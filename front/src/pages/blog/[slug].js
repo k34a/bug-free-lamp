@@ -47,14 +47,14 @@ export async function getStaticProps({params}) {
 export default function BlogPost(data) {
     const imageURL = `http://localhost:1337${data.data[0].attributes.image.data.attributes.url}`;
     return (
-        <>
+        <div className="mt-16 mb-20">
             <Head>
                 <title>{data.data[0].attributes.title}</title>
                 <meta name="description" content={data.data[0].attributes.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main>
+            <main className={`${styles.article} prose`}>
                 <h1>{data.data[0].attributes.title}</h1>
                 <Image 
                     alt={`${data.data[0].attributes.image.data.attributes.alternativeText}`} 
@@ -62,10 +62,10 @@ export default function BlogPost(data) {
                     width={data.data[0].attributes.image.data.attributes.width}
                     height={data.data[0].attributes.image.data.attributes.height}
                 />
-                <div className={styles.article}>
+                <div>
                     <ReactMarkdown>{data.data[0].attributes.body}</ReactMarkdown>
                 </div>
             </main>
-        </>
+        </div>
     )
 }
