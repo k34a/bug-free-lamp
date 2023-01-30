@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogposts",
+  "info": {
+    "singularName": "blogpost",
+    "pluralName": "blogposts",
+    "displayName": "blogpost",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 75,
+      "minLength": 10,
+      "unique": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "maxLength": 75,
+      "minLength": 5,
+      "unique": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 1000
+    },
+    "datepublished": {
+      "type": "date",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "maxLength": 175,
+      "minLength": 90,
+      "unique": false
+    },
+    "authorid": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.article {
+    margin: auto;
+}
+
+@media screen and (min-width: 150px) {
+    .article {
+        width: 80%;
+    }
+}
+
+.article hr {
+    width: 20%;
+    margin: auto;
+}
+
+@media screen and (min-width: 850px) {
+    .article {
+        width: 60%;
+    }
+}

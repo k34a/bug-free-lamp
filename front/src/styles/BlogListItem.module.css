@@ -1,0 +1,40 @@
+.blogListItemContainer {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 2%;
+    margin: auto;
+    box-shadow: 3px 6px #eee8e8;
+    transition: all 0.3s linear;
+}
+
+.blogListItemContainer a {
+    color: black;
+    text-decoration: none;
+}
+
+.blogListItemContainer:hover {
+    background-color: rgb(239, 234, 234);
+}
+
+.itemContainer {
+    width: 100%;
+    padding: 0;
+}
+
+@media screen and (min-width: 50px) {
+    .blogListItemContainer {
+        width: 98%;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .blogListItemContainer {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .blogListItemContainer {
+        width: 60%;
+    }
+}
