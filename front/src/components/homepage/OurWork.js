@@ -20,10 +20,10 @@ export default function OurWork() {
             </div>
             <div className="w-4/5 m-auto lg:col-span-2">
                 <h2 className="text-2xl font-bold leading-normal text-pink-800 mb-5 mt-5">
-                    We are solving the problem of textile waste.
+                    We are transforming this unusable clothing waste into fashionable products.
                 </h2>
                 <p className="mb-5">
-                    Larry Rowbs Foundation is setting up a recycling facility in Uganda to mitigate the environmental, social and medical harms of fast-fashion.
+                    By setting up a recycling facility in Uganda, Larry Rowbs Foundation is trying to mitigate these harms of fast-fashion.
                 </p>
                 <ul className="list-decimal list-inside mb-5">
                     <li>The clothes made from this facility will be sustainable, fashionable, highly-durable, and much safer.</li>

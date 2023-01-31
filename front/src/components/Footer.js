@@ -38,7 +38,7 @@ const Footer = () => {
                             <Link href="/donate" className="text-slate-300">Donate</Link>
                         </p>
                         <p className="mb-4">
-                            <a href="/join" className="text-slate-300">Join</a>
+                            <Link href="/join" className="text-slate-300">Join</Link>
                         </p>
                         <p className="mb-4">
                             <a href="#!" className="text-slate-300">Walk with Travis</a>
@@ -49,7 +49,7 @@ const Footer = () => {
                             Useful links
                         </h6>
                         <p className="mb-4">
-                            <Link href="/about" className="text-slate-300">About</Link>
+                            <Link href="/" className="text-slate-300">Home</Link>
                         </p>
                         <p className="mb-4">
                             <Link href="/blog" className="text-slate-300">Blog</Link>

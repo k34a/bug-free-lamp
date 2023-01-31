@@ -58,10 +58,10 @@ export default function WhatsHappening() {
             </div>
             <div className="w-4/5 m-auto">
                 <h2 className="text-2xl font-bold leading-normal text-pink-800 mb-5">
-                    A truck full of clothes ends up in landfills every second!
+                    A truck full of clothes ends up in landfill every second!
                 </h2>
                 <p className="mb-5">
-                    The fashion industry is putting emphasis on cutting costs, by shifting towards cheaper, low-quality fabrics. The average lifespan of a garment, such as a t-shirt, has thus decreased significantly.
+                    The fashion industry is putting emphasis on cutting costs, by shifting towards cheaper, low-quality fabrics. The average lifespan of a garment, such as a t-shirt, has decreased significantly.
                     <br />
                     This trend is also generating loads of textile waste. Countries like the US, UK, China, and Canada donate millions of tonnes of used clothes to Africa, but 70% of these donations are unusable and ultimately and up in landfills.
                 </p>

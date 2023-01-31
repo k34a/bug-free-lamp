@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 
 const navLinks = [
-    ['About', '/about'],
+    ['Home', '/'],
     ['Blog', '/blog'],
     ['Contact', '/contact'],
     ['Join', '/join'],
