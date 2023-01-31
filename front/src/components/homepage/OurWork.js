@@ -1,0 +1,41 @@
+import styles from "@/styles/OurWork.module.css"
+import Link from "next/link"
+
+export default function OurWork() {
+    return (
+        <div className={`grid lg:grid-cols-3 ${styles.OurWork}`}>
+            <div className={styles.OurWorkAnimation}>
+                <img
+                    id="OurWorkBg"
+                    className={styles.OurWorkBg}
+                    src="/recycle-animation/OurWorkBg.svg"
+                    alt="Colourful background for recycling clothes animation"
+                />
+                <img
+                    id="OurWorkShirts"
+                    className={styles.OurWorkShirts}
+                    src="/recycle-animation/OurWorkShirts.svg"
+                    alt="Shirts to be recycled"
+                />
+            </div>
+            <div className="w-4/5 m-auto lg:col-span-2">
+                <h2 className="text-2xl font-bold leading-normal text-pink-800 mb-5 mt-5">
+                    We are solving the problem of textile waste.
+                </h2>
+                <p className="mb-5">
+                    Larry Rowbs Foundation is setting up a recycling facility in Uganda to mitigate the environmental, social and medical harms of fast-fashion.
+                </p>
+                <ul className="list-decimal list-inside mb-5">
+                    <li>The clothes made from this facility will be sustainable, fashionable, highly-durable, and much safer.</li>
+                    <li>Proceeds from selling the recycled products will help us in running a fashion shool free-of-cost.</li>
+                    <li>The recycling facility and the fashion school will help in creating more jobs while boosting the African economy.</li>
+                </ul>
+                <Link href="/donate" className="mb-5">
+                    <button className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                        Donate
+                    </button>
+                </Link>
+            </div>
+        </div>
+    )
+}

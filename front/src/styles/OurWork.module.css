@@ -1,0 +1,39 @@
+.OurWork {
+    background-color: #fef8ee;
+    overflow: hidden;
+}
+
+.OurWorkAnimation {
+    position: relative;
+    overflow: hidden;
+}
+
+.OurWorkAnimation .OurWorkShirts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: differentialRotate 4s infinite linear;
+}
+
+@keyframes differentialRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(360deg);
+    }
+
+    35% {
+        transform: rotate(360deg);
+    }
+
+    50% {
+        transform: rotate(240deg);
+    }
+
+    100% {
+        transform: rotate(240deg);
+    }
+
+}
