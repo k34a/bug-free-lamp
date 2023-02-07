@@ -1,4 +1,3 @@
-//contact.jsx
 import { useState } from "react";
 
 const validateEmail = (email) => {
@@ -49,7 +48,7 @@ const ContactUs = () => {
 
     return (
         <div className="w-full max-w-lg my-12 m-auto">
-            <h1 className="text-2xl mb-6 text-bold">Contact Form</h1>
+            <h1 className="text-2xl mb-6 text-bold">Contact Us</h1>
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">

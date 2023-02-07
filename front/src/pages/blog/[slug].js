@@ -2,6 +2,7 @@ import Head from 'next/head'
 import ReactMarkdown from "react-markdown"
 import styles from '@/styles/BlogArticle.module.css'
 import Image from 'next/image';
+import SubscribeNewsletter from '@/components/SubscribeNewsletter';
 
 export async function getStaticPaths(context) {
     const fetchParams = {
@@ -47,7 +48,7 @@ export async function getStaticProps({params}) {
 export default function BlogPost(data) {
     const imageURL = `http://localhost:1337${data.data[0].attributes.image.data.attributes.url}`;
     return (
-        <div className="mt-16 mb-20">
+        <div className="pt-16 bg-slate-200">
             <Head>
                 <title>{data.data[0].attributes.title}</title>
                 <meta name="description" content={data.data[0].attributes.description} />
@@ -66,6 +67,7 @@ export default function BlogPost(data) {
                     <ReactMarkdown>{data.data[0].attributes.body}</ReactMarkdown>
                 </div>
             </main>
+            <SubscribeNewsletter />
         </div>
     )
 }

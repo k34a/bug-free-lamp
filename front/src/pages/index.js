@@ -1,9 +1,9 @@
+import Benefits from '@/components/homepage/Benefits'
 import HarmsCaused from '@/components/homepage/HarmsCaused'
 import OurMission from '@/components/homepage/OurMission'
 import OurWork from '@/components/homepage/OurWork'
 import TextileWasteCarousel from '@/components/homepage/TextileWasteCarousel'
 import WhatsHappening from '@/components/homepage/WhatsHappening'
-import Spacer from '@/components/spacer'
 import SubscribeNewsletter from '@/components/SubscribeNewsletter'
 import Head from 'next/head'
 
@@ -18,14 +18,11 @@ export default function Home() {
       </Head>
       <div>
         <TextileWasteCarousel />
-        <Spacer />
         <WhatsHappening />
-        <Spacer />
         <HarmsCaused />
-        <Spacer />
         <OurWork />
-        <Spacer />
         <OurMission />
+        <Benefits />
         <SubscribeNewsletter />
       </div>
     </>

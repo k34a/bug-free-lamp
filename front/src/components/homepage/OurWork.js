@@ -26,12 +26,12 @@ export default function OurWork() {
                     By setting up a recycling facility in Uganda, Larry Rowbs Foundation is trying to mitigate these harms of fast-fashion.
                 </p>
                 <ul className="list-decimal list-inside mb-5">
-                    <li>The clothes made from this facility will be sustainable, fashionable, highly-durable, and much safer.</li>
-                    <li>Proceeds from selling the recycled products will help us in running a fashion shool free-of-cost.</li>
-                    <li>The recycling facility and the fashion school will help in creating more jobs while boosting the African economy.</li>
+                    <li>Shop eco-friendly clothing, stylish and durable.</li>
+                    <li>Try sustainable fashion with 100% biodegradable and recycled materials.</li>
+                    <li>Say NO to fast-fashion and opt-in for chemical-free clothes.</li>
                 </ul>
                 <Link href="/donate" className="mb-5">
-                    <button className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    <button className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                         Donate
                     </button>
                 </Link>

@@ -1,4 +1,5 @@
 import ContactUs from '@/components/ContactUs'
+import SubscribeNewsletter from '@/components/SubscribeNewsletter'
 import Head from 'next/head'
 
 export default function Contact() {
@@ -12,6 +13,7 @@ export default function Contact() {
             </Head>
             <main>
                 <ContactUs />
+                <SubscribeNewsletter />
             </main>
         </>
     )

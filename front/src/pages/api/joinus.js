@@ -10,7 +10,7 @@ export default async function handler(req, res) {
                 'Authorization': `Bearer ${process.env.STRAPITOKEN}`
             }
         }
-        const response = await fetch(`${process.env.STRAPIBASEURL}/api/contacts`, fetchParams);
+        const response = await fetch(`${process.env.STRAPIBASEURL}/api/joins`, fetchParams);
         const json = await response.json();
         if (!response.ok) {
             res.status(400).json(json);

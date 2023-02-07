@@ -1,3 +1,6 @@
+import JoinUs from '@/components/JoinUs'
+import OurTeam from '@/components/OurTeam'
+import SubscribeNewsletter from '@/components/SubscribeNewsletter'
 import Head from 'next/head'
 
 export default function Join() {
@@ -9,6 +12,11 @@ export default function Join() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <main>
+                <JoinUs />
+                <OurTeam />
+                <SubscribeNewsletter />
+            </main>
         </>
     )
 }

@@ -2,19 +2,19 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="text-center lg:text-left bg-lime-700 text-white">
-            <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
+        <footer className="text-center lg:text-left bg-yellow-200 text-black">
+            <div className="flex justify-center items-center lg:justify-between p-6 border-b border-slate-700">
                 <div className="mr-12 hidden lg:block">
                     <span>Get connected with us on social networks:</span>
                 </div>
                 <div className="flex justify-center">
-                    <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-300" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-600" target="_blank" rel="noopener noreferrer">
                         <i className="fa fa-facebook"></i>
                     </a>
-                    <a href="https://www.instagram.com/thelarryrowbsfoundation/" className="mr-6 text-slate-300" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/thelarryrowbsfoundation/" className="mr-6 text-slate-600" target="_blank" rel="noopener noreferrer">
                         <i className="fa fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-300" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-600" target="_blank" rel="noopener noreferrer">
                         <i className="fa fa-linkedin"></i>
                     </a>
                 </div>
@@ -26,7 +26,7 @@ const Footer = () => {
                             <i className="fa fa-recycle" aria-hidden="true">&nbsp;</i>
                             Larry Rowbs Foundation
                         </h6>
-                        <p>
+                        <p className="text-slate-600">
                             Reducing waste, creating fashion
                         </p>
                     </div>
@@ -35,13 +35,13 @@ const Footer = () => {
                             Take Action
                         </h6>
                         <p className="mb-4">
-                            <Link href="/donate" className="text-slate-300">Donate</Link>
+                            <Link href="/donate" className="text-slate-600">Donate</Link>
                         </p>
                         <p className="mb-4">
-                            <Link href="/join" className="text-slate-300">Join</Link>
+                            <Link href="/join" className="text-slate-600">Join</Link>
                         </p>
                         <p className="mb-4">
-                            <a href="#!" className="text-slate-300">Walk with Travis</a>
+                            <a href="#!" className="text-slate-600">Walk with Travis</a>
                         </p>
                     </div>
                     <div className="">
@@ -49,45 +49,45 @@ const Footer = () => {
                             Useful links
                         </h6>
                         <p className="mb-4">
-                            <Link href="/" className="text-slate-300">Home</Link>
+                            <Link href="/" className="text-slate-600">Home</Link>
                         </p>
                         <p className="mb-4">
-                            <Link href="/blog" className="text-slate-300">Blog</Link>
+                            <Link href="/blog" className="text-slate-600">Blog</Link>
                         </p>
                         <p className="mb-4">
-                            <Link href="/contact" className="text-slate-300">Contact</Link>
+                            <Link href="/contact" className="text-slate-600">Contact</Link>
                         </p>
                         <p className="mb-4">
-                            <Link href="/terms" className="text-slate-300">Terms & Conditions</Link>
+                            <Link href="/terms" className="text-slate-600">Terms & Conditions</Link>
                         </p>
                     </div>
                     <div className="">
                         <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
                             Contact
                         </h6>
-                        <p className="flex items-center justify-center md:justify-start mb-4">
+                        <p className="flex items-center text-slate-600 justify-center md:justify-start mb-4">
                             <i className="w-4 mr-4 fa fa-home" aria-hidden="true"></i>
                             2459 Sugar Bottom Rd
                             Furlong, Pennsylvania
                             United States - 18925
                         </p>
-                        <p className="flex items-center justify-center md:justify-start mb-4">
+                        <p className="flex items-center text-slate-600 justify-center md:justify-start mb-4">
                             <i className="w-4 mr-4 fa fa-envelope" aria-hidden="true"></i>
                             info@larryrowbs.com
                         </p>
-                        <p className="flex items-center justify-center md:justify-start mb-4">
+                        <p className="flex items-center text-slate-600 justify-center md:justify-start mb-4">
                             <i className="w-4 mr-4 fa fa-phone" aria-hidden="true"></i>
                             + 01 605 954 8885
                         </p>
                     </div>
                 </div>
             </div>
-            <div className="text-center p-6 bg-lime-700">
+            <div className="text-center p-6 bg-yellow-200">
                 <span>&copy; Copyright 2019-2023 </span>
-                <Link className="text-white font-semibold" href="/">Larry Rowbs Foundation</Link>
+                <Link className="text-slate-600 font-semibold" href="/">Larry Rowbs Foundation</Link>
             </div>
-            <div className="text-center p-6 bg-purple-700">
-                <span>Designed, developed and maintained with <i className="fa fa-heart text-red-500"></i> by </span>
+            <div className="text-center p-3 bg-purple-500 text-white">
+                <span>Made with <i className="fa fa-heart text-red-500"></i> by </span>
                 <a className="text-white font-semibold" href="https://www.linkedin.com/in/sak1sham/">Saksham Garg</a>
             </div>
         </footer>

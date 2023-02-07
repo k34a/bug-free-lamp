@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function WhatsHappening() {
     return (
-        <div className="grid lg:grid-cols-2">
+        <div className="grid lg:grid-cols-2 bg-red-200">
             <div>
                 <div className={styles.sceneVisual}>
                     <img
@@ -66,7 +66,7 @@ export default function WhatsHappening() {
                     This trend is also generating loads of textile waste. Countries like the US, UK, China, and Canada donate millions of tonnes of used clothes to Africa, but 70% of these donations are unusable and ultimately and up in landfills.
                 </p>
                 <Link href="/blog" className="no-underline">
-                    <button className="text-gray-900 font-bold bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    <button className="text-gray-900 font-bold bg-gradient-to-r from-red-400 via-red-500 to-yellow-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-200 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                         Explore more
                     </button>
                 </Link>
