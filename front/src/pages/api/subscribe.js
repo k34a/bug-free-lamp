@@ -7,10 +7,10 @@ export default async function handler(req, res) {
       body: JSON.stringify({"data": req.body}),
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.STRAPITOKEN}`
+        'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
       }
     }
-    const response = await fetch(`${process.env.STRAPIBASEURL}/api/subscribers`, fetchParams);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/subscribers`, fetchParams);
     const json = await response.json();
     if(!response.ok){
       if (json.error.message === "This attribute must be unique"){

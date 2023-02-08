@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const validateEmail = (email) => {
     return email.match(
@@ -14,6 +15,7 @@ const ContactUs = () => {
     const [isInvalidEmail, setIsInvalidEmail] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isNotSubmitted, setIsNotSubmitted] = useState(false);
+    const recaptchaRef = useRef();
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -24,7 +26,9 @@ const ContactUs = () => {
             setIsInvalidEmail(true);
         }
         else {
-            const data = { firstName, lastName, email, message };
+            const token = await recaptchaRef.current.executeAsync();
+            recaptchaRef.current.reset();
+            const data = { firstName, lastName, email, message, token };
             const response = await fetch("/api/contactus", {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -47,7 +51,7 @@ const ContactUs = () => {
     }
 
     return (
-        <div className="w-full max-w-lg my-12 m-auto">
+        <div className="w-5/6 max-w-lg my-12 m-auto">
             <h1 className="text-2xl mb-6 text-bold">Contact Us</h1>
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-wrap -mx-3 mb-6">
@@ -111,6 +115,11 @@ const ContactUs = () => {
                         />
                     </div>
                 </div>
+                <ReCAPTCHA 
+                    size="invisible" 
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT} 
+                    ref={recaptchaRef}
+                />
                 <div className="md:flex md:items-center">
                     <div className="md:w-1/3">
                         <button 

@@ -1,4 +1,5 @@
 import ContactUs from '@/components/ContactUs'
+import FAQ from '@/components/FAQ'
 import SubscribeNewsletter from '@/components/SubscribeNewsletter'
 import Head from 'next/head'
 
@@ -12,6 +13,7 @@ export default function Contact() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
+                <FAQ />
                 <ContactUs />
                 <SubscribeNewsletter />
             </main>

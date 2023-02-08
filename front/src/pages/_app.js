@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import { Poppins } from '@next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import NextNProgress from 'nextjs-progressbar';
 
 const poppins = Poppins({
   weight: ['400'],
@@ -10,10 +11,13 @@ const poppins = Poppins({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={poppins.className}>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
-    </main>
+    <>
+      <NextNProgress />
+      <main className={poppins.className}>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </main>
+    </>
   )
 }

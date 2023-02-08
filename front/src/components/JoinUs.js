@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const validateEmail = (email) => {
     return email.match(
@@ -25,6 +26,7 @@ const JoinUs = () => {
     const [isInvalidLinkedInURL, setIsInvalidLinkedInURL] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isNotSubmitted, setIsNotSubmitted] = useState(false);
+    const recaptchaRef = useRef();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -43,6 +45,8 @@ const JoinUs = () => {
             setIsInvalidLinkedInURL(true);
         }
         else {
+            const token = await recaptchaRef.current.executeAsync();
+            recaptchaRef.current.reset();
             const data = { 
                 firstname: firstName, 
                 lastname: lastName, 
@@ -51,7 +55,8 @@ const JoinUs = () => {
                 linkedin, 
                 location, 
                 skills, 
-                resume 
+                resume,
+                token
             };
             const response = await fetch("/api/joinus", {
                 method: "POST",
@@ -79,7 +84,7 @@ const JoinUs = () => {
     }
 
     return (
-        <div className="w-full max-w-lg my-12 m-auto">
+        <div className="w-5/6 max-w-lg my-12 m-auto">
             <h1 className="text-4xl mb-8 font-bold">Join Us</h1>
             <p>
                 We live by the principles of working together to overcome any obstacle we face, being true to ourselves and anyone we engage with, leveraging diverse skills and resources to accomplish our goals through unified creativity, maintaining a high level of transparency and respect in all communications, and empowering each person to unleash their gifts.
@@ -215,6 +220,11 @@ const JoinUs = () => {
                         {isInvalidResumeURL && <p className="text-red-500 text-xs italic">Please enter a valid link to your resume.</p>}
                     </div>
                 </div>
+                <ReCAPTCHA
+                    size="invisible"
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
+                    ref={recaptchaRef}
+                />
                 <div className="md:flex md:items-center">
                     <div className="md:w-1/3">
                         <button

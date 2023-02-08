@@ -95,7 +95,7 @@ export default function Benefits() {
                             </a>
                         </li>
                     </ul>
-                    <div className={`relative flex flex-col min-w-0 break-words ${bgColor[openTab-1]} w-full pb-6 rounded`}>
+                    <div className={`relative flex flex-col min-w-0 break-words ${bgColor[openTab-1]} w-full py-9 rounded`}>
                         <div className="px-4 py-5 flex-auto">
                             <div className="tab-content tab-space w-4/5 md:w-4/6 lg:w-1/2 m-auto">
                                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">

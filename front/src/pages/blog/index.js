@@ -7,10 +7,10 @@ export async function getStaticProps(context) {
         method: "GET",
         headers: {
             "content-type": "Application/json",
-            'Authorization': `Bearer ${process.env.STRAPITOKEN}`
+            'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
         },
     };
-    const res = await fetch(`${process.env.STRAPIBASEURL}/api/blogposts`, fetchParams);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blogposts`, fetchParams);
     const data = await res.json();
     return {
         props: { ...data }

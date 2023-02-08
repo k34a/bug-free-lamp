@@ -4,6 +4,7 @@ import OurMission from '@/components/homepage/OurMission'
 import OurWork from '@/components/homepage/OurWork'
 import TextileWasteCarousel from '@/components/homepage/TextileWasteCarousel'
 import WhatsHappening from '@/components/homepage/WhatsHappening'
+import Partners from '@/components/homepage/Partners'
 import SubscribeNewsletter from '@/components/SubscribeNewsletter'
 import Head from 'next/head'
 
@@ -23,6 +24,7 @@ export default function Home() {
         <OurWork />
         <OurMission />
         <Benefits />
+        <Partners />
         <SubscribeNewsletter />
       </div>
     </>

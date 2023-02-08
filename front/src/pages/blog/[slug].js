@@ -9,10 +9,10 @@ export async function getStaticPaths(context) {
         method: "GET",
         headers: {
             "content-type": "Application/json",
-            'Authorization': `Bearer ${process.env.STRAPITOKEN}`
+            'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
         },
     };
-    const res = await fetch(`${process.env.STRAPIBASEURL}/api/blogposts`, fetchParams);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blogposts`, fetchParams);
     const data = await res.json();
     const paths = data.data.map((blog) => {
         return {params: {slug: blog.attributes.slug}};
@@ -28,10 +28,10 @@ export async function getStaticProps({params}) {
         method: "GET",
         headers: {
             "content-type": "Application/json",
-            'Authorization': `Bearer ${process.env.STRAPITOKEN}`
+            'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
         },
     };
-    const res = await fetch(`${process.env.STRAPIBASEURL}/api/blogposts?filters[slug][$eq]=${params.slug}&populate=*`, fetchParams);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blogposts?filters[slug][$eq]=${params.slug}&populate=*`, fetchParams);
     const data = await res.json();
     if(data && data.data && data.data.length > 0){
         return {
@@ -46,9 +46,9 @@ export async function getStaticProps({params}) {
 }
 
 export default function BlogPost(data) {
-    const imageURL = `http://localhost:1337${data.data[0].attributes.image.data.attributes.url}`;
+    const imageURL = `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${data.data[0].attributes.image.data.attributes.url}`;
     return (
-        <div className="pt-16 bg-slate-200">
+        <div className="pt-16 bg-white">
             <Head>
                 <title>{data.data[0].attributes.title}</title>
                 <meta name="description" content={data.data[0].attributes.description} />
