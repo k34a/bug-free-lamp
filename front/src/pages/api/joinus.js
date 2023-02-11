@@ -1,4 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+const { Client } = require('@notionhq/client');
+
 async function validateCaptcha(token) {
     const secret_key = process.env.RECAPTCHA_SERVER
     const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`
@@ -19,21 +20,88 @@ export default async function handler(req, res) {
             return;
         }
         delete req.body.token;
-        const fetchParams = {
-            method: "POST",
-            body: JSON.stringify({ "data": req.body }),
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
-            }
-        }
-        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/joins`, fetchParams);
-        const json = await response.json();
-        if (!response.ok) {
-            res.status(400).json(json);
-        }
-        else {
+        const notion = new Client({
+            auth: process.env.NOTION_WRITE_TOKEN,
+        });
+        try {
+            await notion.pages.create({
+                parent: {
+                    database_id: process.env.NOTION_JOINUS,
+                },
+                properties: {
+                    FirstName: {
+                        title: [
+                            {
+                                text: {
+                                    content: req.body.firstname,
+                                },
+                            },
+                        ],
+                    },
+                    LastName: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.lastname,
+                                },
+                            },
+                        ],
+                    },
+                    Email: {
+                        email: req.body.email,
+                    },
+                    Contact: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.contact,
+                                },
+                            },
+                        ],
+                    },
+                    LinkedIn: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.linkedin,
+                                },
+                            },
+                        ],
+                    },
+                    Location: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.location,
+                                },
+                            },
+                        ],
+                    },
+                    Skills: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.skills,
+                                },
+                            },
+                        ],
+                    },
+                    Resume: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.resume,
+                                },
+                            },
+                        ],
+                    },
+                },
+            });
             res.status(200).json({});
+        }
+        catch (err) {
+            console.log(err.message)
+            res.status(400).json(err);
         }
     }
     else {

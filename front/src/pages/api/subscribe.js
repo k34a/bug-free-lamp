@@ -1,28 +1,30 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+const { Client } = require('@notionhq/client');
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const fetchParams = {
-      method: "POST",
-      body: JSON.stringify({"data": req.body}),
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
-      }
-    }
-    const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/subscribers`, fetchParams);
-    const json = await response.json();
-    if(!response.ok){
-      if (json.error.message === "This attribute must be unique"){
-        json.error.message = "You have already subscribed to the newsletter."
-      }
-      else{
-        json.error.message = "Unable to subscribe, please try again later."
-      }
-      res.status(400).json(json);
-    }
-    else{
+    const notion = new Client({
+      auth: process.env.NOTION_WRITE_TOKEN,
+    });
+    try {
+      await notion.pages.create({
+        parent: {
+          database_id: process.env.NOTION_SUBSCRIBE,
+        },
+        properties: {
+          Email: {
+            email: req.body.email,
+          },
+        },
+      });
       res.status(200).json({});
+    }
+    catch (err) {
+      console.log(err.message)
+      res.status(400).json({
+        error: {
+          message: "Unable to subscribe, please try again later."
+        }
+      });
     }
   }
   else{

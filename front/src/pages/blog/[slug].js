@@ -1,71 +1,44 @@
 import Head from 'next/head'
 import ReactMarkdown from "react-markdown"
 import styles from '@/styles/BlogArticle.module.css'
-import Image from 'next/image';
 import SubscribeNewsletter from '@/components/SubscribeNewsletter';
+import { getAllPublished, getSingleBlogPostBySlug } from '../lib/notion';
 
 export async function getStaticPaths(context) {
-    const fetchParams = {
-        method: "GET",
-        headers: {
-            "content-type": "Application/json",
-            'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
-        },
-    };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blogposts`, fetchParams);
-    const data = await res.json();
-    const paths = data.data.map((blog) => {
-        return {params: {slug: blog.attributes.slug}};
-    })
+    const posts = await getAllPublished();
+    const paths = posts.map(({ slug }) => ({ params: { slug } }));
+
     return {
-        paths: paths,
-        fallback: false
+        paths,
+        fallback: "blocking",
     };
 }
 
 export async function getStaticProps({params}) {
-    const fetchParams = {
-        method: "GET",
-        headers: {
-            "content-type": "Application/json",
-            'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
+    const post = await getSingleBlogPostBySlug(params.slug)
+    return {
+        props: {
+            post,
         },
+        revalidate: 60
     };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blogposts?filters[slug][$eq]=${params.slug}&populate=*`, fetchParams);
-    const data = await res.json();
-    if(data && data.data && data.data.length > 0){
-        return {
-            props: data
-        };
-    }
-    else{
-        return {
-            notFound: true
-        }
-    }
 }
 
-export default function BlogPost(data) {
-    const imageURL = `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${data.data[0].attributes.image.data.attributes.url}`;
+export default function BlogPost({post}) {
     return (
-        <div className="pt-16 bg-white">
+        <div className="bg-white">
             <Head>
-                <title>{data.data[0].attributes.title}</title>
-                <meta name="description" content={data.data[0].attributes.description} />
+                <title>{post.metadata.title}</title>
+                <meta name="description" content={post.metadata.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={`${styles.article} prose`}>
-                <h1>{data.data[0].attributes.title}</h1>
-                <Image 
-                    alt={`${data.data[0].attributes.image.data.attributes.alternativeText}`} 
-                    src={imageURL} 
-                    width={data.data[0].attributes.image.data.attributes.width}
-                    height={data.data[0].attributes.image.data.attributes.height}
-                />
-                <div>
-                    <ReactMarkdown>{data.data[0].attributes.body}</ReactMarkdown>
-                </div>
+            <main className={`py-16 ${styles.article} prose mx-auto w-4/5 md:w-3/5 lg:w-1/2`}>
+                <section>
+                    <h2>{post.metadata.title}</h2>
+                    <span>{post.metadata.date}</span>
+                    <ReactMarkdown>{post.markdown}</ReactMarkdown>
+                </section>
             </main>
             <SubscribeNewsletter />
         </div>

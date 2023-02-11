@@ -24,14 +24,14 @@ const BlogList = (props) => {
     return (
         <div className="container mx-auto w-4/5 my-12">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {props.data.map((ele) => {
-                    const readColor = readMoreColors[(ele.id)%(readMoreColors.length)];
+                {props.data.map((ele, index) => {
+                    const readColor = readMoreColors[(index)%(readMoreColors.length)];
                     return (
                         <BlogListItem 
-                            title={ele.attributes.title}
-                            description={ele.attributes.description}
-                            slug={ele.attributes.slug}
-                            key={ele.id}
+                            title={ele.title}
+                            description={ele.description}
+                            slug={ele.slug}
+                            key={index}
                             readcolor={readColor}
                         />
                     )

@@ -1,4 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+const { Client } = require('@notionhq/client');
 
 async function validateCaptcha(token) {
     const secret_key = process.env.RECAPTCHA_SERVER
@@ -20,21 +20,52 @@ export default async function handler(req, res) {
             return;
         }
         delete req.body.token;
-        const fetchParams = {
-            method: "POST",
-            body: JSON.stringify({ "data": req.body }),
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
-            }
-        }
-        const response = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/contacts`, fetchParams);
-        const json = await response.json();
-        if (!response.ok) {
-            res.status(400).json(json);
-        }
-        else {
+        const notion = new Client({
+            auth: process.env.NOTION_WRITE_TOKEN,
+        });
+        try{
+            await notion.pages.create({
+                parent: {
+                    database_id: process.env.NOTION_CONTACTUS,
+                },
+                properties: {
+                    FirstName: {
+                        title: [
+                            {
+                                text: {
+                                    content: req.body.firstName,
+                                },
+                            },
+                        ],
+                    },
+                    LastName: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.lastName,
+                                },
+                            },
+                        ],
+                    },
+                    Email: {
+                        email: req.body.email,
+                    },
+                    Message: {
+                        rich_text: [
+                            {
+                                text: {
+                                    content: req.body.message,
+                                },
+                            },
+                        ],
+                    },
+                },
+            });
             res.status(200).json({});
+        }
+        catch(err){
+            console.log(err.message)
+            res.status(400).json(err);
         }
     }
     else {

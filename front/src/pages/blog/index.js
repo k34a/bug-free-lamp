@@ -1,23 +1,20 @@
 import BlogList from '@/components/BlogList';
 import SubscribeNewsletter from '@/components/SubscribeNewsletter';
 import Head from 'next/head'
+import { getAllPublished } from '../lib/notion';
 
 export async function getStaticProps(context) {
-    const fetchParams = {
-        method: "GET",
-        headers: {
-            "content-type": "Application/json",
-            'Authorization': `Bearer ${process.env.STRAPI_TOKEN}`
-        },
-    };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blogposts`, fetchParams);
-    const data = await res.json();
+    const data = await getAllPublished()
     return {
-        props: { ...data }
+        props: {
+            posts: data,
+        },
+        revalidate: 60
     };
 }
 
-export default function Home(data) {
+export default function Home({posts}) {
+    if (!posts) return <h1>No posts</h1>
     return (
         <>
             <Head>
@@ -27,7 +24,7 @@ export default function Home(data) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <BlogList data={data.data}/>
+                <BlogList data={posts}/>
                 <SubscribeNewsletter />
             </main>
         </>

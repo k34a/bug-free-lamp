@@ -38,10 +38,10 @@ const JoinUs = () => {
         if (!email || !validateEmail(email)) {
             setIsInvalidEmail(true);
         }
-        if (!resume || !validateURL(resume)) {
+        if (resume && !validateURL(resume)) {
             setIsInvalidResumeURL(true);
         }
-        if (!linkedin || !validateURL(linkedin)) {
+        if (linkedin && !validateURL(linkedin)) {
             setIsInvalidLinkedInURL(true);
         }
         else {
