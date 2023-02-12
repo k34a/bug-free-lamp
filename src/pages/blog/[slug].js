@@ -2,7 +2,7 @@ import Head from 'next/head'
 import ReactMarkdown from "react-markdown"
 import styles from '@/styles/BlogArticle.module.css'
 import SubscribeNewsletter from '@/components/SubscribeNewsletter';
-import { getAllPublished, getSingleBlogPostBySlug } from '../lib/notion';
+import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();

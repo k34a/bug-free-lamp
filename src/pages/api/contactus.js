@@ -1,4 +1,4 @@
-import {validateCaptcha} from '../lib/recaptcha';
+import {validateCaptcha} from '../../lib/recaptcha';
 
 const { Client } = require('@notionhq/client');
 

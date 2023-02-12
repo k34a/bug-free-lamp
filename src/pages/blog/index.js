@@ -1,7 +1,7 @@
 import BlogList from '@/components/BlogList';
 import SubscribeNewsletter from '@/components/SubscribeNewsletter';
 import Head from 'next/head'
-import { getAllPublished } from '../lib/notion';
+import { getAllPublished } from '../../lib/notion';
 
 export async function getStaticProps(context) {
     const data = await getAllPublished()
