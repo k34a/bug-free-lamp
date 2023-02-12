@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const validateEmail = (email) => {
     return email.match(
@@ -12,6 +13,8 @@ export default function SubscribeNewsletter() {
     const [invalidEmail, setInvalidEmail] = useState(false);
     const [error, setError] = useState("");
     const [isSubscribed, setIsSubscribed] = useState(false);
+    const recaptchaRef = useRef();
+
     async function handleSubscriberSubmit(e){
         e.preventDefault();
         setInvalidEmail(false);
@@ -21,7 +24,9 @@ export default function SubscribeNewsletter() {
             setInvalidEmail(true);
         }
         else{
-            const subscriber = {email};
+            const token = await recaptchaRef.current.executeAsync();
+            recaptchaRef.current.reset();
+            const subscriber = {email, token};
             const response = await fetch("/api/subscribe", {
                 method: "POST",
                 body: JSON.stringify(subscriber),
@@ -50,6 +55,11 @@ export default function SubscribeNewsletter() {
                         Stay up to date with the roadmap progress, announcements and events conducted by signing up for our weekly newsletter.
                     </p>
                     <form onSubmit={handleSubscriberSubmit}>
+                        <ReCAPTCHA
+                            size="invisible"
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
+                            ref={recaptchaRef}
+                        />
                         <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                             <div className="relative w-full">
                                 <label htmlFor="email" className="hidden mb-2 text-sm font-medium text-gray-300">Email address</label>

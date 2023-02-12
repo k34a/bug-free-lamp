@@ -1,3 +1,4 @@
+import { ThreeDots } from "react-loader-spinner"; 
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -27,9 +28,11 @@ const JoinUs = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isNotSubmitted, setIsNotSubmitted] = useState(false);
     const recaptchaRef = useRef();
+    const [loading, setloading] = useState(false);
 
     async function handleSubmit(e) {
         e.preventDefault();
+        setloading(true);
         setIsInvalidEmail(false);
         setIsInvalidResumeURL(false);
         setIsInvalidLinkedInURL(false);
@@ -38,10 +41,10 @@ const JoinUs = () => {
         if (!email || !validateEmail(email)) {
             setIsInvalidEmail(true);
         }
-        if (resume && !validateURL(resume)) {
+        else if (resume && !validateURL(resume)) {
             setIsInvalidResumeURL(true);
         }
-        if (linkedin && !validateURL(linkedin)) {
+        else if (linkedin && !validateURL(linkedin)) {
             setIsInvalidLinkedInURL(true);
         }
         else {
@@ -81,6 +84,7 @@ const JoinUs = () => {
                 setResume("");
             }
         }
+        setloading(false);
     }
 
     return (
@@ -234,6 +238,7 @@ const JoinUs = () => {
                             Send
                         </button>
                     </div>
+                    {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                     <div className="md:w-2/3"></div>
                 </div>
                 {isNotSubmitted && <p className="text-red-500 text-xs italic my-6">Unable to proceed your request. Please try again later.</p>}

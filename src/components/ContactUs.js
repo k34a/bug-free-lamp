@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const validateEmail = (email) => {
@@ -16,9 +17,11 @@ const ContactUs = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isNotSubmitted, setIsNotSubmitted] = useState(false);
     const recaptchaRef = useRef();
+    const [loading, setloading] = useState(false);
 
     async function handleSubmit(e){
         e.preventDefault();
+        setloading(true);
         setIsInvalidEmail(false);
         setIsSubmitted(false); 
         setIsNotSubmitted(false); 
@@ -48,6 +51,7 @@ const ContactUs = () => {
                 setMessage("");
             }
         }
+        setloading(false);
     }
 
     return (
@@ -129,6 +133,7 @@ const ContactUs = () => {
                             Send
                         </button>
                     </div>
+                    {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                     <div className="md:w-2/3"></div>
                 </div>
                 {isNotSubmitted && <p className="text-red-500 text-xs italic my-6">Unable to save your message. Please try again later.</p>}
