@@ -13,6 +13,19 @@ const poppins = Poppins({
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=UA-252820847-1"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-252820847-1');
+        `}
+      </Script>
       <NextNProgress />
       <main className={poppins.className}>
         <Script src="/static/script.js" />
