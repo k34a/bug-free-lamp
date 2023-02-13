@@ -15,13 +15,21 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps({params}) {
-    const post = await getSingleBlogPostBySlug(params.slug)
-    return {
-        props: {
-            post,
-        },
-        revalidate: 60
-    };
+    try{
+        const post = await getSingleBlogPostBySlug(params.slug)
+        return {
+            props: {
+                post,
+            },
+            revalidate: 60
+        };
+    }
+    catch(err){
+        console.log(err.message);
+        return {
+            notFound: true,
+        }
+    }
 }
 
 export default function BlogPost({post}) {

@@ -6,7 +6,18 @@ module.exports = {
     "./src/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        animateMove: {
+          '0%, 100%': { 
+            transform: 'translate3d(0px, -10px, 0px) rotate(0deg)' 
+          },
+          '50%': { 
+            transform: 'translate3d(10px, 5px, 5px) rotate(2deg)' 
+          },
+        }
+      },
+    },
   },
   plugins: [
     require("flowbite/plugin"),
