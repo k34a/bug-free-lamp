@@ -94,3 +94,16 @@ export const getSingleBlogPostBySlug = async (slug) => {
     };
     return ret;
 }
+
+export const addAltTextToImages = (markdown, altText) => {
+    const regex = /!\[([^\]]*)\]\(([^\)]+)\)/g;
+    let counter = 1;
+    markdown = markdown.replace(regex, (match, p1, p2) => {
+        if (p1.trim() === '') {
+            return `![${altText} ${counter++}](${p2})`;
+        } else {
+            return match;
+        }
+    });
+    return markdown;
+}
