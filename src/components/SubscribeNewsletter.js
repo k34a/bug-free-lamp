@@ -88,7 +88,7 @@ export default function SubscribeNewsletter() {
                         {isSubscribed && <div className="mx-auto max-w-screen-sm text-sm text-left text-green-500 newsletter-form-footer">Thank you for subscribing.</div>}
                         <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">
                             We don&#39;t share emails with anyone.&nbsp; 
-                            <Link href="/privacypolicy" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read our Privacy Policy</Link>.
+                            <Link href="/privacypolicy" className="font-medium text-blue-600 hover:underline">Read our Privacy Policy</Link>.
                         </div>
                     </form>
                 </div>
