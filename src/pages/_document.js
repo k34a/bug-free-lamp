@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <meta name="google-site-verification" content="KyGlTO_S7Lg70l1jUDsUImlqZvPCdStcxP44VZwMlSE" />
       </Head>
       <body>
         <Main />
