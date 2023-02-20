@@ -87,8 +87,9 @@ const Footer = () => {
                 <Link className="text-slate-600 font-semibold" href="/">Larry Rowbs Foundation</Link>
             </div>
             <div className="text-center p-3 bg-purple-500 text-white">
-                <span>Made with <i className="fa fa-heart text-red-500"></i> by </span>
-                <a className="text-white font-semibold" href="https://www.linkedin.com/in/sak1sham/">Saksham Garg</a>
+                <a className="text-white font-semibold" href="https://www.linkedin.com/in/sak1sham/">
+                    <span>Made with <i className="fa fa-heart text-red-500"></i> in India</span>
+                    </a>
             </div>
         </footer>
     );
