@@ -2,14 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
-        pathname: '/uploads/**',
-      },
-    ], 
+    loader: 'akamai',
+    path: '',
   },
   async redirects() {
     return [
