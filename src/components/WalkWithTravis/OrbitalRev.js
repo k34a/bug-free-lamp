@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-export default function OrbitalRev() {
+export default function OrbitalRev(props) {
     const containerRef = useRef();
 
     useEffect(() => {
@@ -129,5 +129,7 @@ export default function OrbitalRev() {
 
     }, [])
 
-    return <canvas ref={containerRef}/>
+    return ( 
+        <canvas ref={containerRef}/>
+    )
 }
