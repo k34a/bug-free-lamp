@@ -110,7 +110,7 @@ export const addAltTextToImages = (markdown, altText) => {
 
 export const generateSlug = (s) => {
     console.log(s)
-    if(!s){
+    if(!s || typeof s !== "string"){
         return "";
     }
     let str = s.replace(/^\s+|\s+$/g, "");
