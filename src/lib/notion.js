@@ -8,6 +8,35 @@ const notion = new Client({
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export const getAllPublished = async () => {
+    let allPosts = [];
+    let hasMore = true;
+    let startCursor = undefined;
+
+    while (hasMore) {
+        const response = await notion.databases.query({
+            database_id: process.env.NOTION_DATABASE_ID,
+            filter: {
+                property: "Published",
+                checkbox: {
+                    equals: true,
+                },
+            },
+            start_cursor: startCursor,
+            page_size: 100,
+        });
+
+        allPosts = [...allPosts, ...response.results];
+        hasMore = response.has_more;
+        startCursor = response.next_cursor;
+    }
+
+    return allPosts.map((post) => {
+        return getPageMetaData(post);
+    });
+};
+
+
+export const getTopPublished = async (n) => {
     const posts = await notion.databases.query({
         database_id: process.env.NOTION_DATABASE_ID,
         filter: {
@@ -22,6 +51,7 @@ export const getAllPublished = async () => {
                 direction: "descending",
             },
         ],
+        page_size: n
     });
     const allPosts = posts.results;
 

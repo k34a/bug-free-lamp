@@ -1,10 +1,10 @@
 import BlogList from '@/components/BlogList';
 import SubscribeNewsletter from '@/components/SubscribeNewsletter';
 import Head from 'next/head'
-import { getAllPublished } from '../../lib/notion';
+import { getTopPublished } from '../../lib/notion';
 
 export async function getStaticProps(context) {
-    const data = await getAllPublished()
+    const data = await getTopPublished(30)
     return {
         props: {
             posts: data,
