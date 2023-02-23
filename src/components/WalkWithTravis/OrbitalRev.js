@@ -130,6 +130,6 @@ export default function OrbitalRev(props) {
     }, [])
 
     return ( 
-        <canvas ref={containerRef}/>
+        <canvas ref={containerRef} style={{cursor: "grab"}}/>
     )
 }

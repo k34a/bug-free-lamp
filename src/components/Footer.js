@@ -41,7 +41,7 @@ const Footer = () => {
                             <Link href="/join" className="text-slate-600">Join</Link>
                         </p>
                         <p className="mb-4">
-                            <a href="#!" className="text-slate-600">Walk with Travis</a>
+                            <Link href="/walkwithtravis" className="text-slate-600">Walk with Travis</Link>
                         </p>
                     </div>
                     <div className="">

@@ -8,6 +8,7 @@ import useDarkMode from '@/lib/useDarkMode';
 import rehypeSlug from 'rehype-slug';
 import Toc from "react-toc";
 import { para } from '@/components/Markdown';
+import Tags from '@/components/Blog/Tags';
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -66,7 +67,16 @@ export default function BlogPost({post, slug}) {
             <main className={`py-16 ${styles.article} prose mx-auto w-4/5 md:w-3/5 lg:w-1/2 dark:prose-invert`}>
                 <section>
                     <h1 className='text-4xl dark:text-white'>{post.metadata.title}</h1>
-                    <span className='italic dark:text-slate-300'>{post.metadata.date}</span>
+                    <div className='pb-5'>
+                        <span className='bg-green-200 text-green-700 py-2 px-3 mr-2 rounded-full font-bold'>
+                            {post.metadata.author[0]}
+                        </span>
+                        <a href={post.metadata.authorHref} target="_blank" rel="noopener noreferrer">
+                                {post.metadata.author}
+                        </a>
+                        <span className='italic dark:text-slate-300'> • {post.metadata.date}</span>
+                    </div>
+                    <Tags tags={post.metadata.tags} />
                     <div className='border-solid border-4 px-6 my-6 dark:text-slate-300 dark:marker:text-slate-300'>
                         <h2>Table of Content</h2>
                         <Toc markdownText={post.markdown} className="dark:text-slate-300" customMatchers={matchers}/>
