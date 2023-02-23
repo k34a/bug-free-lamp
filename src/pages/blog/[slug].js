@@ -46,7 +46,8 @@ export default function BlogPost({post, slug}) {
         })
     }
     post.markdown = addAltTextToImages(post.markdown, post.metadata.title);
-    const matchers = { "[?!:.]": "" }
+    console.log(post.markdown)
+    const matchers = { "[?!:.*_]": "" }
     return (
         <div className="bg-white dark:bg-slate-600 dark:text-white">
             <Head>
@@ -75,18 +76,6 @@ export default function BlogPost({post, slug}) {
                         components={{
                             h2: ({ node, ...props }) => (
                                 <h2 id={generateSlug(props.children[0])} {...props}></h2>
-                            ),
-                            h3: ({ node, ...props }) => (
-                                <h3 id={generateSlug(props.children[0])} {...props}></h3>
-                            ),
-                            h4: ({ node, ...props }) => (
-                                <h4 id={generateSlug(props.children[0])} {...props}></h4>
-                            ),
-                            h5: ({ node, ...props }) => (
-                                <h5 id={generateSlug(props.children[0])} {...props}></h5>
-                            ),
-                            h6: ({ node, ...props }) => (
-                                <h6 id={generateSlug(props.children[0])} {...props}></h6>
                             ),
                         }}
                         >{post.markdown}

@@ -108,8 +108,12 @@ export const addAltTextToImages = (markdown, altText) => {
     return markdown;
 }
 
-export const generateSlug = (string) => {
-    let str = string.replace(/^\s+|\s+$/g, "");
+export const generateSlug = (s) => {
+    console.log(s)
+    if(!s){
+        return "";
+    }
+    let str = s.replace(/^\s+|\s+$/g, "");
     str = str.toLowerCase();
     str = str
         .replace(/[^a-z0-9 -]/g, "")
