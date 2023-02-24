@@ -8,11 +8,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/donate',
-        destination: 'https://www.gofundme.com/f/larry-rowbs-clothing-recycling-initiative',
-        permanent: true,
-      },
-      {
         source: '/blog/tags',
         destination: '/blog',
         permanent: true,
