@@ -15,7 +15,6 @@ export async function getStaticPaths(context) {
 
 export async function getStaticProps({ params }) {
     try {
-        console.log(params.tag)
         const posts = await getTopPublished(30, params.tag)
         return {
             props: {
