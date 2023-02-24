@@ -16,7 +16,7 @@ export default function Donate() {
                     checkout({
                         lineItems: [
                             { 
-                                price: process.env.NEXT_PUBLIC_ONETIME_200,
+                                price: "price_1Mf1aRKJJdoPmWsJ6UQGtkP4",
                                 quantity: 1 
                             }]
                     })
