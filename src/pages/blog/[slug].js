@@ -9,6 +9,13 @@ import rehypeSlug from 'rehype-slug';
 import Toc from "react-toc";
 import { para } from '@/components/Markdown';
 import Tags from '@/components/Blog/Tags';
+import Link from 'next/link';
+
+const hosts = [
+    "www.larryrowbsfoundation.org",
+    "larryrowbsfoundation.org",
+    "localhost"
+]
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -97,7 +104,16 @@ export default function BlogPost({post, slug}) {
                             h3: ({ node, ...props }) => (
                                 <h3 id={generateSlug(props.children[0])} {...props}></h3>
                             ),
-                            p: para
+                            p: para,
+                            a: (props) => {
+                                let url = new URL(props.href)
+                                if(hosts.includes(url.hostname)){
+                                    return <Link href={url.pathname}>{props.children}</Link>
+                                }
+                                else{
+                                    return <a href={url.hostname} target="_blank" rel='noopener noreferrer'>{props.children}</a>
+                                }
+                            }
                         }}
                         >{post.markdown}
                     </ReactMarkdown>

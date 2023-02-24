@@ -12,6 +12,11 @@ const nextConfig = {
         destination: 'https://www.gofundme.com/f/larry-rowbs-clothing-recycling-initiative',
         permanent: true,
       },
+      {
+        source: '/tags',
+        destination: '/blog',
+        permanent: true,
+      },
     ]
   },
 }

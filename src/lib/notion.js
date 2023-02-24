@@ -36,15 +36,34 @@ export const getAllPublished = async () => {
 };
 
 
-export const getTopPublished = async (n) => {
+export const getAllTags = async () => {
+    let allPosts = await getAllPublished();
+    let allTags = allPosts.map((ele)=>(ele.tags));
+    return Array.from(new Set(allTags.flatMap(item => item)));
+};
+
+export const getTopPublished = async (n, tags=null) => {
+    let tagFilter = {
+        property: "Tags",
+        multi_select: {
+            contains: tags,
+        },
+    }
+    let publishFilter = {
+        property: "Published",
+        checkbox: {
+            equals: true,
+        },
+    }
+    let fullFilter = {
+        and: [
+            tagFilter,
+            publishFilter
+        ]
+    }
     const posts = await notion.databases.query({
         database_id: process.env.NOTION_DATABASE_ID,
-        filter: {
-            property: "Published",
-            checkbox: {
-                equals: true,
-            },
-        },
+        filter: tags? fullFilter: publishFilter,
         sorts: [
             {
                 property: "Date",

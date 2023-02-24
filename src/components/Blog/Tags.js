@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const tagColors = [
     ["bg-blue-200", "text-blue-700"],
     ["bg-lime-200", "text-lime-700"],
@@ -11,12 +13,13 @@ export default function Tags(props) {
     const n = tagColors.length;
     const tags = props.tags.map((ele, index) => {
         let color = tagColors[index % n];
+        let link = `/blog/tags/${ele}`;
         return ( 
             <div
                 key={index}
                 className={`text-xs space-x-2 inline-flex items-center font-bold leading-sm uppercase px-3 py-1 ${color[0]} ${color[1]} rounded-full`}
             >
-                {ele}
+                <Link href={link} className={`${color[1]} no-underline`}>{ele}</Link>
             </div>
         )
     })

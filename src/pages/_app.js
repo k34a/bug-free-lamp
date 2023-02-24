@@ -28,7 +28,6 @@ export default function App({ Component, pageProps }) {
       </Script>
       <NextNProgress />
       <main className={poppins.className}>
-        <Script src="/static/script.js" />
         <Header />
         <Component {...pageProps} />
         <Footer />
