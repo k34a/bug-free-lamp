@@ -12,7 +12,6 @@ export async function checkout({lineItems}){
 
     const stripe = await getStripe();
     try{
-        console.log(lineItems)
         await stripe.redirectToCheckout({
             mode: 'subscription',
             lineItems,
