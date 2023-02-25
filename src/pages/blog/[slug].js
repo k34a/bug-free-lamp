@@ -111,7 +111,7 @@ export default function BlogPost({post, slug}) {
                                     return <Link href={url.pathname}>{props.children}</Link>
                                 }
                                 else{
-                                    return <a href={url.hostname} target="_blank" rel='noopener noreferrer'>{props.children}</a>
+                                    return <a href={props.href} target="_blank" rel='noopener noreferrer'>{props.children}</a>
                                 }
                             }
                         }}
