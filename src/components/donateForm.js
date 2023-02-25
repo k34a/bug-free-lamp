@@ -19,10 +19,10 @@ export default function DonateForm(params) {
     return (
         <div className="w-3/4 md:w-1/2 m-auto my-12">
             <div className="mb-5 md:space-x-2">
-                <button onClick={() => setTab(1)} className= "bg-purple-300 text-purple-600 rounded font-black p-4">
+                <button onClick={() => setTab(1)} className= {`bg-purple-300 text-purple-600 rounded font-black p-4 ${tab == 1 && "border-y-4 border-purple-500"}`}>
                     Change Maker
                 </button>
-                <button onClick={() => setTab(2)} className= "bg-sky-300 text-sky-600 rounded font-black p-4">
+                <button onClick={() => setTab(2)} className={`bg-sky-300 text-sky-600 rounded font-black p-4 ${tab == 2 && "border-y-4 border-sky-500"}`}>
                     Sustainability Champion
                 </button>
             </div>
