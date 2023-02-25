@@ -12,7 +12,7 @@ export default function Donate() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <div className='w-7/8 md:w-2/3 m-auto'>
+                <div className='w-11/12 md:w-2/3 m-auto'>
                     <h1 className='text-4xl font-black text-center m-12 opacity-70 text-rose-600'>Be a Sustainable Fashion Hero: Donate Today!</h1>
                     <p>
                         When you donate to Larry Rowbs Foundation, you help us fight the hazards of fast fashion, improve the well-being of workers in the social industry, and create a sustainable future. Your contribution, no matter the size, can make a meaningful impact and support our mission.
