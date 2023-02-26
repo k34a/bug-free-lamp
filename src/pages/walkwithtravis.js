@@ -1,5 +1,5 @@
 import OrbitalRev from '@/components/WalkWithTravis/OrbitalRev'
-import SubscribeNewsletter from '@/components/SubscribeNewsletter'
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 import { useRef } from 'react'
 import About from '@/components/WalkWithTravis/About';

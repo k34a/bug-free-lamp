@@ -1,6 +1,6 @@
-import JoinUs from '@/components/JoinUs'
-import OurTeam from '@/components/OurTeam'
-import SubscribeNewsletter from '@/components/SubscribeNewsletter'
+import JoinUs from '@/components/Forms/JoinUs'
+import OurTeam from '@/components/Team/OurTeam'
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 
 export default function Join() {

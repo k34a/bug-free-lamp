@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import SubscribeNewsletter from '@/components/SubscribeNewsletter';
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter';
 import { getAllTags, getTopPublished } from '../../../lib/notion';
 import Link from 'next/link';
-import BlogList from '@/components/BlogList';
+import BlogList from '@/components/Blog/BlogList';
 
 export async function getStaticPaths(context) {
     const tags = await getAllTags();

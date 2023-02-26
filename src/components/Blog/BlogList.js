@@ -1,4 +1,4 @@
-import BlogListItem from '@/components/BlogListItem';
+import BlogListItem from '@/components/Blog/BlogListItem';
 
 const readMoreColors = [
     "bg-blue-700",

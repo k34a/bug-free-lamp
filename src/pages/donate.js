@@ -1,5 +1,5 @@
-import DonateForm from '@/components/donateForm'
-import SubscribeNewsletter from '@/components/SubscribeNewsletter'
+import DonateForm from '@/components/Forms/donateForm'
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 
 export default function Donate() {
@@ -7,7 +7,7 @@ export default function Donate() {
         <>
             <Head>
                 <title>Donate - Larry Rowbs Foundation</title>
-                <meta name="description" content="Get in touch. Have a question? Send us a note using the form below and someone from the Larry Rowbs Foundation team will be in touch soon." />
+                <meta name="description" content="Become a Sustainability Hero by helping us fight the hazards of fast fashion and create a sustainable future. Donate today!" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

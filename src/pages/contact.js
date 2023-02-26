@@ -1,6 +1,6 @@
-import ContactUs from '@/components/ContactUs'
-import FAQ from '@/components/FAQ'
-import SubscribeNewsletter from '@/components/SubscribeNewsletter'
+import ContactUs from '@/components/Forms/ContactUs'
+import FAQ from '@/components/FAQ/FAQ'
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 
 export default function Contact() {
