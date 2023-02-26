@@ -1,5 +1,5 @@
-import BlogList from '@/components/BlogList';
-import SubscribeNewsletter from '@/components/SubscribeNewsletter';
+import BlogList from '@/components/Blog/BlogList';
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter';
 import Head from 'next/head'
 import { getTopPublished } from '../../lib/notion';
 

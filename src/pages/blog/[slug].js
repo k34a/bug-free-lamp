@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import ReactMarkdown from "react-markdown"
 import styles from '@/styles/BlogArticle.module.css'
-import SubscribeNewsletter from '@/components/SubscribeNewsletter';
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter';
 import { addAltTextToImages, generateSlug, getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
 import Share from '@/components/Blog/Share';
 import useDarkMode from '@/lib/useDarkMode';
 import rehypeSlug from 'rehype-slug';
 import Toc from "react-toc";
-import { para } from '@/components/Markdown';
+import { para } from '@/components/Blog/Markdown';
 import Tags from '@/components/Blog/Tags';
 import Link from 'next/link';
 

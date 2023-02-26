@@ -1,4 +1,4 @@
-import SubscribeNewsletter from '@/components/SubscribeNewsletter'
+import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 import Link from 'next/link'
 
