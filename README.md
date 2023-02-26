@@ -1,17 +1,17 @@
 
 # The website for the Larry Rowbs Foundation
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), and designed using tailwind.
 
 You may view the website live on [https://larryrowbsfoundation.org](https://larryrowbsfoundation.org)
 
 ## Getting Started (Dev)
 
-Do the required installations of dependencies
+Required installations of dependencies
 ```
 npm install
 ```
 
-Pass in the environment variables in a ```.env``` file. Here is a template.
+Create environment variables in a ```.env``` file. Here is a template.
 
 ```
 # Tokens for Google Recaptcha V2
@@ -40,10 +40,6 @@ Now, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -51,3 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing any page by modifying the `.js` in `src/pages` directory. The page auto-updates as you edit the file.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+# Contributing to this repository
+
+Whenever you are done with the changes, create a new pull request, and assign it to any of the contributors.
