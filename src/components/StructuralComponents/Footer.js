@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ReactCountryFlag from "react-country-flag"
 
 const Footer = () => {
     return (
@@ -88,8 +89,10 @@ const Footer = () => {
             </div>
             <div className="text-center p-3 bg-purple-500 text-white">
                 <a className="text-white font-semibold" href="https://www.linkedin.com/in/sak1sham/">
-                    <span>Made with <i className="fa fa-heart text-red-500"></i> in India</span>
-                    </a>
+                    <span>
+                        Made with <i className="fa fa-heart text-red-500"></i> in India <ReactCountryFlag countryCode="IN" svg/>
+                    </span>
+                </a>
             </div>
         </footer>
     );
