@@ -80,7 +80,7 @@ export default function RegistrationForm(params) {
     }
 
     return (
-        <div className="w-11/12 md:w-1/2 mx-auto py-12">
+        <div className="w-11/12 md:w-1/2 mx-auto py-12 bg-transparent">
             <div className="border-purple-500 py-6 px-5 border-4 bg-white">
                 <div className="mb-12">
                     <h1 className="font-black text-4xl mb-6 capitalize text-slate-600">
