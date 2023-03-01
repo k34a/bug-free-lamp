@@ -2,7 +2,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 export async function checkout({src, mode, lineItems}){
     let stripePromise = null;
-
+    console.log(lineItems)
     const getStripe = () => {
         if(!stripePromise){
             stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY);

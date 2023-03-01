@@ -19,10 +19,10 @@ export default function Home() {
       </Head>
       <div>
         <TextileWasteCarousel />
+        <OurMission />
         <WhatsHappening />
         <HarmsCaused />
         <OurWork />
-        <OurMission />
         <Benefits />
         <Partners />
         <SubscribeNewsletter />
