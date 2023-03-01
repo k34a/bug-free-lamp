@@ -39,16 +39,7 @@ export default async function handler(req, res) {
                     },
                     Email: {
                         email: req.body.email,
-                    },
-                    Donation: {
-                        rich_text: [
-                            {
-                                text: {
-                                    content: req.body.donation,
-                                },
-                            },
-                        ],
-                    },
+                    }
                 },
             });
             res.status(200).json({});

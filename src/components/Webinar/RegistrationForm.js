@@ -1,4 +1,3 @@
-import { checkout } from "@/lib/donationCheckout";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ThreeDots } from "react-loader-spinner";
@@ -23,7 +22,6 @@ export default function RegistrationForm(params) {
     const [isInvalidEmail, setIsInvalidEmail] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isNotSubmitted, setIsNotSubmitted] = useState(false);
-    const [donation, setDonation] = useState(1);
     const [loading, setLoading] = useState(false);
     const recaptchaRef = useRef();
 
@@ -43,7 +41,6 @@ export default function RegistrationForm(params) {
                 firstname: fname,
                 lastname: lname,
                 email,
-                donation: donations[donation][0],
                 token
             };
             const response = await fetch("/api/registerwebinar", {
@@ -62,18 +59,6 @@ export default function RegistrationForm(params) {
                 setFname("");
                 setLname("");
                 setEmail("");
-                if (donation > 0) {
-                    checkout({
-                        src: '/webinar',
-                        mode: 'payment',
-                        lineItems: [
-                            {
-                                price: donations[donation][1],
-                                quantity: 1
-                            }
-                        ]
-                    })
-                }
             }
         }
         setLoading(false);
@@ -150,30 +135,6 @@ export default function RegistrationForm(params) {
                                 placeholder="name@domain.com"
                             />
                             {isInvalidEmail && <p className="text-red-500 text-xs italic">Please enter a valid email.</p>}
-                        </div>
-                    </div>
-                    <div className="flex flex-wrap -mx-3 mb-12">
-                        <div className="w-full px-3">
-                            <label 
-                                htmlFor="steps-range" 
-                                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                            >Support our initiatives</label>
-                            <input 
-                                id="steps-range" 
-                                type="range"  
-                                value={donation}
-                                onChange={(e) => {setDonation(e.target.value)}}
-                                min={0}
-                                max={3}
-                                step={1}
-                                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" 
-                            />
-                            <ul className="flex justify-between w-full px-[10px]">
-                                <li className="flex justify-center relative"><span className="absolute">$0</span></li>
-                                <li className="flex justify-center relative"><span className="absolute">$5</span></li>
-                                <li className="flex justify-center relative"><span className="absolute">$15</span></li>
-                                <li className="flex justify-center relative"><span className="absolute">$25</span></li>
-                            </ul>
                         </div>
                     </div>
                     <ReCAPTCHA
