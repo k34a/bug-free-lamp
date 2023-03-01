@@ -3,6 +3,7 @@ import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 import { useRef } from 'react'
 import About from '@/components/WalkWithTravis/About';
+import Typewriter from 'typewriter-effect';
 
 export default function Walkwithtravis() {
     const ref = useRef(null);
@@ -31,7 +32,13 @@ export default function Walkwithtravis() {
                         onClick={handleClick}
                     >
                         <h1 className='flex items-center justify-center text-3xl md:text-6xl font-black text-opacity-65 text-white'>
-                            Walk for Sustainability
+                            <Typewriter
+                                options={{
+                                    strings: ['Walk for Sustainability', 'Walk for Decentralized Philanthropy', 'Walk for Real Human Connection', 'Walk for Purpose', 'Walk for Community Building', 'Walk for Transforming Lives'],
+                                    autoStart: true,
+                                    loop: true,
+                                }}
+                            />
                         </h1>
                     </div>
                     <div>
