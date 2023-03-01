@@ -62,18 +62,19 @@ export default function RegistrationForm(params) {
                 setFname("");
                 setLname("");
                 setEmail("");
+                if (donation > 0) {
+                    console.log(donations[donation][1])
+                    checkout({
+                        lineItems: [
+                            {
+                                price: donations[donation][1],
+                                quantity: 1
+                            }]
+                    })
+                }
             }
         }
         setLoading(false);
-        if(isSubmitted && donation>0){
-            checkout({
-                lineItems: [
-                    {
-                        price: donations[donation][1],
-                        quantity: 1
-                    }]
-            })
-        }
     }
 
     return (
