@@ -84,8 +84,11 @@ export default function RegistrationForm(params) {
             <div className="border-purple-500 py-6 px-5 border-4 bg-white">
                 <div className="mb-12">
                     <h1 className="font-black text-4xl mb-6 capitalize text-slate-600">
-                        Stylish Sustainability: A sneak-peak into the realm of circular fashion in Africa
+                        Stylish Sustainability Webinar
                     </h1>
+                    <h2 className="font-black text-2xl mb-6 capitalize text-slate-600">
+                        A sneak-peak into the realm of circular fashion in Africa
+                    </h2>
                     <p className="mb-6">
                         Join us as we explore the fascinating world of recycling clothing in Africa in a thought-provoking webinar! 
                         The prospects and difficulties of revamping the African fashion sector through cutting-edge recycling techniques will be introduced by the Larry Rowbs Foundation Team. 
