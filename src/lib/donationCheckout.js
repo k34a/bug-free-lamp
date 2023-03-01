@@ -1,6 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 
-export async function checkout({mode, lineItems}){
+export async function checkout({src, mode, lineItems}){
     let stripePromise = null;
 
     const getStripe = () => {
@@ -16,7 +16,7 @@ export async function checkout({mode, lineItems}){
             mode,
             lineItems,
             successUrl: `${window.location.origin}/donatesuccess`,
-            cancelUrl: `${window.location.origin}/donate`,
+            cancelUrl: `${window.location.origin}${src}`,
         })
     } catch(e){
         console.log(e);

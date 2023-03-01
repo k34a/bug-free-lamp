@@ -40,6 +40,7 @@ export default function DonateForm(params) {
                                 className="bg-purple-600 text-white justify-center px-5 py-2 mt-4 rounded" 
                                 onClick={() => {
                                     checkout({
+                                        src: '/donate',
                                         mode: 'subscription',
                                         lineItems: [
                                             {
@@ -69,6 +70,7 @@ export default function DonateForm(params) {
                                 className="bg-sky-600 text-white justify-center px-5 py-2 mt-4 rounded"
                                 onClick={() => {
                                     checkout({
+                                        src: '/donate',
                                         mode: 'payment',
                                         lineItems: [
                                             {

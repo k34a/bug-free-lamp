@@ -64,6 +64,7 @@ export default function RegistrationForm(params) {
                 setEmail("");
                 if (donation > 0) {
                     checkout({
+                        src: '/webinar',
                         mode: 'payment',
                         lineItems: [
                             {
