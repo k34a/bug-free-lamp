@@ -1,4 +1,4 @@
-import DonateForm from '@/components/Forms/donateForm'
+import DonateForm from '@/components/Forms/DonateForm'
 import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 

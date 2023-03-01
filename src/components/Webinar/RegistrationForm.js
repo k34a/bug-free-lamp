@@ -63,13 +63,14 @@ export default function RegistrationForm(params) {
                 setLname("");
                 setEmail("");
                 if (donation > 0) {
-                    console.log(donations[donation][1])
                     checkout({
+                        mode: 'payment',
                         lineItems: [
                             {
                                 price: donations[donation][1],
                                 quantity: 1
-                            }]
+                            }
+                        ]
                     })
                 }
             }

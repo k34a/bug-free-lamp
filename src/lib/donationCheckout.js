@@ -1,6 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 
-export async function checkout({lineItems}){
+export async function checkout({mode, lineItems}){
     let stripePromise = null;
 
     const getStripe = () => {
@@ -13,7 +13,7 @@ export async function checkout({lineItems}){
     const stripe = await getStripe();
     try{
         await stripe.redirectToCheckout({
-            mode: 'subscription',
+            mode,
             lineItems,
             successUrl: `${window.location.origin}/donatesuccess`,
             cancelUrl: `${window.location.origin}/donate`,
