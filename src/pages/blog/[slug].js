@@ -11,6 +11,7 @@ import { aMd, h2Md, h3Md, para } from '@/components/Blog/Markdown';
 import Tags from '@/components/Blog/Tags';
 import { calculateReadingTime } from 'markdown-reading-time';
 import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -52,6 +53,56 @@ export default function BlogPost({post, slug}) {
     const { minutes } = calculateReadingTime(post.markdown);
     post.markdown = addAltTextToImages(post.markdown, post.metadata.title);
     const matchers = { "[?!:.*_/]": "" }
+
+    const mainBody = useRef(null);
+    const startingMainContent = useRef();
+    const shareButtons = useRef();
+    const [selectedText, setSelectedText] = useState("");
+    const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+
+    function handleMouseUp() {
+        const lowerLimit = startingMainContent.current.offsetTop;
+        const upperLimit = shareButtons.current.offsetTop;
+        const currSelection = document.getSelection();
+        const currSelectedText = currSelection.toString();
+        if (currSelectedText) {
+            const range = currSelection.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = document.documentElement.scrollTop + rect.top - 10;
+            if (y > lowerLimit - 20 && y < upperLimit){
+                setTooltipPosition({x, y});
+            }
+            else{
+                setTooltipPosition({ x : 0, y : 0 })
+            }
+            setSelectedText(currSelectedText);
+        } else {
+            setSelectedText("");
+        }
+    }
+
+    function handleCopyClick() {
+        navigator.clipboard.writeText(selectedText || "")
+    }
+
+    function handleTweetClick() {
+        const tweetText = encodeURIComponent(selectedText);
+        const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+        window.open(tweetUrl, "_blank");
+    }
+
+    useEffect(() => {
+        if (document){
+            document.addEventListener('selectionchange', handleMouseUp);
+        }
+        return () => {
+            if (document) {
+                document.removeEventListener("selectionchange", handleMouseUp);
+            }
+        };
+    }, []);
+
     return (
         <div className="bg-white dark:bg-slate-700 dark:text-white selection:text-white selection:bg-black dark:selection:text-black dark:selection:bg-white">
             <Head>
@@ -74,7 +125,10 @@ export default function BlogPost({post, slug}) {
                     <p>&nbsp;&nbsp;Dark Mode</p>
                 </label>
             </div>
-            <main className={`py-16 ${styles.article} prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}>
+            <main
+                ref={mainBody} 
+                className={`py-16 ${styles.article} prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}
+            >
                 <div className='mb-6'>
                     <Link href='/blog' className='hover:-mx-2'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline bi bi-arrow-left mr-2 align-middle" viewBox="0 0 16 16">
@@ -121,18 +175,47 @@ export default function BlogPost({post, slug}) {
                         </h2>
                         <Toc markdownText={post.markdown} className="dark:text-slate-300" customMatchers={matchers}/>
                     </div>
-                    <ReactMarkdown
-                        remarkPlugins={[rehypeSlug]}
-                        components={{
-                            h2: h2Md,
-                            h3: h3Md,
-                            p: para,
-                            a: aMd
-                        }}
-                        >{post.markdown}
-                    </ReactMarkdown>
+                    <div ref={startingMainContent}>
+                        <ReactMarkdown
+                            remarkPlugins={[rehypeSlug]}
+                            components={{
+                                h2: h2Md,
+                                h3: h3Md,
+                                p: para,
+                                a: aMd
+                            }}
+                            >{post.markdown}
+                        </ReactMarkdown>
+                    </div>
+                    {selectedText && (
+                        <div
+                            className="absolute tooltip z-10 bg-black text-white rounded-md shadow-md p-2 flex justify-center items-center space-x-4"
+                            style={{
+                                top: tooltipPosition.y,
+                                left: tooltipPosition.x,
+                                transform: "translate(-50%, -100%)",
+                            }}
+                        >
+                            <button
+                                onClick={handleCopyClick}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-files hover:opacity-50" viewBox="0 0 16 16">
+                                    <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z" />
+                                </svg>
+                            </button>
+                            <button
+                                onClick={handleTweetClick}
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-twitter hover:opacity-50" viewBox="0 0 16 16">
+                                    <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                </svg>
+                            </button>
+                        </div>
+                    )}
                 </section>
-                <Share slug={slug} title={post.metadata.title}/>
+                <div ref={shareButtons}>
+                    <Share slug={slug} title={post.metadata.title}/>
+                </div>
             </main>
             <SubscribeNewsletter />
         </div>
