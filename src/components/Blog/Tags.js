@@ -25,7 +25,7 @@ export default function Tags(props) {
     })
     return (
         <div className="space-x-2">
-            {tags}
+            Tags: {tags}
         </div>
     );
 };
