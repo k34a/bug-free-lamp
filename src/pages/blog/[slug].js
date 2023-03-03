@@ -10,6 +10,7 @@ import Toc from "react-toc";
 import { aMd, h2Md, h3Md, para } from '@/components/Blog/Markdown';
 import Tags from '@/components/Blog/Tags';
 import { calculateReadingTime } from 'markdown-reading-time';
+import Link from 'next/link';
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -74,6 +75,14 @@ export default function BlogPost({post, slug}) {
                 </label>
             </div>
             <main className={`py-16 ${styles.article} prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}>
+                <div className='mb-6'>
+                    <Link href='/blog' className='hover:-mx-2'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline bi bi-arrow-left mr-2 align-middle" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                        </svg>
+                        All Articles
+                    </Link>
+                </div>
                 <section>
                     <h1 className='text-4xl dark:text-white'>{post.metadata.title}</h1>
                     <div className='pb-5'>
