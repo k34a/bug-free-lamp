@@ -22,11 +22,11 @@ const readMoreColors = [
 
 const BlogList = (props) => {
     return (
-        <div className="container mx-auto w-4/5 my-12">
+        <div className="container mx-auto w-11/12 lg:w-4/5 my-12">
             <h1 className='text-4xl font-black text-center pb-12 capitalize'>
                 {props.title || "Fashion Stories for Sustainable Living"}
             </h1>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {props.data.map((ele, index) => {
                     const readColor = readMoreColors[(index)%(readMoreColors.length)];
                     return (
@@ -34,6 +34,7 @@ const BlogList = (props) => {
                             title={ele.title}
                             description={ele.description}
                             slug={ele.slug}
+                            publishDate={ele.date}
                             key={index}
                             readcolor={readColor}
                         />
