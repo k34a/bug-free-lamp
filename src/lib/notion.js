@@ -91,7 +91,7 @@ const getPageMetaData = (post) => {
         title: post.properties.Title.title[0].plain_text,
         tags: getTags(post.properties.Tags.multi_select),
         description: post.properties.Description.rich_text[0].plain_text,
-        date: getToday(post.properties.Date.last_edited_time),
+        date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
         slug: post.properties.Slug.rich_text[0].plain_text,
         author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
         authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
