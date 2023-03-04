@@ -14,6 +14,7 @@ function get5RandomQuestions(array) {
 }
 
 export default function Quiztime() {
+    const [hasStarted, setHasStarted] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [score, setScore] = useState(0);
@@ -34,6 +35,7 @@ export default function Quiztime() {
         <>&#128512;</>,
     ]
     useEffect(() => {
+        setHasStarted(false);
         setCurrentQuestion(0)
         setSelectedOptions([])
         setScore(0)
@@ -73,6 +75,83 @@ export default function Quiztime() {
         setShowScore(true);
     };
 
+    const getStarted = (
+        <div className='w-1/2 align-middle items-center m-auto justify-center flex flex-col space-y-5 text-white'>
+            <h1 className='text-4xl font-black underline capitalize'>Sustainability Quiz</h1>
+            <p className='text-xl'>Welcome to our sustainability quiz! This quiz aims to test your knowledge on sustainable fashion and its impact on Africa, as well as the harms of fast fashion and consumer choices.</p>
+            <p className='text-xl'>The fashion industry has a significant impact on the environment and society, and it&apos;s important to understand how our choices as consumers can make a difference. By taking this quiz, you&apos;ll learn about the benefits of sustainable fashion, the negative impacts of fast fashion, and how you can make more sustainable fashion choices.</p>
+            <p className='text-xl pb-6'>Are you ready to test your knowledge on sustainable fashion? Let&apos;s get started!</p>
+            <button onClick={(e) => setHasStarted(true)} className="inline align-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                Start Quiz
+            </button>
+        </div>
+    );
+
+    const scoreSheet = (
+        <div className='w-1/2 align-middle items-center m-auto justify-center flex flex-col space-y-5'>
+            <h1 className="text-3xl font-semibold text-center text-white">
+                You scored {score} out of {questions.length}
+                {expression[score]}
+            </h1>
+            <button onClick={reset} className="inline align-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                Try Again
+            </button>
+        </div>
+    );
+
+    const questionWithOptions = (
+        <>
+            <div className="">
+                <h4 className="py-4 text-xl text-white/60">
+                    Question {currentQuestion + 1} of {questions.length}
+                </h4>
+                <div className="py-4 text-2xl text-white">
+                    {questions[currentQuestion]?.question}
+                </div>
+            </div>
+            <div className="w-full">
+                {questions[currentQuestion]?.answerOptions?.map((answer, index) => (
+                    <div
+                        key={index}
+                        className="flex items-center w-full py-4 pl-5 m-2 ml-0 space-x-2 border-2 cursor-pointer border-white/10 rounded-xl bg-white/5"
+                        onClick={(e) => handleAnswerOption(answer.answer)}
+                    >
+                        <input
+                            type="radio"
+                            name={answer.answer}
+                            value={answer.answer}
+                            checked={
+                                answer.answer === selectedOptions[currentQuestion]?.answerByUser
+                            }
+                            onChange={(e) => handleAnswerOption(answer.answer)}
+                            className="w-6 h-6 bg-black"
+                        />
+                        <p className="ml-6 text-white">{answer.answer}</p>
+                    </div>
+                ))}
+            </div>
+            <div className="w-full py-4 text-white space-x-2">
+                <button
+                    onClick={handlePrevious}
+                    className="w-[49%] py-3 bg-indigo-600 rounded-lg disabled:bg-indigo-400 disabled:cursor-not-allowed"
+                    disabled={currentQuestion == 0}
+                >
+                    Previous
+                </button>
+                <button
+                    onClick={
+                        currentQuestion + 1 === questions.length
+                            ? handleSubmitButton
+                            : handleNext
+                    }
+                    className="w-[49%] py-3 bg-indigo-600 rounded-lg"
+                >
+                    {currentQuestion + 1 === questions.length ? "Submit" : "Next"}
+                </button>
+            </div>
+        </>
+    );
+
     return (
         <>
             <Head>
@@ -83,70 +162,12 @@ export default function Quiztime() {
             </Head>
             <main>
                 <div className="px-5 sm:py-12 md:py-28 bg-slate-700 justify-center items-center">
-                    {questions.length?
-                        (showScore ? (
-                            <div className='w-1/2 align-middle items-center m-auto justify-center flex flex-col space-y-5'>
-                                <h1 className="text-3xl font-semibold text-center text-white">
-                                    You scored {score} out of {questions.length}
-                                    {expression[score]}
-                                </h1>
-                                <button onClick={reset} className="inline align-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-                                    Try Again
-                                </button>
-                            </div>
-                        ) : (
-                            <>
-                                <div className="">
-                                    <h4 className="py-4 text-xl text-white/60">
-                                        Question {currentQuestion + 1} of {questions.length}
-                                    </h4>
-                                    <div className="py-4 text-2xl text-white">
-                                        {questions[currentQuestion].question}
-                                    </div>
-                                </div>
-                                <div className="w-full">
-                                    {questions[currentQuestion].answerOptions.map((answer, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-center w-full py-4 pl-5 m-2 ml-0 space-x-2 border-2 cursor-pointer border-white/10 rounded-xl bg-white/5"
-                                            onClick={(e) => handleAnswerOption(answer.answer)}
-                                        >
-                                            <input
-                                                type="radio"
-                                                name={answer.answer}
-                                                value={answer.answer}
-                                                checked={
-                                                    answer.answer === selectedOptions[currentQuestion]?.answerByUser
-                                                }
-                                                onChange={(e) => handleAnswerOption(answer.answer)}
-                                                className="w-6 h-6 bg-black"
-                                            />
-                                            <p className="ml-6 text-white">{answer.answer}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="w-full py-4 text-white space-x-2">
-                                    <button
-                                        onClick={handlePrevious}
-                                        className="w-[49%] py-3 bg-indigo-600 rounded-lg disabled:bg-indigo-400 disabled:cursor-not-allowed"
-                                        disabled={currentQuestion == 0}
-                                    >
-                                        Previous
-                                    </button>
-                                    <button
-                                        onClick={
-                                            currentQuestion + 1 === questions.length
-                                                ? handleSubmitButton
-                                                : handleNext
-                                        }
-                                        className="w-[49%] py-3 bg-indigo-600 rounded-lg"
-                                    >
-                                        {currentQuestion + 1 === questions.length ? "Submit" : "Next"}
-                                    </button>
-                                </div>
-                            </>
-                        ))
-                        : <h2 className="text-3xl font-semibold text-center text-white">No Questions </h2>}
+                    {
+                        hasStarted? (
+                            questions.length? (showScore ? scoreSheet : questionWithOptions)
+                            : <h2 className="text-3xl font-semibold text-center text-white">No Questions </h2>
+                        ): getStarted
+                    }
                 </div>
             </main>
         </>
