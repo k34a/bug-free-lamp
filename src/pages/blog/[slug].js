@@ -60,7 +60,7 @@ export default function BlogPost({post, slug}) {
     const [selectedText, setSelectedText] = useState("");
     const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
-    function handleMouseUp() {
+    function handleTextSelection() {
         const lowerLimit = startingMainContent.current.offsetTop;
         const upperLimit = shareButtons.current.offsetTop;
         const currSelection = document.getSelection();
@@ -94,11 +94,11 @@ export default function BlogPost({post, slug}) {
 
     useEffect(() => {
         if (document){
-            document.addEventListener('selectionchange', handleMouseUp);
+            document.addEventListener('selectionchange', handleTextSelection);
         }
         return () => {
             if (document) {
-                document.removeEventListener("selectionchange", handleMouseUp);
+                document.removeEventListener("selectionchange", handleTextSelection);
             }
         };
     }, []);
