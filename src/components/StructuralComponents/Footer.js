@@ -47,6 +47,9 @@ const Footer = () => {
                         <p className="mb-4">
                             <Link href="/webinar" className="text-slate-600">Sustainability Webinar</Link>
                         </p>
+                        <p className="mb-4">
+                            <Link href="/quiztime" className="text-slate-600">Quiz Time</Link>
+                        </p>
                     </div>
                     <div className="">
                         <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
