@@ -1,4 +1,6 @@
 import BlogListItem from '@/components/Blog/BlogListItem';
+import Masonry from 'react-masonry-css';
+import styles from '@/styles/BlogList.module.css'
 
 const readMoreColors = [
     "bg-blue-700",
@@ -20,26 +22,39 @@ const readMoreColors = [
     "bg-stone-700"
 ]
 
+const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1
+};
+
 const BlogList = (props) => {
     return (
         <div className="container mx-auto w-11/12 lg:w-4/5 my-12">
             <h1 className='text-4xl font-black text-center pb-12 capitalize'>
                 {props.title || "Fashion Stories for Sustainable Living"}
             </h1>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {props.data.map((ele, index) => {
-                    const readColor = readMoreColors[(index)%(readMoreColors.length)];
-                    return (
-                        <BlogListItem 
-                            title={ele.title}
-                            description={ele.description}
-                            slug={ele.slug}
-                            publishDate={ele.date}
-                            key={index}
-                            readcolor={readColor}
-                        />
-                    )
-                })}
+            <div>
+                <Masonry
+                    breakpointCols={breakpointColumnsObj}
+                    className={styles.myMasonryGrid}
+                    columnClassName={styles.myMasonryGridColumn}
+                >
+                    {props.data.map((ele, index) => {
+                        const readColor = readMoreColors[(index)%(readMoreColors.length)];
+                        return (
+                            <BlogListItem 
+                                title={ele.title}
+                                description={ele.description}
+                                slug={ele.slug}
+                                publishDate={ele.date}
+                                key={index}
+                                readcolor={readColor}
+                            />
+                        )
+                    })}
+                </Masonry>
             </div>
         </div>
     );
