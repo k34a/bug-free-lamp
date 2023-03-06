@@ -1,3 +1,5 @@
+import { calculateReadingTime } from "markdown-reading-time";
+
 const { Client } = require("@notionhq/client")
 const { NotionToMarkdown } = require("notion-to-md");
 
@@ -139,8 +141,10 @@ export const getSingleBlogPostBySlug = async (slug) => {
     const page_id = metadata.id.split('-').join('');
     const mdblocks = await n2m.pageToMarkdown(page_id);
     const mdString = n2m.toMarkdownString(mdblocks);
+    const {minutes} = calculateReadingTime(mdString)
     const ret = {
         metadata,
+        minutes,
         markdown: mdString,
     };
     return ret;
