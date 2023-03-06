@@ -1,7 +1,7 @@
 import Toc from "react-toc";
 import Tags from "./Tags";
 
-const MetaData = ({post, minutes}) => {
+const MetaData = ({post}) => {
     const matchers = { "[?!:.*_/]": "" }
     return (
         <>
@@ -29,7 +29,7 @@ const MetaData = ({post, minutes}) => {
                         <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
                     </svg>
                     &nbsp;&nbsp;
-                    {minutes} min read
+                    {post.minutes} min read
                 </span>
             </div>
             <Tags tags={post.metadata.tags} />

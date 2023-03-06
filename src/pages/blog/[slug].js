@@ -5,8 +5,7 @@ import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter';
 import { addAltTextToImages, getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
 import Share from '@/components/Blog/Pages/Share';
 import rehypeSlug from 'rehype-slug';
-import { aMd, h2Md, h3Md, para } from '@/components/Blog/Pages/Markdown';
-import { calculateReadingTime } from 'markdown-reading-time';
+import componentMapping from '@/components/Blog/Pages/Markdown';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import SelectedTextMenu from '@/components/Blog/Pages/SelectedTextMenu';
@@ -43,8 +42,8 @@ export async function getStaticProps({params}) {
 }
 
 export default function BlogPost({post, slug}) {
-    const { minutes } = calculateReadingTime(post.markdown);
     post.markdown = addAltTextToImages(post.markdown, post.metadata.title);
+
     const mainBody = useRef(null);
     const startingMainContent = useRef();
     const shareButtons = useRef();
@@ -104,16 +103,11 @@ export default function BlogPost({post, slug}) {
                     </Link>
                 </div>
                 <section>
-                    <MetaData post={post} minutes={minutes}/>
+                    <MetaData post={post}/>
                     <div ref={startingMainContent}>
                         <ReactMarkdown
                             remarkPlugins={[rehypeSlug]}
-                            components={{
-                                h2: h2Md,
-                                h3: h3Md,
-                                p: para,
-                                a: aMd
-                            }}
+                            components={componentMapping}
                             >{post.markdown}
                         </ReactMarkdown>
                     </div>

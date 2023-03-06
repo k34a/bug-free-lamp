@@ -7,7 +7,7 @@ const hosts = [
     "localhost"
 ]
 
-export const para = (paragraph) => {
+const para = (paragraph) => {
     const { node } = paragraph
 
     if (node.children[0].tagName === "img") {
@@ -31,15 +31,15 @@ export const para = (paragraph) => {
 }
 
 
-export const h2Md = ({ node, ...props }) => (
+const h2Md = ({ node, ...props }) => (
     <h2 id={generateSlug(props.children[0])} {...props}></h2>
 )
 
-export const h3Md = ({ node, ...props }) => (
+const h3Md = ({ node, ...props }) => (
     <h3 id={generateSlug(props.children[0])} {...props}></h3>
 )
 
-export const aMd = (props) => {
+const aMd = (props) => {
     let url = new URL(props.href)
     const classes = 'text-red-600 dark:text-yellow-200'
     if (hosts.includes(url.hostname)) {
@@ -49,3 +49,12 @@ export const aMd = (props) => {
         return <a href={props.href} target="_blank" rel='noopener noreferrer' className={classes}>{props.children}</a>
     }
 }
+
+const componentMapping = {
+    h2: h2Md,
+    h3: h3Md,
+    p: para,
+    a: aMd
+}
+
+export default componentMapping;
