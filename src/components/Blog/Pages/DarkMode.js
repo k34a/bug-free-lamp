@@ -1,26 +1,46 @@
 import useDarkMode from "@/lib/useDarkMode";
+import { useEffect, useState } from "react";
 
 const DarkMode = () => {
-    const [colorTheme, setTheme] = useDarkMode();
+    const [theme, setTheme] = useDarkMode();
+    const [hydrated, setHydrated] = useState(false)
     const toggleTheme = (e) => {
         setTheme((t) => {
             if (e.target.value === "dark") return "light";
             else return "dark";
         })
     }
+    useEffect(() => {
+        setHydrated(true);
+    }, []);
+
+    if (!hydrated) {
+        return null;
+    }
+
     return (
         <div className='flex v-screen justify-center items-center pt-12'>
             <label className="relative inline-flex items-center cursor-pointer">
                 <input
                     type="checkbox"
-                    value={colorTheme}
+                    value={theme}
                     className="sr-only peer"
-                    checked={colorTheme === "dark"}
+                    checked={theme === "dark"}
                     onClick={toggleTheme}
                     onChange={(e) => { }}
                 />
-                <div className="w-11 h-6 bg-gray-400 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-black"></div>
-                <p>&nbsp;&nbsp;Dark Mode</p>
+                <div className={`${theme === 'dark'? "text-white": "text-black"}`}>
+                    {theme == 'dark'? (
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="w-8 h-8 bi bi-sun" viewBox="0 0 16 16">
+                            <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                        </svg>
+                    ):(
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="black" className="bi bi-moon-fill w-8 h-8" viewBox="0 0 16 16">
+                            <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                        </svg>
+                    )}
+                </div>
+                <span>&nbsp;&nbsp;{theme === 'dark' ? "Light" : "Dark"} Mode</span>
             </label>
         </div>
     );
