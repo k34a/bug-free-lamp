@@ -23,10 +23,9 @@ const readMoreColors = [
 ]
 
 const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-    500: 1
+    default: 3,
+    1100: 2,
+    600: 1,
 };
 
 const BlogList = (props) => {
