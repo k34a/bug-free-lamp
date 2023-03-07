@@ -92,7 +92,7 @@ export default function BlogPost({post, slug}) {
             <DarkMode />
             <main
                 ref={mainBody} 
-                className={`py-16 ${styles.article} prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}
+                className={`py-16 ${styles.article} break-words prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}
             >
                 <div className='mb-6'>
                     <Link href='/blog' className='hover:-mx-2'>
