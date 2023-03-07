@@ -3,7 +3,7 @@ import Link from "next/link";
 const ReadMore = (props) => {
     return (
         <div>
-            <h3><Link href="/blog" className="font-bold">Read More</Link></h3>
+            <h3><Link href="/blog" className="font-bold">Readers also enjoyed</Link></h3>
             <div className="space-y-4">
                 {props.readMoreArticles.map((ele, index) => {
                     return (
