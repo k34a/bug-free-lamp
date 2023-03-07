@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 import SelectedTextMenu from '@/components/Blog/Pages/SelectedTextMenu';
 import DarkMode from '@/components/Blog/Pages/DarkMode';
 import MetaData from '@/components/Blog/Pages/MetaData';
+import ReadMore from '@/components/Blog/Pages/ReadMore';
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -43,7 +44,6 @@ export async function getStaticProps({params}) {
 
 export default function BlogPost({post, slug}) {
     post.markdown = addAltTextToImages(post.markdown, post.metadata.title);
-
     const mainBody = useRef(null);
     const startingMainContent = useRef();
     const shareButtons = useRef();
@@ -116,6 +116,7 @@ export default function BlogPost({post, slug}) {
                 <div ref={shareButtons}>
                     <Share slug={slug} title={post.metadata.title}/>
                 </div>
+                <ReadMore readMoreArticles={post.readMoreArticles} className='prose-normal'/>
             </main>
             <SubscribeNewsletter />
         </div>
