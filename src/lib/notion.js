@@ -94,6 +94,7 @@ const getPageMetaData = (post) => {
         tags: getTags(post.properties.Tags.multi_select),
         description: post.properties.Description.rich_text[0].plain_text,
         date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
+        publishedDate: post.properties.Date?.date?.start || "2023-01-01",
         slug: post.properties.Slug.rich_text[0].plain_text,
         author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
         authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
@@ -136,8 +137,75 @@ export const getMetadataForSinglePost = async (slug) => {
     return getPageMetaData(response.results[0]);
 }
 
+export const getReadMoreArticles = async (publishedDateString) => {
+    const publishedDate = new Date(publishedDateString)
+    const beforeResponse = await notion.databases.query({
+        database_id: process.env.NOTION_DATABASE_ID,
+        filter: {
+            and: [
+                {
+                    property: "Date",
+                    date: {
+                        before: publishedDate.toISOString(),
+                    },
+                },
+                {
+                    property: "Published",
+                    checkbox: {
+                        equals: true,
+                    },
+                },
+            ],
+        },
+        sorts: [
+            {
+                property: "Date",
+                direction: "descending",
+            },
+        ],
+        page_size: 3,
+    });
+    const beforeArticles = beforeResponse?.results?.splice(0, 3) || []; // assuming there is only one matching article
+    let readMoreArticles = [...beforeArticles]
+    
+    if(readMoreArticles.length < 3){
+        const afterResponse = await notion.databases.query({
+            database_id: process.env.NOTION_DATABASE_ID,
+            filter: {
+                and: [
+                    {
+                        property: "Date",
+                        date: {
+                            after: publishedDate.toISOString(),
+                        },
+                    },
+                    {
+                        property: "Published",
+                        checkbox: {
+                            equals: true,
+                        },
+                    },
+                ],
+            },
+            sorts: [
+                {
+                    property: "Date",
+                    direction: "ascending",
+                },
+            ],
+            page_size: 3,
+        });
+        const howManyArticlesLess = 3 - readMoreArticles.length;
+        const afterArticle = afterResponse?.results?.splice(0, howManyArticlesLess) || [];
+        readMoreArticles = [...afterArticle, ...readMoreArticles];
+    }
+    return readMoreArticles.map(getPageMetaData);
+}
+
+
 export const getSingleBlogPostBySlug = async (slug) => {
     const metadata = await getMetadataForSinglePost(slug);
+    const readMoreArticles = await getReadMoreArticles(metadata.publishedDate);
     const page_id = metadata.id.split('-').join('');
     const mdblocks = await n2m.pageToMarkdown(page_id);
     const mdString = n2m.toMarkdownString(mdblocks);
@@ -145,6 +213,7 @@ export const getSingleBlogPostBySlug = async (slug) => {
     const ret = {
         metadata,
         minutes,
+        readMoreArticles,
         markdown: mdString,
     };
     return ret;
