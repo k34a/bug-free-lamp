@@ -86,10 +86,6 @@ export default function SubscribeNewsletter() {
                         {invalidEmail && <div className="mx-auto max-w-screen-sm text-sm text-left text-red-500 newsletter-form-footer">Please enter a valid email.</div>}
                         <div className="mx-auto max-w-screen-sm text-sm text-left text-red-500 newsletter-form-footer">{error}</div>
                         {isSubscribed && <div className="mx-auto max-w-screen-sm text-sm text-left text-green-500 newsletter-form-footer">Thank you for subscribing.</div>}
-                        <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">
-                            We don&#39;t share emails with anyone.&nbsp; 
-                            <Link href="/privacypolicy" className="font-medium text-blue-600 hover:underline">Read our Privacy Policy</Link>.
-                        </div>
                     </form>
                 </div>
             </div>

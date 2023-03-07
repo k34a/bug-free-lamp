@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ReactCountryFlag from "react-country-flag"
 
 const Footer = () => {
     return (
@@ -20,7 +19,7 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <div className="mx-6 py-10 text-center md:text-left">
+            <div className="mx-6 pt-10 pb-5 text-center md:text-left">
                 <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div className="">
                         <h6 className="uppercase font-semibold mb-4 flex items-center justify-center md:justify-start">
@@ -89,16 +88,27 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div>
+                <div className='flex v-screen justify-center items-center'>
+                    <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer">
+                        <div className="border-green-600 border-4 text-green-600 font-medium inline-flex items-center px-2.5 py-0.5 rounded-lg">
+                            <svg aria-hidden="true" className="w-10 h-10 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                            This website emits 0.38g of CO<sub>2</sub>
+                        </div>
+                    </a>
+                </div>
+            </div>
             <div className="text-center p-6 bg-yellow-200">
                 <span>&copy; Copyright 2019-2023 </span>
                 <Link className="text-slate-600 font-semibold" href="/">Larry Rowbs Foundation</Link>
             </div>
-            <div className="text-center p-3 bg-purple-500 text-white">
-                <a className="text-white font-semibold" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">
-                    <span>
-                        Made with <i className="fa fa-heart text-red-500"></i> in India <ReactCountryFlag countryCode="IN" svg/>
-                    </span>
-                </a>
+            <div className="text-center p-3 bg-purple-500 text-white a-text-bold">
+                <p>
+                    Website Content Managed by <Link className="text-yellow-200" href='/'>Larry Rowbs Foundation</Link>
+                </p>
+                <p>
+                    Designed, Developed and Hosted by <a className="text-yellow-200" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
+                </p>
             </div>
         </footer>
     );
