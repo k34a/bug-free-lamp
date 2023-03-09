@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
                 posts,
                 tag: params.tag
             },
-            revalidate: 60
+            revalidate: 120
         };
     }
     catch (err) {
