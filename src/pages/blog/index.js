@@ -9,7 +9,7 @@ export async function getStaticProps(context) {
         props: {
             posts: data,
         },
-        revalidate: 120
+        revalidate: 60
     };
 }
 

@@ -56,7 +56,7 @@ export default function WhatsHappening() {
                     />
                 </div>
             </div>
-            <div className="w-4/5 m-auto my-12 lg:my-auto">
+            <div className="w-4/5 m-auto">
                 <h2 className="text-2xl font-bold leading-normal text-pink-800 mb-5">
                     A truck full of clothes ends up in landfill every second!
                 </h2>
