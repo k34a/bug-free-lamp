@@ -5,17 +5,12 @@
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    transform: rotate(180deg);
 }
 
 .customShapeDivider svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 55px;
+    height: 112px;
     transform: rotateY(180deg);
-}
-
-.customShapeDivider .shapeFill {
-    fill: #FFFFFF;
 }

@@ -11,8 +11,8 @@
 .customShapeDivider svg {
     position: relative;
     display: block;
-    width: calc(100% + 1.3px);
-    height: 55px;
+    width: calc(122% + 1.3px);
+    height: 124px;
     transform: rotateY(180deg);
 }
 

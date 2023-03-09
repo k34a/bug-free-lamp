@@ -31,7 +31,7 @@ export async function getStaticProps({params}) {
                 post,
                 slug: params.slug
             },
-            revalidate: 60
+            revalidate: 120
         };
     }
     catch(err){
