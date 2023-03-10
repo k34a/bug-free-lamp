@@ -12,7 +12,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: cloudsMovement 7s infinite linear;
+    animation: cloudsMovement 7s infinite ease-in;
 }
 
 @keyframes cloudsMovement {
@@ -33,7 +33,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: birdsMovement 10s infinite linear;
+    animation: birdsMovement 10s infinite ease-in;
 }
 
 @keyframes birdsMovement {
@@ -62,7 +62,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: truckBodyMovement 15s infinite linear;
+    animation: truckBodyMovement 15s infinite ease-in;
 }
 
 @keyframes truckBodyMovement {
@@ -93,7 +93,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: truckInclinerMovement 15s infinite linear;
+    animation: truckInclinerMovement 15s infinite ease-in;
 }
 
 @keyframes truckInclinerMovement {
@@ -137,7 +137,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: truckContainerMovement 15s infinite linear;
+    animation: truckContainerMovement 15s infinite ease-in;
 }
 
 @keyframes truckContainerMovement {
@@ -181,7 +181,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: truckStaticMovement 15s infinite linear;
+    animation: truckStaticMovement 15s infinite ease-in;
 }
 
 @keyframes truckStaticMovement {
@@ -222,7 +222,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: truckGarbageMovement 15s infinite linear;
+    animation: truckGarbageMovement 15s infinite ease-in;
 }
 
 @keyframes truckGarbageMovement {
