@@ -19,7 +19,7 @@ const tabsConfig = [
                 <br /><br /> Together, we can create a cleaner, healthier, and greener planet through sustainable fashion.
             </p>),
             head: "Developing a Circular Fashion Economy",
-            bg: "bg-green-200",
+            bg: "bg-gradient-to-r from-teal-200 to-teal-500",
             buttonBg: "bg-green-700",
             buttonBgHover: "bg-green-800",
         }
@@ -42,7 +42,7 @@ const tabsConfig = [
                 We understand the importance of investing in local communities and helping to boost the economy while also promoting sustainability and ethical practices. By doing so, we are not only creating a better future for the environment but also for the individuals and communities we aim to serve.
             </p>),
             head: "Creating More Jobs",
-            bg: "bg-sky-200",
+            bg: "bg-gradient-to-r from-indigo-500 to-blue-500",
             buttonBg: "bg-sky-700",
             buttonBgHover: "bg-sky-800",
         }
@@ -65,9 +65,9 @@ const tabsConfig = [
                 Our goal is to provide education and training in sustainable fashion practices to individuals from all walks of life, free of charge. By educating the next generation of fashion professionals and designers, we hope to foster a more responsible and sustainable fashion industry. Our aim is to build a complete ecosystem for talented individuals, and raise awareness about the importance of ethical and sustainable practices in the fashion industry. By doing so, we believe that we can make a positive impact on the fashion industry and help to create a more equitable and sustainable world.
             </p>),
             head: "Free-of-cost Fashion School",
-            bg: "bg-pink-200",
-            buttonBg: "bg-pink-700",
-            buttonBgHover: "bg-pink-800",
+            bg: "bg-gradient-to-r from-violet-500 to-purple-500",
+            buttonBg: "bg-violet-800",
+            buttonBgHover: "bg-violet-700",
         }
     ],
     [
@@ -86,7 +86,7 @@ const tabsConfig = [
                 Join us in this mission to create a safer, greener, and healthier world for all.
             </p>),
             head: "Safeguarding Health",
-            bg: "bg-red-200",
+            bg: "bg-gradient-to-r from-amber-400 to-yellow-500",
             buttonBg: "bg-red-700",
             buttonBgHover: "bg-red-800",
         }
@@ -94,7 +94,7 @@ const tabsConfig = [
 ]
 
 export default function Benefits() {
-    const [openTab, setOpenTab] = useState(3);
+    const [openTab, setOpenTab] = useState(2);
     const tabs = tabsConfig.map((ele, index)=>{
         return (
             <li key={index}>
@@ -117,7 +117,7 @@ export default function Benefits() {
 
     const tabsContent = tabsConfig.map((ele, index) => {
         return (
-            <div key={index} className="md:text-lg lg:text-xl">
+            <div key={index} className="md:text-lg lg:text-xl text-white">
                 <div className={openTab === index+1 ? "block" : "hidden"}>
                     <img
                         src={ele[4]["img"]}
@@ -128,7 +128,10 @@ export default function Benefits() {
                     {ele[4]["content"]}
                     <br /><br />
                     <Link href="/blog">
-                        <button type="button" className={`text-white ${ele[4]["buttonBg"]} hover:${ele[4]["buttonBgHover"]} focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center no-underline`}>
+                        <button 
+                            type="button"
+                            className={`text-white ${ele[4]["buttonBg"]} hover:${ele[4]["buttonBgHover"]} focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center no-underline`}
+                        >
                             Learn More
                             <svg aria-hidden="true" className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd">
@@ -154,7 +157,7 @@ export default function Benefits() {
                             </ul>
                         </div>
                     </div>
-                    <div className={`relative flex flex-col min-w-0 break-words ${tabsConfig[openTab-1][4]["bg"]} w-full py-9 rounded`}>
+                    <div className={`relative flex flex-col min-w-0 break-words ${tabsConfig[openTab-1][4]["bg"]} w-full py-24 rounded`}>
                         <div className="px-4 py-5 flex-auto">
                             <div className="tab-content tab-space w-4/5 md:w-4/6 lg:w-1/2 m-auto">
                                 {tabsContent}

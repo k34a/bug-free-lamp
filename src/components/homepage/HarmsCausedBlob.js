@@ -28,17 +28,25 @@ const HarmsCausedBlob = (props) => {
                     <animated.path d={d} fill={props.color} />
                 </animated.svg>
                 <div className="absolute z-10 flex flex-col items-center justify-center text-center w-11/12 sm:w-3/4 md:w-1/2">
-                    <h2 className="text-2xl md:text-5xl font-bold text-gray-800 pb-6">
-                        {props.heading}
-                    </h2>
-                    <p className="text-normal md:text-2xl text-gray-800">
-                        {props.description}
-                    </p>
+                    <div className={props.text}>
+                        <h2 className="text-2xl md:text-5xl font-bold pb-6">
+                            {props.heading}
+                        </h2>
+                        <p className="text-normal md:text-2xl">
+                            {props.description}
+                        </p>
+                    </div>
                 </div>
             </div>
             <div className={styles.customShapeDivider}>
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" className={props.fill}></path>
+                    <defs>
+                        <linearGradient id={props.gradId} x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style={{ stopColor: props.fillend, stopOpacity: "1" }} />
+                            <stop offset="100%" style={{stopColor: props.fillstart, stopOpacity: "1"}} />
+                        </linearGradient>
+                    </defs>
+                    <path d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" fill={`url(#${props.gradId})`}></path>
                 </svg>
             </div>
         </div>
