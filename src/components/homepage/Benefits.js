@@ -117,14 +117,14 @@ export default function Benefits() {
 
     const tabsContent = tabsConfig.map((ele, index) => {
         return (
-            <div key={index}>
+            <div key={index} className="md:text-lg lg:text-xl">
                 <div className={openTab === index+1 ? "block" : "hidden"}>
                     <img
                         src={ele[4]["img"]}
                         alt={ele[4]["alt"]}
                         className="w-1/4 m-auto"
                     />
-                    <h2 className="text-2xl my-4">{ele[4]["head"]}</h2>
+                    <h2 className="text-2xl my-4 md:text-3xl lg:text-4xl font-black">{ele[4]["head"]}</h2>
                     {ele[4]["content"]}
                     <br /><br />
                     <Link href="/blog">

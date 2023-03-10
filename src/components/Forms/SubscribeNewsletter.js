@@ -47,7 +47,7 @@ export default function SubscribeNewsletter() {
     return (
         <section className="bg-black">
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:pb-16 lg:px-6">
-                <div className="mx-auto max-w-screen-md sm:text-center">
+                <div className="mx-auto my-12 max-w-screen-md sm:text-center">
                     <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-white sm:text-4xl">
                         JOIN THE MOVEMENT!
                     </h2>
