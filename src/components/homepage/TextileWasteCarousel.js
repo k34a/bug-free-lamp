@@ -7,13 +7,13 @@ export default function TextileWasteCarousel(props){
                 className="p-12 text-left relative overflow-hidden bg-no-repeat bg-cover bg-left"
                 style={{
                     backgroundImage: "url('/fast-fashion-clothes-hanging.jpg')",
-                    height: "500px"
+                    height: "600px"
                 }}>
                 <div
                     className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
                     style={{backgroundColor: "rgba(0, 0, 0, 0.6)"}}
                 >
-                    <div className="flex justify-center items-center h-full">
+                    <div className="flex justify-center items-center h-full w-11/12 m-auto">
                         <div className="py-3 px-7 border-gray-200 border-2">
                             <h2 className="text-white font-semibold text-4xl mb-4 underline underline-offset-8">Trashion</h2>
                             <p className="text-slate-300 mb-6"><i>/&apos;traʃn/</i></p>
