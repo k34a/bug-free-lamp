@@ -1,5 +1,4 @@
 import BlogList from '@/components/Blog/BlogList';
-import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter';
 import Head from 'next/head'
 import { getTopPublished } from '../../lib/notion';
 
@@ -25,7 +24,6 @@ export default function Home({posts}) {
             </Head>
             <main>
                 <BlogList data={posts}/>
-                <SubscribeNewsletter />
             </main>
         </>
     )

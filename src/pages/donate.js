@@ -1,5 +1,4 @@
 import DonateForm from '@/components/Forms/DonateForm'
-import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 
 export default function Donate() {
@@ -36,7 +35,6 @@ export default function Donate() {
                     </p>
                 </div>
                 <DonateForm />
-                <SubscribeNewsletter />
             </main>
         </>
     )

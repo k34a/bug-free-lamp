@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import ReactMarkdown from "react-markdown"
 import styles from '@/styles/BlogArticle.module.css'
-import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter';
 import { addAltTextToImages, getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
 import Share from '@/components/Blog/Pages/Share';
 import rehypeSlug from 'rehype-slug';
@@ -118,7 +117,6 @@ export default function BlogPost({post, slug}) {
                 </div>
                 <ReadMore readMoreArticles={post.readMoreArticles} className='prose-normal'/>
             </main>
-            <SubscribeNewsletter />
         </div>
     )
 }

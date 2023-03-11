@@ -1,6 +1,5 @@
 import JoinUs from '@/components/Forms/JoinUs'
 import OurTeam from '@/components/Team/OurTeam'
-import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 
 export default function Join() {
@@ -15,7 +14,6 @@ export default function Join() {
             <main>
                 <JoinUs />
                 <OurTeam />
-                <SubscribeNewsletter />
             </main>
         </>
     )

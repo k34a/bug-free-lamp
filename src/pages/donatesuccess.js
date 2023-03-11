@@ -1,4 +1,3 @@
-import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -18,7 +17,6 @@ export default function Donate() {
                         Return home
                     </Link>
                 </div>
-                <SubscribeNewsletter />
             </main>
         </>
     )

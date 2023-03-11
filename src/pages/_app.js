@@ -1,9 +1,10 @@
 import '@/styles/globals.css'
 import { Poppins } from '@next/font/google'
-import Header from '@/components/StructuralComponents/Header'
+import Header from '@/components/StructuralComponents/VerticalHeader'
 import Footer from '@/components/StructuralComponents/Footer'
 import NextNProgress from 'nextjs-progressbar';
 import Script from 'next/script';
+import { useState } from 'react';
 
 const poppins = Poppins({
   weight: ['400'],
@@ -11,6 +12,7 @@ const poppins = Poppins({
 })
 
 export default function App({ Component, pageProps }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       <Script
@@ -27,10 +29,18 @@ export default function App({ Component, pageProps }) {
         `}
       </Script>
       <NextNProgress />
-      <main className={poppins.className}>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
+      <main className={`${poppins.className} h-screen`}>
+        <Header 
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+        <div 
+          className='absolute right-0 top-0 w-full pt-16 sm:pt-0 sm:pl-16'
+          onClick={(e) => setIsMenuOpen(false)}
+        >
+          <Component {...pageProps} />
+          <Footer />
+        </div>
       </main>
     </>
   )
