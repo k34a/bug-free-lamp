@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import { Poppins } from '@next/font/google'
-import Header from '@/components/StructuralComponents/VerticalHeader'
+import Header from '@/components/StructuralComponents/Header'
 import Footer from '@/components/StructuralComponents/Footer'
 import NextNProgress from 'nextjs-progressbar';
 import Script from 'next/script';
