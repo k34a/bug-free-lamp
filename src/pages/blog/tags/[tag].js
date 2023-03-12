@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import SubscribeNewsletter from '@/components/Forms/SubscribeNewsletter';
 import { getAllTags, getTopPublished } from '../../../lib/notion';
-import Link from 'next/link';
 import BlogList from '@/components/Blog/BlogList';
 
 export async function getStaticPaths(context) {
@@ -45,7 +43,6 @@ export default function BlogPost({ posts, tag }) {
             </Head>
             <main>
                 <BlogList data={posts} title={`Curated list of Articles on ${tag}`}/>
-                <SubscribeNewsletter />
             </main>
         </>
     )
