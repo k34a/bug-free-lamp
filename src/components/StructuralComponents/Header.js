@@ -41,7 +41,7 @@ const Header = (props) => {
                             <svg className="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
                             </svg>
-                            {isOpen && <span className="ml-2 text-sm font-medium">Blog</span>}
+                            {isOpen && <span className="ml-2 text-sm font-medium">Read Articles</span>}
                         </Link>
                         <Link className={`flex items-center ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`} href="/join">
                             <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill='currentColor'>
@@ -55,7 +55,7 @@ const Header = (props) => {
                             </svg>
                             {isOpen && <span className="ml-2 text-sm font-medium">Donate</span>}
                         </Link>
-                        <Link className={`flex items-center ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`} href="/contact">
+                        <Link className={`flex items-center border-t border-gray-700 ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`} href="/contact">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6 h-6" viewBox="0 0 16 16">
                                 <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                             </svg>
@@ -74,7 +74,7 @@ const Header = (props) => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6 h-6" viewBox="0 0 16 16">
                                 <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" />
                             </svg>
-                            {isOpen && <span className="ml-2 text-sm font-medium">Webinar</span>}
+                            {isOpen && <span className="ml-2 text-sm font-medium">Register for Webinar</span>}
                         </Link>
                         <Link className={`flex items-center ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`} href="/quiztime">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -155,7 +155,7 @@ const Header = (props) => {
                             <Link 
                                 href="/webinar" 
                                 className="block px-4 py-2 hover:bg-gray-600"
-                            >Webinar
+                            >Register for Webinar
                             </Link>
                         </li>
                         <li>
