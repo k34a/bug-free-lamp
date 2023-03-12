@@ -1,5 +1,3 @@
-import styles from "@/styles/TextileWasteCarousel.module.css"
-
 export default function TextileWasteCarousel(props){
     return(
         <div className="relative">
