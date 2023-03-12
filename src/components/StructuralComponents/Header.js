@@ -23,7 +23,7 @@ const Header = (props) => {
             >
                 <Link className={`flex items-center mt-3 ${isOpen ? "w-full px-3" : "justify-center"}`} href="/">
                     <img
-                        className="w-8 h-8"
+                        className="w-8 h-8 rounded"
                         alt="Logo"
                         src='/logo.png'
                     />
@@ -95,7 +95,7 @@ const Header = (props) => {
                 <div className="rounded p-2">
                     <Link href="/">
                         <img
-                            className="w-8 h-8"
+                            className="w-8 h-8 rounded"
                             alt="Logo"
                             src='/logo.png'
                         />
