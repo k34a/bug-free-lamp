@@ -7,7 +7,7 @@ const HarmsCaused = () => {
             <HarmsCausedBlob
                 className="w-full md:w-1/3 lg:my-4 md:my-0 md:mr-4"
                 color="#d9f99d"
-                heading="Environmental Effects"
+                heading="Causing Serious Environmental Effects"
                 description="Fast fashion, with its endless cycle of production and consumption, leaves a damaging trail on the environment- from water contamination, accelerating global warming, deforestation, to the piles of waste in landfills."
                 bg='bg-gradient-to-r from-lime-300 to-lime-600'
                 text="text-lime-800"
@@ -18,7 +18,7 @@ const HarmsCaused = () => {
             <HarmsCausedBlob 
                 className="w-full md:w-1/3 lg:my-4 md:my-0 md:mr-4" 
                 color="#bae6fd"
-                heading="Social Harms"
+                heading="And Social Harms"
                 description="Workers in the fast-fashion industry are exploited with extremely low wages, dangerous working conditions and denied human rights."
                 bg='bg-gradient-to-r from-sky-300 to-sky-600'
                 text='text-sky-800'
@@ -29,7 +29,7 @@ const HarmsCaused = () => {
             <HarmsCausedBlob 
                 className="w-full md:w-1/3 lg:my-4 md:my-0" 
                 color="#ddd6fe"
-                heading="Health Issues"
+                heading="Did we forget to mention Health Issues?"
                 description="The cheap and toxic chemical used to dye the clothes are carcinogenic in nature, and potentially cause developmental issues."
                 bg='bg-gradient-to-r from-violet-300 to-violet-600'
                 text='text-violet-800'

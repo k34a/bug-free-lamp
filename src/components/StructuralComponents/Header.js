@@ -15,7 +15,7 @@ const Header = (props) => {
     }
 
     const normalHeader = (
-        <div className="fixed top-0 left-0 flex h-screen space-x-6 bg-violet-700 z-50">
+        <div className="fixed top-0 left-0 flex h-screen space-x-6 bg-violet-700 z-50 shadow-2xl">
             <div
                 className={`flex flex-col items-center ${isOpen ? "w-45" : "w-16"} h-full overflow-hidden text-gray-100 bg-violet-700 rounded`}
                 onMouseEnter={(e) => { setIsOpen(true) }}
@@ -55,7 +55,9 @@ const Header = (props) => {
                             </svg>
                             {isOpen && <span className="ml-2 text-sm font-medium">Donate</span>}
                         </Link>
-                        <Link className={`flex items-center border-t border-gray-700 ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`} href="/contact">
+                    </div>
+                    <div className={`flex flex-col items-center ${isOpen ? "w-full" : ""} mt-3 border-t border-gray-700`}>
+                        <Link className={`flex items-center ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`} href="/contact">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6 h-6" viewBox="0 0 16 16">
                                 <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                             </svg>

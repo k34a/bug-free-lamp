@@ -6,7 +6,7 @@ export default function WhatsHappening() {
         <div className="py-12">
             <div className='flex items-center justify-center'>
                 <div className="relative">
-                    <div className={styles.sceneVisual}>
+                    <div className={`${styles.sceneVisual} border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}>
                         <img
                             id="landfill"
                             className={styles.landfill}

@@ -39,7 +39,7 @@ const HarmsCausedBlob = (props) => {
                 </div>
             </div>
             <div className={styles.customShapeDivider}>
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className='-mb-1'>
                     <defs>
                         <linearGradient id={props.gradId} x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" style={{ stopColor: props.fillend, stopOpacity: "1" }} />
