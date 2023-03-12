@@ -7,8 +7,8 @@ const HarmsCaused = () => {
             <HarmsCausedBlob
                 className="w-full md:w-1/3 lg:my-4 md:my-0 md:mr-4"
                 color="#d9f99d"
-                heading="Environmental Effects"
-                description="Fast fashion, with its endless cycle of production and consumption, leaves a damaging trail on the environment- from water contamination, accelerating global warming, deforestation, to the piles of waste in landfills."
+                heading="Causing Serious Environmental Effects"
+                description="Fast fashion ravages the planet, leaving Polluted Water Bodies, accelerating Global Warming, Deforesting Lands, and towering Landfills in its wake."
                 bg='bg-gradient-to-r from-lime-300 to-lime-600'
                 text="text-lime-800"
                 fillstart='#7dd3fc'
@@ -18,8 +18,8 @@ const HarmsCaused = () => {
             <HarmsCausedBlob 
                 className="w-full md:w-1/3 lg:my-4 md:my-0 md:mr-4" 
                 color="#bae6fd"
-                heading="Social Harms"
-                description="Workers in the fast-fashion industry are exploited with extremely low wages, dangerous working conditions and denied human rights."
+                heading="And Social Harms"
+                description="Workers in the fast-fashion industry are exploited with extremely Low Wages, dangerous Working Conditions and denied Human Rights."
                 bg='bg-gradient-to-r from-sky-300 to-sky-600'
                 text='text-sky-800'
                 fillstart='#c4b5fd'
@@ -29,8 +29,8 @@ const HarmsCaused = () => {
             <HarmsCausedBlob 
                 className="w-full md:w-1/3 lg:my-4 md:my-0" 
                 color="#ddd6fe"
-                heading="Health Issues"
-                description="The cheap and toxic chemical used to dye the clothes are carcinogenic in nature, and potentially cause developmental issues."
+                heading="Did we forget to mention Health Issues?"
+                description="Cheap and toxic dyes in fast-fashion are Carcinogenic and can cause Developmental Problems."
                 bg='bg-gradient-to-r from-violet-300 to-violet-600'
                 text='text-violet-800'
                 fillstart='#FEF8EE'
