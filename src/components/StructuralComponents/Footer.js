@@ -117,7 +117,7 @@ export default function Footer() {
             </div>
             <div className="text-center px-6 text-sm">
                 <span>&copy; Copyright 2019-Present </span>
-                <Link className="text-slate-200 font-semibold" href="/">Larry Rowbs Foundation</Link>
+                <Link className="text-yellow-200 font-semibold" href="/">Larry Rowbs Foundation</Link>
             </div>
             <div className="text-center px-3 a-text-bold text-sm">
                 <p>
