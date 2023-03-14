@@ -1,3 +1,4 @@
+import YoutubeVideo from "@/components/Youtube"
 import { generateSlug } from "@/lib/notion"
 import Link from "next/link"
 
@@ -7,6 +8,12 @@ const hosts = [
     "localhost"
 ]
 
+const youtubeHosts = [
+    "youtube.com",
+    "www.youtube.com",
+    "youtu.be"
+]
+
 const para = (paragraph) => {
     const { node } = paragraph
 
@@ -14,7 +21,6 @@ const para = (paragraph) => {
         const image = node.children[0]
         const metastring = image.properties.alt
         const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
-
         return (
             <div className="postImgWrapper">
                 <img
@@ -26,6 +32,17 @@ const para = (paragraph) => {
                 <figcaption className="caption text-center" aria-label={alt}>{alt}</figcaption>
             </div>
         )
+    }
+    else if (node.children.length == 1 && node.children[0].tagName === "a") {
+        const link = node.children[0]
+        let url = new URL(link.properties.href)
+        let youtubeRegExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        if (youtubeHosts.includes(url.hostname)) {
+            let match = link.properties.href.match(youtubeRegExp);
+            if (match && match[2].length == 11) {
+                return <YoutubeVideo videoId={match[2]} />
+            }
+        }
     }
     return <p>{paragraph.children}</p>
 }
