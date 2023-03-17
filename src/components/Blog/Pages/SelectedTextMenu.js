@@ -1,5 +1,9 @@
-function handleCopyClick(text) {
+function handleCopyClick(text, setIsCopied) {
     navigator.clipboard.writeText(text || "")
+    setIsCopied(true)
+    setTimeout(() => {
+        setIsCopied(false);
+    }, 700);
 }
 
 function handleTweetClick(text) {
@@ -7,6 +11,7 @@ function handleTweetClick(text) {
     const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
     window.open(tweetUrl, "_blank");
 } 
+
 const SelectedTextMenu = (props) => {
     return (
         <div
@@ -18,7 +23,7 @@ const SelectedTextMenu = (props) => {
             }}
         >
             <button
-                onClick={() => handleCopyClick(props.selectedText)}
+                onClick={() => handleCopyClick(props.selectedText, props.setIsCopied)}
                 className='hover:opacity-75 active:opacity-25'
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-files" viewBox="0 0 16 16">

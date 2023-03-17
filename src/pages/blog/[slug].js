@@ -42,12 +42,12 @@ export async function getStaticProps({params}) {
 }
 
 export default function BlogPost({post, slug}) {
-    post.markdown = addAltTextToImages(post.markdown, post.metadata.title);
     const mainBody = useRef(null);
     const startingMainContent = useRef();
     const shareButtons = useRef();
     const [selectedText, setSelectedText] = useState("");
     const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+    const [isCopied, setIsCopied] = useState(false);
 
     function handleTextSelection() {
         const lowerLimit = startingMainContent.current.offsetTop;
@@ -110,12 +110,13 @@ export default function BlogPost({post, slug}) {
                             >{post.markdown}
                         </ReactMarkdown>
                     </div>
-                    {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} /> }
+                    {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied}/> }
                 </section>
                 <div ref={shareButtons}>
                     <Share slug={slug} title={post.metadata.title}/>
                 </div>
                 <ReadMore readMoreArticles={post.readMoreArticles} className='prose-normal'/>
+                {isCopied && <div className='bg-black text-white p-4 fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
             </main>
         </div>
     )
