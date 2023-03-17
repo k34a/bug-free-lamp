@@ -22,6 +22,7 @@
     "markdown-reading-time": "^0.1.1",
     "next": "13.1.6",
     "nextjs-progressbar": "^0.0.16",
+    "nodemailer": "^6.9.1",
     "notion-to-md": "^2.5.5",
     "postprocessing": "^6.30.0",
     "react": "18.2.0",
