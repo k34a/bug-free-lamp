@@ -2,13 +2,6 @@ import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ThreeDots } from "react-loader-spinner";
 
-const donations = [
-    ["0", null],
-    ["5", process.env.NEXT_PUBLIC_WEBINAR_5],
-    ["15", process.env.NEXT_PUBLIC_WEBINAR_15],
-    ["25", process.env.NEXT_PUBLIC_WEBINAR_25],
-]
-
 const validateEmail = (email) => {
     return email.match(
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -156,11 +149,12 @@ export default function RegistrationForm(params) {
                             <div className="md:w-2/3"></div>
                         </div>
                     </div>
-                    {isSubmitted && <div className="flex flex-wrap text-green-500">
-                        Your are now registered for the event.
+                    {isSubmitted && <div className="mt-2 flex flex-wrap text-green-500">
+                        Thank you for registering for the event! 
+                        <small className="text-black">We have sent you an email invite. If you don&apos;t see it in your inbox, please check your spam folder.</small>
                     </div>}
                     {isNotSubmitted && <div className="flex flex-wrap text-red-500">
-                        We are not able to registed you for the event. Please contact us.
+                        We are not able to register you for the event. Please contact us <a href="mailto:info@larryrowbs.com">here</a>.
                     </div>}
                 </form>
             </div>
