@@ -53,13 +53,13 @@ const emailBody = `
     }
     
     /* Button */
-    button {
+    .button {
       display: inline-block;
       font-size: 16px;
       font-weight: bold;
       text-align: center;
       text-decoration: none;
-      color: white;
+      color: green;
       padding: 10px 20px;
       border-radius: 5px;
       margin-top: 20px;
@@ -89,7 +89,7 @@ const emailBody = `
     <p>During the webinar, we will introduce you to cutting-edge recycling techniques that have the potential to revolutionize the African fashion industry. You will learn how recycling and reusing can not only reduce waste but also create new opportunities for growth and development.</p>
     <p>We understand that your time is valuable, so we have made sure that the webinar will be informative, engaging, and interactive. You will have the opportunity to ask questions, network with other like-minded individuals, and be a part of a community that cares deeply about sustainable development.</p>
     <p>Please mark your calendar for the webinar, which will take place on <b>March 24th at 9AM EST.</b></p>
-    <center><button><a href="https://tinyurl.com/stylishsustainabilitywebinar">Join Webinar</a></button></center>
+    <center><a href="https://tinyurl.com/stylishsustainabilitywebinar" class='button'>Join Webinar</a></center>
     <p>Also, don't forget to spread the word and invite others who share your passion for sustainability and fashion. Let's work together towards a better future for the African fashion industry and the planet!</p>
     <p>If you want to learn more about our initiatives, or about the effects of fast fashion, you can have a look at our <a href="https://larryrowbsfoundation.org/blog"><b>blog</b></a>.</p>
     <p>Thank you for registering for the Stylish Sustainability Webinar, and we can't wait to see you there!</p>
