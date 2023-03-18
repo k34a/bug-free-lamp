@@ -1,6 +1,7 @@
 import YoutubeVideo from "@/components/Youtube"
 import { generateSlug } from "@/lib/notion"
 import Link from "next/link"
+import styles from '@/styles/BlogArticle.module.css'
 
 const hosts = [
     "www.larryrowbsfoundation.org",
@@ -58,7 +59,7 @@ const h3Md = ({ node, ...props }) => (
 
 const aMd = (props) => {
     let url = new URL(props.href)
-    const classes = 'text-red-600 dark:text-yellow-200'
+    const classes = `!no-underline text-red-600 dark:text-yellow-200 link ${styles.linkUnderline} ${styles.linkUnderlineBlack}`;
     if (hosts.includes(url.hostname)) {
         return <Link href={url.pathname} className={classes}>{props.children}</Link>
     }

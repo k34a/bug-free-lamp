@@ -17,7 +17,7 @@ export async function checkout({src, mode, lineItems}){
             successUrl: `${window.location.origin}/donatesuccess`,
             cancelUrl: `${window.location.origin}${src}`,
         })
-    } catch(e){
-        console.log(e);
+    } catch(err){
+        console.log(err);
     }
 }

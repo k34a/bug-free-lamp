@@ -90,7 +90,7 @@ export default async function handler(req, res) {
             res.status(200).json({});
         }
         catch (err) {
-            console.log(err.message)
+            console.log(err)
             res.status(400).json(err);
         }
     }
