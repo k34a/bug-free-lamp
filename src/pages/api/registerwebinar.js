@@ -100,7 +100,10 @@ const emailBody = `
 `
 
 function capitalizeFirstLetter(s) {
-  return s.charAt(0).toUpperCase() + s.slice(1);
+  if(s && s.length > 0){
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  return "";
 }
 
 export default async function handler(req, res) {
@@ -143,7 +146,9 @@ export default async function handler(req, res) {
                     }
                 },
             });
-          const emailSubject = `Registration Confirmed for ${capitalizeFirstLetter(req.body.firstname)} ${capitalizeFirstLetter(req.body.lastname)} to the Stylish Sustainabilty Webinar`;
+            const firstname = capitalizeFirstLetter(req.body?.firstname || "");
+            const lastname = capitalizeFirstLetter(req.body?.lastname || "");
+            const emailSubject = `Registration Confirmed for ${firstname} ${lastname} to the Stylish Sustainabilty Webinar`;
             emailNotifier(req.body.email, emailSubject, emailBody);
             res.status(200).json({});
         }
