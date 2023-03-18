@@ -8,6 +8,17 @@ const validateEmail = (email) => {
     );
 };
 
+function titleCase(str) {
+    if(!str || str.length == 0){
+        return ""
+    }
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    return splitStr.join(' ');
+}
+
 export default function RegistrationForm(params) {
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
@@ -96,7 +107,7 @@ export default function RegistrationForm(params) {
                                 type="text"
                                 placeholder="Jane"
                                 required={true}
-                                onChange={(e) => setFname(e.target.value)}
+                                onChange={(e) => setFname(titleCase(e.target.value))}
                                 value={fname}
                             />
                         </div>
@@ -110,7 +121,7 @@ export default function RegistrationForm(params) {
                                 type="text"
                                 placeholder="Doe"
                                 required={true}
-                                onChange={(e) => setLname(e.target.value)}
+                                onChange={(e) => setLname(titleCase(e.target.value))}
                                 value={lname}
                             />
                         </div>
