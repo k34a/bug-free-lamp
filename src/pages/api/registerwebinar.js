@@ -99,7 +99,9 @@ const emailBody = `
 </html>
 `
 
-const emailSubject = "Thanks for registering to the webinar";
+function capitalizeFirstLetter(s) {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -141,6 +143,7 @@ export default async function handler(req, res) {
                     }
                 },
             });
+          const emailSubject = `Registration Confirmed for ${capitalizeFirstLetter(req.body.firstname)} ${capitalizeFirstLetter(req.body.lastname)} to the Stylish Sustainabilty Webinar`;
             emailNotifier(req.body.email, emailSubject, emailBody);
             res.status(200).json({});
         }
