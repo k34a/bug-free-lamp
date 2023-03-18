@@ -113,7 +113,7 @@ export default async function handler(req, res) {
             auth: process.env.NOTION_WRITE_TOKEN,
         });
         try {
-            await notion.pages.create({
+            /*await notion.pages.create({
                 parent: {
                     database_id: process.env.NOTION_WEBINAR,
                 },
@@ -141,11 +141,11 @@ export default async function handler(req, res) {
                     }
                 },
             });
-            emailNotifier(req.body.email, emailSubject, emailBody);
+            emailNotifier(req.body.email, emailSubject, emailBody);*/
             res.status(200).json({});
         }
         catch (err) {
-            console.log(err.message)
+            console.log(err)
             res.status(400).json(err);
         }
     }

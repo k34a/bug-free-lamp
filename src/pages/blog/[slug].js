@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import ReactMarkdown from "react-markdown"
 import styles from '@/styles/BlogArticle.module.css'
-import { addAltTextToImages, getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
+import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
 import Share from '@/components/Blog/Pages/Share';
 import rehypeSlug from 'rehype-slug';
 import componentMapping from '@/components/Blog/Pages/Markdown';
@@ -34,7 +34,7 @@ export async function getStaticProps({params}) {
         };
     }
     catch(err){
-        console.log(err.message);
+        console.log(err);
         return {
             notFound: true,
         }

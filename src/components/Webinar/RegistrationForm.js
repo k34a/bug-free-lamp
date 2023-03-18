@@ -14,6 +14,7 @@ export default function RegistrationForm(params) {
     const [email, setEmail] = useState("");
     const [isInvalidEmail, setIsInvalidEmail] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submittedEmail, setSubmittedEmail] = useState("");
     const [isNotSubmitted, setIsNotSubmitted] = useState(false);
     const [loading, setLoading] = useState(false);
     const recaptchaRef = useRef();
@@ -45,9 +46,10 @@ export default function RegistrationForm(params) {
             });
             const json = await response.json();
             if (!response.ok) {
-                setIsNotSubmitted(true)
+                setIsNotSubmitted(true);
             }
             else {
+                setSubmittedEmail(email);
                 setIsSubmitted(true);
                 setFname("");
                 setLname("");
@@ -150,8 +152,8 @@ export default function RegistrationForm(params) {
                         </div>
                     </div>
                     {isSubmitted && <div className="mt-2 flex flex-wrap text-green-500">
-                        Thank you for registering for the event! 
-                        <small className="text-black">We have sent you an email invite. If you don&apos;t see it in your inbox, please check your spam folder.</small>
+                        <p>You&apos;re registered!</p>
+                        <p className="text-black text-opacity-80 text-sm">We sent you an invite at <b>{submittedEmail}</b>. If you don&apos;t see it in your inbox, please check your spam folder.</p>
                     </div>}
                     {isNotSubmitted && <div className="flex flex-wrap text-red-500">
                         We are not able to register you for the event. Please contact us <a href="mailto:info@larryrowbs.com">here</a>.

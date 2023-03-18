@@ -22,7 +22,7 @@ export function emailNotifier(emailid, emailSubject, emailBody) {
             console.log(err)
         else{
             transporter.close();
-            console.log("Email sent.")
+            console.log(`Email sent to ${emailid}.`)
         }
     })
 }
