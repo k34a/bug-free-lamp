@@ -1,17 +1,28 @@
+import { useState } from "react";
 import Toc from "react-toc";
 import Tags from "./Tags";
 
+const getInitialsFromName = (name) => {
+    const words = name.trim().split(/\s+/);
+    const firstInitial = words.length > 0 ? words[0].charAt(0).toUpperCase() : '';
+    const lastInitial = words.length > 1 ? words[words.length - 1].charAt(0).toUpperCase() : '';
+    const initials = firstInitial + lastInitial;
+    return initials;
+}
+
 const MetaData = ({post}) => {
-    const matchers = { "[?!:.*_/]": "" }
+    const matchers = { "[?!:.*_/]": "" };
+    const [isTocOpen, setIsTocOpen] = useState(true);
+
     return (
         <>
         <h1 className='text-4xl dark:text-white'>{post.metadata.title}</h1>
-            <div className='pb-5'>
-                <span className='select-none bg-green-200 text-green-700 py-2 px-3 mr-2 rounded-full font-bold'>
-                    {post.metadata.author[0]}
-                </span>
+            <div className='pb-5 flex items-center'>
+                <div className="select-none relative inline-flex mr-3 items-center justify-center w-10 h-10 overflow-hidden bg-purple-200 rounded-full dark:bg-purple-600 ring-2 ring-purple-300 dark:ring-purple-500">
+                    <span className="font-bold text-purple-600 dark:text-purple-200">{getInitialsFromName(post.metadata?.author || "")}</span>
+                </div>
                 <a href={post.metadata.authorHref} target="_blank" rel="noopener noreferrer">
-                        {post.metadata.author}
+                    {post.metadata.author}
                 </a>
             </div>
             <div className='pb-5 align-middle'>
@@ -33,14 +44,18 @@ const MetaData = ({post}) => {
                 </span>
             </div>
             <Tags tags={post.metadata.tags} />
-            <div className='border-solid border-4 px-6 my-6 dark:text-slate-300 dark:marker:text-slate-300 prose-a:no-underline'>
-                <h2 className='my-6'>
+            <div className='border-solid rounded-lg border-2 border-gray-600 dark:border-gray-400 px-6 my-6 dark:text-slate-300 dark:marker:text-slate-300 prose-a:no-underline'>
+                <h2 
+                    className='my-6 cursor-pointer' 
+                    onClick={(e) => {setIsTocOpen(!isTocOpen)}}
+                    title={isTocOpen? "Hide Table of Contents": "View Table of Contents"}
+                >
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" className="inline mr-4 bi bi-justify-left" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
                     </svg>
                     Table of Contents
                 </h2>
-                <Toc markdownText={post.markdown} className="dark:text-slate-300" customMatchers={matchers}/>
+                <Toc markdownText={post.markdown} className={`dark:text-slate-300 ${isTocOpen? "block": "hidden"}`} customMatchers={matchers}/>
             </div>
         </>
     );

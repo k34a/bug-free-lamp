@@ -1,7 +1,6 @@
 import YoutubeVideo from "@/components/Youtube"
 import { generateSlug } from "@/lib/notion"
 import Link from "next/link"
-import styles from '@/styles/BlogArticle.module.css'
 
 const hosts = [
     "www.larryrowbsfoundation.org",
@@ -23,11 +22,11 @@ const para = (paragraph) => {
         const metastring = image.properties.alt
         const alt = metastring?.replace(/ *\{[^)]*\} */g, "")
         return (
-            <div className="postImgWrapper">
+            <div>
                 <img
                     src={image.properties.src}
                     width="100%"
-                    className="postImg"
+                    className="rounded md:rounded-lg"
                     alt={alt}
                 />
                 <figcaption className="caption text-center" aria-label={alt}>{alt}</figcaption>
@@ -59,7 +58,7 @@ const h3Md = ({ node, ...props }) => (
 
 const aMd = (props) => {
     let url = new URL(props.href)
-    const classes = `!no-underline text-red-600 dark:text-yellow-200 link ${styles.linkUnderline} ${styles.linkUnderlineBlack}`;
+    const classes = `text-red-600 dark:text-yellow-200`;
     if (hosts.includes(url.hostname)) {
         return <Link href={url.pathname} className={classes}>{props.children}</Link>
     }
