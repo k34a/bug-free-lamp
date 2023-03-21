@@ -23,7 +23,7 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps({params}) {
-    try{
+    try {
         const post = await getSingleBlogPostBySlug(params.slug)
         return {
             props: {
@@ -116,7 +116,7 @@ export default function BlogPost({post, slug}) {
                     <Share slug={slug} title={post.metadata.title}/>
                 </div>
                 <ReadMore readMoreArticles={post.readMoreArticles} className='prose-normal'/>
-                {isCopied && <div className='bg-black text-white p-4 fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
+                {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
             </main>
         </div>
     )

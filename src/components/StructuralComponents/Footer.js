@@ -89,31 +89,24 @@ export default function Footer() {
                     </form>
                 </div>
             </div>
-            <div>
-                <div className='flex v-screen justify-center items-center'>
-                    <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer">
-                        <div className="border-green-300 border-4 text-green-300 font-medium inline-flex items-center px-2.5 py-0.5 rounded-lg w-full">
-                            <svg aria-hidden="true" className="w-10 h-10 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                            This website emits 0.38g of CO2
-                        </div>
-                    </a>
-                </div>
+            <div className="flex justify-center">
+                <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-200" target="_blank" rel="noopener noreferrer">
+                    <i className="fa fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/thelarryrowbsfoundation/" className="mr-6 text-slate-200" target="_blank" rel="noopener noreferrer">
+                    <i className="fa fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-200" target="_blank" rel="noopener noreferrer">
+                    <i className="fa fa-linkedin"></i>
+                </a>
             </div>
-            <div className="flex justify-center items-center lg:justify-between px-6 text-white">
-                <div className="mr-12 hidden lg:block">
-                    <span>Get connected with us on social networks:</span>
-                </div>
-                <div className="flex justify-center">
-                    <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-200" target="_blank" rel="noopener noreferrer">
-                        <i className="fa fa-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/thelarryrowbsfoundation/" className="mr-6 text-slate-200" target="_blank" rel="noopener noreferrer">
-                        <i className="fa fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/larryrowbsfoundation/" className="mr-6 text-slate-200" target="_blank" rel="noopener noreferrer">
-                        <i className="fa fa-linkedin"></i>
-                    </a>
-                </div>
+            <div className='flex v-screen justify-center items-center'>
+                <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer">
+                    <div className="border-green-300 border-4 text-green-300 font-medium inline-flex items-center px-2.5 py-0.5 rounded-lg w-full">
+                        <svg aria-hidden="true" className="w-10 h-10 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                        This website emits 0.38g of CO2
+                    </div>
+                </a>
             </div>
             <div className="text-center px-6 text-sm">
                 <span>&copy; Copyright 2019-Present </span>

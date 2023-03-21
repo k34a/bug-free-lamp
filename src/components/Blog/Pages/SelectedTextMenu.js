@@ -1,5 +1,6 @@
 function handleCopyClick(text, setIsCopied) {
     navigator.clipboard.writeText(text || "")
+    document.getSelection().removeAllRanges();
     setIsCopied(true)
     setTimeout(() => {
         setIsCopied(false);
@@ -10,6 +11,7 @@ function handleTweetClick(text) {
     const tweetText = encodeURIComponent(text);
     const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
     window.open(tweetUrl, "_blank");
+    document.getSelection().removeAllRanges();
 } 
 
 const SelectedTextMenu = (props) => {
