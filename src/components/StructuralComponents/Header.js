@@ -10,7 +10,7 @@ import { BsLaptopFill } from 'react-icons/bs';
 
 const MenuItems = {
     main: [
-        ["Home", <FaHome key="home" size={24} />, '/home'],
+        ["Home", <FaHome key="home" size={24} />, '/'],
         ["Read Articles", <IoReader key="blog" size={24} />, '/blog'],
         ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
         ["Donate", <AiFillHeart key="blog" size={24} />, '/donate'],
@@ -25,7 +25,7 @@ const MenuItems = {
 
 const SmallMenuItems = {
     main: [
-        ["Home", <FaHome key="home" size={24} />, '/home'],
+        ["Home", <FaHome key="home" size={24} />, '/'],
         ["Read Articles", <IoReader key="blog" size={24} />, '/blog'],
         ["Donate", <AiFillHeart key="blog" size={24} />, '/donate'],
     ],
