@@ -23,7 +23,7 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps({params}) {
-    try{
+    try {
         const post = await getSingleBlogPostBySlug(params.slug)
         return {
             props: {
