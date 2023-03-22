@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { BsChevronDown } from 'react-icons/bs';
 import styles from '@/styles/Commons.module.css'
 
 export default function FAQItem(props){
     return (
-        <div className="p-2 rounded border-2 border-gray-700 my-6">
+        <div className={`p-2 rounded border-2 border-gray-700 my-6 ${props.isopen ? "bg-gray-200": ""}`}>
             <h3 
                 className="font-semibold cursor-pointer" 
                 onClick={(e) => { 
