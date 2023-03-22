@@ -4,7 +4,7 @@ import Tags from "./Tags";
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { BiTime } from 'react-icons/bi';
 import { BsChevronDown } from 'react-icons/bs';
-import styles from '@/styles/BlogArticle.module.css'
+import styles from '@/styles/Commons.module.css'
 
 const getInitialsFromName = (name) => {
     const words = name.trim().split(/\s+/);
