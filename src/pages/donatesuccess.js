@@ -6,7 +6,7 @@ export default function Donate() {
         <>
             <Head>
                 <title>Thank you - Larry Rowbs Foundation</title>
-                <meta name="description" content="Get in touch. Have a question? Send us a note using the form below and someone from the Larry Rowbs Foundation team will be in touch soon." />
+                <meta name="description" content="Thank you for support Larry Rowbs Foundation in cleaning Africa and making the fashion industry more sustainable." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

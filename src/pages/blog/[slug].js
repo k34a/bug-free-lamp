@@ -87,6 +87,8 @@ export default function BlogPost({post, slug}) {
             <Head>
                 <title>{post.metadata.title}</title>
                 <meta name="description" content={post.metadata.description} />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <DarkMode />
             <main

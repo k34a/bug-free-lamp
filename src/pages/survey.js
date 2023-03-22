@@ -64,6 +64,8 @@ export default function Survey() {
             <Head>
                 <title>Survey - Larry Rowbs Foundation</title>
                 <meta name="description" content="Tell us what you think about our mission. Larry Rowbs Foundation is always open to suggestions, ideas and discussion." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <div>
                 <SurveyForm 

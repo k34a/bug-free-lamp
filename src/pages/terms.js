@@ -8,6 +8,7 @@ const terms = (props) => {
                 <title>Terms and Conditions - Larry Rowbs Foundation</title>
                 <meta name="description" content="Terms and Conditions for the use of the website. Larry Rowbs Foundation is a registered not-for-profit organization working on mitigating the harms of the fast-fashion industry." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="w-11/12 sm:w-3/5 mx-auto break-words my-12 leading-relaxed space-y-3">
                 <h2 className="text-3xl text-center"><strong>Terms and Conditions</strong></h2>
