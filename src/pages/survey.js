@@ -74,7 +74,7 @@ export default function Survey() {
                     description={<>Thanks for attending the webinar! <br />Please share your opinion below. It won&apos;t take more than 2-3 minutes to complete... promise &#128522;</>}
                     formQuestions={questions}
                     notionDB="NOTION_SURVEY"
-                    bgImage="/v880-kul-10.jpg"
+                    bgImage="https://i.ibb.co/51CmDNC/v880-kul-10.jpg"
                 />
             </div>
         </>

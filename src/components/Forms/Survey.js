@@ -76,7 +76,12 @@ const SurveyForm = (props) => {
 
     return (
         <>
-            <div className={`w-full shadow bg-[url('${props.bgImage || "/v880-kul-10.jpg"}')] h-48 sm:h-56 bg-cover bg-center`}></div>
+            <div
+                style={{
+                    backgroundImage: `url('${props.bgImage}')`
+                }} 
+                className={`w-full shadow h-48 sm:h-56 bg-cover bg-center`}
+            ></div>
             <div className="w-11/12 sm:w-9/12 lg:w-7/12 my-12 m-auto">
                 <h1 className="text-2xl mb-6 font-black">{props.heading}</h1>
                 <p className="text-lg mb-6">{props.description || ""}</p>
