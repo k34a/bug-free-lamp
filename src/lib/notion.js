@@ -138,7 +138,7 @@ export const getMetadataForSinglePost = async (slug) => {
 }
 
 export const getReadMoreArticles = async (publishedDateString) => {
-    try{
+    try {
         const publishedDate = new Date(publishedDateString)
         const beforeResponse = await notion.databases.query({
             database_id: process.env.NOTION_DATABASE_ID,

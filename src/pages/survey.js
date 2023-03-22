@@ -69,11 +69,12 @@ export default function Survey() {
             </Head>
             <div>
                 <SurveyForm 
-                    heading={"Survey"}
+                    heading={"Webinar Survey"}
                     doneButtonText="Done!"
                     description={<>Thanks for attending the webinar! <br />Please share your opinion below. It won&apos;t take more than 2-3 minutes to complete... promise &#128522;</>}
                     formQuestions={questions}
                     notionDB="NOTION_SURVEY"
+                    bgImage="/v880-kul-10.jpg"
                 />
             </div>
         </>
