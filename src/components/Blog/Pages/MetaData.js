@@ -48,7 +48,7 @@ const MetaData = ({post}) => {
                     onClick={(e) => {setIsTocOpen(!isTocOpen)}}
                     title={isTocOpen? "Hide Table of Contents": "View Table of Contents"}
                 >
-                    <BsChevronDown size={28} className={`inline mr-4 ${styles.rotateIcon} ${isTocOpen? styles.down: ""}`}/>
+                    <BsChevronDown size={28} className={`inline mr-4 ${styles.rotateIcon} ${isTocOpen ? "" : styles.down}`}/>
                     Table of Contents
                 </h2>
                 <Toc markdownText={post.markdown} className={`dark:text-slate-300 ${isTocOpen? "block": "hidden"}`} customMatchers={matchers}/>
