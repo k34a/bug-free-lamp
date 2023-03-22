@@ -138,6 +138,9 @@ export const getMetadataForSinglePost = async (slug) => {
 }
 
 export const getReadMoreArticles = async (publishedDateString) => {
+    if(!publishedDateString){
+        return [];
+    }
     try {
         const publishedDate = new Date(publishedDateString)
         const beforeResponse = await notion.databases.query({
