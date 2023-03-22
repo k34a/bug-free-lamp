@@ -24,17 +24,17 @@ const questions = [
         name: "Question3",
     },
     {
-        question: "What kind of support have you given to organizations that align with your values? (e.g. financial, skills, services, promoting, etc.)",
+        question: "What kind of support have you given to organizations that align with your values?",
         optional: false,
         type: "bigtext",
-        placeholder: "",
+        placeholder: "(e.g. financial, skills, services, promoting, etc.)",
         name: "Question4",
     },
     {
-        question: "What are some takeaways you've seen/heard/felt from an organization that inspired/empowered/motivated you to offer your support?",
+        question: "What aspects of an organization inspire, empower, or motivate you to offer support? What are some key factors that encourage you to engage with an organization and contribute to their mission?",
         optional: false,
         type: "bigtext",
-        placeholder: "",
+        placeholder: "In short, what motivates you to support an organization?",
         name: "Question5",
     },
     {
