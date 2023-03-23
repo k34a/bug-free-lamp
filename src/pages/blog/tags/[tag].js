@@ -14,6 +14,11 @@ export async function getStaticPaths(context) {
 export async function getStaticProps({ params }) {
     try {
         const posts = await getTopPublished(30, params.tag)
+        if(!posts) {
+            return {
+                notFound: true,
+            }
+        }
         return {
             props: {
                 posts,
