@@ -98,6 +98,7 @@ const getPageMetaData = (post) => {
         slug: post.properties.Slug.rich_text[0].plain_text,
         author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
         authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
+        imageThumbnail: post?.properties?.ImageThumbnail?.url || "",
     };
 };
 

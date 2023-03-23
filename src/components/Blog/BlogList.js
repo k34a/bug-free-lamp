@@ -44,11 +44,13 @@ const BlogList = (props) => {
                         const readColor = readMoreColors[(index)%(readMoreColors.length)];
                         return (
                             <BlogListItem 
+                                imageThumbnail={ele.imageThumbnail}
                                 title={ele.title}
                                 description={ele.description}
                                 slug={ele.slug}
                                 publishDate={ele.date}
                                 key={index}
+                                itemNumber={index}
                                 readcolor={readColor}
                             />
                         )
