@@ -5,6 +5,7 @@ import Footer from '@/components/StructuralComponents/Footer'
 import NextNProgress from 'nextjs-progressbar';
 import Script from 'next/script';
 import { useState } from 'react';
+import CookieConsent from '@/components/StructuralComponents/CookieConsent';
 
 const poppins = Poppins({
   weight: ['400'],
@@ -38,6 +39,7 @@ export default function App({ Component, pageProps }) {
           className='absolute right-0 top-0 w-full pt-16 sm:pt-0 sm:pl-16'
           onClick={(e) => setIsMenuOpen(false)}
         >
+          <CookieConsent />
           <Component {...pageProps} />
           <Footer />
         </div>

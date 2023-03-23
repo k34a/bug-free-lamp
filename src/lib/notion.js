@@ -133,7 +133,6 @@ export const getMetadataForSinglePost = async (slug) => {
         },
     });
     if(!response || !response.results || response.results.length === 0){
-        console.log(slug);
         return {};
     }
     return getPageMetaData(response.results[0]);
@@ -143,16 +142,45 @@ export const getReadMoreArticles = async (publishedDateString) => {
     if(!publishedDateString){
         return [];
     }
-    try {
-        const publishedDate = new Date(publishedDateString)
-        const beforeResponse = await notion.databases.query({
+    const publishedDate = new Date(publishedDateString)
+    const beforeResponse = await notion.databases.query({
+        database_id: process.env.NOTION_DATABASE_ID,
+        filter: {
+            and: [
+                {
+                    property: "Date",
+                    date: {
+                        before: publishedDate.toISOString(),
+                    },
+                },
+                {
+                    property: "Published",
+                    checkbox: {
+                        equals: true,
+                    },
+                },
+            ],
+        },
+        sorts: [
+            {
+                property: "Date",
+                direction: "descending",
+            },
+        ],
+        page_size: 3,
+    });
+    const beforeArticles = beforeResponse?.results?.splice(0, 3) || []; // assuming there is only one matching article
+    let readMoreArticles = [...beforeArticles]
+    
+    if(readMoreArticles.length < 3){
+        const afterResponse = await notion.databases.query({
             database_id: process.env.NOTION_DATABASE_ID,
             filter: {
                 and: [
                     {
                         property: "Date",
                         date: {
-                            before: publishedDate.toISOString(),
+                            after: publishedDate.toISOString(),
                         },
                     },
                     {
@@ -166,51 +194,16 @@ export const getReadMoreArticles = async (publishedDateString) => {
             sorts: [
                 {
                     property: "Date",
-                    direction: "descending",
+                    direction: "ascending",
                 },
             ],
             page_size: 3,
         });
-        const beforeArticles = beforeResponse?.results?.splice(0, 3) || []; // assuming there is only one matching article
-        let readMoreArticles = [...beforeArticles]
-        
-        if(readMoreArticles.length < 3){
-            const afterResponse = await notion.databases.query({
-                database_id: process.env.NOTION_DATABASE_ID,
-                filter: {
-                    and: [
-                        {
-                            property: "Date",
-                            date: {
-                                after: publishedDate.toISOString(),
-                            },
-                        },
-                        {
-                            property: "Published",
-                            checkbox: {
-                                equals: true,
-                            },
-                        },
-                    ],
-                },
-                sorts: [
-                    {
-                        property: "Date",
-                        direction: "ascending",
-                    },
-                ],
-                page_size: 3,
-            });
-            const howManyArticlesLess = 3 - readMoreArticles.length;
-            const afterArticle = afterResponse?.results?.splice(0, howManyArticlesLess) || [];
-            readMoreArticles = [...afterArticle, ...readMoreArticles];
-        }
-        return readMoreArticles.map(getPageMetaData);
-    } catch (err) {
-        console.log(err);
-        console.log(publishedDateString);
-        console.log(typeof publishedDateString);
+        const howManyArticlesLess = 3 - readMoreArticles.length;
+        const afterArticle = afterResponse?.results?.splice(0, howManyArticlesLess) || [];
+        readMoreArticles = [...afterArticle, ...readMoreArticles];
     }
+    return readMoreArticles.map(getPageMetaData);
 }
 
 const donationText = `## Your Support is all we need.
@@ -245,6 +238,7 @@ export const getSingleBlogPostBySlug = async (slug) => {
     } catch (err) {
         console.log(slug)
         console.log(err)
+        return null
     }
 }
 
