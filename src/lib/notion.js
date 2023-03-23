@@ -132,6 +132,7 @@ export const getMetadataForSinglePost = async (slug) => {
         },
     });
     if(!response || !response.results || response.results.length === 0){
+        console.log(slug);
         return {};
     }
     return getPageMetaData(response.results[0]);
