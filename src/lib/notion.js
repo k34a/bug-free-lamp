@@ -132,6 +132,7 @@ export const getMetadataForSinglePost = async (slug) => {
         },
     });
     if(!response || !response.results || response.results.length === 0){
+        console.log(slug);
         return {};
     }
     return getPageMetaData(response.results[0]);
@@ -225,20 +226,25 @@ But arriving at our target needs more than simple planning. It needs support fro
 4. Purchase recycled clothes, and recycle old clothes as much as possible!`
 
 export const getSingleBlogPostBySlug = async (slug) => {
-    const metadata = await getMetadataForSinglePost(slug);
-    const readMoreArticles = await getReadMoreArticles(metadata.publishedDate);
-    const page_id = metadata.id.split('-').join('');
-    const mdblocks = await n2m.pageToMarkdown(page_id);
-    let mdString = n2m.toMarkdownString(mdblocks);
-    const {minutes} = calculateReadingTime(mdString);
-    mdString = addAltTextToImages(mdString, metadata?.title || "Title") + donationText;
-    const ret = {
-        metadata,
-        minutes,
-        readMoreArticles,
-        markdown: mdString,
-    };
-    return ret;
+    try {
+        const metadata = await getMetadataForSinglePost(slug);
+        const readMoreArticles = await getReadMoreArticles(metadata.publishedDate);
+        const page_id = metadata.id.split('-').join('');
+        const mdblocks = await n2m.pageToMarkdown(page_id);
+        let mdString = n2m.toMarkdownString(mdblocks);
+        const {minutes} = calculateReadingTime(mdString);
+        mdString = addAltTextToImages(mdString, metadata?.title || "Title") + donationText;
+        const ret = {
+            metadata,
+            minutes,
+            readMoreArticles,
+            markdown: mdString,
+        };
+        return ret;
+    } catch (err) {
+        console.log(slug)
+        console.log(err)
+    }
 }
 
 export const addAltTextToImages = (markdown, altText) => {
