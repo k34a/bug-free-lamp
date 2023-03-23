@@ -12,10 +12,11 @@ import DarkMode from '@/components/Blog/Pages/DarkMode';
 import MetaData from '@/components/Blog/Pages/MetaData';
 import ReadMore from '@/components/Blog/Pages/ReadMore';
 
+let paths = [];
+
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
-    const paths = posts.map(({ slug }) => ({ params: { slug } }));
-
+    paths = posts.map(({ slug }) => ({ params: { slug } }));
     return {
         paths,
         fallback: "blocking",
@@ -34,6 +35,8 @@ export async function getStaticProps({params}) {
         };
     }
     catch(err){
+        console.log(params)
+        console.log(paths)
         console.log(err);
         return {
             notFound: true,
