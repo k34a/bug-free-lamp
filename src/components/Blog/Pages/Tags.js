@@ -17,15 +17,18 @@ export default function Tags(props) {
         return ( 
             <div
                 key={index}
-                className={`text-xs space-x-2 inline-flex items-center font-bold leading-sm uppercase px-3 py-1 ${color[0]} ${color[1]} rounded-full`}
+                className={`inline-flex items-center py-2 px-3 rounded-full text-xs font-bold leading-sm uppercase ${color[0]} ${color[1]} my-1`}
             >
-                <Link href={link} className={`${color[1]} no-underline`}>{ele}</Link>
+                <Link href={link} className={`inline-flex items-center ${color[1]} !no-underline`}>
+                    <span className="mr-2 px-2 py-1 text-white bg-black rounded-full">#</span>
+                    {ele}
+                </Link>
             </div>
         )
     })
     return (
         <div className="space-x-2">
-            Tags: {tags}
+            Filter By: {tags}
         </div>
     );
 };
