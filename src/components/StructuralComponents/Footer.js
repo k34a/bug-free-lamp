@@ -47,7 +47,7 @@ export default function Footer() {
     return (
         <section className="bg-black py-8 space-y-8 text-white break-words">
             <div className="px-4 mx-auto max-w-screen-xl">
-                <div className="mx-auto my-12 max-w-screen-md sm:text-center">
+                <div className="mx-auto my-12 max-w-screen-md text-center">
                     <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-white sm:text-4xl">
                         JOIN THE MOVEMENT!
                     </h2>
