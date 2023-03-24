@@ -4,7 +4,7 @@ export default function TextileWasteCarousel(props){
             <div
                 className="p-12 text-left relative overflow-hidden bg-no-repeat bg-cover bg-left"
                 style={{
-                    backgroundImage: "url('/fast-fashion-clothes-hanging.jpg')",
+                    backgroundImage: "url('/fast-fashion-clothes-hanging.webp')",
                     height: "600px"
                 }}>
                 <div
