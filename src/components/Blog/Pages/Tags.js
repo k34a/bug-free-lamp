@@ -9,9 +9,9 @@ const tagColors = [
     ["bg-slate-200", "text-slate-700"],
 ]
 
-export default function Tags(props) {
+export default function Tags({ publishedTags}) {
     const n = tagColors.length;
-    const tags = props.tags.map((ele, index) => {
+    const tags = publishedTags.map((ele, index) => {
         let color = tagColors[index % n];
         let link = `/blog/tags/${ele}`;
         return ( 
@@ -26,9 +26,10 @@ export default function Tags(props) {
             </div>
         )
     })
+
     return (
         <div className="space-x-2">
             Filter By: {tags}
         </div>
-    );
+    )
 };

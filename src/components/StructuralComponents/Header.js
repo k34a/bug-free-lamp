@@ -6,7 +6,6 @@ import { RiTeamFill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { MdQuiz } from 'react-icons/md';
-import { BsLaptopFill } from 'react-icons/bs';
 
 const MenuItems = {
     main: [
@@ -14,9 +13,9 @@ const MenuItems = {
         ["Read Articles", <IoReader key="blog" size={24} />, '/blog'],
         ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
         ["Donate", <AiFillHeart key="blog" size={24} />, '/donate'],
+        ["Contact", <IoCall key="blog" size={24} />, '/contact'],
     ],
     extra: [
-        ["Contact", <IoCall key="blog" size={24} />, '/contact'],
         ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
         ["Sustainability Quiz", <MdQuiz key="blog" size={24} />, '/quiztime'],
     ]
