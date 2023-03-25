@@ -1,61 +1,38 @@
 import styles from "@/styles/WhatsHappening.module.css"
 import Link from "next/link"
+import { useEffect, useState } from "react";
+import 'react-loading-skeleton/dist/skeleton.css'
+
+const skeleton = (
+    <div className="w-full h-full bg-gray-300 rounded-lg animate-pulse">
+        <div className="max-w-full m-auto text-white h-48 sm:h-56 md:h-72 lg:h-96 text-3xl font-bold flex items-center justify-center" style={{ width: '1000px' }}>
+            <svg className="w-12 h-12 text-gray-200 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" /></svg>
+            <span className="sr-only">Loading...</span>
+        </div>
+    </div>
+);
+
 
 export default function WhatsHappening() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(()=> {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+    })
+
     return (
         <div className="py-12">
             <div className='flex items-center justify-center'>
-                <div className="relative">
-                    <div className={`${styles.sceneVisual} lg:drop-shadow-2xl border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}>
-                        <img
-                            id="landfill"
-                            className={styles.landfill}
-                            src="/landfill-animation/landfill-bg.svg"
-                            alt="landfill background"
-                        />
-                        <img
-                            id="landfill-clouds"
-                            className={styles.landfillClouds}
-                            src="/landfill-animation/landfill-clouds.svg"
-                            alt="landfill clouds"
-                        />
-                        <img
-                            id="landfill-birds"
-                            className={styles.landfillBirds}
-                            src="/landfill-animation/landfill-birds.svg"
-                            alt="landfill birds"
-                        />
-                        <img
-                            id="landfill-truck-garbage"
-                            className={styles.landfillTruckGarbage}
-                            src="/landfill-animation/landfill-truck-garbage.svg"
-                            alt="landfill truck garbage"
-                            />
-                        <img
-                            id="landfill-truck-static"
-                            className={styles.landfillTruckStatic}
-                            src="/landfill-animation/landfill-truck-static.svg"
-                            alt="landfill truck static"
-                        />
-                        <img
-                            id="landfill-truck-body"
-                            className={styles.landfillTruckBody}
-                            src="/landfill-animation/landfill-truck-body.svg"
-                            alt="landfill truck body"
-                            />
-                        <img
-                            id="landfill-truck-incliner"
-                            className={styles.landfillTruckIncliner}
-                            src="/landfill-animation/landfill-truck-incliner.svg"
-                            alt="landfill truck incliner"
-                            />
-                        <img
-                            id="landfill-truck-container"
-                            className={styles.landfillTruckContainer}
-                            src="/landfill-animation/landfill-truck-container.svg"
-                            alt="landfill truck container"
-                        />
-                    </div>
+                <div
+                    className={`${styles.sceneVisual} lg:w-3/5 m-auto lg:drop-shadow-2xl border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}
+                >
+                    {isLoading ? skeleton : (
+                        <video autoPlay muted loop className={styles.video}>
+                            <source src="/LandfillAnimation.mp4" type="video/mp4" />
+                        </video>
+                    )}
                 </div>
             </div>
             <div className="w-11/12 sm:w-4/5 lg:w-3/5 m-auto py-12 leading-relaxed">
