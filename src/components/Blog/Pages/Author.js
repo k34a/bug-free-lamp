@@ -9,7 +9,7 @@ const getInitialsFromName = (name) => {
     return initials;
 }
 
-const Author = ({ authorName, authorHref, isLoading }) => {
+const Author = ({ authorName, authorHref }) => {
     const authorComponent = (
         <div className='pb-5 flex items-center'>
             <div className="select-none relative inline-flex mr-3 items-center justify-center w-10 h-10 overflow-hidden bg-purple-200 rounded-full dark:bg-purple-600 ring-2 ring-purple-300 dark:ring-purple-500">
@@ -21,17 +21,7 @@ const Author = ({ authorName, authorHref, isLoading }) => {
         </div>
     );
 
-    const skeleton = (
-        <div className='pb-5 align-middle'>
-            <span className='block md:inline'>
-                <Skeleton width={"50%"} />
-            </span>
-        </div>
-    );
-
-    return (
-        isLoading ? skeleton: authorComponent
-    );
+    return authorComponent;
 };
 
 export default Author;

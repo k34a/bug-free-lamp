@@ -1,12 +1,24 @@
 import styles from "@/styles/WhatsHappening.module.css"
 import Link from "next/link"
 import { useEffect, useState } from "react";
+import { BsFillCameraReelsFill } from "react-icons/bs";
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const skeleton = (
     <div className="w-full h-full bg-gray-300 rounded-lg animate-pulse">
-        <div className="max-w-full m-auto text-white h-48 sm:h-56 md:h-72 lg:h-96 text-3xl font-bold flex items-center justify-center" style={{ width: '1000px' }}>
-            <svg className="w-12 h-12 text-gray-200 dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" viewBox="0 0 384 512"><path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" /></svg>
+        <div
+            width={1472}
+            height={916} 
+            className="m-auto text-black text-3xl font-bold flex items-center justify-center"
+            style={{
+                maxWidth: "100%",
+                aspectRatio: "1472/916"
+            }}
+        >
+            <BsFillCameraReelsFill size={48}/>
+            {/* <svg className="w-12 h-12 text-gray-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" viewBox="0 0 384 512">
+                <path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
+            </svg> */}
             <span className="sr-only">Loading...</span>
         </div>
     </div>
@@ -26,10 +38,17 @@ export default function WhatsHappening() {
         <div className="py-12">
             <div className='flex items-center justify-center'>
                 <div
-                    className={`${styles.sceneVisual} lg:w-3/5 m-auto lg:drop-shadow-2xl border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}
+                    className={`${styles.sceneVisual} w-full lg:w-3/5 m-auto lg:drop-shadow-2xl border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}
                 >
                     {isLoading ? skeleton : (
-                        <video autoPlay muted loop className={styles.video}>
+                        <video 
+                            width={1472}
+                            height={916}
+                            autoPlay
+                            muted
+                            loop
+                            className={styles.video}
+                        >
                             <source src="/LandfillAnimation.mp4" type="video/mp4" />
                         </video>
                     )}
