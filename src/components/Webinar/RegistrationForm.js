@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ThreeDots } from "react-loader-spinner";
@@ -70,6 +71,97 @@ export default function RegistrationForm(params) {
         setLoading(false);
     }
 
+    const formWebinar = (
+        <form onSubmit={handleSubmit}>
+            <h2 className="my-6 text-slate-700 font-bold text-2xl">Register Now!</h2>
+            <div className="flex flex-wrap -mx-3 mb-6">
+                <div className="w-full md:w-1/2 px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+                        First Name *
+                    </label>
+                    <input
+                        className="appearance-none block w-full bg-white text-gray-700 border-2 border-purple-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
+                        id="grid-first-name"
+                        type="text"
+                        placeholder="Jane"
+                        required={true}
+                        onChange={(e) => setFname(titleCase(e.target.value))}
+                        value={fname}
+                    />
+                </div>
+                <div className="w-full md:w-1/2 px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+                        Last Name *
+                    </label>
+                    <input
+                        className="appearance-none block w-full bg-white text-gray-700 border-2 border-purple-400 rounded py-3 px-4 leading-tight focus:outline-none"
+                        id="grid-last-name"
+                        type="text"
+                        placeholder="Doe"
+                        required={true}
+                        onChange={(e) => setLname(titleCase(e.target.value))}
+                        value={lname}
+                    />
+                </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+                <div className="w-full px-3">
+                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="email">
+                        E-mail *
+                    </label>
+                    <input
+                        className="appearance-none block w-full bg-white text-gray-700 border-2 border-purple-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
+                        id="email"
+                        required={true}
+                        type="text"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        placeholder="name@domain.com"
+                    />
+                    {isInvalidEmail && <p className="text-red-500 text-xs italic">Please enter a valid email.</p>}
+                </div>
+            </div>
+            <ReCAPTCHA
+                size="invisible"
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
+                ref={recaptchaRef}
+            />
+            <div className="flex flex-wrap -mx-3">
+                <div className="w-full px-3 md:flex md:items-center">
+                    <div className="md:w-1/3">
+                        <button
+                            className="shadow bg-white border-2 border-purple-400 text-gray-700 hover:bg-purple-500 hover:text-white focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
+                            type="submit"
+                        >
+                            Register
+                        </button>
+                    </div>
+                    {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
+                    <div className="md:w-2/3"></div>
+                </div>
+            </div>
+            {isSubmitted && <div className="mt-2 flex flex-wrap text-green-500">
+                <p>You&apos;re registered!</p>
+                <p className="text-black text-opacity-80 text-sm">We sent you an invite at <b>{submittedEmail}</b>. If you don&apos;t see it in your inbox, please check your spam folder.</p>
+            </div>}
+            {isNotSubmitted && <div className="flex flex-wrap text-red-500">
+                We are not able to register you for the event. Please contact us <a href="mailto:info@larryrowbs.com">here</a>.
+            </div>}
+        </form>
+    );
+
+    const webinarEnded = (
+        <div>
+            <p className="text-lg font-bold">This form is no longer accepting responses.</p>
+            <br />
+            <p className="text-lg font-bold"><Link href="/survey" className="text-purple-700">Kindly share your feedback with us after attending the webinar. We would appreciate hearing your thoughts. Thank you!</Link></p>
+        </div>
+    );
+
+    const nowDateTime = new Date();
+    const targetDateTime = new Date('25-03-2023 06:00:00 AM IST');
+    const isBefore = nowDateTime.getTime() < targetDateTime.getTime();
+
     return (
         <div className="w-11/12 md:w-1/2 mx-auto py-12 bg-transparent">
             <div className="border-purple-500 py-6 px-5 border-4 bg-white">
@@ -94,82 +186,8 @@ export default function RegistrationForm(params) {
                         &nbsp;&nbsp;09:00 AM EST
                     </div>
                 </div>
-                <form onSubmit={handleSubmit}>
-                    <h2 className="my-6 text-slate-700 font-bold text-2xl">Register Now!</h2>
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full md:w-1/2 px-3">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
-                                First Name *
-                            </label>
-                            <input
-                                className="appearance-none block w-full bg-white text-gray-700 border-2 border-purple-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
-                                id="grid-first-name"
-                                type="text"
-                                placeholder="Jane"
-                                required={true}
-                                onChange={(e) => setFname(titleCase(e.target.value))}
-                                value={fname}
-                            />
-                        </div>
-                        <div className="w-full md:w-1/2 px-3">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
-                                Last Name *
-                            </label>
-                            <input
-                                className="appearance-none block w-full bg-white text-gray-700 border-2 border-purple-400 rounded py-3 px-4 leading-tight focus:outline-none"
-                                id="grid-last-name"
-                                type="text"
-                                placeholder="Doe"
-                                required={true}
-                                onChange={(e) => setLname(titleCase(e.target.value))}
-                                value={lname}
-                            />
-                        </div>
-                    </div>
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="email">
-                                E-mail *
-                            </label>
-                            <input
-                                className="appearance-none block w-full bg-white text-gray-700 border-2 border-purple-400 rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
-                                id="email"
-                                required={true}
-                                type="text"
-                                onChange={(e) => setEmail(e.target.value)}
-                                value={email}
-                                placeholder="name@domain.com"
-                            />
-                            {isInvalidEmail && <p className="text-red-500 text-xs italic">Please enter a valid email.</p>}
-                        </div>
-                    </div>
-                    <ReCAPTCHA
-                        size="invisible"
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
-                        ref={recaptchaRef}
-                    />
-                    <div className="flex flex-wrap -mx-3">
-                        <div className="w-full px-3 md:flex md:items-center">
-                            <div className="md:w-1/3">
-                                <button
-                                    className="shadow bg-white border-2 border-purple-400 text-gray-700 hover:bg-purple-500 hover:text-white focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
-                                    type="submit"
-                                >
-                                    Register
-                                </button>
-                            </div>
-                            {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
-                            <div className="md:w-2/3"></div>
-                        </div>
-                    </div>
-                    {isSubmitted && <div className="mt-2 flex flex-wrap text-green-500">
-                        <p>You&apos;re registered!</p>
-                        <p className="text-black text-opacity-80 text-sm">We sent you an invite at <b>{submittedEmail}</b>. If you don&apos;t see it in your inbox, please check your spam folder.</p>
-                    </div>}
-                    {isNotSubmitted && <div className="flex flex-wrap text-red-500">
-                        We are not able to register you for the event. Please contact us <a href="mailto:info@larryrowbs.com">here</a>.
-                    </div>}
-                </form>
+
+                {isBefore? formWebinar: webinarEnded}
             </div>
         </div>
     );
