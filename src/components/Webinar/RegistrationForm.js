@@ -154,7 +154,7 @@ export default function RegistrationForm(params) {
         <div>
             <p className="text-lg font-bold">This form is no longer accepting responses.</p>
             <br />
-            <p className="text-lg font-bold"><Link href="/survey" className="text-purple-700">Kindly share your feedback with us after attending the webinar. We would appreciate hearing your thoughts. Thank you!</Link></p>
+            <p className="text-lg font-bold">Kindly share your <Link href="/survey" className="text-purple-700">feedback</Link> with us after attending the webinar. We would appreciate hearing your thoughts. Thank you!</p>
         </div>
     );
 
