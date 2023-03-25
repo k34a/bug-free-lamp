@@ -1,10 +1,8 @@
 import { useState } from "react";
-import Skeleton from 'react-loading-skeleton';
 
 import { BsChevronDown } from "react-icons/bs";
 import Toc from "react-toc";
 
-import 'react-loading-skeleton/dist/skeleton.css';
 import styles from '@/styles/Commons.module.css';
 
 const TableOfContents = ({ tocMarkdown }) => {
