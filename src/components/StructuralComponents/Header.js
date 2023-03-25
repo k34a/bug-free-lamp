@@ -18,7 +18,6 @@ const MenuItems = {
     extra: [
         ["Contact", <IoCall key="blog" size={24} />, '/contact'],
         ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Register For Webinar", <BsLaptopFill key="blog" size={24} />, '/webinar'],
         ["Sustainability Quiz", <MdQuiz key="blog" size={24} />, '/quiztime'],
     ]
 }
@@ -33,7 +32,6 @@ const SmallMenuItems = {
         ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
         ["Contact", <IoCall key="blog" size={24} />, '/contact'],
         ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Register For Webinar", <BsLaptopFill key="blog" size={24} />, '/webinar'],
         ["Sustainability Quiz", <MdQuiz key="blog" size={24} />, '/quiztime'],
     ]
 }
