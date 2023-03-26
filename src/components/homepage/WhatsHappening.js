@@ -35,7 +35,7 @@ export default function WhatsHappening() {
             <div className='flex items-center justify-center'>
                 <div
                     className={`${styles.sceneVisual} w-full lg:w-3/5 m-auto lg:drop-shadow-2xl border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}
-                    onContextMenu={() => false}
+                    onContextMenu={(e) => e.preventDefault()}
                 >
                     {isLoading ? skeleton : (
                         <video 
