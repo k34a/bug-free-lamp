@@ -17,44 +17,51 @@ const questions = [
         name: "Question2",
     },
     {
+        question: "What is your phone number? (Optional)",
+        optional: true,
+        type: "phone",
+        placeholder: "Enter your phone number",
+        name: "Question3",
+    },
+    {
         question: "How did you hear about The Larry Rowbs Foundation?",
         optional: false,
         type: "bigtext",
         placeholder: "From a friend, social media, or elsewhere?",
-        name: "Question3",
+        name: "Question4",
     },
     {
         question: "What kind of support have you given to organizations that align with your values?",
         optional: false,
         type: "bigtext",
         placeholder: "(e.g. financial, skills, services, promoting, etc.)",
-        name: "Question4",
+        name: "Question5",
     },
     {
         question: "What aspects of an organization inspire, empower, or motivate you to offer support? What are some key factors that encourage you to engage with an organization and contribute to their mission?",
         optional: false,
         type: "bigtext",
         placeholder: "In short, what motivates you to support an organization?",
-        name: "Question5",
+        name: "Question6",
     },
     {
         question: "Does the mission/vision of The Larry Rowbs Foundation resonate with you?",
         optional: false,
         type: "boolean",
-        name: "Question6",
+        name: "Question7",
     },
     {
         question: <>Would you be happy to support us with spare change round ups and a monthly contribution? (To learn more about spare change round-ups, checkout <a href="https://www.joinchangemaker.com/" className="text-purple-700" target="_blank" rel="noopener noreferrer nofollow">Change Maker</a>)</>,
         optional: false,
         type: "boolean",
-        name: "Question7",
+        name: "Question8",
     },
     {
         question: "Do you have any feedback for us to help us improve how we do things?",
         optional: false,
         type: "bigtext",
         placeholder: "We would love to hear from you!",
-        name: "Question8",
+        name: "Question9",
     }
 ]
 

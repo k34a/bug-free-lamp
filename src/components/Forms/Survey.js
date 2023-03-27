@@ -2,6 +2,9 @@ import { useRef, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRouter } from 'next/router';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+import { isValidPhoneNumber } from 'react-phone-number-input'
 
 const validateEmail = (email) => {
     return email.match(
@@ -30,19 +33,24 @@ const SurveyForm = (props) => {
         const submittedData = {...formData};
         const invalidFieldsInSubmittedData = {}
         for (let i = 0; i < props.formQuestions?.length; i++){
-            const fieldName = props.formQuestions?.[i].name
-            if (props.formQuestions?.[i]?.type == "email"){
-                const fieldVal = submittedData[props.formQuestions?.[i].name];
+            const fieldName = props.formQuestions?.[i]?.name
+            const fieldVal = submittedData[props.formQuestions?.[i]?.name];
+            const fieldType = props.formQuestions?.[i]?.type;
+            if (submittedData[fieldName] == undefined){
+                submittedData[fieldName] = ""
+            }
+            if (fieldType == "email"){
                 if (fieldVal && !validateEmail(fieldVal)){
                     invalidFieldsInSubmittedData[fieldName] = true
                 }
             }
-            else if (props.formQuestions?.[i]?.type == "boolean") {
-                const fieldVal = submittedData[props.formQuestions?.[i].name];
-                submittedData[fieldName] = fieldVal? "Yes": "No";
+            else if (fieldType == "phone") {
+                if (fieldVal && !isValidPhoneNumber(fieldVal)) {
+                    invalidFieldsInSubmittedData[fieldName] = true
+                }
             }
-            if (submittedData[fieldName] == undefined){
-                submittedData[fieldName] = ""
+            else if (fieldType == "boolean") {
+                submittedData[fieldName] = fieldVal? "Yes": "No";
             }
         }
         if (invalidFieldsInSubmittedData && Object.keys(invalidFieldsInSubmittedData).length == 0){
@@ -111,6 +119,18 @@ const SurveyForm = (props) => {
                                     />
                                 );
                                 validation = <>{invalidFormFields[ele.name] && <p className="text-red-500 text-xs italic">Please enter a valid value.</p>}</>;
+                            }
+                            else if (ele.type == "phone") {
+                                field = (
+                                    <PhoneInput
+                                        id={ele.name}
+                                        required={!ele.optional || false}
+                                        placeholder={ele.placeholder || "Enter phone number"}
+                                        value={formData[ele.name] || ""}
+                                        onChange={(value) => UpdateFormData(value || "", ele.name)}
+                                    />
+                                );
+                                validation = <>{invalidFormFields[ele.name] && <p className="text-red-500 text-xs italic">Please enter a valid phone number.</p>}</>;
                             }
                             else if (ele.type == "bigtext") {
                                 field = (
