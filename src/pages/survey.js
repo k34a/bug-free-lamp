@@ -44,7 +44,7 @@ const questions = [
         name: "Question6",
     },
     {
-        question: "Would you be happy to support us with spare change round ups and a monthly contribution?",
+        question: <>Would you be happy to support us with spare change round ups and a monthly contribution? (To learn more about spare change round-ups, checkout <a href="https://www.joinchangemaker.com/" className="text-purple-700">Change Maker</a>)</>,
         optional: false,
         type: "boolean",
         name: "Question7",
