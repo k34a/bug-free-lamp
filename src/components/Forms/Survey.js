@@ -123,6 +123,8 @@ const SurveyForm = (props) => {
                             else if (ele.type == "phone") {
                                 field = (
                                     <PhoneInput
+                                        id={ele.name}
+                                        required={!ele.optional || false}
                                         placeholder={ele.placeholder || "Enter phone number"}
                                         value={formData[ele.name] || ""}
                                         onChange={(value) => UpdateFormData(value || "", ele.name)}
