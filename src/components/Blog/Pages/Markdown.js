@@ -63,7 +63,7 @@ const aMd = (props) => {
         return <Link href={url.pathname} className={classes}>{props.children}</Link>
     }
     else {
-        return <a href={props.href} target="_blank" rel='noopener noreferrer' className={classes}>{props.children}</a>
+        return <a href={props.href} target="_blank" rel="noopener noreferrer nofollow" className={classes}>{props.children}</a>
     }
 }
 

@@ -15,7 +15,7 @@ export default function Partners(){
                         />
                     </div>
                     <div className="m-2 md:text-lg lg:text-xl">
-                        We are proud to announce that <a  className="underline" target="_blank" rel="noopener noreferrer" href="https://christianministryalliance.org">the Christian Ministry Alliance</a> has endorsed our work and vision.
+                        We are proud to announce that <a className="underline" target="_blank" rel="noopener noreferrer" href="https://christianministryalliance.org">the Christian Ministry Alliance</a> has endorsed our work and vision.
                         <br /><br />
                         The Christian Ministry Alliance is a registered 501(c)(3) Corporation with the U.S. Internal Revenue Service.
                     </div>
