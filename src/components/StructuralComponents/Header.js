@@ -6,7 +6,6 @@ import { RiTeamFill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 import { MdQuiz } from 'react-icons/md';
-import styles from '@/styles/Header.module.css';
 
 const MenuItems = {
     main: [
@@ -50,9 +49,9 @@ const Header = (props) => {
     }
 
     const normalHeader = (
-        <div className="fixed top-0 left-0 flex h-screen space-x-6 bg-violet-700 z-50 shadow-2xl overflow-y-scroll">
+        <div className="fixed top-0 left-0 flex h-screen space-x-6 bg-violet-700 z-50 shadow-2xl">
             <div
-                className={`flex flex-col items-center ${isOpen ? "w-45" : "w-16"} h-full overflow-hidden overflow-y-scroll text-gray-100 bg-violet-700 rounded ${styles.noScrollbar}`}
+                className={`flex flex-col items-center ${isOpen ? "w-45" : "w-16"} h-full overflow-hidden text-gray-100 bg-violet-700 rounded`}
                 onMouseEnter={(e) => { setIsOpen(true) }}
                 onMouseLeave={(e) => { setIsOpen(false) }}
             >
