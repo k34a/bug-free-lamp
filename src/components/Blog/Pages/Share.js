@@ -1,49 +1,73 @@
 import Link from "next/link";
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io5";
+import { useState } from "react";
+import { FaRegCheckCircle } from "react-icons/fa";
+import { FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { IoCopyOutline, IoLogoWhatsapp } from "react-icons/io5";
+
+function handleCopyClick(text, setIsCopied) {
+    navigator.clipboard.writeText(text || "")
+    setIsCopied(true)
+    setTimeout(() => {
+        setIsCopied(false);
+    }, 3000);
+}
+
 
 export default function Share(props) {
+    const [isCopied, setIsCopied] = useState(false);
+
     const url = `https://larryrowbsfoundation.org/blog/${props.slug}`;
+    const shareDetails = [
+        ["facebook", {
+            icon: <FiFacebook size={20} />, 
+            link: `https://www.facebook.com/sharer/sharer.php?u=${url}`
+        }],
+        ["linkedin", {
+            icon: <FiLinkedin size={20} />, 
+            link: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${props.title}&summary=${props.title}&source=larryrowbsfoundation.org`
+        }],
+        ["twitter", {
+            icon: <FiTwitter size={20} />, 
+            link: `https://twitter.com/share?text=${url}`
+        }],
+        ["whatsapp", {
+            icon: <IoLogoWhatsapp size={20} />, 
+            link: `https://api.whatsapp.com/send?text=${url}`
+        }],
+    ]
     return (
         <div>
-            <h3>Share this article</h3>
-            <div className="flex space-x-3 pt-2">
-                <a 
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${url}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer nofollow"
-                    className="text-blue-600 dark:text-blue-300"
-                    >
-                    <FaFacebookF size={20}/>
-                </a>
-                <a 
-                    href={`http://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${props.title}&summary=${props.title}&source=larryrowbsfoundation.org`}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="text-sky-500 dark:text-sky-300"
+            <div className='my-6'>
+                <Link
+                    href='/donate'
+                    className='bg-lime-600 text-white focus:ring-4 focus:ring-lime-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-lime-800 !no-underline'
                 >
-                    <FaLinkedinIn size={20}/>
-                </a>
-                <a 
-                    href={`http://twitter.com/share?text=${url}`}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="text-sky-500 dark:text-sky-300"
-                >
-                    <FaTwitter size={20}/>
-                </a>
-                <a 
-                    href={`https://api.whatsapp.com/send?text=${url}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer nofollow"
-                    className="text-teal-600 dark:text-teal-300"
-                >
-                    <IoLogoWhatsapp size={20} />
-                </a>
+                    Consider supporting us
+                </Link>
             </div>
-            <h3>Consider supporting us</h3>
-            <div className='pt-2'>
-                <Link href='/donate' className='bg-lime-700 text-white font-bold focus:ring-4 focus:ring-lime-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-lime-800'>Donate</Link>
+            <div className="flex pt-2 items-center flex-wrap">
+                {shareDetails.map((ele, index) => {
+                    return (
+                            <a 
+                                key={index}
+                                href={ele[1].link} 
+                                target="_blank"
+                                rel="noopener noreferrer nofollow"
+                                className="p-4 mr-3 my-3 rounded-full border-2 border-slate-700 hover:border-slate-400 dark:border-slate-100 dark:hover:border-slate-500"
+                            >
+                                {ele[1].icon}
+                            </a>
+                    )
+                })}
+                <div className="border-2 my-3 border-black dark:border-slate-200 py-2 px-3 hover:bg-slate-100 dark:hover:bg-slate-500">
+                    <button 
+                        className={`flex items-center space-x-2 duration-75 ${isCopied? "text-lime-600 dark:text-green-300": ""}`}
+                        onClick={(e) => handleCopyClick(url, setIsCopied)}
+                    >
+                        <span>{isCopied? "Copied!": "Copy Link"}</span>
+                        {isCopied? <FaRegCheckCircle size={20} /> : <IoCopyOutline size={20} />}
+                    </button>
+                </div>
             </div>
         </div>
     );

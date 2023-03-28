@@ -226,7 +226,9 @@ export const getSingleBlogPostBySlug = async (slug) => {
         const page_id = metadata.id.split('-').join('');
         const mdblocks = await n2m.pageToMarkdown(page_id);
         let mdString = n2m.toMarkdownString(mdblocks);
-        const {minutes} = calculateReadingTime(mdString);
+        const {minutes} = calculateReadingTime(mdString, {
+            wordsPerMinute: 200,
+        });
         mdString = addAltTextToImages(mdString, metadata?.title || "Title") + donationText;
         const ret = {
             metadata,
