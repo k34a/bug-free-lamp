@@ -37,7 +37,7 @@ export default function Share(props) {
     ]
     return (
         <div>
-            <div className='my-6'>
+            <div className='my-6 flex items-center justify-center'>
                 <Link
                     href='/donate'
                     className='bg-lime-600 text-white focus:ring-4 focus:ring-lime-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-lime-800 !no-underline'
@@ -45,7 +45,7 @@ export default function Share(props) {
                     Consider supporting us
                 </Link>
             </div>
-            <div className="flex pt-2 items-center flex-wrap">
+            <div className="flex pt-2 items-center flex-wrap justify-center">
                 {shareDetails.map((ele, index) => {
                     return (
                             <a 
@@ -69,6 +69,7 @@ export default function Share(props) {
                     </button>
                 </div>
             </div>
+            <hr className="sm:w-4/5 lg:w-1/2 h-1 mx-auto my-4 bg-gray-200 border-0 rounded md:my-10 dark:bg-gray-600" />
         </div>
     );
 };

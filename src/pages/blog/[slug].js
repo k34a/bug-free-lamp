@@ -88,7 +88,7 @@ export default function BlogPost({post, slug}) {
     }, []);
 
     return (
-        <div className="bg-white dark:bg-slate-700 dark:text-white selection:text-white selection:bg-black dark:selection:text-black dark:selection:bg-white">
+        <div className="bg-white dark:bg-slate-800 dark:text-white selection:text-white selection:bg-black dark:selection:text-black dark:selection:bg-white">
             <Head>
                 <title>{post.metadata.title}</title>
                 <meta name="description" content={post.metadata.description} />
