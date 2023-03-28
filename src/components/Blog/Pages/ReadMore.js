@@ -3,22 +3,26 @@ import Link from "next/link";
 const ReadMore = (props) => {
     return (
         <div>
-            <h3><Link href="/blog" className="font-bold">Readers also enjoyed</Link></h3>
-            <div className="space-y-4">
+            <h3 className="font-bold mb-6">Continue Exploring</h3>
+            <div className="flex flex-col space-y-6">
                 {props.readMoreArticles.map((ele, index) => {
                     return (
-                        <div 
+                        <Link 
+                            href={`/blog/${ele.slug}`} 
+                            className="!no-underline"
                             key={index}
-                            className='border-2 px-4 py-2 break-words'
                         >
-                            <Link href={`/blog/${ele.slug}`} className="font-bold">
-                                {ele.title}
-                            </Link>
-                            <br />
-                            {ele.description}
-                            <br />
-                            <span className="italic text-sm">{ele.date}</span>
-                        </div>
+                            <div 
+                                className='border-2 p-4 rounded-lg break-words hover:bg-slate-200 dark:hover:bg-slate-500'
+                            >
+                                <div className="font-bold mb-4">
+                                    {ele.title}
+                                </div>
+                                <div className="text-base mb-4">
+                                    {ele.description}
+                                </div>
+                            </div>
+                        </Link>
                     );
                 })}
             </div>

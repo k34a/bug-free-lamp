@@ -172,7 +172,7 @@ export default function Quiztime() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <div className="px-5 py-12 md:py-28 bg-slate-700 justify-center items-center">
+                <div className="px-5 py-12 md:py-28 bg-slate-800 justify-center items-center">
                     {
                         hasStarted? (
                             questions.length? (showScore ? scoreSheet : questionWithOptions)
