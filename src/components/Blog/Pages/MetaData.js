@@ -3,22 +3,30 @@ import TableOfContents from "./TableOfContents";
 import DateTime from "@/components/Blog/Pages/DateTime";
 import Author from "@/components/Blog/Pages/Author";
 
-const MetaData = ({ post}) => {
+const MetaData = (props) => {
+    const post = props.post;
+    if(!post) {
+        return null;
+    }
+    const title = post?.metadata?.title || "";
+    const markdown = post?.metadata?.markdown || "";
+    const metadata = post?.metadata || {};
+    const minutes = post?.minutes || "";
     return (
         <>
             <h1 className='text-4xl dark:text-white'>
-                {post.metadata.title}
+                {title}
             </h1>
             <Author 
-                authorName={post.metadata?.author || ""}
-                authorHref={post.metadata.authorHref}
+                authorName={metadata.author}
+                authorHref={metadata.authorHref}
             />
             <DateTime 
-                publishDate={post.metadata.date}
-                readingTime={post.minutes}
+                publishDate={metadata.date}
+                readingTime={minutes}
             />
-            <Tags publishedTags={post.metadata.tags}/>
-            <TableOfContents tocMarkdown={post.markdown}/>
+            <Tags publishedTags={metadata.tags}/>
+            <TableOfContents tocMarkdown={markdown}/>
         </>
     );
 }

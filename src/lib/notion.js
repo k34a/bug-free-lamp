@@ -92,6 +92,7 @@ const getPageMetaData = (post) => {
         id: post.id,
         title: post.properties.Title.title[0].plain_text,
         tags: getTags(post.properties.Tags.multi_select),
+        seoKeywords: getTags(post.properties.SEOKeywords.multi_select),
         description: post.properties.Description.rich_text[0].plain_text,
         date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
         publishedDate: post.properties.Date?.date?.start || "2023-01-01",

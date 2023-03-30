@@ -15,8 +15,10 @@ function handleCopyClick(text, setIsCopied) {
 
 export default function Share(props) {
     const [isCopied, setIsCopied] = useState(false);
+    const slug = props.slug || "";
+    const title = props.title || "";
 
-    const url = `https://larryrowbsfoundation.org/blog/${props.slug}`;
+    const url = `https://larryrowbsfoundation.org/blog/${slug}`;
     const shareDetails = [
         ["facebook", {
             icon: <FiFacebook size={20} />, 
@@ -24,7 +26,7 @@ export default function Share(props) {
         }],
         ["linkedin", {
             icon: <FiLinkedin size={20} />, 
-            link: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${props.title}&summary=${props.title}&source=larryrowbsfoundation.org`
+            link: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${title}&source=larryrowbsfoundation.org`
         }],
         ["twitter", {
             icon: <FiTwitter size={20} />, 

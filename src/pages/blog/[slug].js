@@ -53,6 +53,7 @@ export default function BlogPost({post, slug}) {
     const [selectedText, setSelectedText] = useState("");
     const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
     const [isCopied, setIsCopied] = useState(false);
+    const keywordsString = post.metadata.seoKeywords.join(", ") || "";
 
     function handleTextSelection() {
         const lowerLimit = startingMainContent.current.offsetTop;
@@ -93,6 +94,7 @@ export default function BlogPost({post, slug}) {
                 <title>{post.metadata.title}</title>
                 <meta name="description" content={post.metadata.description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="keywords" content={keywordsString} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <DarkMode />
