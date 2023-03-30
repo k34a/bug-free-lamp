@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { ImLeaf } from "react-icons/im";
 
 const validateEmail = (email) => {
     return email.match(
@@ -101,23 +102,23 @@ export default function Footer() {
                 </a>
             </div>
             <div className='flex v-screen justify-center items-center'>
-                <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer">
-                    <div className="border-green-300 border-4 text-green-300 font-medium inline-flex items-center px-2.5 py-0.5 rounded-lg w-full">
-                        <svg aria-hidden="true" className="w-10 h-10 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer" className="decoration-green-300">
+                    <div className="border-green-300 border-4 text-green-300 font-medium inline-flex items-center px-4 py-3 rounded-lg w-full">
+                        <ImLeaf size={24} className="mr-2"/>
                         This website emits 0.38g of CO2
                     </div>
                 </a>
             </div>
             <div className="text-center px-6 text-sm">
                 <span>&copy; Copyright 2019-Present </span>
-                <Link className="text-yellow-200 font-semibold" href="/">Larry Rowbs Foundation</Link>
+                <Link className="text-yellow-200" href="/">Larry Rowbs Foundation</Link>
             </div>
-            <div className="text-center px-3 a-text-bold text-sm">
+            <div className="text-center px-3 a-text-bold text-sm leading-relaxed">
                 <p>
-                    Website Content Owned and Managed by <Link className="text-yellow-200 font-semibold" href='/'>Larry Rowbs Foundation</Link>
+                    Website Content Owned and Managed by <Link className="text-yellow-200" href='/'>Larry Rowbs Foundation</Link>
                 </p>
                 <p>
-                    Designed, Developed and Hosted by <a className="text-yellow-200 font-semibold" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
+                    Designed, Developed and Hosted by <a className="text-yellow-200" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
                 </p>
             </div>
         </section>
