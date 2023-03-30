@@ -9,7 +9,7 @@ const MetaData = (props) => {
         return null;
     }
     const title = post?.metadata?.title || "";
-    const markdown = post?.metadata?.markdown || "";
+    const markdown = post?.markdown || "";
     const metadata = post?.metadata || {};
     const minutes = post?.minutes || "";
     return (
