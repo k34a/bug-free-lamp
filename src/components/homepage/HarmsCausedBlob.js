@@ -15,11 +15,12 @@ const HarmsCausedBlob = (props) => {
     });
 
     return (
-        <div className='relative'>
+        <div className='relative'
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+        >
             <div 
-                className={`flex justify-center items-center h-[80vh] md:h-[70vh] ${props.bg} relative`}
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
+                className={`flex justify-center items-center h-[80vh] md:h-[100vh] ${props.bg} relative`}
             >
                 <animated.svg
                     className="w-64 md:w-96 lg:w-128"

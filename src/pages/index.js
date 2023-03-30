@@ -21,7 +21,7 @@ export default function Home() {
         <OurMission />
         <HarmsCaused />
         <OurWork />
-        <TextileWasteCarousel />
+        {/* <TextileWasteCarousel /> */}
         <Benefits />
         <Partners />
       </div>

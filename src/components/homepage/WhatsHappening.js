@@ -1,35 +1,7 @@
 import styles from "@/styles/WhatsHappening.module.css"
 import Link from "next/link"
-import { useEffect, useState } from "react";
-import { BsFillCameraReelsFill } from "react-icons/bs";
-
-const skeleton = (
-    <div className="w-full h-full bg-gray-300 rounded-lg animate-pulse">
-        <div
-            width={1472}
-            height={916} 
-            className="m-auto text-black text-3xl font-bold flex items-center justify-center"
-            style={{
-                maxWidth: "100%",
-                aspectRatio: "1472/916"
-            }}
-        >
-            <BsFillCameraReelsFill size={48}/>
-            <span className="sr-only">Loading...</span>
-        </div>
-    </div>
-);
-
 
 export default function WhatsHappening() {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(()=> {
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 2000);
-    })
-
     return (
         <div className="py-12">
             <div className='flex items-center justify-center'>
@@ -37,18 +9,16 @@ export default function WhatsHappening() {
                     className={`${styles.sceneVisual} w-full lg:w-3/5 m-auto lg:drop-shadow-2xl border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}
                     onContextMenu={(e) => e.preventDefault()}
                 >
-                    {isLoading ? skeleton : (
-                        <video 
-                            width={1472}
-                            height={916}
-                            autoPlay
-                            muted
-                            loop
-                            className={styles.video}
-                        >
-                            <source src="/LandfillAnimation.mp4" type="video/mp4" />
-                        </video>
-                    )}
+                    <video 
+                        width={1472}
+                        height={916}
+                        autoPlay
+                        muted
+                        loop
+                        className={styles.video}
+                    >
+                        <source src="/LandfillAnimation.mp4" type="video/mp4" />
+                    </video>
                 </div>
             </div>
             <div className="w-11/12 sm:w-4/5 lg:w-3/5 m-auto py-12 leading-relaxed">
