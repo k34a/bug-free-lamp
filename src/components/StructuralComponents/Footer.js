@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ImLeaf } from "react-icons/im";
+import { ThreeDots } from "react-loader-spinner";
 
 const validateEmail = (email) => {
     return email.match(
@@ -15,9 +16,11 @@ export default function Footer() {
     const [error, setError] = useState("");
     const [isSubscribed, setIsSubscribed] = useState(false);
     const recaptchaRef = useRef();
+    const [loading, setloading] = useState(false);
 
     async function handleSubscriberSubmit(e) {
         e.preventDefault();
+        setloading(true);
         setInvalidEmail(false);
         setError("");
         setIsSubscribed(false);
@@ -44,6 +47,7 @@ export default function Footer() {
                 setEmail("");
             }
         }
+        setloading(false);
     }
     return (
         <section className="bg-black py-8 space-y-8 text-white break-words">
@@ -79,14 +83,19 @@ export default function Footer() {
                                 </input>
                             </div>
                             <div>
-                                <button type="submit" className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-blue-700 border-blue-600 sm:rounded-none sm:rounded-r-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+                                <button 
+                                    type="submit" 
+                                    className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-blue-700 border-blue-600 sm:rounded-none sm:rounded-r-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:cursor-not-allowed"
+                                    disabled={loading}
+                                >
                                     Subscribe
                                 </button>
                             </div>
                         </div>
+                        <div className="items-center flex justify-center">{loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}</div>
                         {invalidEmail && <div className="mx-auto max-w-screen-sm text-sm text-left text-red-500 newsletter-form-footer">Please enter a valid email.</div>}
                         <div className="mx-auto max-w-screen-sm text-sm text-left text-red-500 newsletter-form-footer">{error}</div>
-                        {isSubscribed && <div className="mx-auto max-w-screen-sm text-sm text-left text-green-500 newsletter-form-footer">Thank you for subscribing.</div>}
+                        {isSubscribed && <div className="mx-auto max-w-screen-sm font-bold text-left text-green-400 newsletter-form-footer">Thank you for subscribing.</div>}
                     </form>
                 </div>
             </div>

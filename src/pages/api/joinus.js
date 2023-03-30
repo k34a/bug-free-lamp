@@ -23,7 +23,7 @@ export default async function handler(req, res) {
                         title: [
                             {
                                 text: {
-                                    content: req.body.firstname,
+                                    content: req.body.firstName,
                                 },
                             },
                         ],
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
                         rich_text: [
                             {
                                 text: {
-                                    content: req.body.lastname,
+                                    content: req.body.lastName,
                                 },
                             },
                         ],
