@@ -42,16 +42,20 @@ const JoinUs = () => {
         setInvalidFields({});
         setIsSubmitted(false);
         setIsNotSubmitted(false);
+        const invalidSubmittedFields = {}
+        if (!formData.contact || !isValidPhoneNumber(formData.contact)) {
+            invalidSubmittedFields["contact"] = true;
+        }
         if (!formData.email || !validateEmail(formData.email)) {
-            setInvalidFields({...invalidFields, "email": true});
+            invalidSubmittedFields["email"] = true;
         }
-        else if (formData.resume && !validateURL(formData.resume)) {
-            setInvalidFields({ ...invalidFields, "resume": true });
+        if (formData.resume && !validateURL(formData.resume)) {
+            invalidSubmittedFields["resume"] = true;
         }
-        else if (formData.linkedin && !validateURL(formData.linkedin)) {
-            setInvalidFields({ ...invalidFields, "linkedin": true });
+        if (formData.linkedin && !validateURL(formData.linkedin)) {
+            invalidSubmittedFields["linkedin"] = true;
         }
-        else {
+        if (invalidSubmittedFields && Object.keys(invalidSubmittedFields).length == 0) {
             const token = await recaptchaRef.current.executeAsync();
             recaptchaRef.current.reset();
             const updatedFormData = {...formData, token}
@@ -71,6 +75,7 @@ const JoinUs = () => {
                 setFormData(defaultsParams);
             }
         }
+        setInvalidFields(invalidSubmittedFields)
         setloading(false);
     }
 
@@ -150,6 +155,7 @@ const JoinUs = () => {
                             value={formData.contact}
                             onChange={(value) => setFormData({...formData, contact: value})}
                         />
+                        {invalidFields["contact"] && <p className="text-red-500 italic">Please enter a valid contact info.</p>}
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
@@ -234,6 +240,7 @@ const JoinUs = () => {
                     {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                     <div className="md:w-2/3"></div>
                 </div>
+                {invalidFields && Object.keys(invalidFields).length > 0 && <p className="text-red-500 text-xs italic my-6">Some fields above are invalid. Please correct them and re-submit.</p>}
                 {isNotSubmitted && <p className="text-red-500 italic my-6">Unable to proceed your request. Please try again later.</p>}
                 {isSubmitted && <p className="text-green-500 italic my-6">Your message is sent successfully. Please expect a response within 24-48 hours.</p>}
             </form>

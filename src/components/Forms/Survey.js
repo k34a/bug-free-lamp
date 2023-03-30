@@ -40,12 +40,12 @@ const SurveyForm = (props) => {
                 submittedData[fieldName] = ""
             }
             if (fieldType == "email"){
-                if (fieldVal && !validateEmail(fieldVal)){
+                if (fieldVal || !validateEmail(fieldVal)){
                     invalidFieldsInSubmittedData[fieldName] = true
                 }
             }
             else if (fieldType == "phone") {
-                if (fieldVal && !isValidPhoneNumber(fieldVal)) {
+                if (fieldVal || !isValidPhoneNumber(fieldVal)) {
                     invalidFieldsInSubmittedData[fieldName] = true
                 }
             }
