@@ -3,10 +3,17 @@ import SurveyForm from '@/components/Forms/Survey'
 
 const questions = [
     {
-        question: "What is your name?",
+        question: "First name",
         optional: false,
         type: "text",
-        placeholder: "John Doe",
+        placeholder: "John",
+        name: "Question0"
+    }, 
+    {
+        question: "Last name",
+        optional: false,
+        type: "text",
+        placeholder: "Doe",
         name: "Question1"
     },
     {
