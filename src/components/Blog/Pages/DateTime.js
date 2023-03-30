@@ -1,7 +1,14 @@
 import { BiTime } from "react-icons/bi";
 import { FaRegCalendarAlt } from "react-icons/fa";
 
-const DateTime = ({ publishDate, readingTime }) => {
+const DateTime = (props) => {
+    const publishDate = props.publishDate || "";
+    const readingTime = props.readingTime || "";
+
+    if (publishDate || !readingTime) {
+        return null;
+    }
+
     const articleDateTime = (
         <div className='pb-5 align-middle'>
             <span className='dark:text-slate-300 mr-6 block md:inline'>

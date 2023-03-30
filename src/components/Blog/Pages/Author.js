@@ -6,14 +6,17 @@ const getInitialsFromName = (name) => {
     return initials;
 }
 
-const Author = ({ authorName, authorHref }) => {
+const Author = (props) => {
+    const author = props.authorName || "Anonymous";
+    const href = props.authorHref || "";
+
     const authorComponent = (
         <div className='pb-5 flex items-center'>
             <div className="select-none relative inline-flex mr-3 items-center justify-center w-10 h-10 overflow-hidden bg-purple-200 rounded-full dark:bg-purple-600 ring-2 ring-purple-300 dark:ring-purple-500">
-                <span className="font-bold text-purple-600 dark:text-purple-200">{getInitialsFromName(authorName)}</span>
+                <span className="font-bold text-purple-600 dark:text-purple-200">{getInitialsFromName(author)}</span>
             </div>
-            <a href={authorHref} target="_blank" rel="noopener noreferrer">
-                {authorName}
+            <a href={href} target="_blank" rel="noopener noreferrer">
+                {author}
             </a>
         </div>
     );
