@@ -1,6 +1,9 @@
 import { ThreeDots } from "react-loader-spinner"; 
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import PhoneInput from 'react-phone-number-input'
+import { isValidPhoneNumber } from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 const validateEmail = (email) => {
     return email.match(
@@ -14,17 +17,20 @@ function validateURL(s) {
 }
 
 const JoinUs = () => {
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [contact, setContact] = useState("");
-    const [linkedin, setLinkedin] = useState("");
-    const [location, setLocation] = useState("");
-    const [skills, setSkills] = useState("");
-    const [resume, setResume] = useState("");
-    const [isInvalidEmail, setIsInvalidEmail] = useState(false);
-    const [isInvalidResumeURL, setIsInvalidResumeURL] = useState(false);
-    const [isInvalidLinkedInURL, setIsInvalidLinkedInURL] = useState(false);
+    const defaultsParams = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        contact: "",
+        linkedin: "",
+        location: "",
+        skills: "",
+        resume: "",
+        token: ""
+    }
+
+    const [invalidFields, setInvalidFields] = useState({});
+    const [formData, setFormData] = useState(defaultsParams);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isNotSubmitted, setIsNotSubmitted] = useState(false);
     const recaptchaRef = useRef();
@@ -33,37 +39,25 @@ const JoinUs = () => {
     async function handleSubmit(e) {
         e.preventDefault();
         setloading(true);
-        setIsInvalidEmail(false);
-        setIsInvalidResumeURL(false);
-        setIsInvalidLinkedInURL(false);
+        setInvalidFields({});
         setIsSubmitted(false);
         setIsNotSubmitted(false);
-        if (!email || !validateEmail(email)) {
-            setIsInvalidEmail(true);
+        if (!formData.email || !validateEmail(formData.email)) {
+            setInvalidFields({...invalidFields, "email": true});
         }
-        else if (resume && !validateURL(resume)) {
-            setIsInvalidResumeURL(true);
+        else if (formData.resume && !validateURL(formData.resume)) {
+            setInvalidFields({ ...invalidFields, "resume": true });
         }
-        else if (linkedin && !validateURL(linkedin)) {
-            setIsInvalidLinkedInURL(true);
+        else if (formData.linkedin && !validateURL(formData.linkedin)) {
+            setInvalidFields({ ...invalidFields, "linkedin": true });
         }
         else {
             const token = await recaptchaRef.current.executeAsync();
             recaptchaRef.current.reset();
-            const data = { 
-                firstname: firstName, 
-                lastname: lastName, 
-                email, 
-                contact, 
-                linkedin, 
-                location, 
-                skills, 
-                resume,
-                token
-            };
+            const updatedFormData = {...formData, token}
             const response = await fetch("/api/joinus", {
                 method: "POST",
-                body: JSON.stringify(data),
+                body: JSON.stringify(updatedFormData),
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -74,17 +68,17 @@ const JoinUs = () => {
             }
             else {
                 setIsSubmitted(true);
-                setFirstName("");
-                setLastName("");
-                setEmail("");
-                setContact("");
-                setLinkedin("");
-                setLocation("");
-                setSkills("");
-                setResume("");
+                setFormData(defaultsParams);
             }
         }
         setloading(false);
+    }
+
+    const updateField = (e) => {
+        setFormData({
+          ...formData,
+            [e.target.name]: e.target.value
+        });
     }
 
     return (
@@ -99,129 +93,127 @@ const JoinUs = () => {
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-first-name">
                             First Name *
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-first-name"
                             type="text"
-                            placeholder="Jane"
+                            placeholder="John"
                             required={true}
-                            onChange={(e) => setFirstName(e.target.value)}
-                            value={firstName}
+                            name="firstName"
+                            onChange={(e) => updateField(e)}
+                            value={formData.firstName}
                         />
                     </div>
                     <div className="w-full md:w-1/2 px-3">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-last-name">
                             Last Name *
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-last-name"
                             type="text"
                             placeholder="Doe"
-                            onChange={(e) => setLastName(e.target.value)}
-                            value={lastName}
+                            required={true}
+                            name="lastName"
+                            onChange={(e) => updateField(e)}
+                            value={formData.lastName}
                         />
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-password">
                             E-mail *
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="email"
+                            name="email"
                             required={true}
                             type="text"
-                            onChange={(e) => setEmail(e.target.value)}
-                            value={email}
+                            onChange={(e) => updateField(e)}
+                            value={formData.email}
                             placeholder="name@domain.com"
                         />
-                        {isInvalidEmail && <p className="text-red-500 text-xs italic">Please enter a valid email.</p>}
+                        {invalidFields["email"] && <p className="text-red-500 italic">Please enter a valid email.</p>}
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-password">
                             Contact Number *
                         </label>
-                        <input
-                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="contact"
+                        <PhoneInput
+                            name="contact"
                             required={true}
-                            type="tel"
-                            onChange={(e) => setContact(e.target.value)}
-                            value={contact}
-                            placeholder="888 888 8888"
-                            pattern="[0-9]{10}"
+                            placeholder="Enter phone number"
+                            value={formData.contact}
+                            onChange={(value) => setFormData({...formData, contact: value})}
                         />
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-password">
                             LinkedIn Profile Link
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="linkedin"
+                            name="linkedin"
                             type="text"
-                            onChange={(e) => setLinkedin(e.target.value)}
-                            value={linkedin}
+                            onChange={(e) => updateField(e)}
+                            value={formData.linkedin}
                             placeholder="Link to your LinkedIn Account"
                         />
-                        {isInvalidLinkedInURL && <p className="text-red-500 text-xs italic">Please enter a valid link to your LinkedIn account.</p>}
+                        {invalidFields["linkedin"] && <p className="text-red-500 italic">Please enter a valid link to your LinkedIn account.</p>}
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-password">
                             Which part of the world are you from? *
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="location"
+                            name="location"
                             required={true}
                             type="text"
-                            onChange={(e) => setLocation(e.target.value)}
-                            value={location}
+                            onChange={(e) => updateField(e)}
+                            value={formData.location}
                             placeholder="City, Country"
                         />
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-password">
                             What are your skills, strengths, gifts, & superpowers? *
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="skills"
+                            name="skills"
                             required={true}
                             type="text"
-                            onChange={(e) => setSkills(e.target.value)}
-                            value={skills}
+                            onChange={(e) => updateField(e)}
+                            value={formData.skills}
                             placeholder="Come on, don't hesitate :)"
                         />
                     </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                        <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-password">
                             Resume
                         </label>
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="resume"
+                            name="resume"
                             type="text"
-                            onChange={(e) => setResume(e.target.value)}
-                            value={resume}
+                            onChange={(e) => updateField(e)}
+                            value={formData.resume}
                             placeholder="Link to your resume"
                         />
-                        {isInvalidResumeURL && <p className="text-red-500 text-xs italic">Please enter a valid link to your resume.</p>}
+                        {invalidFields["resume"] && <p className="text-red-500 italic">Please enter a valid link to your resume.</p>}
                     </div>
                 </div>
                 <ReCAPTCHA
@@ -232,17 +224,18 @@ const JoinUs = () => {
                 <div className="md:flex md:items-center">
                     <div className="md:w-1/3">
                         <button
-                            className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                            className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed"
                             type="submit"
+                            disabled={loading}
                         >
-                            Send
+                            Apply
                         </button>
                     </div>
                     {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                     <div className="md:w-2/3"></div>
                 </div>
-                {isNotSubmitted && <p className="text-red-500 text-xs italic my-6">Unable to proceed your request. Please try again later.</p>}
-                {isSubmitted && <p className="text-green-500 text-xs italic my-6">Your message is sent successfully. Please expect a response within 24-48 hours.</p>}
+                {isNotSubmitted && <p className="text-red-500 italic my-6">Unable to proceed your request. Please try again later.</p>}
+                {isSubmitted && <p className="text-green-500 italic my-6">Your message is sent successfully. Please expect a response within 24-48 hours.</p>}
             </form>
         </div>
     );
