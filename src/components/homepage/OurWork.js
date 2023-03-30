@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function OurWork() {
     return (
-        <div className={`grid lg:grid-cols-3 ${styles.OurWork}`}>
+        <div className={`py-12 md:py-24 grid lg:grid-cols-3 ${styles.OurWork}`}>
             <div className="flex justify-center items-center">
                 <div className={styles.OurWorkAnimation}>
                     <img

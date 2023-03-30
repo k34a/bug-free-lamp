@@ -1,8 +1,7 @@
 import Link from "next/link";
-import React, { useState } from "react";
 import styles from "@/styles/Benefits.module.css"
 
-const tabsConfig = [
+const config = [
     {
         img: "./Green-environment-by-recycling.svg",
         alt: "Green environment by Sustainable Fashion",
@@ -14,10 +13,22 @@ const tabsConfig = [
             <br /><br /> Together, we can create a cleaner, healthier, and greener planet through sustainable fashion.
         </p>),
         head: "Developing a Circular Fashion Economy",
-        bg: "bg-gradient-to-r from-green-200 to-green-500",
+        bg: "bg-lime-500",
+        textColor: "text-lime-950",
         buttonBg: "bg-green-700",
         buttonBgHover: "bg-green-800",
         buttonText: "Conscious fashion rocks!",
+        bottomSvg: (
+            <div className={styles.customShapeDivider}>
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        className='fill-cyan-800'
+                    >
+                    </path>
+                </svg>
+            </div>
+        ),
     },
     {
         img: "./boosting-economy-through-sustainable-fashion.svg",
@@ -32,10 +43,22 @@ const tabsConfig = [
             We understand the importance of investing in local communities and helping to boost the economy while also promoting sustainability and ethical practices. By doing so, we are not only creating a better future for the environment but also for the individuals and communities we aim to serve.
         </p>),
         head: "Creating More Jobs",
-        bg: "bg-gradient-to-r from-indigo-500 to-blue-500",
-        buttonBg: "bg-blue-600",
-        buttonBgHover: "bg-blue-700",
+        bg: "bg-cyan-800",
+        textColor: "text-white",
+        buttonBg: "bg-cyan-600",
+        buttonBgHover: "bg-cyan-500",
         buttonText: "Wear your values!",
+        bottomSvg: (
+            <div className={styles.customShapeDivider}>
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        className='fill-amber-200'
+                    >
+                    </path>
+                </svg>
+            </div>
+        ),
     },
     {
         img: "./Safeguarding-health-with-sustainable-fashion.svg",
@@ -48,10 +71,22 @@ const tabsConfig = [
             Join us in this mission to create a safer, greener, and healthier world for all.
         </p>),
         head: "Safeguarding Health",
-        bg: "bg-gradient-to-r from-amber-400 to-yellow-500",
+        bg: "bg-amber-200",
+        textColor: "text-black",
         buttonBg: "bg-red-700",
         buttonBgHover: "bg-red-800",
         buttonText: "Fast fashion? No thanks!",
+        bottomSvg: (
+            <div className={styles.customShapeDivider}>
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        className='fill-fuchsia-900'
+                    >
+                    </path>
+                </svg>
+            </div>
+        ),
     },
     {
         img: "./Charitable-Fashion-school.svg",
@@ -66,42 +101,57 @@ const tabsConfig = [
             Our goal is to provide education and training in sustainable fashion practices to individuals from all walks of life, free of charge. By educating the next generation of fashion professionals and designers, we hope to foster a more responsible and sustainable fashion industry. Our aim is to build a complete ecosystem for talented individuals, and raise awareness about the importance of ethical and sustainable practices in the fashion industry. By doing so, we believe that we can make a positive impact on the fashion industry and help to create a more equitable and sustainable world.
         </p>),
         head: "Free-of-cost Fashion School",
-        bg: "bg-gradient-to-r from-violet-500 to-purple-500",
-        buttonBg: "bg-violet-800",
-        buttonBgHover: "bg-violet-700",
+        bg: "bg-fuchsia-900",
+        textColor: "text-slate-200",
+        buttonBg: "bg-zinc-800",
+        buttonBgHover: "bg-zinc-600",
         buttonText: "Fashion with a purpose!",
+        bottomSvg: (
+            <div className={styles.customShapeDivider}>
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        className='fill-white'
+                    >
+                    </path>
+                </svg>
+            </div>
+        ),
     },
 ]
 
 export default function Benefits() {
-    const tabsContent = tabsConfig.map((ele, index) => {
+    const BenefitsContent = config.map((ele, index) => {
         return (
-            <div key={index} className={`w-full min-w-0 break-words py-24 rounded ${ele["bg"]}`}>
-                <div className="px-4 py-5 flex-auto">
-                    <div className="tab-content tab-space w-4/5 md:w-4/6 lg:w-1/2 m-auto">
-                        <div className={`md:text-lg lg:text-xl text-white`}>
-                            <div>
-                                <img
-                                    src={ele["img"]}
-                                    alt={ele["alt"]}
-                                    loading="lazy"
-                                    className="w-1/2 sm:w-1/3 lg:w-1/4 m-auto"
-                                />
-                                <h2 className="text-2xl my-4 md:text-3xl lg:text-4xl font-black">{ele["head"]}</h2>
-                                {ele["content"]}
-                                <br /><br />
-                                <Link href="/blog" className="!no-underline">
-                                    <button 
-                                        type="button"
-                                        className={`text-white ${ele["buttonBg"]} hover:${ele["buttonBgHover"]} focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-3 text-center inline-flex items-center`}
-                                    >
-                                        {ele["buttonText"]}
-                                    </button>
-                                </Link>
+            <div key={index} className="relative">
+                <div className={`w-full min-w-0 break-words pt-12 pb-36 md:pb-36 ${ele["bg"]}`}>
+                    <div className="px-4 py-5 flex-auto">
+                        <div className="w-4/5 md:w-4/6 lg:w-1/2 m-auto">
+                            <div className={`md:text-lg lg:text-xl ${ele["textColor"]}`}>
+                                <div>
+                                    <img
+                                        src={ele["img"]}
+                                        alt={ele["alt"]}
+                                        loading="lazy"
+                                        className="w-1/2 sm:w-1/3 lg:w-1/4 m-auto"
+                                    />
+                                    <h2 className="text-2xl my-4 md:text-3xl lg:text-4xl font-black">{ele["head"]}</h2>
+                                    {ele["content"]}
+                                    <br /><br />
+                                    <Link href="/blog" className="!no-underline">
+                                        <button 
+                                            type="button"
+                                            className={`text-white ${ele["buttonBg"]} hover:${ele["buttonBgHover"]} focus:ring-4 focus:outline-none font-medium rounded-lg px-5 py-3 text-center inline-flex items-center`}
+                                        >
+                                            {ele["buttonText"]}
+                                        </button>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {ele['bottomSvg']}
             </div>
         );
     })
@@ -109,16 +159,7 @@ export default function Benefits() {
         <>
             <div className="flex flex-wrap">
                 <div className="w-full relative">
-                    {tabsContent}
-                    <div className={styles.customShapeDivider}>
-                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path 
-                                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                                className={styles.shapeFill}
-                            >
-                            </path>
-                        </svg>
-                    </div>
+                    {BenefitsContent}
                 </div>
             </div>
         </>

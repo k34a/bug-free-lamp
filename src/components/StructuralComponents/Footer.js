@@ -114,10 +114,10 @@ export default function Footer() {
             </div>
             <div className="text-center px-3 a-text-bold text-sm">
                 <p>
-                    Website Content Managed by <Link className="text-yellow-200" href='/'>Larry Rowbs Foundation</Link>
+                    Website Content Owned and Managed by <Link className="text-yellow-200 font-semibold" href='/'>Larry Rowbs Foundation</Link>
                 </p>
                 <p>
-                    Designed, Developed and Hosted by <a className="text-yellow-200" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
+                    Designed, Developed and Hosted by <a className="text-yellow-200 font-semibold" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
                 </p>
             </div>
         </section>
