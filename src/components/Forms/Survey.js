@@ -170,9 +170,9 @@ const SurveyForm = (props) => {
                         {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                         <div className="md:w-2/3"></div>
                     </div>
-                    {invalidFormFields && Object.keys(invalidFormFields).length > 0 && <p className="text-red-500 text-xs italic my-6">Some fields above are invalid. Please correct them and re-submit.</p>}
-                    {isSubmitted === -1 && <p className="text-red-500 text-xs italic my-6">Unable to save your survey. Please try again later.</p>}
-                    {isSubmitted === 1 && <p className="text-green-500 text-xs italic my-6">Your response is saved.</p>}
+                    {invalidFormFields && Object.keys(invalidFormFields).length > 0 && <p className="text-red-500 italic my-6">Some fields above are invalid. Please correct them and re-submit.</p>}
+                    {isSubmitted === -1 && <p className="text-red-500 italic my-6">Unable to save your response. Please try again later.</p>}
+                    {isSubmitted === 1 && <p className="text-green-500 italic my-6">Your response is saved.</p>}
                 </form>
             </div>
         </>

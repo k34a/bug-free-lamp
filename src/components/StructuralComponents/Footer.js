@@ -117,7 +117,7 @@ export default function Footer() {
                 <span>&copy; Copyright 2019-Present </span>
                 <Link className="text-yellow-200" href="/">Larry Rowbs Foundation</Link>
             </div>
-            <div className="text-center px-3 a-text-bold text-sm leading-relaxed">
+            <div className="text-center px-3 text-sm leading-relaxed">
                 <p>
                     Website Content Owned and Managed by <Link className="text-yellow-200" href='/'>Larry Rowbs Foundation</Link>
                 </p>

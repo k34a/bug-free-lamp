@@ -15,7 +15,7 @@ function BigtextField(props) {
                 value={value}
                 placeholder={placeholder}
             />
-            <>{isInvalid && <p className="text-red-500 text-xs italic">Please enter a valid value.</p>}</>
+            <>{isInvalid && <p className="text-red-500 italic">Please enter a valid value.</p>}</>
         </div>
     )
 }
