@@ -110,7 +110,7 @@ export default async function handler(req, res) {
           },
         },
       });
-      //emailNotifier(req.body.email, emailSubject, emailBody);
+      emailNotifier(req.body.email, emailSubject, emailBody);
       res.status(200).json({});
     }
     catch (err) {
