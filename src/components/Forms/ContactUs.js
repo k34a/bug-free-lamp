@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import ReCAPTCHA from "react-google-recaptcha";
 import { titleCase, validateEmail } from "@/lib/commonFrontEndFns";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const ContactUs = () => {
     const defaultData = {
@@ -14,8 +14,9 @@ const ContactUs = () => {
     const [formData, setFormData] = useState(defaultData);
     const [isInvalidEmail, setIsInvalidEmail] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isNotSubmitted, setIsNotSubmitted] = useState(false);
-    const recaptchaRef = useRef();
+    const [token, setToken] = useState("");
+    const hcaptchaRef = useRef();
+    const [error, setError] = useState("");
     const [loading, setloading] = useState(false);
 
     async function handleSubmit(e){
@@ -23,13 +24,12 @@ const ContactUs = () => {
         setloading(true);
         setIsInvalidEmail(false);
         setIsSubmitted(false); 
-        setIsNotSubmitted(false); 
+        setError("");
         if (!formData.email || !validateEmail(formData.email)) {
             setIsInvalidEmail(true);
+            setError("Some fields above are invalid. Please correct them and re-submit.")
         }
-        else {
-            const token = await recaptchaRef.current.executeAsync();
-            recaptchaRef.current.reset();
+        else if (token) {
             const submitData = { ...formData, token };
             const response = await fetch("/api/contactus", {
                 method: "POST",
@@ -39,13 +39,18 @@ const ContactUs = () => {
                 }
             });
             const json = await response.json();
+            hcaptchaRef.current.resetCaptcha();
+            setToken("");
             if (!response.ok) {
-                setIsNotSubmitted(true)
+                setError("Unable to proceed your request. Please try again later.")
             }
             else {
                 setIsSubmitted(true);
                 setFormData(defaultData);
             }
+        }
+        else {
+            setError("Please verify the captcha.")
         }
         setloading(false);
     }
@@ -127,12 +132,13 @@ const ContactUs = () => {
                         />
                     </div>
                 </div>
-                <ReCAPTCHA 
-                    size="invisible" 
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT} 
-                    ref={recaptchaRef}
+                <HCaptcha
+                    ref={hcaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+                    onVerify={token => setToken(token)}
+                    onExpire={e => setToken("")}
                 />
-                <div className="md:flex md:items-center">
+                <div className="my-6 md:flex md:items-center">
                     <div className="md:w-1/3">
                         <button 
                             className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed"
@@ -145,7 +151,7 @@ const ContactUs = () => {
                     {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                     <div className="md:w-2/3"></div>
                 </div>
-                {isNotSubmitted && <p className="text-red-500 italic my-6">Unable to save your message. Please try again later.</p>}
+                {error && <p className="text-red-500 italic my-6">{error}</p>}
                 {isSubmitted && <p className="text-green-500 italic my-6">Your message is sent successfully. Please expect a response within 24-48 hours.</p>}
             </form>
         </div>
