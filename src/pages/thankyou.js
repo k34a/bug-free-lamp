@@ -14,9 +14,14 @@ export default function Thankyou() {
                 <div className='w-7/8 md:w-2/3 h-screen m-auto flex flex-col items-center justify-center'>
                     <h1 className='text-4xl font-black text-center mx-12 mt-12 mb-6 opacity-70 text-rose-600'>Thank you! &#127881;</h1>
                     <h2 className='text-2xl italic font-black text-center mx-12 mt-6 mb-12 opacity-70 text-sky-800'>&ldquo;Small acts, when multiplied by millions of people, can transform the world.&rdquo; - Howard Zinn</h2>
-                    <Link href="/" className="bg-black text-white p-4 rounded-lg">
-                        Return home
-                    </Link>
+                    <div className='flex flex-col sm:flex-row items-center justify-center font-bold'>
+                        <Link href="/donate" className="sm:mr-5 mb-5 sm:mb-0 bg-white border-4 border-green-500 hover:bg-green-500 hover:text-white text-green-700 p-4 rounded-lg">
+                            Consider Supporting Us
+                        </Link>
+                        <Link href="/" className="bg-white text-black border-4 border-black hover:bg-black hover:text-white p-4 rounded-lg">
+                            Return home
+                        </Link>
+                    </div>
                 </div>
             </main>
         </>
