@@ -17,7 +17,7 @@ function TextField(props) {
                 value={value}
                 placeholder={placeholder}
             />
-            <>{isInvalid && <p className="text-red-500 italic">Please enter a valid email.</p>}</>
+            <>{isInvalid && <p className="text-red-500 italic">Please enter a valid value.</p>}</>
         </div>
     )
 }
