@@ -28,6 +28,7 @@ const para = (paragraph) => {
                     width="100%"
                     className="rounded md:rounded-lg"
                     alt={alt}
+                    loading="lazy"
                 />
                 <figcaption className="caption text-center" aria-label={alt}>{alt}</figcaption>
             </div>
