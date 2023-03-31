@@ -151,12 +151,12 @@ const SurveyForm = (props) => {
                 <h1 className="text-2xl mb-6 font-black">{props.formData.title}</h1>
                 <p className="text-lg mb-6">{props.formData.description}</p>
                 <form onSubmit={handleSubmit}>
+                    {formElements}
                     <ReCAPTCHA
                         size="invisible"
                         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
                         ref={recaptchaRef}
                     />
-                    {formElements}
                     <div className="md:flex md:items-center">
                         <div className="md:w-1/3">
                             <button 
