@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import ReCAPTCHA from "react-google-recaptcha";
 import { useRouter } from 'next/router';
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { titleCase, validateEmail } from "@/lib/commonFrontEndFns";
@@ -9,12 +8,15 @@ import EmailField from "./FormComponents/EmailField";
 import PhoneField from "./FormComponents/PhoneField";
 import BooleanField from "./FormComponents/BooleanField";
 import BigtextField from "./FormComponents/BigtextField";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const SurveyForm = (props) => {
     const formItems = props.formData.properties || {};
     const requiredItems = props.formData.required || [];
 
-    const defaultFormData = {};
+    const defaultFormData = {
+
+    };
     Object.keys(formItems).forEach(property => {
         defaultFormData[property] = "";
         if (property.type === 'boolean') {
@@ -24,18 +26,20 @@ const SurveyForm = (props) => {
     
     const router = useRouter();
     const [formData, setFormData] = useState(defaultFormData);
-    const [invalidFormFields, setInvalidFormFields] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(0);
+    const [token, setToken] = useState("");
+    const hcaptchaRef = useRef();
+    
     const [loading, setloading] = useState(false);
-    const recaptchaRef = useRef();
+    const [isSubmitted, setIsSubmitted] = useState(0);
+    const [invalidFormFields, setInvalidFormFields] = useState({});
+    const [error, setError] = useState("");
     
     async function handleSubmit(e){
         e.preventDefault();
         setloading(true);
         setIsSubmitted(0); 
         setInvalidFormFields({});
-        const token = await recaptchaRef.current.executeAsync();
-        recaptchaRef.current.reset();
+        setError("");
         
         const submittedData = {...formData};
         const invalidFieldsInSubmittedData = {}
@@ -59,7 +63,8 @@ const SurveyForm = (props) => {
                 submittedData[fieldName] = fieldVal? "Yes": "No";
             }
         })
-        if (invalidFieldsInSubmittedData && Object.keys(invalidFieldsInSubmittedData).length === 0){
+        
+        if (token && invalidFieldsInSubmittedData && Object.keys(invalidFieldsInSubmittedData).length === 0){
             console.log("Submitted")
             const response = await fetch("/api/submitsurvey", {
                 method: "POST",
@@ -69,7 +74,10 @@ const SurveyForm = (props) => {
                 }
             });
             const json = await response.json();
+            hcaptchaRef.current.resetCaptcha();
+            setToken("");
             if (!response.ok) {
+                setError("Unable to save your response. Please try again later.")
                 setIsSubmitted(-1);
             }
             else {
@@ -77,6 +85,12 @@ const SurveyForm = (props) => {
                 setFormData(defaultFormData);
                 router.push('/thankyou');
             }
+        }
+        else if(!token) {
+            setError("Please verify the captcha.")
+        }
+        else {
+            setError("Some fields above are invalid. Please correct them and re-submit.")
         }
         setInvalidFormFields(invalidFieldsInSubmittedData)
         setloading(false);
@@ -152,12 +166,13 @@ const SurveyForm = (props) => {
                 <p className="text-lg mb-6">{props.formData.description}</p>
                 <form onSubmit={handleSubmit}>
                     {formElements}
-                    <ReCAPTCHA
-                        size="invisible"
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
-                        ref={recaptchaRef}
+                    <HCaptcha
+                        ref={hcaptchaRef}
+                        sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+                        onVerify={token => setToken(token)}
+                        onExpire={e => setToken("")}
                     />
-                    <div className="md:flex md:items-center">
+                    <div className="my-6 md:flex md:items-center">
                         <div className="md:w-1/3">
                             <button 
                                 className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed"
@@ -170,8 +185,7 @@ const SurveyForm = (props) => {
                         {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                         <div className="md:w-2/3"></div>
                     </div>
-                    {invalidFormFields && Object.keys(invalidFormFields).length > 0 && <p className="text-red-500 italic my-6">Some fields above are invalid. Please correct them and re-submit.</p>}
-                    {isSubmitted === -1 && <p className="text-red-500 italic my-6">Unable to save your response. Please try again later.</p>}
+                    {error && <p className="text-red-500 italic my-6">{error}</p>}
                     {isSubmitted === 1 && <p className="text-green-500 italic my-6">Your response is saved.</p>}
                 </form>
             </div>

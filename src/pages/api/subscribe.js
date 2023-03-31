@@ -1,5 +1,5 @@
 import { emailNotifier } from '@/lib/emailfns';
-import { validateCaptcha } from '../../lib/recaptcha';
+import { validateHCaptcha } from '../../lib/hcaptcha';
 
 const { Client } = require('@notionhq/client');
 
@@ -86,7 +86,7 @@ const emailSubject = "You're in! Welcome to the Larry Rowbs Foundation Newslette
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const isTokenValid = await validateCaptcha(req.body.token);
+    const isTokenValid = await validateHCaptcha(req.body.token);
     if (!isTokenValid) {
       res.status(404).json({
         error: {
@@ -110,7 +110,7 @@ export default async function handler(req, res) {
           },
         },
       });
-      emailNotifier(req.body.email, emailSubject, emailBody);
+      //emailNotifier(req.body.email, emailSubject, emailBody);
       res.status(200).json({});
     }
     catch (err) {

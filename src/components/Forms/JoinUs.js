@@ -1,10 +1,10 @@
 import { ThreeDots } from "react-loader-spinner"; 
 import { useState, useRef } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import PhoneInput from 'react-phone-number-input'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import { titleCase, validateEmail, validateURL } from "@/lib/commonFrontEndFns";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const JoinUs = () => {
     const defaultsParams = {
@@ -21,9 +21,11 @@ const JoinUs = () => {
 
     const [invalidFields, setInvalidFields] = useState({});
     const [formData, setFormData] = useState(defaultsParams);
+    const [token, setToken] = useState("");
+    const hcaptchaRef = useRef();
+    
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isNotSubmitted, setIsNotSubmitted] = useState(false);
-    const recaptchaRef = useRef();
+    const [error, setError] = useState("")
     const [loading, setloading] = useState(false);
 
     async function handleSubmit(e) {
@@ -31,7 +33,7 @@ const JoinUs = () => {
         setloading(true);
         setInvalidFields({});
         setIsSubmitted(false);
-        setIsNotSubmitted(false);
+        setError("");
         const invalidSubmittedFields = {}
         if (!formData.contact || !isValidPhoneNumber(formData.contact)) {
             invalidSubmittedFields["contact"] = true;
@@ -45,9 +47,7 @@ const JoinUs = () => {
         if (formData.linkedin && !validateURL(formData.linkedin)) {
             invalidSubmittedFields["linkedin"] = true;
         }
-        if (invalidSubmittedFields && Object.keys(invalidSubmittedFields).length == 0) {
-            const token = await recaptchaRef.current.executeAsync();
-            recaptchaRef.current.reset();
+        if (token && invalidSubmittedFields && Object.keys(invalidSubmittedFields).length == 0) {
             const updatedFormData = {...formData, token}
             const response = await fetch("/api/joinus", {
                 method: "POST",
@@ -57,13 +57,21 @@ const JoinUs = () => {
                 }
             });
             const json = await response.json();
+            hcaptchaRef.current.resetCaptcha();
+            setToken("");
             if (!response.ok) {
-                setIsNotSubmitted(true)
+                setError("Unable to proceed your request. Please try again later.")
             }
             else {
                 setIsSubmitted(true);
                 setFormData(defaultsParams);
             }
+        }
+        else if (!token) {
+            setError("Please verify the captcha.")
+        }
+        else {
+            setError("Some fields above are invalid. Please correct them and re-submit.")
         }
         setInvalidFields(invalidSubmittedFields)
         setloading(false);
@@ -216,12 +224,13 @@ const JoinUs = () => {
                         {invalidFields["resume"] && <p className="text-red-500 italic">Please enter a valid link to your resume.</p>}
                     </div>
                 </div>
-                <ReCAPTCHA
-                    size="invisible"
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_CLIENT}
-                    ref={recaptchaRef}
+                <HCaptcha
+                    ref={hcaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY}
+                    onVerify={token => setToken(token)}
+                    onExpire={e => setToken("")}
                 />
-                <div className="md:flex md:items-center">
+                <div className="my-6 md:flex md:items-center">
                     <div className="md:w-1/3">
                         <button
                             className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed"
@@ -234,8 +243,7 @@ const JoinUs = () => {
                     {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                     <div className="md:w-2/3"></div>
                 </div>
-                {invalidFields && Object.keys(invalidFields).length > 0 && <p className="text-red-500 italic my-6">Some fields above are invalid. Please correct them and re-submit.</p>}
-                {isNotSubmitted && <p className="text-red-500 italic my-6">Unable to proceed your request. Please try again later.</p>}
+                {error && <p className="text-red-500 italic my-6">{error}</p>}
                 {isSubmitted && <p className="text-green-500 italic my-6">Your message is sent successfully. Please expect a response within 24-48 hours.</p>}
             </form>
         </div>

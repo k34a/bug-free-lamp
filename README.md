@@ -14,9 +14,9 @@ npm install
 Create environment variables in a ```.env``` file. Here is a template.
 
 ```
-# Tokens for Google Recaptcha V2
-NEXT_PUBLIC_RECAPTCHA_CLIENT=<>
-RECAPTCHA_SERVER=<>
+# Tokens for Google HCaptcha V2
+NEXT_PUBLIC_HCAPTCHA_CLIENT=<>
+HCAPTCHA_SERVER=<>
 
 # Tokens for a Notion client (read and write separately. write token used to save data for forms)
 NOTION_TOKEN=<>

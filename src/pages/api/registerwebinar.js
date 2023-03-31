@@ -1,5 +1,5 @@
 import { emailNotifier } from '@/lib/emailfns';
-import { validateCaptcha } from '../../lib/recaptcha';
+import { validateHCaptcha } from '../../lib/hcaptcha';
 
 const { Client } = require('@notionhq/client');
 
@@ -101,7 +101,7 @@ const emailBody = `
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const isTokenValid = await validateCaptcha(req.body.token);
+        const isTokenValid = await validateHCaptcha(req.body.token);
         if (!isTokenValid) {
             res.status(404).json({});
             return;
