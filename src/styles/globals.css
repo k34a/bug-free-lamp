@@ -11,6 +11,7 @@ html {
     padding: 0;
     box-sizing: border-box;
     transition: all 0.3s linear;
+    font-display: swap;
 }
 
 ::-webkit-scrollbar {
