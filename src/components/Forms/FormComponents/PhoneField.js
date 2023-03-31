@@ -17,7 +17,7 @@ function PhoneField(props) {
                 value={value}
                 onChange={(value) => onValueChange(name, value)}
             />
-            <>{isInvalid && <p className="text-red-500 text-xs italic">Please enter a valid phone number.</p>}</>
+            <>{isInvalid && <p className="text-red-500 italic">Please enter a valid phone number.</p>}</>
         </div>
     )
 }

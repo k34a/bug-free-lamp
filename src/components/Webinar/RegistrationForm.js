@@ -76,7 +76,7 @@ export default function RegistrationForm(params) {
             <h2 className="my-6 text-slate-700 font-bold text-2xl">Register Now!</h2>
             <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+                    <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-first-name">
                         First Name *
                     </label>
                     <input
@@ -90,7 +90,7 @@ export default function RegistrationForm(params) {
                     />
                 </div>
                 <div className="w-full md:w-1/2 px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+                    <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-last-name">
                         Last Name *
                     </label>
                     <input
@@ -106,7 +106,7 @@ export default function RegistrationForm(params) {
             </div>
             <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="email">
+                    <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="email">
                         E-mail *
                     </label>
                     <input
@@ -118,7 +118,7 @@ export default function RegistrationForm(params) {
                         value={email}
                         placeholder="name@domain.com"
                     />
-                    {isInvalidEmail && <p className="text-red-500 text-xs italic">Please enter a valid email.</p>}
+                    {isInvalidEmail && <p className="text-red-500 italic">Please enter a valid email.</p>}
                 </div>
             </div>
             <ReCAPTCHA

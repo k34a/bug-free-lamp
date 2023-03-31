@@ -234,7 +234,7 @@ const JoinUs = () => {
                     {loading && <ThreeDots color={'rgb(45 212 191)'} loading={loading} size={100} />}
                     <div className="md:w-2/3"></div>
                 </div>
-                {invalidFields && Object.keys(invalidFields).length > 0 && <p className="text-red-500 text-xs italic my-6">Some fields above are invalid. Please correct them and re-submit.</p>}
+                {invalidFields && Object.keys(invalidFields).length > 0 && <p className="text-red-500 italic my-6">Some fields above are invalid. Please correct them and re-submit.</p>}
                 {isNotSubmitted && <p className="text-red-500 italic my-6">Unable to proceed your request. Please try again later.</p>}
                 {isSubmitted && <p className="text-green-500 italic my-6">Your message is sent successfully. Please expect a response within 24-48 hours.</p>}
             </form>
