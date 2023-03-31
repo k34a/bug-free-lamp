@@ -1,76 +1,74 @@
 import Head from "next/head";
 import SurveyForm from '@/components/Forms/Survey'
 
-const questions = [
-    {
-        question: "First name",
-        optional: false,
-        type: "text",
-        placeholder: "John",
-        name: "Question0"
-    }, 
-    {
-        question: "Last name",
-        optional: false,
-        type: "text",
-        placeholder: "Doe",
-        name: "Question1"
+const formData = {
+    title: "Webinar Survey",
+    description: (<> Thanks for attending the webinar! <br /> Please share your opinion below. It won&apos;t take more than 2-3 minutes to complete...promise &#128522;</>),
+    required: [
+        "Question0",
+        "Question1",
+        "Question2",
+        "Question4",
+        "Question5",
+        "Question6",
+        "Question9",
+    ],
+    donaButton: "Done!",
+    properties: {
+        Question0: {
+            type: "text",
+            placeholder: "John",
+            label: "First name",
+            titleCase: true,
+        },
+        Question1: {
+            type: "text",
+            placeholder: "Doe",
+            label: "Last name",
+            titleCase: true,
+        },
+        Question2: {
+            type: "email",
+            placeholder: "your@email.com",
+            label: "What is your email?",
+        },
+        Question3: {
+            type: "phone",
+            placeholder: "Enter your phone number",
+            label: "What is your phone number? (Optional)",
+            optional: true,
+        },
+        Question4: {
+            type: "bigtext",
+            placeholder: "From a friend, social media, or elsewhere?",
+            label: "How did you hear about The Larry Rowbs Foundation?",
+        },
+        Question5: {
+            type: "bigtext",
+            placeholder: "(e.g. financial, skills, services, promoting, etc.)",
+            label: "What kind of support have you given to organizations that align with your values?",
+        },
+        Question6: {
+            type: "bigtext",
+            placeholder: "In short, what motivates you to support an organization?",
+            label: "What aspects of an organization inspire, empower, or motivate you to offer support? What are some key factors that encourage you to engage with an organization and contribute to their mission?",
+        },
+        Question7: {
+            type: "boolean",
+            label: "Does the mission/vision of The Larry Rowbs Foundation resonate with you?",
+        },
+        Question8: {
+            type: "boolean",
+            label: "Would you be happy to support us with spare change round ups and a monthly contribution? (To learn more about spare change round-ups, checkout Change Maker)",
+        },
+        Question9: {
+            type: "bigtext",
+            placeholder: "We would love to hear from you!",
+            label: "Do you have any feedback for us to help us improve how we do things?",
+        },
     },
-    {
-        question: "What is your email?",
-        optional: false,
-        type: "email",
-        placeholder: "your@email.com",
-        name: "Question2",
-    },
-    {
-        question: "What is your phone number? (Optional)",
-        optional: true,
-        type: "phone",
-        placeholder: "Enter your phone number",
-        name: "Question3",
-    },
-    {
-        question: "How did you hear about The Larry Rowbs Foundation?",
-        optional: false,
-        type: "bigtext",
-        placeholder: "From a friend, social media, or elsewhere?",
-        name: "Question4",
-    },
-    {
-        question: "What kind of support have you given to organizations that align with your values?",
-        optional: false,
-        type: "bigtext",
-        placeholder: "(e.g. financial, skills, services, promoting, etc.)",
-        name: "Question5",
-    },
-    {
-        question: "What aspects of an organization inspire, empower, or motivate you to offer support? What are some key factors that encourage you to engage with an organization and contribute to their mission?",
-        optional: false,
-        type: "bigtext",
-        placeholder: "In short, what motivates you to support an organization?",
-        name: "Question6",
-    },
-    {
-        question: "Does the mission/vision of The Larry Rowbs Foundation resonate with you?",
-        optional: false,
-        type: "boolean",
-        name: "Question7",
-    },
-    {
-        question: <>Would you be happy to support us with spare change round ups and a monthly contribution? (To learn more about spare change round-ups, checkout <a href="https://www.joinchangemaker.com/" className="text-purple-700" target="_blank" rel="noopener noreferrer nofollow">Change Maker</a>)</>,
-        optional: false,
-        type: "boolean",
-        name: "Question8",
-    },
-    {
-        question: "Do you have any feedback for us to help us improve how we do things?",
-        optional: false,
-        type: "bigtext",
-        placeholder: "We would love to hear from you!",
-        name: "Question9",
-    }
-]
+};
+
 
 export default function Survey() {
     return (
@@ -83,10 +81,7 @@ export default function Survey() {
             </Head>
             <div>
                 <SurveyForm 
-                    heading={"Webinar Survey"}
-                    doneButtonText="Done!"
-                    description={<>Thanks for attending the webinar! <br />Please share your opinion below. It won&apos;t take more than 2-3 minutes to complete... promise &#128522;</>}
-                    formQuestions={questions}
+                    formData={formData}
                     notionDB="NOTION_SURVEY"
                     bgImage="https://i.ibb.co/51CmDNC/v880-kul-10.jpg"
                 />

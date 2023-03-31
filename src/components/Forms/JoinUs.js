@@ -4,17 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import PhoneInput from 'react-phone-number-input'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
-
-const validateEmail = (email) => {
-    return email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
-
-function validateURL(s) {
-    var regexp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-    return regexp.test(s);
-}
+import { titleCase, validateEmail, validateURL } from "@/lib/commonFrontEndFns";
 
 const JoinUs = () => {
     const defaultsParams = {
@@ -79,10 +69,14 @@ const JoinUs = () => {
         setloading(false);
     }
 
-    const updateField = (e) => {
+    const updateField = (e, makeTitleCase = false) => {
+        let value = e.target.value;
+        if (makeTitleCase) {
+            value = titleCase(value);
+        }
         setFormData({
           ...formData,
-            [e.target.name]: e.target.value
+            [e.target.name]: value
         });
     }
 
@@ -107,7 +101,7 @@ const JoinUs = () => {
                             placeholder="John"
                             required={true}
                             name="firstName"
-                            onChange={(e) => updateField(e)}
+                            onChange={(e) => updateField(e, true)}
                             value={formData.firstName}
                         />
                     </div>
@@ -121,7 +115,7 @@ const JoinUs = () => {
                             placeholder="Doe"
                             required={true}
                             name="lastName"
-                            onChange={(e) => updateField(e)}
+                            onChange={(e) => updateField(e, true)}
                             value={formData.lastName}
                         />
                     </div>
@@ -138,7 +132,7 @@ const JoinUs = () => {
                             type="text"
                             onChange={(e) => updateField(e)}
                             value={formData.email}
-                            placeholder="name@domain.com"
+                            placeholder="your@email.com"
                         />
                         {invalidFields["email"] && <p className="text-red-500 italic">Please enter a valid email.</p>}
                     </div>

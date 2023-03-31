@@ -1,12 +1,7 @@
 import { useRef, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import ReCAPTCHA from "react-google-recaptcha";
-
-const validateEmail = (email) => {
-    return email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
+import { titleCase, validateEmail } from "@/lib/commonFrontEndFns";
 
 const ContactUs = () => {
     const defaultData = {
@@ -55,10 +50,14 @@ const ContactUs = () => {
         setloading(false);
     }
 
-    const updateField = (e) => {
+    const updateField = (e, makeTitleCase = false) => {
+        let value = e.target.value;
+        if (makeTitleCase) {
+            value = titleCase(value);
+        }
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [e.target.name]: value
         });
     }
 
@@ -77,7 +76,7 @@ const ContactUs = () => {
                             type="text" 
                             placeholder="John"
                             required={true}
-                            onChange={(e) => updateField(e)}
+                            onChange={(e) => updateField(e, true)}
                             value={formData.firstName}
                         />
                     </div>
@@ -91,7 +90,7 @@ const ContactUs = () => {
                             type="text" 
                             required={true}
                             placeholder="Doe"
-                            onChange={(e) => updateField(e)}
+                            onChange={(e) => updateField(e, true)}
                             value={formData.lastName}
                         />
                     </div>
@@ -108,7 +107,7 @@ const ContactUs = () => {
                             type="text"
                             onChange={(e) => updateField(e)}
                             value={formData.email}
-                            placeholder="name@domain.com"
+                            placeholder="your@email.com"
                         />
                         {isInvalidEmail && <p className="text-red-500 italic">Please enter a valid email.</p>}
                     </div>
