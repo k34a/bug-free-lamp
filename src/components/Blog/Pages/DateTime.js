@@ -5,7 +5,7 @@ const DateTime = (props) => {
     const publishDate = props.publishDate || "";
     const readingTime = props.readingTime || "";
 
-    if (publishDate || !readingTime) {
+    if (!publishDate || !readingTime) {
         return null;
     }
 
