@@ -42,9 +42,9 @@ export default function Share(props) {
             <div className='my-6 flex items-center justify-center'>
                 <Link
                     href='/donate'
-                    className='bg-lime-600 text-white focus:ring-4 focus:ring-lime-300 rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 hover:bg-lime-800 !no-underline'
+                    className='font-semibold border-4 border-lime-600 text-black hover:text-white rounded-lg px-4 lg:px-5 py-3 lg:py-3.5 hover:bg-lime-800 !no-underline'
                 >
-                    Consider supporting us
+                    Consider Supporting Us
                 </Link>
             </div>
             <div className="flex pt-2 items-center flex-wrap justify-center">
