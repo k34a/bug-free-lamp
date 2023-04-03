@@ -1,17 +1,22 @@
 import Head from 'next/head'
-import ReactMarkdown from "react-markdown"
-import styles from '@/styles/BlogArticle.module.css'
-import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
-import Share from '@/components/Blog/Pages/Share';
-import rehypeSlug from 'rehype-slug';
-import componentMapping from '@/components/Blog/Pages/Markdown';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+
+import ReactMarkdown from "react-markdown"
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm'
+import { HiArrowNarrowLeft } from "react-icons/hi";
+
+import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
+
+import Share from '@/components/Blog/Pages/Share';
+import componentMapping from '@/components/Blog/Pages/Markdown';
 import SelectedTextMenu from '@/components/Blog/Pages/SelectedTextMenu';
 import DarkMode from '@/components/Blog/Pages/DarkMode';
 import MetaData from '@/components/Blog/Pages/MetaData';
 import ReadMore from '@/components/Blog/Pages/ReadMore';
-import { HiArrowNarrowLeft } from "react-icons/hi";
+
+import styles from '@/styles/BlogArticle.module.css'
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -112,7 +117,7 @@ export default function BlogPost({post, slug}) {
                     <MetaData post={post}/>
                     <div ref={startingMainContent}>
                         <ReactMarkdown
-                            remarkPlugins={[rehypeSlug]}
+                            remarkPlugins={[rehypeSlug, remarkGfm]}
                             components={componentMapping}
                             >{post.markdown}
                         </ReactMarkdown>

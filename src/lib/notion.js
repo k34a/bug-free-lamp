@@ -89,14 +89,16 @@ const getPageMetaData = (post) => {
         return allTags;
     };
     return {
+        // compulsory properties
         id: post.id,
         title: post.properties.Title.title[0].plain_text,
-        tags: getTags(post.properties.Tags.multi_select),
-        seoKeywords: getTags(post.properties.SEOKeywords.multi_select),
-        description: post.properties.Description.rich_text[0].plain_text,
+        slug: post.properties.Slug.rich_text[0].plain_text,
+        // optional properties
+        tags: getTags(post.properties.Tags?.multi_select || []),
+        seoKeywords: getTags(post.properties.SEOKeywords?.multi_select || []),
+        description: post.properties.Description?.rich_text?.[0]?.plain_text || "",
         date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
         publishedDate: post.properties.Date?.date?.start || "2023-01-01",
-        slug: post.properties.Slug.rich_text[0].plain_text,
         author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
         authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
         imageThumbnail: post?.properties?.ImageThumbnail?.url || "",
