@@ -12,7 +12,7 @@ const BlogListItem = (props) => {
     const placholderThumbnail = defaultPlaceholders[props.itemNumber % (defaultPlaceholders.length)]
 
     return (
-        <div className="bg-white border border-gray-200 rounded-lg shadow">
+        <div className="bg-white dark:bg-slate-900 dark:text-white border-2 border-gray-200 dark:border-gray-950 rounded-lg shadow">
             <Link href={`/blog/${props.slug}`} className="!no-underline select-none">
                 <div
                     className="w-full shadow h-48 sm:h-56 bg-cover bg-center rounded-lg"
@@ -24,9 +24,9 @@ const BlogListItem = (props) => {
             </Link>
             <div className="m-auto max-w-sm p-6">
                 <Link href={`/blog/${props.slug}`}>
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{props.title}</h5>
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-slate-100">{props.title}</h5>
                 </Link>
-                <p className="mb-3 font-normal text-gray-700">{props.description}</p>
+                <p className="mb-3 font-normal text-gray-700 dark:text-slate-200">{props.description}</p>
                 <div className="mb-3 text-sm italic">
                     {props.publishDate}
                 </div>

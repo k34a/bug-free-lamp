@@ -105,30 +105,28 @@ export default function BlogPost({post, slug}) {
             <DarkMode />
             <main
                 ref={mainBody} 
-                className={`py-16 ${styles.article} break-words prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}
+                className='py-16 space-y-6'
             >
-                <div className='mb-6'>
-                    <Link href='/blog' className='hover:-mx-2'>
-                        <HiArrowNarrowLeft size={16} className="inline mr-2 align-middle" />
-                        All Articles
-                    </Link>
-                </div>
-                <section>
-                    <MetaData post={post}/>
-                    <div ref={startingMainContent}>
-                        <ReactMarkdown
-                            remarkPlugins={[rehypeSlug, remarkGfm]}
-                            components={componentMapping}
-                            >{post.markdown}
-                        </ReactMarkdown>
+                <div
+                    className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}
+                >
+                    <section>
+                        <MetaData post={post}/>
+                        <div ref={startingMainContent}>
+                            <ReactMarkdown
+                                remarkPlugins={[rehypeSlug, remarkGfm]}
+                                components={componentMapping}
+                                >{post.markdown}
+                            </ReactMarkdown>
+                        </div>
+                        {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied}/> }
+                    </section>
+                    <div ref={shareButtons}>
+                        <Share slug={slug} title={post.metadata.title}/>
                     </div>
-                    {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied}/> }
-                </section>
-                <div ref={shareButtons}>
-                    <Share slug={slug} title={post.metadata.title}/>
+                    {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
                 </div>
-                <ReadMore readMoreArticles={post.readMoreArticles} className='prose-normal'/>
-                {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
+                <ReadMore readMoreArticles={post.readMoreArticles} className='prose-normal' theme="light" />
             </main>
         </div>
     )
