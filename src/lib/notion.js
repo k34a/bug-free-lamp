@@ -100,6 +100,7 @@ const getPageMetaData = (post) => {
         date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
         publishedDate: post.properties.Date?.date?.start || "2023-01-01",
         author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
+        authorPic: post?.properties?.AuthorProfilePicLink?.url || "",
         authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
         imageThumbnail: post?.properties?.ImageThumbnail?.url || "",
     };

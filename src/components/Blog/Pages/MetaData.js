@@ -1,6 +1,5 @@
 import Tags from "@/components/Blog/Pages/Tags";
 import TableOfContents from "./TableOfContents";
-import DateTime from "@/components/Blog/Pages/DateTime";
 import Author from "@/components/Blog/Pages/Author";
 
 const MetaData = (props) => {
@@ -14,18 +13,18 @@ const MetaData = (props) => {
     const minutes = post?.minutes || "";
     return (
         <>
-            <h1 className='text-4xl dark:text-white'>
+            <Tags publishedTags={metadata.tags}/>
+            <h1 className='text-4xl md:text-6xl dark:text-white'>
                 {title}
             </h1>
+            <p>{metadata.description}</p>
             <Author 
                 authorName={metadata.author}
                 authorHref={metadata.authorHref}
-            />
-            <DateTime 
                 publishDate={metadata.date}
                 readingTime={minutes}
+                authorPic={metadata.authorPic}
             />
-            <Tags publishedTags={metadata.tags}/>
             <TableOfContents tocMarkdown={markdown}/>
         </>
     );

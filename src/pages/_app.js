@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
           gtag('config', 'G-CL7HRH1ZH9');
         `}
       </Script>
-      <NextNProgress />
+      <NextNProgress options={{ showSpinner: false }} />
       <main className={`${poppins.className} h-screen`}>
         <Header 
           isMenuOpen={isMenuOpen}
