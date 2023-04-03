@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 export default function Document() {
   return (
@@ -8,6 +9,11 @@ export default function Document() {
         <meta name="theme-color" content="#b700ff" />
         <meta name="msapplication-navbutton-color" content="#b700ff" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#b700ff" />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8692166760702368"
+          crossorigin="anonymous"
+        ></Script>
       </Head>
       <body>
         <Main />

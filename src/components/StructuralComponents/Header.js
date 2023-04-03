@@ -59,7 +59,7 @@ const Header = (props) => {
                     <img
                         className="w-8 h-8 rounded"
                         alt="Logo"
-                        src='/logo.png'
+                        src='/logo.webp'
                     />
                     {isOpen && <span className="ml-2 text-normal font-bold">Larry Rowbs Foundation</span>}
                 </Link>
@@ -105,7 +105,7 @@ const Header = (props) => {
                         <img
                             className="w-8 h-8 rounded"
                             alt="Logo"
-                            src='/logo.png'
+                            src='/logo.webp'
                         />
                     </Link>
                 </div>
