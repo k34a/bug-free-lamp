@@ -13,7 +13,7 @@ const ReadMore = (props) => {
                             key={index}
                         >
                             <div 
-                                className='border-2 p-4 rounded-lg break-words hover:bg-slate-200 dark:hover:bg-slate-500'
+                                className='border-2 p-4 rounded-lg break-words hover:bg-purple-200 dark:hover:bg-purple-700'
                             >
                                 <div className="font-bold mb-4">
                                     {ele.title}
