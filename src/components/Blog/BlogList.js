@@ -52,6 +52,7 @@ const BlogList = (props) => {
                                 key={index}
                                 itemNumber={index}
                                 readcolor={readColor}
+                                darkMode={props.enableDarkMode || false}
                             />
                         )
                     })}

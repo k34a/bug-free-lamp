@@ -32,9 +32,12 @@ export const getAllPublished = async () => {
         startCursor = response.next_cursor;
     }
 
-    return allPosts.map((post) => {
+    const allPostsMetaData = allPosts.map((post) => {
         return getPageMetaData(post);
     });
+    return allPostsMetaData.filter((post) => {
+        return Object.keys(post).length > 0;
+    })
 };
 
 
@@ -75,35 +78,43 @@ export const getTopPublished = async (n, tags=null) => {
         page_size: n
     });
     const allPosts = posts.results;
-
-    return allPosts.map((post) => {
+    const allPostsMetaData = allPosts.map((post) => {
         return getPageMetaData(post);
     });
+    return allPostsMetaData.filter((post) => {
+        return Object.keys(post).length > 0;
+    })
 };
 
 const getPageMetaData = (post) => {
-    const getTags = (tags) => {
-        const allTags = tags.map((tag) => {
-            return tag.name;
-        });
-        return allTags;
-    };
-    return {
-        // compulsory properties
-        id: post.id,
-        title: post.properties.Title.title[0].plain_text,
-        slug: post.properties.Slug.rich_text[0].plain_text,
-        // optional properties
-        tags: getTags(post.properties.Tags?.multi_select || []),
-        seoKeywords: getTags(post.properties.SEOKeywords?.multi_select || []),
-        description: post.properties.Description?.rich_text?.[0]?.plain_text || "",
-        date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
-        publishedDate: post.properties.Date?.date?.start || "2023-01-01",
-        author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
-        authorPic: post?.properties?.AuthorProfilePicLink?.url || "",
-        authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
-        imageThumbnail: post?.properties?.ImageThumbnail?.url || "",
-    };
+    try {
+        const getTags = (tags) => {
+            const allTags = tags.map((tag) => {
+                return tag.name;
+            });
+            return allTags;
+        };
+        const metaData = {
+            // compulsory properties
+            id: post.id,
+            title: post.properties.Title.title[0].plain_text,
+            slug: post.properties.Slug.rich_text[0].plain_text,
+            // optional properties
+            tags: getTags(post.properties.Tags?.multi_select || []),
+            seoKeywords: getTags(post.properties.SEOKeywords?.multi_select || []),
+            description: post.properties.Description?.rich_text?.[0]?.plain_text || "",
+            date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
+            publishedDate: post.properties.Date?.date?.start || "2023-01-01",
+            author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
+            authorPic: post?.properties?.AuthorProfilePicLink?.url || "",
+            authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
+            imageThumbnail: post?.properties?.ImageThumbnail?.url || "",
+        };
+        return metaData;
+    } catch (e) {
+        console.log(e);
+        return {};
+    }
 };
 
 function getToday(datestring) {

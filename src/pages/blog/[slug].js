@@ -126,7 +126,12 @@ export default function BlogPost({post, slug}) {
                     </div>
                     {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
                 </div>
-                <ReadMore readMoreArticles={post.readMoreArticles} className='prose-normal' theme="light" />
+                <ReadMore 
+                    readMoreArticles={post.readMoreArticles} 
+                    className='prose-normal' 
+                    theme="light" 
+                    enableDarkMode={true}
+                />
             </main>
         </div>
     )
