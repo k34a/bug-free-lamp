@@ -1,3 +1,4 @@
+import { emailNotifier } from '@/lib/emailfns';
 import { validateHCaptcha } from '../../lib/hcaptcha';
 
 const { Client } = require('@notionhq/client');
