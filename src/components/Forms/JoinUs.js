@@ -197,11 +197,10 @@ const JoinUs = () => {
                         <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="grid-password">
                             What are your skills, strengths, gifts, & superpowers? *
                         </label>
-                        <input
-                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                        <textarea
+                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
                             name="skills"
                             required={true}
-                            type="text"
                             onChange={(e) => updateField(e)}
                             value={formData.skills}
                             placeholder="Come on, don't hesitate :)"
