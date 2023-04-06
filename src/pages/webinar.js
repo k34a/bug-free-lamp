@@ -18,7 +18,7 @@ const webinarData = {
     date: "March 24th, 2023",
     time: "09:00 AM EST",
     surveyForm: "/survey",
-    lastRegistrationDate: "25 Apr 2023 06:00:00 GMT",
+    lastRegistrationDate: "25 Mar 2023 06:00:00 GMT",
 }
 
 export default function Webinar(params) {
