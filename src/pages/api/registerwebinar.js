@@ -111,39 +111,39 @@ export default async function handler(req, res) {
           auth: process.env.NOTION_WRITE_TOKEN,
         });
         try {
-          await notion.pages.create({
-              parent: {
-                  database_id: process.env.NOTION_WEBINAR,
-              },
-              properties: {
-                  Firstname: {
-                      title: [
-                          {
-                              text: {
-                                  content: req.body.firstname,
-                              },
-                          },
-                      ],
-                  },
-                  Lastname: {
-                      rich_text: [
-                          {
-                              text: {
-                                  content: req.body.lastname,
-                              },
-                          },
-                      ],
-                  },
-                  Email: {
-                      email: req.body.email,
-                  }
-              },
-          });
-          const firstname = req.body?.firstname || "";
-          const lastname = req.body?.lastname || "";
-          const emailSubject = `Registration Confirmed for ${firstname} ${lastname} to the Stylish Sustainabilty Webinar`;
-          emailNotifier(req.body.email, emailSubject, emailBody);
-          res.status(200).json({});
+          // await notion.pages.create({
+          //     parent: {
+          //         database_id: process.env.NOTION_WEBINAR,
+          //     },
+          //     properties: {
+          //         Firstname: {
+          //             title: [
+          //                 {
+          //                     text: {
+          //                         content: req.body.firstname,
+          //                     },
+          //                 },
+          //             ],
+          //         },
+          //         Lastname: {
+          //             rich_text: [
+          //                 {
+          //                     text: {
+          //                         content: req.body.lastname,
+          //                     },
+          //                 },
+          //             ],
+          //         },
+          //         Email: {
+          //             email: req.body.email,
+          //         }
+          //     },
+          // });
+          // const firstname = req.body?.firstname || "";
+          // const lastname = req.body?.lastname || "";
+          // const emailSubject = `Registration Confirmed for ${firstname} ${lastname} to the Stylish Sustainabilty Webinar`;
+          // emailNotifier(req.body.email, emailSubject, emailBody);
+          res.status(400).json({});
         }
         catch (err) {
           console.log(err)
