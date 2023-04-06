@@ -1,11 +1,9 @@
 import Head from 'next/head'
-import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 import ReactMarkdown from "react-markdown"
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm'
-import { HiArrowNarrowLeft } from "react-icons/hi";
 
 import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
 
