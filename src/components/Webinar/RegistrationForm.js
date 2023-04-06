@@ -174,11 +174,11 @@ export default function RegistrationForm(props) {
                     </h2>}
                     {props.data.description}
                     <div className="text-xl mb-6">
-                        <i className="fa fa-calendar mr-2"></i>
+                        <i className="fa fa-calendar mr-3"></i>
                         {props.data.date}
                     </div>
                     <div className="text-xl mb-6">
-                        <i className="fa fa-clock-o mr-2"></i>
+                        <i className="fa fa-clock-o mr-3"></i>
                         {props.data.time}
                     </div>
                 </div>
