@@ -20,7 +20,7 @@ export const getAllPublished = async () => {
             filter: {
                 property: "Published",
                 checkbox: {
-                    equals: false,
+                    equals: true,
                 },
             },
             start_cursor: startCursor,
@@ -57,7 +57,7 @@ export const getTopPublished = async (n, tags=null) => {
     let publishFilter = {
         property: "Published",
         checkbox: {
-            equals: false,
+            equals: true,
         },
     }
     let fullFilter = {
