@@ -38,7 +38,7 @@ export default function Share(props) {
         }],
     ]
     return (
-        <div>
+        <div className="my-12">
             <div className='my-6 flex items-center justify-center'>
                 <Link
                     href='/donate'

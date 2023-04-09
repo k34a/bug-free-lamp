@@ -6,7 +6,10 @@ import Toc from "react-toc";
 import styles from '@/styles/Commons.module.css';
 
 const TableOfContents = ({ tocMarkdown }) => {
-    const matchers = { "[?!:.*_/]": "" };
+    const matchers = { 
+        "[?!:.*_/()–]": "",
+        "--": "-",
+    };
     const [isTocOpen, setIsTocOpen] = useState(true);
 
     const tableOfContents = (
