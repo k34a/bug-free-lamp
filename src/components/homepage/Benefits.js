@@ -138,13 +138,10 @@ export default function Benefits() {
                                     <h2 className="text-2xl my-4 md:text-3xl lg:text-4xl font-black">{ele["head"]}</h2>
                                     {ele["content"]}
                                     <br /><br />
-                                    <Link href="/blog" className="!no-underline">
-                                        <button 
-                                            type="button"
-                                            className={`text-white ${ele["buttonBg"]} hover:${ele["buttonBgHover"]} focus:ring-4 focus:outline-none font-medium rounded-lg px-5 py-3 text-center inline-flex items-center`}
-                                        >
-                                            {ele["buttonText"]}
-                                        </button>
+                                    <Link 
+                                        href="/blog" 
+                                        className={`!no-underline text-white ${ele["buttonBg"]} hover:${ele["buttonBgHover"]} focus:ring-4 focus:outline-none font-medium rounded-lg p-5 text-center inline-flex items-center`}>
+                                        {ele["buttonText"]}
                                     </Link>
                                 </div>
                             </div>
