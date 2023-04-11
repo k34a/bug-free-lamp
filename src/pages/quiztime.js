@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaTwitter } from 'react-icons/fa';
+import { Circles } from 'react-loader-spinner';
 
 function get5RandomQuestions(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -22,6 +23,7 @@ export default function Quiztime() {
     const [showScore, setShowScore] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [seed, setSeed] = useState(1);
+    const [loading, setLoading] = useState(false);
     
     const reset = () => {
         setSeed(Math.random());
@@ -35,6 +37,7 @@ export default function Quiztime() {
         <>&#128512;</>,
         <>&#128512;</>,
     ]
+
     useEffect(() => {
         setHasStarted(false);
         setCurrentQuestion(0)
@@ -54,12 +57,20 @@ export default function Quiztime() {
 
     const handlePrevious = () => {
         const prevQues = currentQuestion - 1;
-        prevQues >= 0 && setCurrentQuestion(prevQues);
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            prevQues >= 0 && setCurrentQuestion(prevQues);
+        }, 1000);
     };
 
     const handleNext = () => {
         const nextQues = currentQuestion + 1;
-        nextQues < questions.length && setCurrentQuestion(nextQues);
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            nextQues < questions.length && setCurrentQuestion(nextQues);
+        }, 1000);
     };
 
     const handleSubmitButton = () => {
@@ -72,8 +83,12 @@ export default function Quiztime() {
                     (newScore += 1)
             );
         }
-        setScore(newScore);
-        setShowScore(true);
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            setScore(newScore);
+            setShowScore(true);
+        }, 1000);
     };
 
 
@@ -89,19 +104,19 @@ export default function Quiztime() {
             <p className='text-xl'>Welcome to our sustainability quiz! This quiz aims to test your knowledge on sustainable fashion and its impact on Africa, as well as the harms of fast fashion and consumer choices.</p>
             <p className='text-xl'>The fashion industry has a significant impact on the environment and society, and it&apos;s important to understand how our choices as consumers can make a difference. By taking this quiz, you&apos;ll learn about the benefits of sustainable fashion, the negative impacts of fast fashion, and how you can make more sustainable fashion choices.</p>
             <p className='text-xl pb-6'>Are you ready to test your knowledge on sustainable fashion? Let&apos;s get started!</p>
-            <button onClick={(e) => setHasStarted(true)} className="inline align-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            <button onClick={(e) => setHasStarted(true)} className="inline align-center bg-green-800 hover:bg-green-700 text-white font-bold py-3 px-5 border border-blue-700 rounded">
                 Start Quiz
             </button>
         </div>
     );
 
     const scoreSheet = (
-        <div className='h-screen w-11/12 sm:w-1/2 my-12 align-middle items-center m-auto justify-center flex flex-col space-y-5'>
+        <div className='h-screen w-11/12 sm:w-1/2 align-middle items-center m-auto justify-center flex flex-col space-y-5'>
             <h1 className="text-3xl font-semibold text-center text-white">
                 You scored {score} out of {questions.length}
-                {expression[score]}
+                <span className='ml-2'>{expression[score]}</span>
             </h1>
-            <button onClick={reset} className="inline align-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 border border-indigo-700 rounded">
+            <button onClick={reset} className="inline align-center bg-red-700 hover:bg-green-700 text-white font-bold py-2 px-4 border border-indigo-700 rounded">
                 Try Again
             </button>
             <button onClick={shareScoreTwitter} className="inline align-center bg-blue-500 hover:bg-blue-400 text-white font-bold py-4 px-4 border border-blue-700 rounded-full">
@@ -135,7 +150,7 @@ export default function Quiztime() {
                                 answer.answer === selectedOptions[currentQuestion]?.answerByUser
                             }
                             onChange={(e) => handleAnswerOption(answer.answer)}
-                            className="w-6 h-6 bg-black"
+                            className="w-6 h-6 bg-green-300"
                         />
                         <p className="ml-6 text-white">{answer.answer}</p>
                     </div>
@@ -144,7 +159,7 @@ export default function Quiztime() {
             <div className="w-full py-4 text-white align-center space-y-2 sm:space-y-0 sm:space-x-2 grid grid-cols-1 sm:grid-cols-2">
                 <button
                     onClick={handlePrevious}
-                    className="w-full py-3 bg-indigo-600 rounded-lg disabled:bg-indigo-400 disabled:cursor-not-allowed"
+                    className="w-full py-3 bg-green-700 rounded-lg disabled:text-green-400 disabled:cursor-not-allowed"
                     disabled={currentQuestion == 0}
                 >
                     Previous
@@ -155,7 +170,7 @@ export default function Quiztime() {
                             ? handleSubmitButton
                             : handleNext
                     }
-                    className="w-full py-3 bg-indigo-600 rounded-lg"
+                    className="w-full py-3 bg-green-700 rounded-lg"
                 >
                     {currentQuestion + 1 === questions.length ? "Submit" : "Next"}
                 </button>
@@ -172,13 +187,26 @@ export default function Quiztime() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <div className="px-5 py-12 md:py-28 bg-slate-800 justify-center items-center">
-                    {
-                        hasStarted? (
-                            questions.length? (showScore ? scoreSheet : questionWithOptions)
-                            : <h2 className="text-3xl font-semibold text-center text-white">No Questions </h2>
-                        ): getStarted
-                    }
+                <div className="px-5 py-12 md:py-28 bg-green-500 justify-center items-center relative">
+                    {loading && <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                        <Circles
+                            height="80"
+                            width="80"
+                            color="#cccccc"
+                            ariaLabel="circles-loading"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                        />
+                    </div>}
+                    <div className={`${loading? "blur-md" : ""}`}>
+                        {
+                            hasStarted? (
+                                questions.length? (showScore ? scoreSheet : questionWithOptions)
+                                : <h2 className="text-3xl font-semibold text-center text-white">No Questions Available </h2>
+                            ): getStarted
+                        }
+                    </div>
                 </div>
             </main>
         </>

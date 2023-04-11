@@ -5,7 +5,7 @@ import { FaHome, FaWalking } from 'react-icons/fa';
 import { RiTeamFill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { MdQuiz } from 'react-icons/md';
+import { BsLightningFill } from 'react-icons/bs';
 
 const MenuItems = {
     main: [
@@ -17,7 +17,7 @@ const MenuItems = {
     ],
     extra: [
         ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Sustainability Quiz", <MdQuiz key="blog" size={24} />, '/quiztime'],
+        ["Sustainability Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
     ]
 }
 
@@ -31,13 +31,12 @@ const SmallMenuItems = {
         ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
         ["Contact", <IoCall key="blog" size={24} />, '/contact'],
         ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Sustainability Quiz", <MdQuiz key="blog" size={24} />, '/quiztime'],
+        ["Sustainability Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
     ]
 }
 
 const Header = (props) => {
-    const setIsOpen = props.setIsMenuOpen;
-    const isOpen = props.isMenuOpen;
+    const {isMenuOpen, setIsMenuOpen} = props
     const [hydrated, setHydrated] = useState(false)
 
     useEffect(() => {
@@ -51,43 +50,45 @@ const Header = (props) => {
     const normalHeader = (
         <div className="fixed top-0 left-0 flex h-screen space-x-6 bg-violet-700 z-50 shadow-2xl">
             <div
-                className={`flex flex-col items-center ${isOpen ? "w-45" : "w-16"} h-full overflow-hidden text-gray-100 bg-violet-700 rounded`}
-                onMouseEnter={(e) => { setIsOpen(true) }}
-                onMouseLeave={(e) => { setIsOpen(false) }}
+                className={`flex flex-col items-center h-full overflow-hidden text-gray-100 bg-violet-700 rounded`}
+                onMouseEnter={(e) => { setIsMenuOpen(true) }}
+                onMouseLeave={(e) => { setIsMenuOpen(false) }}
             >
-                <Link className={`flex items-center mt-3 ${isOpen ? "w-full px-3" : "justify-center"}`} href="/">
+                <Link className="flex items-center mt-3 w-full px-4" href="/">
                     <img
-                        className="w-8 h-8 rounded"
-                        alt="Logo"
+                        className="rounded"
                         src='/logo.webp'
+                        width={32}
+                        height={32}
+                        alt="Logo"
                     />
-                    {isOpen && <span className="ml-2 text-normal font-bold">Larry Rowbs Foundation</span>}
+                    {isMenuOpen && <span className="ml-2 text-normal font-bold">Larry Rowbs Foundation</span>}
                 </Link>
-                <div className={isOpen ? "w-full px-2" : ""}>
-                    <div className={`flex flex-col items-center ${isOpen ? "w-full" : ""} mt-3 border-t border-gray-400`}>
+                <div className="w-full px-2">
+                    <div className="flex flex-col items-center justify-center w-full mt-3 border-t border-gray-400">
                         {MenuItems.main.map((ele, index)=> {
                             return (
                                 <Link 
                                     key={index} 
-                                    className={`flex items-center ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`} 
+                                    className="flex items-center px-3 w-full h-12 mt-2 rounded hover:bg-violet-500 hover:text-gray-300"
                                     href={ele[2]}
                                 >
                                     {ele[1]}
-                                    {isOpen && <span className="ml-2 text-sm font-medium">{ele[0]}</span>}
+                                    {isMenuOpen && <span className="ml-3 text-sm font-medium">{ele[0]}</span>}
                                 </Link>
                             );
                         })}
                     </div>
-                    <div className={`flex flex-col items-center ${isOpen ? "w-full" : ""} mt-3 border-t border-gray-400`}>
+                    <div className="flex flex-col items-center justify-center w-full mt-3 border-t border-gray-400">
                         {MenuItems.extra.map((ele, index) => {
                             return (
                                 <Link
                                     key={index}
-                                    className={`flex items-center ${isOpen ? "w-full" : "w-12 justify-center"} h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300`}
+                                    className="flex items-center px-3 w-full h-12 mt-2 rounded hover:bg-violet-500 hover:text-gray-300"
                                     href={ele[2]}
                                 >
                                     {ele[1]}
-                                    {isOpen && <span className="ml-2 text-sm font-medium">{ele[0]}</span>}
+                                    {isMenuOpen && <span className="ml-3 text-sm font-medium">{ele[0]}</span>}
                                 </Link>
                             );
                         })}
@@ -103,9 +104,11 @@ const Header = (props) => {
                 <div className="rounded p-2">
                     <Link href="/">
                         <img
-                            className="w-8 h-8 rounded"
-                            alt="Logo"
+                            className="rounded"
                             src='/logo.webp'
+                            width={32}
+                            height={32}
+                            alt="Logo"
                         />
                     </Link>
                 </div>
@@ -123,16 +126,16 @@ const Header = (props) => {
                 })}
                 <div 
                     className="rounded p-2"
-                    onClick={(e) => {setIsOpen(!isOpen)}}
+                    onClick={(e) => {setIsMenuOpen(!isMenuOpen)}}
                 >
                     <BiDotsVerticalRounded size={24}/>
                 </div>
             </div>
             <div 
                 className="w-full flex justify-end"
-                onClick={(e) => { setIsOpen(false) }}
+                onClick={(e) => { setIsMenuOpen(false) }}
             >
-                {isOpen && <div className="z-50 bg-black divide-y divide-gray-100 rounded-lg shadow w-44 text-slate-100">
+                {isMenuOpen && <div className="z-50 bg-black divide-y divide-gray-100 rounded-lg shadow w-44 text-slate-100">
                     <ul className="py-2 text-sm">
                         {SmallMenuItems.extra.map((ele, index) => {
                             return (

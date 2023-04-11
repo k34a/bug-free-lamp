@@ -39,15 +39,7 @@ export default function Share(props) {
     ]
     return (
         <div className="my-12">
-            <div className='my-6 flex items-center justify-center'>
-                <Link
-                    href='/donate'
-                    className='font-semibold border-4 border-lime-600 text-black dark:text-white hover:text-white rounded-lg px-4 lg:px-5 py-3 lg:py-3.5 hover:bg-lime-800 !no-underline'
-                >
-                    Consider Supporting Us
-                </Link>
-            </div>
-            <div className="flex pt-2 items-center flex-wrap justify-center">
+            <div className="flex items-center flex-wrap justify-center">
                 {shareDetails.map((ele, index) => {
                     return (
                             <a 

@@ -221,19 +221,6 @@ export const getReadMoreArticles = async (publishedDateString) => {
     return readMoreArticles.map(getPageMetaData);
 }
 
-const donationText = `## Your Support is all we need.
-
-
-[Our foundation](https://larryrowbsfoundation.org/) aims to make the fashion industry more environmentally friendly and less exploitative towards its workers. We plan to empower the people of Africa and boost its economy.
-
-
-But arriving at our target needs more than simple planning. It needs support from people. Larry Rowbs Foundation invites you to support us and our cause with any of the following:
-
-1. Helping us raise funds to set up the recycling facility in Uganda. Your [donations ](https://larryrowbsfoundation.org/donate)will go a long way.
-2. [Join our team](https://larryrowbsfoundation.org/join/). Our team needs environment activists, researchers, designers, content writers, and social media managers. You are most welcome if you want to bring any other talent that will help us.
-3. Help us [spread the word](https://www.instagram.com/thelarryrowbsfoundation/).
-4. Purchase recycled clothes, and recycle old clothes as much as possible!`
-
 export const getSingleBlogPostBySlug = async (slug) => {
     try {
         const metadata = await getMetadataForSinglePost(slug);
@@ -244,7 +231,7 @@ export const getSingleBlogPostBySlug = async (slug) => {
         const {minutes} = calculateReadingTime(mdString, {
             wordsPerMinute: 200,
         });
-        mdString = addAltTextToImages(mdString, metadata?.title || "Title") + donationText;
+        mdString = addAltTextToImages(mdString, metadata?.title || "Title");
         const ret = {
             metadata,
             minutes,

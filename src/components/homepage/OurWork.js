@@ -33,10 +33,10 @@ export default function OurWork() {
                     <li>Say NO to fast-fashion and opt-in for chemical-free clothes.</li>
                 </ul>
                 <div>
-                    <Link href="/donate" className="">
-                        <button className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                            Donate
-                        </button>
+                    <Link
+                        href="/donate"
+                        className="!no-underline text-white bg-cyan-700 hover:bg-cyan-600 focus:ring-4 focus:outline-none font-medium rounded-lg p-5 text-center inline-flex items-center">
+                        Consider Supporting Us
                     </Link>
                 </div>
             </div>
