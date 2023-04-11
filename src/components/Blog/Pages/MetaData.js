@@ -17,7 +17,6 @@ const MetaData = (props) => {
             <h1 className='text-4xl md:text-6xl dark:text-white'>
                 {title}
             </h1>
-            <p>{metadata.description}</p>
             <Author 
                 authorName={metadata.author}
                 authorHref={metadata.authorHref}
@@ -25,7 +24,6 @@ const MetaData = (props) => {
                 readingTime={minutes}
                 authorPic={metadata.authorPic}
             />
-            <TableOfContents tocMarkdown={markdown}/>
         </>
     );
 }
