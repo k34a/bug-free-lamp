@@ -16,6 +16,7 @@ import ReadMore from '@/components/Blog/Pages/ReadMore';
 
 import styles from '@/styles/BlogArticle.module.css'
 import YourSupportIsAllWeNeed from '@/components/Blog/Pages/YourSupportIsAllWeNeed';
+import TableOfContents from '@/components/Blog/Pages/TableOfContents';
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -105,25 +106,30 @@ export default function BlogPost({post, slug}) {
             <main
                 ref={mainBody} 
                 className='py-16 space-y-6'
-            >
-                <div
-                    className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 md:w-3/4 lg:w-1/2 dark:prose-invert`}
                 >
-                    <section>
-                        <MetaData post={post}/>
-                        <div ref={startingMainContent}>
-                            <ReactMarkdown
-                                remarkPlugins={[rehypeSlug, remarkGfm]}
-                                components={componentMapping}
-                                >{post.markdown}
-                            </ReactMarkdown>
+                <div className='flex w-full'>
+                    <div className='md:w-2/3 h-full'>
+                        <div className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 dark:prose-invert md:col-span-2`}>
+                            <section>
+                                <MetaData post={post}/>
+                                <div ref={startingMainContent}>
+                                    <ReactMarkdown
+                                        remarkPlugins={[rehypeSlug, remarkGfm]}
+                                        components={componentMapping}
+                                        >{post.markdown}
+                                    </ReactMarkdown>
+                                </div>
+                                {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied}/> }
+                            </section>
+                            <div ref={shareButtons}>
+                                <Share slug={slug} title={post.metadata.title}/>
+                            </div>
+                            {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
                         </div>
-                        {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied}/> }
-                    </section>
-                    <div ref={shareButtons}>
-                        <Share slug={slug} title={post.metadata.title}/>
                     </div>
-                    {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
+                    <div className='hidden md:block md:w-1/3 h-full sticky top-0 right-0'>
+                        <TableOfContents tocMarkdown={post.markdown} />
+                    </div>
                 </div>
                 <YourSupportIsAllWeNeed />
                 <ReadMore 
