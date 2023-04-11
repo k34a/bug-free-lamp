@@ -15,6 +15,7 @@ import MetaData from '@/components/Blog/Pages/MetaData';
 import ReadMore from '@/components/Blog/Pages/ReadMore';
 
 import styles from '@/styles/BlogArticle.module.css'
+import YourSupportIsAllWeNeed from '@/components/Blog/Pages/YourSupportIsAllWeNeed';
 
 export async function getStaticPaths(context) {
     const posts = await getAllPublished();
@@ -124,6 +125,7 @@ export default function BlogPost({post, slug}) {
                     </div>
                     {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
                 </div>
+                <YourSupportIsAllWeNeed />
                 <ReadMore 
                     readMoreArticles={post.readMoreArticles} 
                     className='prose-normal' 
