@@ -2,7 +2,6 @@ import ContactUs from '@/components/Forms/ContactUs'
 import FAQ from '@/components/FAQ/FAQ'
 import Head from 'next/head'
 import Link from 'next/link';
-import { BiSmile } from 'react-icons/bi';
 
 const faq = [
     {
@@ -49,7 +48,7 @@ const faq = [
         ques: "Can I visit the Larry Rowbs Foundation's facility in Uganda?",
         ans: (
             <>
-                Definitely! Once the facility is functional, we would love to have you there. In fact, we will show you around <BiSmile className="inline" />
+                Definitely! Once the facility is functional, we would love to have you there. In fact, we will show you around &#128522;
             </>
         )
     },
