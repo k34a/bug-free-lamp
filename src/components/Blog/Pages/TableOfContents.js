@@ -17,7 +17,7 @@ const TableOfContents = ({ tocMarkdown }) => {
                     customMatchers={matchers} 
                     lowestHeadingLevel={3}
                     highlightId={activeId}
-                    highlightClass="underline font-bold"
+                    highlightClass="underline font-bold text-purple-500 dark:text-purple-300 bg-slate-200 dark:bg-slate-500"
                 />
             </div>
         </div>

@@ -107,7 +107,7 @@ export default function BlogPost({post, slug}) {
                 ref={mainBody} 
                 className='py-16 space-y-6'
                 >
-                <div className='flex w-full'>
+                <div className='flex w-full divide-x'>
                     <div className='md:w-2/3 h-full'>
                         <div className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 dark:prose-invert md:col-span-2`}>
                             <section>
