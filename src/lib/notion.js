@@ -221,6 +221,15 @@ export const getReadMoreArticles = async (publishedDateString) => {
     return readMoreArticles.map(getPageMetaData);
 }
 
+function getFirstImageFromMarkdown(markdownText) {
+    const regex = /!\[.*\]\((.*)\)/;
+    const match = regex.exec(markdownText);
+    if (match) {
+        return match[1];
+    }
+    return null;
+}
+
 export const getSingleBlogPostBySlug = async (slug) => {
     try {
         const metadata = await getMetadataForSinglePost(slug);
@@ -232,11 +241,13 @@ export const getSingleBlogPostBySlug = async (slug) => {
             wordsPerMinute: 200,
         });
         mdString = addAltTextToImages(mdString, metadata?.title || "Title");
+        const firstImage = getFirstImageFromMarkdown(mdString);
         const ret = {
             metadata,
             minutes,
             readMoreArticles,
             markdown: mdString,
+            firstImage,
         };
         return ret;
     } catch (err) {

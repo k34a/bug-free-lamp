@@ -101,6 +101,10 @@ export default function BlogPost({post, slug}) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="keywords" content={keywordsString} />
                 <link rel="icon" href="/favicon.ico" />
+                <meta property="og:image" content={post.firstImage} />
+                <meta property="og:image:type" content="image/png" />
+                <meta property="og:image:width" content="1024" />
+                <meta property="og:image:height" content="1024" />
             </Head>
             <DarkMode />
             <main
