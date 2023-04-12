@@ -1,5 +1,4 @@
 import Tags from "@/components/Blog/Pages/Tags";
-import TableOfContents from "./TableOfContents";
 import Author from "@/components/Blog/Pages/Author";
 
 const MetaData = (props) => {
@@ -8,7 +7,6 @@ const MetaData = (props) => {
         return null;
     }
     const title = post?.metadata?.title || "";
-    const markdown = post?.markdown || "";
     const metadata = post?.metadata || {};
     const minutes = post?.minutes || "";
     return (
