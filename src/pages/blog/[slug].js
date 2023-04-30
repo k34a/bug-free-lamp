@@ -124,6 +124,9 @@ export default function BlogPost({post, slug}) {
                                     </ReactMarkdown>
                                 </div>
                                 {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied}/> }
+                                <div className='italics text-sm font-light'>
+                                    DISCLAIMER: The author is solely responsible for all content and views expressed in this article, as well as citing and/or licensing any images utilized within the text. All sources cited in this article are the responsibility of the author.
+                                </div>
                             </section>
                             <div ref={shareButtons}>
                                 <Share slug={slug} title={post.metadata.title}/>
