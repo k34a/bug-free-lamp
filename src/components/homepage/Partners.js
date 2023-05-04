@@ -26,7 +26,7 @@ export default function Partners(){
                         <div className="m-2 flex justify-center items-center">
                             <img
                                 src="/changemaker.webp"
-                                alt="Christian Ministry Alliance"
+                                alt="Change Maker"
                             />
                         </div>
                         <div className="m-2 md:text-lg lg:text-xl">
