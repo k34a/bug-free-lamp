@@ -5,7 +5,7 @@ import { useHeadsObserver } from "@/lib/useHeadsObserver";
 const TableOfContents = ({ tocMarkdown }) => {
     const { activeId } = useHeadsObserver()
     const matchers = { 
-        "[?!:.*_/()–’]": "",
+        "[?!,:.*_/()–’]": "",
         "--": "-",
     };
     const tableOfContents = (
