@@ -50,11 +50,11 @@ const para = (paragraph) => {
 
 
 const h2Md = ({ node, ...props }) => (
-    <h2 id={generateSlug(props.children[0])} {...props}></h2>
+    <h2 id={generateSlug(props.children?.[0] || "")} {...props}></h2>
 )
 
 const h3Md = ({ node, ...props }) => (
-    <h3 id={generateSlug(props.children[0])} {...props}></h3>
+    <h3 id={generateSlug(props.children?.[0] || "")} {...props}></h3>
 )
 
 const aMd = (props) => {
