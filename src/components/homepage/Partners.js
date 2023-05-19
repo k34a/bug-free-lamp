@@ -44,6 +44,18 @@ export default function Partners(){
                             </div>
                         </div>
                     </div>
+                    <div className="grid md:grid-cols-2 gap-4 m-2">
+                        <div className="m-2 flex justify-center items-center">
+                            <img
+                                src="/WorldWideWeavingOfWomen.webp"
+                                alt="World Wide Weaving Of Women"
+                            />
+                        </div>
+                        <div className="m-2 md:text-lg lg:text-xl">
+                            World Wide Weaving of Women, an initiative fostering a global network for women engaged in textile art, has partnered with the Larry Rowbs Foundation to support the development of a sustainable textile industry.
+                            <br /><br />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
