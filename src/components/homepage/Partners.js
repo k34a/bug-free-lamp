@@ -52,7 +52,7 @@ export default function Partners(){
                             />
                         </div>
                         <div className="m-2 md:text-lg lg:text-xl">
-                            World Wide Weaving of Women, an initiative fostering a global network for women engaged in textile art, has partnered with the Larry Rowbs Foundation to support the development of a sustainable textile industry.
+                            <a className="underline" target="_blank" rel="noopener noreferrer" href="https://www.joy-of-weaving-wwwow.com/">World Wide Weaving of Women</a>, an initiative fostering a global network for women engaged in textile art, has partnered with the Larry Rowbs Foundation to support the development of a sustainable textile industry.
                             <br /><br />
                         </div>
                     </div>
