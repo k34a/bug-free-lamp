@@ -23,14 +23,14 @@ const Author = (props) => {
         <div className='flex items-center mt-6 mb-9'>
             {
                 authorPic? 
-                    <img
-                        src={authorPic}
-                        alt={`${author} profile picture`}
-                        className="m-0 select-none relative inline-flex mr-3 items-center justify-center rounded-full overflow-hidden ring-2 ring-purple-300 dark:ring-purple-500"
-                        height="56px"
-                        width="56px"
-                        loading="lazy"
-                    />
+                    <div className="h-14 w-14 m-0 select-none relative inline-flex mr-3 items-center justify-center rounded-full overflow-hidden ring-2 ring-purple-300 dark:ring-purple-500">
+                        <img
+                            src={authorPic}
+                            alt={`${author} profile picture`}
+                            className="inline h-full w-auto"
+                            loading="lazy"
+                        />
+                    </div>
                     :
                     <div className="m-0 select-none relative inline-flex mr-3 items-center justify-center w-14 h-14 overflow-hidden bg-purple-200 rounded-full dark:bg-purple-600 ring-2 ring-purple-300 dark:ring-purple-500">
                         <span className="font-bold text-purple-600 dark:text-purple-200">{getInitialsFromName(author)}</span>
