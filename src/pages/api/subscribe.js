@@ -71,7 +71,7 @@ const emailBody = `
   <div class="container">
     <h1 class="heading">You're Subscribed to the Larry Rowbs Foundation Newsletter!</h1>
     <p>Thank you for subscribing to the Larry Rowbs Foundation newsletter. We're excited to have you on board and to share updates on our work and the harms caused by the Fast Fashion Industry in Africa.</p>
-		<p>If you have any questions, comments, or suggestions, please feel free to reach out to us at <a href="mailto:info@larryrowbs.com">info@larryrowbs.com<a/>. We value your opinion and appreciate your support.</p>
+		<p>If you have any questions, comments, or suggestions, please feel free to reach out to us at <a href="mailto:info@larryrowbsfoundation.org">info@larryrowbsfoundation.org<a/>. We value your opinion and appreciate your support.</p>
 		<p>Stay tuned for our upcoming newsletters, and be sure to follow us on social media to stay up-to-date on our latest activities and initiatives.</p>
 		<p>Best regards,</p>
 		<p>The Larry Rowbs Foundation team</p>
