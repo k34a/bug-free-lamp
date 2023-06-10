@@ -73,11 +73,12 @@ export default function Contact() {
                 <ContactUs />
                 <div id="calendlyScheduler">
                     <h2 className="text-3xl mx-auto w-5/6 max-w-lg font-bold">Schedule a Call</h2>
-                    <div className='w-11/12'>
+                    <div className='w-11/12 mx-auto'>
                         <InlineWidget 
                             url="https://calendly.com/larryrowbsfoundation/intro"
                             styles={{
-                                height: '800px'
+                                height: '800px',
+                                textAlign: 'center',
                             }}
                         />
                     </div>
