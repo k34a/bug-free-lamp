@@ -2,6 +2,7 @@ import ContactUs from '@/components/Forms/ContactUs'
 import FAQ from '@/components/FAQ/FAQ'
 import Head from 'next/head'
 import Link from 'next/link';
+import { InlineWidget } from "react-calendly";
 
 const faq = [
     {
@@ -70,11 +71,23 @@ export default function Contact() {
                     faq={faq}
                 />
                 <ContactUs />
+                <div id="calendlyScheduler">
+                    <h2 className="text-3xl mx-auto w-5/6 max-w-lg font-bold">Schedule a Call</h2>
+                    <div className='w-11/12 mx-auto'>
+                        <InlineWidget 
+                            url="https://calendly.com/larryrowbsfoundation/intro"
+                            styles={{
+                                height: '800px',
+                                textAlign: 'center',
+                            }}
+                        />
+                    </div>
+                </div>
                 <div className="mx-6 py-10 text-center md:text-left flex items-center justify-center">
                     <div>
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                            Contact
-                        </h6>
+                        <h2 className="text-3xl mb-6 font-bold">
+                            Contact Information
+                        </h2>
                         <p className="flex items-center text-slate-600 justify-center md:justify-start mb-4">
                             <i className="w-4 mr-4 fa fa-home" aria-hidden="true"></i>
                             2459 Sugar Bottom Rd
@@ -83,7 +96,7 @@ export default function Contact() {
                         </p>
                         <p className="flex items-center text-slate-600 justify-center md:justify-start mb-4">
                             <i className="w-4 mr-4 fa fa-envelope" aria-hidden="true"></i>
-                            info@larryrowbs.com
+                            info@larryrowbsfoundation.org
                         </p>
                         <p className="flex items-center text-slate-600 justify-center md:justify-start mb-4">
                             <i className="w-4 mr-4 fa fa-phone" aria-hidden="true"></i>

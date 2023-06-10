@@ -126,16 +126,18 @@ export default function Footer() {
                     </div>
                 </a>
             </div>
+            <div className="flex justify-center">
+                <Link href="/terms" className="mr-6 text-slate-200 text-sm">
+                    Terms & Conditions
+                </Link>
+            </div>
             <div className="text-center px-6 text-sm">
-                <span>&copy; Copyright 2019-Present </span>
+                <span>&copy; Copyright 2019-{new Date().getFullYear()} </span>
                 <Link className="text-yellow-200" href="/">Larry Rowbs Foundation</Link>
             </div>
             <div className="text-center px-3 text-sm leading-relaxed">
                 <p>
-                    Website Content Owned and Managed by <Link className="text-yellow-200" href='/'>Larry Rowbs Foundation</Link>
-                </p>
-                <p>
-                    Designed, Developed and Hosted by <a className="text-yellow-200" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
+                    Website by <a className="text-yellow-200" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
                 </p>
             </div>
         </section>

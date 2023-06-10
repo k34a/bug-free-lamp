@@ -141,7 +141,7 @@ export default async function handler(req, res) {
                 </div>
             `;
             emailBody = emailBody.replace("{{EmailBody}}", mainBody)
-            emailNotifier("info@larryrowbs.com", "New query for the Larry Rowbs Foundation", emailBody)
+            emailNotifier("info@larryrowbsfoundation.org", "New query for the Larry Rowbs Foundation", emailBody)
             res.status(200).json({});
         }
         catch(err){
