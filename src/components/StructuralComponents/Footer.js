@@ -127,7 +127,7 @@ export default function Footer() {
                 </a>
             </div>
             <div className="flex justify-center">
-                <Link href="/terms" className="mr-6 text-slate-200">
+                <Link href="/terms" className="mr-6 text-slate-200 text-sm">
                     Terms & Conditions
                 </Link>
             </div>
