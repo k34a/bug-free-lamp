@@ -86,7 +86,7 @@ export const getTopPublished = async (n, tags=null) => {
     })
 };
 
-const getPageMetaData = (post) => {
+const getPageMetaData = (post, authorDetails) => {
     try {
         const getTags = (tags) => {
             const allTags = tags.map((tag) => {
@@ -105,9 +105,9 @@ const getPageMetaData = (post) => {
             description: post.properties.Description?.rich_text?.[0]?.plain_text || "",
             date: getToday(post.properties.Date?.date?.start || "2023-01-01"),
             publishedDate: post.properties.Date?.date?.start || "2023-01-01",
-            author: post?.properties?.Author?.rich_text?.[0]?.plain_text || "Anonymous Author",
-            authorPic: post?.properties?.AuthorProfilePicLink?.url || "",
-            authorHref: post?.properties?.Author?.rich_text?.[0]?.href || "",
+            author: authorDetails?.properties?.Name?.title?.[0]?.plain_text || "Anonymous Author",
+            authorPic: authorDetails?.properties?.ProfilePic?.url || "",
+            authorHref: authorDetails?.properties?.LinkedInProfile?.url || "",
             imageThumbnail: post?.properties?.ImageThumbnail?.url || "",
         };
         return metaData;
@@ -147,10 +147,22 @@ export const getMetadataForSinglePost = async (slug) => {
             },
         },
     });
-    if(!response || !response.results || response.results.length === 0){
+    if (!response?.results?.[0]?.properties?.AuthorId?.number || response.results.length === 0){
         return {};
     }
-    return getPageMetaData(response.results[0]);
+    const authorDetails = await notion.databases.query({
+        database_id: process.env.NOTION_AUTHOR_DATABASE_ID,
+        filter: {
+            property: "Id",
+            number: {
+                equals: response.results[0].properties.AuthorId.number,
+            },
+        },
+    });
+    if (!authorDetails || !authorDetails.results || authorDetails.results.length === 0) {
+        return {};
+    }
+    return getPageMetaData(response.results[0], authorDetails.results[0]);
 }
 
 export const getReadMoreArticles = async (publishedDateString) => {

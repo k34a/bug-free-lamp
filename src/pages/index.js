@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Head>
         <title>Home - Larry Rowbs Foundation</title>
-        <meta name="description" content="Larry Rowbs Foundation is a registered not-for-profit organization working on mitigating the harms of the fast-fashion industry" />
+        <meta name="description" content="Larry Rowbs Foundation is a registered non-governmental organization working on mitigating the harms of the fast-fashion industry" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
