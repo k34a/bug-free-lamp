@@ -6,7 +6,7 @@ const terms = (props) => {
         <>
             <Head>
                 <title>Terms and Conditions - Larry Rowbs Foundation</title>
-                <meta name="description" content="Terms and Conditions for the use of the website. Larry Rowbs Foundation is a registered not-for-profit organization working on mitigating the harms of the fast-fashion industry." />
+                <meta name="description" content="Terms and Conditions for the use of the website. Larry Rowbs Foundation is a registered non-governmental organization working on mitigating the harms of the fast-fashion industry." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
