@@ -1,6 +1,6 @@
 import BlogList from '@/components/Blog/BlogList';
 import Head from 'next/head'
-import { getTopPublished } from '../../lib/notion';
+import { getTopPublished } from '../../lib/notion/blog';
 
 export async function getStaticProps(context) {
     const data = await getTopPublished(30)

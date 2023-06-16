@@ -1,12 +1,8 @@
 import { calculateReadingTime } from "markdown-reading-time";
+import { getToday, getFirstImageFromMarkdown, addAltTextToImages } from "./common.js";
+import notion from './notion';
 
-const { Client } = require("@notionhq/client")
 const { NotionToMarkdown } = require("notion-to-md");
-
-const notion = new Client({
-    auth: process.env.NOTION_TOKEN,
-})
-
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
 export const getAllPublished = async () => {
@@ -40,52 +36,6 @@ export const getAllPublished = async () => {
     })
 };
 
-
-export const getAllTags = async () => {
-    let allPosts = await getAllPublished();
-    let allTags = allPosts.map((ele)=>(ele.tags));
-    return Array.from(new Set(allTags.flatMap(item => item)));
-};
-
-export const getTopPublished = async (n, tags=null) => {
-    let tagFilter = {
-        property: "Tags",
-        multi_select: {
-            contains: tags,
-        },
-    }
-    let publishFilter = {
-        property: "Published",
-        checkbox: {
-            equals: true,
-        },
-    }
-    let fullFilter = {
-        and: [
-            tagFilter,
-            publishFilter
-        ]
-    }
-    const posts = await notion.databases.query({
-        database_id: process.env.NOTION_DATABASE_ID,
-        filter: tags? fullFilter: publishFilter,
-        sorts: [
-            {
-                property: "Date",
-                direction: "descending",
-            },
-        ],
-        page_size: n
-    });
-    const allPosts = posts.results;
-    const allPostsMetaData = allPosts.map((post) => {
-        return getPageMetaData(post);
-    });
-    return allPostsMetaData.filter((post) => {
-        return Object.keys(post).length > 0;
-    })
-};
-
 const getPageMetaData = (post, authorDetails) => {
     try {
         const getTags = (tags) => {
@@ -107,7 +57,7 @@ const getPageMetaData = (post, authorDetails) => {
             publishedDate: post.properties.Date?.date?.start || "2023-01-01",
             author: authorDetails?.properties?.Name?.title?.[0]?.plain_text || "Anonymous Author",
             authorPic: authorDetails?.properties?.ProfilePic?.url || "",
-            authorHref: authorDetails?.properties?.LinkedInProfile?.url || "",
+            authorHref: `/authors/${post.properties.AuthorId?.number}`,
             imageThumbnail: post?.properties?.ImageThumbnail?.url || "",
         };
         return metaData;
@@ -116,24 +66,6 @@ const getPageMetaData = (post, authorDetails) => {
         return {};
     }
 };
-
-function getToday(datestring) {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-    let date = new Date();
-
-    if (datestring) {
-        date = new Date(datestring);
-    }
-
-    const day = date.getDate();
-    const month = months[date.getMonth()];
-    const year = date.getFullYear();
-    let today = `${month} ${day}, ${year}`;
-
-    return today;
-};
-
 
 export const getMetadataForSinglePost = async (slug) => {
     const response = await notion.databases.query({
@@ -147,7 +79,7 @@ export const getMetadataForSinglePost = async (slug) => {
             },
         },
     });
-    if (!response?.results?.[0]?.properties?.AuthorId?.number || response.results.length === 0){
+    if (!response?.results?.[0]?.properties?.AuthorId?.number || response.results.length === 0) {
         return {};
     }
     const authorDetails = await notion.databases.query({
@@ -165,8 +97,9 @@ export const getMetadataForSinglePost = async (slug) => {
     return getPageMetaData(response.results[0], authorDetails.results[0]);
 }
 
+
 export const getReadMoreArticles = async (publishedDateString) => {
-    if(!publishedDateString){
+    if (!publishedDateString) {
         return [];
     }
     const publishedDate = new Date(publishedDateString)
@@ -198,8 +131,8 @@ export const getReadMoreArticles = async (publishedDateString) => {
     });
     const beforeArticles = beforeResponse?.results?.splice(0, 3) || []; // assuming there is only one matching article
     let readMoreArticles = [...beforeArticles]
-    
-    if(readMoreArticles.length < 3){
+
+    if (readMoreArticles.length < 3) {
         const afterResponse = await notion.databases.query({
             database_id: process.env.NOTION_DATABASE_ID,
             filter: {
@@ -233,15 +166,6 @@ export const getReadMoreArticles = async (publishedDateString) => {
     return readMoreArticles.map(getPageMetaData);
 }
 
-function getFirstImageFromMarkdown(markdownText) {
-    const regex = /!\[.*\]\((.*)\)/;
-    const match = regex.exec(markdownText);
-    if (match) {
-        return match[1];
-    }
-    return null;
-}
-
 export const getSingleBlogPostBySlug = async (slug) => {
     try {
         const metadata = await getMetadataForSinglePost(slug);
@@ -249,7 +173,7 @@ export const getSingleBlogPostBySlug = async (slug) => {
         const page_id = metadata.id.split('-').join('');
         const mdblocks = await n2m.pageToMarkdown(page_id);
         let mdString = n2m.toMarkdownString(mdblocks);
-        const {minutes} = calculateReadingTime(mdString, {
+        const { minutes } = calculateReadingTime(mdString, {
             wordsPerMinute: 200,
         });
         mdString = addAltTextToImages(mdString, metadata?.title || "Title");
@@ -269,29 +193,41 @@ export const getSingleBlogPostBySlug = async (slug) => {
     }
 }
 
-export const addAltTextToImages = (markdown, altText) => {
-    const regex = /!\[([^\]]*)\]\(([^\)]+)\)/g;
-    let counter = 1;
-    markdown = markdown.replace(regex, (match, p1, p2) => {
-        if (p1.trim() === '') {
-            return `![${altText} ${counter++}](${p2})`;
-        } else {
-            return match;
-        }
-    });
-    return markdown;
-}
-
-export const generateSlug = (s) => {
-    if(!s || typeof s !== "string"){
-        return "";
+export const getTopPublished = async (n, tags = null) => {
+    let tagFilter = {
+        property: "Tags",
+        multi_select: {
+            contains: tags,
+        },
     }
-    let str = s.replace(/^\s+|\s+$/g, "");
-    str = str.toLowerCase();
-    str = str
-        .replace(/[^a-z0-9 -]/g, "")
-        .replace(/\s+/g, "-")
-        .replace(/-+/g, "-");
-
-    return str;
+    let publishFilter = {
+        property: "Published",
+        checkbox: {
+            equals: true,
+        },
+    }
+    let fullFilter = {
+        and: [
+            tagFilter,
+            publishFilter
+        ]
+    }
+    const posts = await notion.databases.query({
+        database_id: process.env.NOTION_DATABASE_ID,
+        filter: tags ? fullFilter : publishFilter,
+        sorts: [
+            {
+                property: "Date",
+                direction: "descending",
+            },
+        ],
+        page_size: n
+    });
+    const allPosts = posts.results;
+    const allPostsMetaData = allPosts.map((post) => {
+        return getPageMetaData(post);
+    });
+    return allPostsMetaData.filter((post) => {
+        return Object.keys(post).length > 0;
+    })
 };

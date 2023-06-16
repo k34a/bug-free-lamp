@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm'
 
-import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
+import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion/blog';
 
 import Share from '@/components/Blog/Pages/Share';
 import componentMapping from '@/components/Blog/Pages/Markdown';
