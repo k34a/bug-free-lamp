@@ -46,6 +46,10 @@ const getInitialsFromName = (name) => {
 }
 
 export default function BlogPost({ authorDetails, slug }) {
+    const aboutAuthor = authorDetails.about.split('\n');
+    const About = aboutAuthor.map((line, index) => {
+        return <div key={index}>{line}&nbsp;</div>
+    })
     const titleValue = `${authorDetails.author} - Larry Rowbs Foundation`;
     const descriptionValue = `This is a profile page for ${authorDetails.author}, who is a volunteer and a content writer at the Larry Rowbs Foundation.`;
     return (
@@ -95,7 +99,7 @@ export default function BlogPost({ authorDetails, slug }) {
                         </div>
                     )}
                     <div>
-                        <p className="text-xl font-bold">{authorDetails.about}</p>
+                        <div className="text-xl">{About}</div>
                     </div>
                 </div>
             </main>
