@@ -1,4 +1,5 @@
 import { validateURL } from "@/lib/commonFrontEndFns";
+import Link from "next/link";
 
 const getInitialsFromName = (name) => {
     const words = name.trim().split(/\s+/);
@@ -37,14 +38,12 @@ const Author = (props) => {
                     </div>
             }
             <div>
-                <a 
-                    href={href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                <Link 
+                    href={href}
                     className="!no-underline font-bold"
                 >
                     {author}
-                </a>
+                </Link>
                 <div className="space-x-2 text-sm">
                     {publishDate && <span>{publishDate}</span>}
                     {publishDate && readingTime && <span>•</span>}

@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { getAllTags, getTopPublished } from '../../../lib/notion';
+import { getAllTags } from '../../../lib/notion/tags';
+import { getTopPublished } from '../../../lib/notion/blog';
 import BlogList from '@/components/Blog/BlogList';
 
 export async function getStaticPaths(context) {

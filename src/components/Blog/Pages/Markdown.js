@@ -1,5 +1,5 @@
 import YoutubeVideo from "@/components/Youtube"
-import { generateSlug } from "@/lib/notion"
+import { generateSlug } from "@/lib/notion/common"
 import Link from "next/link"
 
 const hosts = [
