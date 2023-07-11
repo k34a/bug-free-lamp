@@ -25,28 +25,6 @@ export default function Partners(){
                     <div className="grid md:grid-cols-2 gap-4 m-2">
                         <div className="m-2 flex justify-center items-center">
                             <img
-                                src="/changemaker.webp"
-                                alt="Change Maker"
-                            />
-                        </div>
-                        <div className="m-2 md:text-lg lg:text-xl">
-                            We have partnered with <a className="underline" target="_blank" rel="noopener noreferrer" href="https://www.joinchangemaker.com/">ChangeMaker</a> to build a community of sustainability leaders.
-                            <br /><br />
-                            <div className="">
-                                <a 
-                                    href="https://go.changemaker.app/donate/larry-rowbs-foundation" 
-                                    className="!no-underline"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                >
-                                    <button className="text-center !no-underline p-3 bg-green-700 text-white hover:bg-purple-700 rounded">Say Hello to Change Makers</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-4 m-2">
-                        <div className="m-2 flex justify-center items-center">
-                            <img
                                 src="/WorldWideWeavingOfWomen.webp"
                                 alt="World Wide Weaving Of Women"
                             />
@@ -56,6 +34,16 @@ export default function Partners(){
                             <br /><br />
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="bg-[#48968f]">
+                <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto py-12 text-white">
+                    <a href="https://www.kickstarter.com/projects/lrf/the-larry-rowbs-foundation-fashion-recycling-in-africa" title="Check this out!">
+                        <h2 className="text-3xl font-bold py-6">
+                            We are now on Kickstarter. Check it out!
+                        </h2>
+                        <img src='./kick_starter_pix.png' alt="Larry Rowbs Foundation on Kickstarter" />
+                    </a>
                 </div>
             </div>
         </div>
