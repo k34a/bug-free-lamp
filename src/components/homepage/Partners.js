@@ -38,7 +38,12 @@ export default function Partners(){
             </div>
             <div className="bg-[#48968f]">
                 <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto py-12 text-white">
-                    <a href="https://www.kickstarter.com/projects/lrf/the-larry-rowbs-foundation-fashion-recycling-in-africa" title="Check this out!">
+                    <a 
+                        href="https://www.kickstarter.com/projects/lrf/the-larry-rowbs-foundation-fashion-recycling-in-africa" 
+                        title="Check this out!"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <h2 className="text-3xl font-bold py-6">
                             We are now on Kickstarter. Check it out!
                         </h2>
