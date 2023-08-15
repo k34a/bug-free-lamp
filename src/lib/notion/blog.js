@@ -74,7 +74,7 @@ export const getMetadataForSinglePost = async (slug) => {
             property: "Slug",
             formula: {
                 string: {
-                    equals: slug,
+                    contains: slug
                 },
             },
         },
@@ -169,8 +169,11 @@ export const getReadMoreArticles = async (publishedDateString) => {
 export const getSingleBlogPostBySlug = async (slug) => {
     try {
         const metadata = await getMetadataForSinglePost(slug);
+        if (!metadata || Object.keys(metadata).length === 0) {
+            throw new Error(`No metadata found for ${slug}`);
+        }
         const readMoreArticles = await getReadMoreArticles(metadata.publishedDate);
-        const page_id = metadata.id.split('-').join('');
+        const page_id = metadata.id?.split('-')?.join('');
         const mdblocks = await n2m.pageToMarkdown(page_id);
         let mdString = n2m.toMarkdownString(mdblocks);
         const { minutes } = calculateReadingTime(mdString, {
