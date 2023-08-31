@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm'
 
-import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion';
+import { getAllPublished, getSingleBlogPostBySlug } from '../../lib/notion/blog';
 
 import Share from '@/components/Blog/Pages/Share';
 import componentMapping from '@/components/Blog/Pages/Markdown';
@@ -27,10 +27,10 @@ export async function getStaticPaths(context) {
     };
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
     try {
         const post = await getSingleBlogPostBySlug(params.slug)
-        if(!post){
+        if (!post) {
             return {
                 notFound: true,
             }
@@ -43,7 +43,7 @@ export async function getStaticProps({params}) {
             revalidate: 120
         };
     }
-    catch(err){
+    catch (err) {
         console.log(err);
         return {
             notFound: true,
@@ -51,7 +51,7 @@ export async function getStaticProps({params}) {
     }
 }
 
-export default function BlogPost({post, slug}) {
+export default function BlogPost({ post, slug }) {
     const mainBody = useRef(null);
     const startingMainContent = useRef();
     const shareButtons = useRef();
@@ -70,11 +70,11 @@ export default function BlogPost({post, slug}) {
             const rect = range.getBoundingClientRect();
             const x = rect.left + rect.width / 2;
             const y = document.documentElement.scrollTop + rect.top - 10;
-            if (y > lowerLimit - 20 && y < upperLimit){
-                setTooltipPosition({x, y});
+            if (y > lowerLimit - 20 && y < upperLimit) {
+                setTooltipPosition({ x, y });
             }
-            else{
-                setTooltipPosition({ x : 0, y : 0 })
+            else {
+                setTooltipPosition({ x: 0, y: 0 })
             }
             setSelectedText(currSelectedText);
         } else {
@@ -83,7 +83,7 @@ export default function BlogPost({post, slug}) {
     }
 
     useEffect(() => {
-        if (document){
+        if (document) {
             document.addEventListener('selectionchange', handleTextSelection);
         }
         return () => {
@@ -108,28 +108,28 @@ export default function BlogPost({post, slug}) {
             </Head>
             <DarkMode />
             <main
-                ref={mainBody} 
+                ref={mainBody}
                 className='py-16 space-y-6'
-                >
+            >
                 <div className='flex w-full divide-x'>
                     <div className='md:w-2/3 h-full'>
                         <div className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 dark:prose-invert md:col-span-2`}>
                             <section>
-                                <MetaData post={post}/>
+                                <MetaData post={post} />
                                 <div ref={startingMainContent}>
                                     <ReactMarkdown
                                         remarkPlugins={[rehypeSlug, remarkGfm]}
                                         components={componentMapping}
-                                        >{post.markdown}
+                                    >{post.markdown}
                                     </ReactMarkdown>
                                 </div>
-                                {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied}/> }
+                                {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied} />}
                                 <div className='italics text-sm font-light'>
                                     DISCLAIMER: The author is solely responsible for all content and views expressed in this article, as well as citing and/or licensing any images utilized within the text. All sources cited in this article are the responsibility of the author.
                                 </div>
                             </section>
                             <div ref={shareButtons}>
-                                <Share slug={slug} title={post.metadata.title}/>
+                                <Share slug={slug} title={post.metadata.title} />
                             </div>
                             {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
                         </div>
@@ -139,10 +139,10 @@ export default function BlogPost({post, slug}) {
                     </div>
                 </div>
                 <YourSupportIsAllWeNeed />
-                <ReadMore 
-                    readMoreArticles={post.readMoreArticles} 
-                    className='prose-normal' 
-                    theme="light" 
+                <ReadMore
+                    readMoreArticles={post.readMoreArticles}
+                    className='prose-normal'
+                    theme="light"
                     enableDarkMode={true}
                 />
             </main>

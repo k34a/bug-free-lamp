@@ -43,42 +43,48 @@ const detailsMembers = [
         Bio: "Sustainability professional with experience in Sustainable Business Models & Circular economy, Masters in Energy and Environmental engineering, and Bachelor’s in mechanical engineering.",
         LinkedIn: "https://www.linkedin.com/in/anoop-raghuram-5bb0b8193/"
     },
+    {
+        Name: "Clementina Martinez-Masarweh",
+        Role: "Board Member",
+        Bio: "Slow fashion maven, zero-waste artist. Founder of DNA Sustainable Threds. Award-winning filmmaker. Sustainable fashion advocate. SB62 Bill influencer. Inspiring change for 20+ years.",
+        LinkedIn: "https://www.linkedin.com/in/clementinamasarwehdesigner/"
+    },
 ]
 
-export default function OurTeam(){
+export default function OurTeam() {
     return (
-            <div className="flex items-center justify-center min-h-screen bg-white py-6">
-                <div className="flex flex-col">
-                    <div className="flex flex-col mt-8">
-                        <div className="container max-w-7xl px-4">
-                            <div className="flex flex-wrap justify-center text-center mb-12">
-                                <div className="w-full lg:w-6/12 px-4">
-                                    <h2 className="text-gray-900 text-4xl font-bold mb-8">
-                                        Meet the Team
-                                    </h2>
+        <div className="flex items-center justify-center min-h-screen bg-white py-6">
+            <div className="flex flex-col">
+                <div className="flex flex-col mt-8">
+                    <div className="container max-w-7xl px-4">
+                        <div className="flex flex-wrap justify-center text-center mb-12">
+                            <div className="w-full lg:w-6/12 px-4">
+                                <h2 className="text-gray-900 text-4xl font-bold mb-8">
+                                    Meet the Team
+                                </h2>
 
-                                    <p className="text-gray-700 text-lg font-light">
-                                        With over 100 years of combined experience, we have got a well-seasoned team at the helm.
-                                    </p>
-                                </div>
+                                <p className="text-gray-700 text-lg font-light">
+                                    With over 100 years of combined experience, we have got a well-seasoned team at the helm.
+                                </p>
                             </div>
+                        </div>
 
-                            <div className="flex flex-wrap">
-                                {detailsMembers.map((ele, index)=>{
-                                    return (
-                                        <TeamMemberCard 
-                                            name={ele.Name}
-                                            role={ele.Role}
-                                            bio={ele.Bio}
-                                            linkedin={ele.LinkedIn}
-                                            key={index}
-                                        />
-                                    );
-                                })}
-                            </div>
+                        <div className="flex flex-wrap">
+                            {detailsMembers.map((ele, index) => {
+                                return (
+                                    <TeamMemberCard
+                                        name={ele.Name}
+                                        role={ele.Role}
+                                        bio={ele.Bio}
+                                        linkedin={ele.LinkedIn}
+                                        key={index}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     );
 }
