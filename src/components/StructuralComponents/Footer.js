@@ -137,7 +137,7 @@ export default function Footer() {
             </div>
             <div className="text-center px-3 text-sm leading-relaxed">
                 <p>
-                    Website by <a className="text-yellow-200" href="https://www.linkedin.com/in/sak1sham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
+                    Website by <a className="text-yellow-200" href="https://www.instagram.com/sakshamgarg1286/" target="_blank" rel="noreferrer noopenner">k34a</a>
                 </p>
             </div>
         </section>
