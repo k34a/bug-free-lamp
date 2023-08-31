@@ -168,8 +168,6 @@ export const getReadMoreArticles = async (publishedDateString) => {
 
 export const getSingleBlogPostBySlug = async (slug) => {
     try {
-        console.log("Fetching blog post for slug", slug);
-        console.time("fetchBlogPostData")
         const metadata = await getMetadataForSinglePost(slug);
         if (!metadata || Object.keys(metadata).length === 0) {
             throw new Error(`No metadata found for ${slug}`);
@@ -190,10 +188,8 @@ export const getSingleBlogPostBySlug = async (slug) => {
             markdown: mdString,
             firstImage,
         };
-        console.timeEnd("fetchBlogPostData")
         return ret;
     } catch (err) {
-        console.timeEnd("fetchBlogPostData")
         console.log(slug)
         console.log(err)
         return null
