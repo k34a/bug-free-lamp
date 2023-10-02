@@ -1,8 +1,8 @@
-export default function Partners(){
+export default function Partners() {
     return (
         <div>
             <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto py-12">
-                <img 
+                <img
                     src="/collaborated-hand.svg"
                     alt="Our Partners"
                     className="w-1/4 lg:w-1/4 m-auto hidden md:block"
@@ -34,21 +34,6 @@ export default function Partners(){
                             <br /><br />
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="bg-[#48968f]">
-                <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto py-12 text-white">
-                    <a 
-                        href="https://www.kickstarter.com/projects/lrf/the-larry-rowbs-foundation-fashion-recycling-in-africa" 
-                        title="Check this out!"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className="text-3xl font-bold py-6">
-                            We are now on Kickstarter. Check it out!
-                        </h2>
-                        <img src='./kick_starter_pix.png' alt="Larry Rowbs Foundation on Kickstarter" />
-                    </a>
                 </div>
             </div>
         </div>
