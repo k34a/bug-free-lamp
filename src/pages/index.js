@@ -17,6 +17,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
+        <div className="bg-[#48968f]">
+          <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto text-white">
+            <h2 className="text-xl font-bold py-6">
+              We have initiated a fundraiser on <a
+                href="https://www.gofundme.com/f/larry-rowbs-clothing-recycling-initiative"
+                title="Go Fund Me Fundraiser"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Gofundme
+              </a> - Check it out.
+            </h2>
+
+          </div>
+        </div>
         <WhatsHappening />
         <OurMission />
         <HarmsCaused />
