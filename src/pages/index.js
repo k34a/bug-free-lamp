@@ -2,12 +2,13 @@ import Benefits from '@/components/homepage/Benefits'
 import HarmsCaused from '@/components/homepage/HarmsCaused'
 import OurMission from '@/components/homepage/OurMission'
 import OurWork from '@/components/homepage/OurWork'
-import TextileWasteCarousel from '@/components/homepage/TextileWasteCarousel'
+// import TextileWasteCarousel from '@/components/homepage/TextileWasteCarousel'
 import WhatsHappening from '@/components/homepage/WhatsHappening'
 import Partners from '@/components/homepage/Partners'
 import Head from 'next/head'
-import Image from 'next/image'
 import { Carousel } from 'flowbite-react';
+import { AiOutlineArrowRight } from 'react-icons/ai'
+import { FaArrowRight } from 'react-icons/fa'
 
 export default function Home() {
     return (
@@ -40,9 +41,9 @@ export default function Home() {
                 <HarmsCaused />
                 <OurWork />
                 <div className='bg-yellow-300 py-12'>
-                    <div className='w-11/12 sm:w-10/12 m-auto'>
-                        <div className='text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-purple-700'>
-                            And... Some samples of 100% biodegradable recycled products that we have produced.
+                    <div className='w-11/12 sm:w-10/12 m-auto flex flex-col gap-12'>
+                        <div className='text-xl sm:text-2xl md:text-3xl font-bold text-yellow-800'>
+                            And... here are some samples of 100% biodegradable recycled products that we have produced.
                         </div>
                         {/*
                             5 images
@@ -102,6 +103,20 @@ export default function Home() {
                                     />
                                 </div>
                             </Carousel>
+                        </div>
+                        <div className='text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-yellow-800'>
+                            We are hoping to produce more such products - soon this year.
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <a
+                                href="https://www.gofundme.com/f/larry-rowbs-clothing-recycling-initiative"
+                                className='text-xl sm:text-xl md:text-2xl font-semibold py-3 px-5 border-black border-4 rounded-lg !no-underline hover:bg-purple-700 hover:text-white'
+                            >
+                                <div className='flex items-center justify-center gap-2'>
+                                    Support our mission
+                                    <FaArrowRight />
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
