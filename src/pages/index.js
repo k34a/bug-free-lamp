@@ -30,7 +30,7 @@ export default function Home() {
                                 className="underline"
                             >
                                 Gofundme
-                            </a> to support our mission. Please donate.
+                            </a>. Please donate to support our mission.
                         </h2>
 
                     </div>
