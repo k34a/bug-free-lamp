@@ -6,41 +6,109 @@ import TextileWasteCarousel from '@/components/homepage/TextileWasteCarousel'
 import WhatsHappening from '@/components/homepage/WhatsHappening'
 import Partners from '@/components/homepage/Partners'
 import Head from 'next/head'
+import Image from 'next/image'
+import { Carousel } from 'flowbite-react';
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Home - Larry Rowbs Foundation</title>
-        <meta name="description" content="Larry Rowbs Foundation is a registered non-governmental organization working on mitigating the harms of the fast-fashion industry" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>
-        <div className="bg-[#48968f]">
-          <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto text-white">
-            <h2 className="text-xl font-bold py-6">
-              We have initiated a fundraiser on <a
-                href="https://www.gofundme.com/f/larry-rowbs-clothing-recycling-initiative"
-                title="Go Fund Me Fundraiser"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Gofundme
-              </a> - Check it out.
-            </h2>
+    return (
+        <>
+            <Head>
+                <title>Home - Larry Rowbs Foundation</title>
+                <meta name="description" content="Larry Rowbs Foundation is a registered non-governmental organization working on mitigating the harms of the fast-fashion industry" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <div>
+                <div className="bg-[#48968f]">
+                    <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto text-white">
+                        <h2 className="text-xl font-bold py-6">
+                            We have initiated a fundraiser on <a
+                                href="https://www.gofundme.com/f/larry-rowbs-clothing-recycling-initiative"
+                                title="Go Fund Me Fundraiser"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline"
+                            >
+                                Gofundme
+                            </a> to support our mission. Please donate.
+                        </h2>
 
-          </div>
-        </div>
-        <WhatsHappening />
-        <OurMission />
-        <HarmsCaused />
-        <OurWork />
-        {/* <TextileWasteCarousel /> */}
-        <Benefits />
-        <Partners />
-      </div>
-    </>
-  )
+                    </div>
+                </div>
+                <WhatsHappening />
+                <OurMission />
+                <HarmsCaused />
+                <OurWork />
+                <div className='bg-yellow-300 py-12'>
+                    <div className='w-11/12 sm:w-10/12 m-auto'>
+                        <div className='text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-purple-700'>
+                            And... Some samples of 100% biodegradable recycled products that we have produced.
+                        </div>
+                        {/*
+                            5 images
+                            1st - 1208 * 617
+                            Others - 462 * 617
+                        */}
+                        <div className='h-[617px]'>
+                            <Carousel slideInterval={5000}>
+                                <div>
+                                    <img
+                                        src="/samples/aso_oke_shoes.jpg"
+                                        alt="shoes sample created by LRF"
+                                        loading='lazy'
+                                        width={1208}
+                                        height={617}
+                                        className='max-w-full max-h-full rounded-md drop-shadow-md'
+                                    />
+                                </div>
+                                <div>
+                                    <img
+                                        src="/samples/finished_product_5.jpg"
+                                        alt="Shirt sample created by LRF"
+                                        loading='lazy'
+                                        width={462}
+                                        height={617}
+                                        className='m-auto h-full max-w-full max-h-full aspect-462/617 rounded-md drop-shadow-md'
+                                    />
+                                </div>
+                                <div>
+                                    <img
+                                        src="/samples/finshed_product.jpg"
+                                        alt="Shirt sample created by LRF"
+                                        loading='lazy'
+                                        width={462}
+                                        height={617}
+                                        className='m-auto h-full max-w-full max-h-full aspect-462/617 rounded-md drop-shadow-md'
+                                    />
+                                </div>
+                                <div>
+                                    <img
+                                        src="/samples/finished_sample.jpg"
+                                        alt="Shirt sample created by LRF"
+                                        loading='lazy'
+                                        width={462}
+                                        height={617}
+                                        className='m-auto h-full max-w-full max-h-full aspect-462/617 rounded-md drop-shadow-md'
+                                    />
+                                </div>
+                                <div>
+                                    <img
+                                        src="/samples/finished_sample_2.jpg"
+                                        alt="Shirt sample created by LRF"
+                                        loading='lazy'
+                                        width={462}
+                                        height={617}
+                                        className='m-auto h-full max-w-full max-h-full aspect-462/617 rounded-md drop-shadow-md'
+                                    />
+                                </div>
+                            </Carousel>
+                        </div>
+                    </div>
+                </div>
+                {/* <TextileWasteCarousel /> */}
+                <Benefits />
+                <Partners />
+            </div>
+        </>
+    )
 }
