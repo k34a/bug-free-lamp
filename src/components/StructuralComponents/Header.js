@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IoReader, IoCall } from 'react-icons/io5';
-import { FaHome, FaWalking } from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
 import { RiTeamFill } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
@@ -10,14 +10,13 @@ import { BsLightningFill } from 'react-icons/bs';
 const MenuItems = {
     main: [
         ["Home", <FaHome key="home" size={24} />, '/'],
-        ["Read Articles", <IoReader key="blog" size={24} />, '/blog'],
+        ["Blog", <IoReader key="blog" size={24} />, '/blog'],
         ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
         ["Donate", <AiFillHeart key="blog" size={24} />, '/donate'],
         ["Contact", <IoCall key="blog" size={24} />, '/contact'],
     ],
     extra: [
-        ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Sustainability Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
+        ["Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
     ]
 }
 
@@ -30,13 +29,12 @@ const SmallMenuItems = {
     extra: [
         ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
         ["Contact", <IoCall key="blog" size={24} />, '/contact'],
-        ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Sustainability Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
+        ["Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
     ]
 }
 
 const Header = (props) => {
-    const {isMenuOpen, setIsMenuOpen} = props
+    const { isMenuOpen, setIsMenuOpen } = props
     const [hydrated, setHydrated] = useState(false)
 
     useEffect(() => {
@@ -66,10 +64,10 @@ const Header = (props) => {
                 </Link>
                 <div className="w-full px-2">
                     <div className="flex flex-col items-center justify-center w-full mt-3 border-t border-gray-400">
-                        {MenuItems.main.map((ele, index)=> {
+                        {MenuItems.main.map((ele, index) => {
                             return (
-                                <Link 
-                                    key={index} 
+                                <Link
+                                    key={index}
                                     className="flex items-center px-3 w-full h-12 mt-2 rounded hover:bg-violet-500 hover:text-gray-300"
                                     href={ele[2]}
                                 >
@@ -97,7 +95,7 @@ const Header = (props) => {
             </div>
         </div>
     )
-    
+
     const smallScreenHeader = (
         <div className="z-50 w-screen fixed top-0 left-0 text-white">
             <div className="flex justify-around items-center bg-violet-700 shadow h-16">
@@ -124,14 +122,14 @@ const Header = (props) => {
                         </div>
                     );
                 })}
-                <div 
+                <div
                     className="rounded p-2"
-                    onClick={(e) => {setIsMenuOpen(!isMenuOpen)}}
+                    onClick={(e) => { setIsMenuOpen(!isMenuOpen) }}
                 >
-                    <BiDotsVerticalRounded size={24}/>
+                    <BiDotsVerticalRounded size={24} />
                 </div>
             </div>
-            <div 
+            <div
                 className="w-full flex justify-end"
                 onClick={(e) => { setIsMenuOpen(false) }}
             >
