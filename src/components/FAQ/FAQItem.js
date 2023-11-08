@@ -1,20 +1,20 @@
 import { BsChevronDown } from 'react-icons/bs';
 import styles from '@/styles/Commons.module.css'
 
-export default function FAQItem(props){
+export default function FAQItem(props) {
     return (
-        <div className={`p-2 rounded border-2 border-gray-700 my-6 ${props.isopen ? "bg-gray-200": ""}`}>
-            <h3 
-                className="font-semibold cursor-pointer" 
-                onClick={(e) => { 
-                    if(props.isopen)
+        <div className={`p-2 rounded border-2 border-gray-300 my-6 ${props.isopen ? "bg-gray-200" : ""}`}>
+            <h3
+                className="font-semibold cursor-pointer"
+                onClick={(e) => {
+                    if (props.isopen)
                         props.setIsOpen(-1)
                     else
                         props.setIsOpen(props.faqindex)
                 }}
             >
-                <BsChevronDown 
-                    size={20} 
+                <BsChevronDown
+                    size={20}
                     className={`inline mr-2 ${styles.rotateIcon} ${props.isopen ? "" : styles.down}`}
                 />
                 {props.question}

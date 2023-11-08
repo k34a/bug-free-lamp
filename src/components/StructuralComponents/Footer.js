@@ -58,7 +58,7 @@ export default function Footer() {
                         Stay up to date with the roadmap progress, announcements and events conducted by signing up for our weekly newsletter.
                     </p>
                     <form>
-                        {hcaptchaVisible? 
+                        {hcaptchaVisible ?
                             <div className="flex items-center justify-center mb-3">
                                 <HCaptcha
                                     ref={hcaptchaRef}
@@ -90,8 +90,8 @@ export default function Footer() {
                                     </input>
                                 </div>
                                 <div>
-                                    <button 
-                                        type="submit" 
+                                    <button
+                                        type="submit"
                                         className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-blue-700 border-blue-600 sm:rounded-none sm:rounded-r-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:cursor-not-allowed"
                                         disabled={loading}
                                         onClick={e => setHcaptchaVisible(true)}
@@ -121,7 +121,7 @@ export default function Footer() {
             <div className='flex v-screen justify-center items-center'>
                 <a href="https://www.websitecarbon.com/" target="_blank" rel="noopener noreferrer" className="decoration-green-300">
                     <div className="border-green-300 border-4 text-green-300 font-medium inline-flex items-center px-4 py-3 rounded-lg w-full">
-                        <ImLeaf size={24} className="mr-2"/>
+                        <ImLeaf size={24} className="mr-2" />
                         This website emits 0.38g of CO2
                     </div>
                 </a>
@@ -137,7 +137,7 @@ export default function Footer() {
             </div>
             <div className="text-center px-3 text-sm leading-relaxed">
                 <p>
-                    Website by <a className="text-yellow-200" href="https://www.instagram.com/sakshamgarg1286/" target="_blank" rel="noreferrer noopenner">k34a</a>
+                    Website by <a className="text-yellow-200" href="https://www.instagram.com/ggsaksham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
                 </p>
             </div>
         </section>

@@ -1,40 +1,60 @@
-import styles from "@/styles/WhatsHappening.module.css"
-import Link from "next/link"
+import { Button, Link } from "@nextui-org/react";
+
+const landfillImages = [
+    '/dumped-clothes/1.jpeg',
+    '/dumped-clothes/2.jpeg',
+    '/dumped-clothes/3.jpg',
+    '/dumped-clothes/4.jpg',
+]
 
 export default function WhatsHappening() {
     return (
-        <div className="py-12">
-            <div className='flex items-center justify-center'>
-                <div
-                    className={`${styles.sceneVisual} w-full lg:w-3/5 m-auto lg:drop-shadow-2xl border-dashed border-0 lg:border-4 border-slate-700 rounded-lg lg:rounded-xl`}
-                    onContextMenu={(e) => e.preventDefault()}
-                >
-                    <video 
-                        width={1472}
-                        height={916}
-                        autoPlay
-                        muted
-                        loop
-                        className={styles.video}
-                    >
-                        <source src="/LandfillAnimation.mp4" type="video/mp4" />
-                    </video>
-                </div>
+        <div className="w-11/12 sm:w-4/5 md:w-3/5 mx-auto py-6 flex flex-col gap-6">
+            <div className='bg-gradient-to-r from-stone-700 to-emerald-600 bg-clip-text text-transparent'>
+                <span className="text-3xl sm:text-4xl md:text-5xl font-bold">Why we are doing this?</span> <br />
+                <span className="text-2xl sm:text-3xl md:text-4xl">- Because a truck full of used clothes ends up in landfills each second!</span>
             </div>
-            <div className="w-11/12 sm:w-4/5 lg:w-3/5 m-auto py-12 leading-relaxed">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-red-500 mb-5 capitalize">
-                    A truck full of clothes ends up in landfills <span className="highlight-container"><span className="highlight">Every Second</span></span>!
-                </h2>
-                <p className="mb-6 lg:mb-10 lg:text-xl">
-                    The fashion industry is putting emphasis on cutting costs, by shifting towards cheaper, low-quality fabrics. The average lifespan of a garment, such as a t-shirt, has decreased significantly.
-                    <br />
-                    This trend is also generating loads of textile waste. Countries like the US, UK, China, and Canada donate millions of tonnes of used clothes to Africa, but 70% of these donations are unusable and ultimately and up in landfills.
-                </p>
-                <Link
+            <div
+                onContextMenu={(e) => e.preventDefault()}
+            >
+                <video
+                    width={1472}
+                    height={916}
+                    autoPlay
+                    muted
+                    loop
+                    title="A truck dumping used clothes into landfills"
+                    className="max-w-[85%] mx-auto lg:drop-shadow-2xl border-dashed border-1 md:border-2 lg:border-3 border-red-500 rounded-lg lg:rounded-xl"
+                >
+                    <source src="/LandfillAnimation.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <p className="md:text-lg">
+                The fashion industry prioritizes cutting costs by making use of <b>cheap and toxic materials</b>. This also reduces the <b>lifespan</b> of the clothes.
+                <br />
+                Discarding the clothes in this fast fashion era leads to excessive textile waste. <b>Millions of tonnes</b> of clothes are donated to Africa, but 70% ending up in <b>landfills</b> of Uganda, Nigeria, Kenya and other countries.
+            </p>
+            <div className="flex items-center justify-center">
+                <Button
+                    size='lg'
+                    className='bg-green-700 text-slate-50 font-bold text-lg sm:text-xl'
+                    as={Link}
                     href="/blog"
-                    className="!no-underline text-white text-xl bg-pink-700 hover:bg-purple-600 focus:ring-4 focus:outline-none font-medium rounded-lg py-4 px-5 text-center inline-flex items-center">
-                    Explore More
-                </Link>
+                >Learn More</Button>
+            </div>
+            <div className="pt-6 flex flex-col gap-6">
+                <div className="text-2xl sm:text-3xl md:text-4xl text-green-700 font-bold text-center">Have a look at the condition of these landfills</div>
+                <div className="grid grid-cols-2">
+                    {
+                        landfillImages.map((src, index) => {
+                            return <img
+                                src={src}
+                                alt="Landfills in Africa filled with used clothes donated to developing nations"
+                                key={index}
+                            />
+                        })
+                    }
+                </div>
             </div>
         </div>
     )

@@ -1,17 +1,4 @@
-.OurWork {
-    background-color: #fef8ee;
-    overflow: hidden;
-}
-
-.OurWorkAnimation {
-    position: relative;
-    overflow: hidden;
-}
-
-.OurWorkAnimation .OurWorkShirts {
-    position: absolute;
-    top: 0;
-    left: 0;
+.OurWorkShirts {
     animation: differentialRotate 20s infinite linear;
 }
 

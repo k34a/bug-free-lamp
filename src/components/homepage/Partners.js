@@ -1,13 +1,9 @@
 export default function Partners() {
     return (
         <div>
-            <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto py-12">
-                <img
-                    src="/collaborated-hand.svg"
-                    alt="Our Partners"
-                    className="w-1/4 lg:w-1/4 m-auto hidden md:block"
-                />
-                <h2 className="font-bold text-3xl md:hidden text-center capitalize">We have partnered with</h2>
+            <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto py-12 flex flex-col gap-6">
+                <h2 className="font-bold text-2xl sm:text-4xl md:text-5xl text-center capitalize text-green-700">Sustainable Fashion has become a movement!</h2>
+                <p className="font-bold text-xl sm:text-2xl md:text-3xl text-center capitalize text-green-700">Here are some of our supporters</p>
                 <div className="grid divide-y-4">
                     <div className="grid md:grid-cols-2 gap-4 m-2">
                         <div className="m-2 flex justify-center items-center">
