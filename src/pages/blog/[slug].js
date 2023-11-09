@@ -17,9 +17,10 @@ import ReadMore from '@/components/Blog/Pages/ReadMore';
 import styles from '@/styles/BlogArticle.module.css'
 import YourSupportIsAllWeNeed from '@/components/Blog/Pages/YourSupportIsAllWeNeed';
 import TableOfContents from '@/components/Blog/Pages/TableOfContents';
+import blogArticles from '@/blogdata';
 
 export async function getStaticPaths(context) {
-    const posts = await getAllPublished();
+    const posts = blogArticles;
     const paths = posts.map(({ slug }) => ({ params: { slug } }));
     return {
         paths,

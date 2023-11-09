@@ -1,3 +1,5 @@
+import { Button, Link } from "@nextui-org/react";
+
 export default function Partners() {
     return (
         <div>
@@ -30,6 +32,14 @@ export default function Partners() {
                             <br /><br />
                         </div>
                     </div>
+                </div>
+                <div className="flex items-center justify-center">
+                    <Button
+                        size='lg'
+                        className='bg-green-700 text-slate-50 font-bold text-lg sm:text-xl'
+                        as={Link}
+                        href="/donate"
+                    >Become our supporter</Button>
                 </div>
             </div>
         </div>

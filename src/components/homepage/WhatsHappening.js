@@ -44,13 +44,14 @@ export default function WhatsHappening() {
             </div>
             <div className="pt-6 flex flex-col gap-6">
                 <div className="text-2xl sm:text-3xl md:text-4xl text-green-700 font-bold text-center">Have a look at the condition of these landfills</div>
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                     {
                         landfillImages.map((src, index) => {
                             return <img
                                 src={src}
                                 alt="Landfills in Africa filled with used clothes donated to developing nations"
                                 key={index}
+                                className="rounded sm:rounded-lg drop-shadow-md sm:drop-shadow-lg"
                             />
                         })
                     }

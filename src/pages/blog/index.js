@@ -1,9 +1,9 @@
 import BlogList from '@/components/Blog/BlogList';
 import Head from 'next/head'
-import { getTopPublished } from '../../lib/notion/blog';
+import blogArticles from '@/blogdata';
 
 export async function getStaticProps(context) {
-    const data = await getTopPublished(30)
+    const data = blogArticles;
     return {
         props: {
             posts: data,
@@ -12,7 +12,7 @@ export async function getStaticProps(context) {
     };
 }
 
-export default function Home({posts}) {
+export default function Home({ posts }) {
     if (!posts) return <h1>No posts</h1>
     return (
         <>
@@ -23,7 +23,7 @@ export default function Home({posts}) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <BlogList data={posts}/>
+                <BlogList data={posts} title="Fashion Stories for Sustainable Living" />
             </main>
         </>
     )

@@ -39,7 +39,7 @@ export default function OurWork() {
                     </div>
                 </div>
             </div>
-            <div className='bg-green-300 py-12'>
+            <div className='py-12'>
                 <div className='w-11/12 sm:w-10/12 m-auto flex flex-col gap-12'>
                     <div className="text-green-800 text-center">
                         <span className='text-2xl sm:text-3xl md:text-4xl font-bold '>
@@ -120,7 +120,7 @@ export default function OurWork() {
                             className="underline"
                         >
                             Gofundme
-                        </a>. Please donate to support our mission.
+                        </a>. Please donate to support our project.
                     </h2>
                 </div>
             </div>

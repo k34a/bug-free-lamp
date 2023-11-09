@@ -11,7 +11,7 @@ const defaultPlaceholders = [
 const BlogListItem = (props) => {
     const placholderThumbnail = defaultPlaceholders[props.itemNumber % (defaultPlaceholders.length)]
     let mainBodyClass = "bg-white border-2 border-gray-200 rounded-lg shadow"
-    if(props.darkMode) {
+    if (props.darkMode) {
         mainBodyClass += " dark:bg-slate-900 dark:text-white dark:border-gray-950"
     }
     return (
@@ -29,15 +29,15 @@ const BlogListItem = (props) => {
                 <Link href={`/blog/${props.slug}`}>
                     <h5 className={`mb-2 text-2xl font-bold tracking-tight text-gray-900 ${props.darkMode ? "dark:text-slate-100" : null}`}>{props.title}</h5>
                 </Link>
-                <p className={`mb-3 font-normal text-gray-700 ${props.darkMode ? "dark:text-slate-200": null}`}>
+                <p className={`mb-3 font-normal text-gray-700 ${props.darkMode ? "dark:text-slate-200" : null}`}>
                     {props.description}
                 </p>
                 <div className="mb-3 text-sm italic">
                     {props.publishDate}
                 </div>
-                <Link 
+                <Link
                     href={`/blog/${props.slug}`}
-                    className={`!no-underline px-3 py-2 text-sm font-medium text-center text-white ${props.readcolor} rounded-lg hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300`}
+                    className={`!no-underline px-3 py-2 text-sm font-medium text-center text-white bg-green-600 rounded-lg hover:bg-black focus:ring-4 focus:outline-none focus:ring-blue-300`}
                 >
                     Read more
                 </Link>

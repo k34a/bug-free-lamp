@@ -1,6 +1,7 @@
 import { calculateReadingTime } from "markdown-reading-time";
 import { getToday, getFirstImageFromMarkdown, addAltTextToImages } from "./common.js";
 import notion from './notion';
+import blogArticles from "@/blogdata/index.js";
 
 const { NotionToMarkdown } = require("notion-to-md");
 const n2m = new NotionToMarkdown({ notionClient: notion });
@@ -197,40 +198,6 @@ export const getSingleBlogPostBySlug = async (slug) => {
 }
 
 export const getTopPublished = async (n, tags = null) => {
-    let tagFilter = {
-        property: "Tags",
-        multi_select: {
-            contains: tags,
-        },
-    }
-    let publishFilter = {
-        property: "Published",
-        checkbox: {
-            equals: true,
-        },
-    }
-    let fullFilter = {
-        and: [
-            tagFilter,
-            publishFilter
-        ]
-    }
-    const posts = await notion.databases.query({
-        database_id: process.env.NOTION_DATABASE_ID,
-        filter: tags ? fullFilter : publishFilter,
-        sorts: [
-            {
-                property: "Date",
-                direction: "descending",
-            },
-        ],
-        page_size: n
-    });
-    const allPosts = posts.results;
-    const allPostsMetaData = allPosts.map((post) => {
-        return getPageMetaData(post);
-    });
-    return allPostsMetaData.filter((post) => {
-        return Object.keys(post).length > 0;
-    })
+    const posts = blogArticles;
+    return posts
 };
