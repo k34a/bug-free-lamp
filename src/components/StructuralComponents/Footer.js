@@ -1,3 +1,4 @@
+import React from "react";
 import { validateEmail } from "@/lib/commonFrontEndFns";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Link from "next/link";

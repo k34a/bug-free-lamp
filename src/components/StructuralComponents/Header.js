@@ -5,7 +5,6 @@ import {
     NavbarContent,
     NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem
 } from "@nextui-org/react";
-import { useRouter } from "next/router";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
