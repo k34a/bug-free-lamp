@@ -1,6 +1,5 @@
 import React from "react";
 import YoutubeVideo from "@/components/Youtube";
-import { generateSlug } from "@/lib/notion/common";
 import Link from "next/link";
 
 const hosts = [
@@ -8,6 +7,20 @@ const hosts = [
     "larryrowbsfoundation.org",
     "localhost",
 ];
+
+const generateSlug = (s) => {
+    if (!s || typeof s !== "string") {
+        return "";
+    }
+    let str = s.replace(/^\s+|\s+$/g, "");
+    str = str.toLowerCase();
+    str = str
+        .replace(/[^a-z0-9 -]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-");
+
+    return str;
+};
 
 const youtubeHosts = ["youtube.com", "www.youtube.com", "youtu.be"];
 

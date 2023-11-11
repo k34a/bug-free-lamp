@@ -5,6 +5,7 @@ const authors = [
         name: "Saksham Garg",
         href: "",
         pic: "",
+        bio: "",
     }
 ]
 
