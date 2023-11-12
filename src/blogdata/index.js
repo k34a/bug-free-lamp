@@ -7,6 +7,21 @@ import SustainableFashionAsASolutionToTheFashionIndustrysImpactOnWastefulness fr
 import RoleOfChemicalRecyclingInPromotingSustainableFashion from "@/blogdata/articles/role-of-chemical-recycling-in-promoting-sustainable-waste-management.md"
 import RoleOfAfricanTextilesInAfricanCultureAndIdentity from "@/blogdata/articles/role-of-african-textiles-in-african-culture-and-identity.md"
 import RoleOfTechnologyInModernClothingProduction from "@/blogdata/articles/role-of-technology-in-modern-clothing-production.md"
+import ImpactOfEnvironmentalAndSocialMovementsOnTextileProductionPolicies from "@/blogdata/articles/impact-of-environmental-and-social-movements-on-textile-production-policies.md"
+import InnovativeUsesOfRecycledMaterialsInFashionDesign from "@/blogdata/articles/innovative-uses-of-recycled-materials-in-fashion-design.md"
+import TraditionalWeavingAndDyeingTechniquesUsedInAfrica from "@/blogdata/articles/traditional-weaving-and-dyeing-techniques-used-in-africa.md"
+import BenefitsAndChallengesOfUpcyclingInSustainableFashion from "@/blogdata/articles/benefits-and-challenges-of-upcycling-in-sustainable-fashion.md"
+import TextileProductionRegulationsInUnitedStatesUnitedKingdomEuropeAfricaAsia from "@/blogdata/articles/textile-production-regulations-in-united-states-united-kingdom-europe-africa-asia.md"
+import RoleOfEthicalFashionInSustainableFashion from "@/blogdata/articles/role-of-ethical-fashion-in-sustainable-fashion.md"
+import TheImpactOfTextileWasteOnMarineEcosystemAndThePotentialForRecyclingToMitigateThisImpact from "@/blogdata/articles/the-impact-of-textile-waste-on-marine-ecosystem-and-the-potential-for-reycling-to-mitigate-this-impact.md"
+import TheDifferentProcessesOfRecyclingWithDifferentMaterials from "@/blogdata/articles/the-different-processes-of-recycling-with-different-materials.md"
+import TheImpactOfGlobalizationOnAfricanFashion from "@/blogdata/articles/the-impact-of-globalization-on-african-fashion.md"
+import TheImpactOfFreeTradeAgreementsOnTextileProductionRegulations from "@/blogdata/articles/the-impact-of-free-trade-agreements-on-textile-production-regulations.md"
+import TheJourneyOfTonyeRaine from "@/blogdata/articles/the-journey-of-tonye-raine.md"
+import TheEvolutionOfClothingMaterialsOverTheTime from "@/blogdata/articles/the-evolution-of-clothing-materials-over-the-time.md"
+import ThePotentialForPublicPrivatePartnershipsToPromoteSustainableTextileProductionPolicies from "@/blogdata/articles/the-potential-for-public-private-partnerships-to-promote-sustainable-textile-production-policies.md"
+import TheImpactOfGlobalizationOnClothingProductionAndConsumption from "@/blogdata/articles/the-impact-of-globalization-on-clothing-production-and-consumption.md"
+import TheRoleOfTransparencyInSustainableFashionSupplyChain from "@/blogdata/articles/the-role-of-transparency-in-sustainable-fashion-supply-chain.md"
 
 const authors = [
     {
@@ -14,46 +29,221 @@ const authors = [
         href: "https://www.linkedin.com/in/sak1sham/",
         pic: "",
         bio: "",
+        id: 0,
     },
     {
         name: "Nafeesa Javed",
         href: "http://www.linkedin.com/in/Nafeesaa-Javed",
         pic: "",
         bio: "",
+        id: 1,
     },
     {
         name: "Qurah tul ain",
         href: "https://www.linkedin.com/in/sak1sham/",
         pic: "",
         bio: "",
+        id: 2,
     },
     {
         name: "Samra Arshad",
         href: "https://www.linkedin.com/in/samra-arshad-",
         pic: "https://iili.io/HSmIvR4.jpg",
         bio: "",
+        id: 3,
     },
     {
         name: "Farwa Ramzan",
         href: "https://www.linkedin.com/in/farwa-ramzan-%F0%9F%8C%9F-website-content-writer-085257210/",
         pic: "https://iili.io/HU3DWp1.webp",
         bio: "",
+        id: 4,
     },
     {
         name: "Khadija Abdul Majid",
         href: "https://www.linkedin.com/in/khadija-butt-1931ba240/",
         pic: "https://iili.io/HrPFCj1.jpg",
         bio: "",
+        id: 5,
     },
     {
         name: "Mah Jabeen",
         href: "https://www.linkedin.com/in/mah-jabeen-b520b724a",
         pic: "",
         bio: "",
+        id: 6,
     },
 ]
 
 const blogArticles = [
+    {
+        title: "The Role of Transparency in Sustainable Fashion Supply Chains",
+        slug: "the-role-of-transparency-in-sustainable-fashion-supply-chain",
+        description: "",
+        tags: ["sustainable-fashion", "transparency-in-fashion"],
+        seoKeywords: ["sustainable-fashion", "transparency-in-fashion"],
+        authorId: 4,
+        imageThumbnail: "https://iili.io/JH6j6NI.png",
+        date: "September 18, 2023",
+        content: TheRoleOfTransparencyInSustainableFashionSupplyChain,
+    },
+    {
+        title: "The Impact of Globalization on Clothing Production and Consumption",
+        slug: "the-impact-of-globalization-on-clothing-production-and-consumption",
+        description: "",
+        tags: ["fashion-industry", "clothing-production"],
+        seoKeywords: ["fashion-industry", "clothing-production"],
+        authorId: 3,
+        imageThumbnail: "https://iili.io/HipyXu2.jpg",
+        date: "August 15, 2023",
+        content: TheImpactOfGlobalizationOnClothingProductionAndConsumption,
+    },
+    {
+        title: "The Potential for Public-Private Partnerships to Promote Sustainable Textile Production Practices",
+        slug: "the-potential-for-public-private-partnerships-to-promote-sustainable-textile-production-policies",
+        description: "",
+        tags: ["sustainable-fashion", 'sustainable-standards'],
+        seoKeywords: ["sustainable-fashion", 'sustainable-standards'],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/HZwWmv9.jpg",
+        date: "August 1, 2023",
+        content: ThePotentialForPublicPrivatePartnershipsToPromoteSustainableTextileProductionPolicies,
+    },
+    {
+        title: "The Evolution of Clothing Materials over the Time",
+        slug: "the-evolution-of-clothing-materials-over-the-time",
+        description: "",
+        tags: ["sustainable-future", 'fashion-industry', 'african-fashion'],
+        seoKeywords: ["sustainable-future", 'fashion-industry', 'african-fashion'],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/HPAkLjR.jpg",
+        date: "June 23, 2023",
+        content: TheEvolutionOfClothingMaterialsOverTheTime,
+    },
+    {
+        title: "The Journey of Tonye Raine",
+        slug: "the-journey-of-tonye-raine",
+        description: "",
+        tags: ["lrf-member-story"],
+        seoKeywords: ["lrf-member-story"],
+        authorId: 5,
+        imageThumbnail: "https://iili.io/H6YAG72.jpg",
+        date: "June 12, 2023",
+        content: TheJourneyOfTonyeRaine,
+    },
+    {
+        title: "The Impact of Free Trade Agreements on Textile Production Regulations",
+        slug: "the-impact-of-free-trade-agreements-on-textile-production-regulations",
+        description: "",
+        tags: ["textile-policies", "textile-regulations"],
+        seoKeywords: ["textile-policies", "textile-regulations"],
+        authorId: 5,
+        imageThumbnail: "https://iili.io/HUeMUNV.jpg",
+        date: "June 2, 2023",
+        content: TheImpactOfFreeTradeAgreementsOnTextileProductionRegulations,
+    },
+    {
+        title: "The Impact of Globalization on African Fashion",
+        slug: "the-impact-of-globalization-on-african-fashion",
+        description: "",
+        tags: ["african-fashion"],
+        seoKeywords: ["african-fashion"],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/HS8fkPV.jpg",
+        date: "May 30, 2023",
+        content: TheImpactOfGlobalizationOnAfricanFashion,
+    },
+    {
+        title: "The Different Processes of Recycling with Different Materials",
+        slug: "the-different-processes-of-recycling-with-different-materials",
+        description: "",
+        tags: ["upcycling", "recycling", "ethical-fashion"],
+        seoKeywords: ["upcycling", "recycling", "ethical-fashion"],
+        authorId: 4,
+        imageThumbnail: "https://iili.io/HU3VYFI.png",
+        date: "May 23, 2023",
+        content: TheDifferentProcessesOfRecyclingWithDifferentMaterials,
+    },
+    {
+        title: "The Impact of Textile Waste on Marine Ecosystems and the Potential for Recycling to Mitigate This Impact",
+        slug: "the-impact-of-textile-waste-on-marine-ecosystem-and-the-potential-for-reycling-to-mitigate-this-impact",
+        description: "",
+        tags: ["sustainable-fashion", "ethical-fashion"],
+        seoKeywords: ["sustainable-fashion", "ethical-fashion"],
+        authorId: 3,
+        imageThumbnail: "https://iili.io/HSOrNdG.jpg",
+        date: "May 22, 2023",
+        content: TheImpactOfTextileWasteOnMarineEcosystemAndThePotentialForRecyclingToMitigateThisImpact,
+        isImageDark: true,
+    },
+    {
+        title: "The Role of Ethical Fashion in Promoting Sustainable Fashion",
+        slug: "role-of-ethical-fashion-in-sustainable-fashion",
+        description: "",
+        tags: ["sustainable-fashion", "ethical-fashion"],
+        seoKeywords: ["sustainable-fashion", "ethical-fashion"],
+        authorId: 2,
+        imageThumbnail: "https://iili.io/H8sReUb.jpg",
+        date: "May 4, 2023",
+        content: RoleOfEthicalFashionInSustainableFashion,
+        isImageDark: true,
+    },
+    {
+        title: "The History of Textile Production Regulations in The United States, The United Kingdom, Europe, Africa and Asia",
+        slug: "textile-production-regulations-in-united-states-united-kingdom-europe-africa-asia",
+        description: "",
+        tags: ["textile-policies", "textile-regulations", "labor-laws"],
+        seoKeywords: ["textile-policies", "textile-regulations", "labor-laws"],
+        authorId: 1,
+        imageThumbnail: "https://iili.io/HST8gXp.png",
+        date: "May 2, 2023",
+        content: TextileProductionRegulationsInUnitedStatesUnitedKingdomEuropeAfricaAsia,
+    },
+    {
+        title: "The Benefits and Challenges of Upcycling",
+        slug: "benefits-and-challenges-of-upcycling-in-sustainable-fashion",
+        description: "",
+        tags: ["upcycling"],
+        seoKeywords: ["upcycling"],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/HNVRHb4.jpg",
+        date: "April 6, 2023",
+        content: BenefitsAndChallengesOfUpcyclingInSustainableFashion,
+    },
+    {
+        title: "Traditional Weaving and Dyeing Techniques Used in Africa",
+        slug: "traditional-weaving-and-dyeing-techniques-used-in-africa",
+        description: "",
+        tags: ["fashion-industry", "african-fashion"],
+        seoKeywords: ["fashion-industry", "african-fashion"],
+        authorId: 5,
+        imageThumbnail: "https://iili.io/HOBaln4.jpg",
+        date: "April 5, 2023",
+        content: TraditionalWeavingAndDyeingTechniquesUsedInAfrica,
+    },
+    {
+        title: "Innovative Uses of Recycled Materials in Fashion Design",
+        slug: "innovative-uses-of-recycled-materials-in-fashion-design",
+        description: "",
+        tags: ["fashion-industry"],
+        seoKeywords: ["fashion-industry"],
+        authorId: 4,
+        imageThumbnail: "https://iili.io/HNUaS8F.png",
+        date: "April 2, 2023",
+        content: InnovativeUsesOfRecycledMaterialsInFashionDesign,
+    },
+    {
+        title: "The Impact of Environmental and Social Movements on Textile Production Policies",
+        slug: "impact-of-environmental-and-social-movements-on-textile-production-policies",
+        description: "",
+        tags: ["textile-policies"],
+        seoKeywords: ["textile-policies"],
+        authorId: 3,
+        imageThumbnail: "https://iili.io/Hw1PbgR.jpg",
+        date: "March 31, 2023",
+        content: ImpactOfEnvironmentalAndSocialMovementsOnTextileProductionPolicies,
+        isImageDark: true,
+    },
     {
         title: "Role of Technology in Modern Clothing Production",
         slug: "role-of-technology-in-modern-clothing-production",
