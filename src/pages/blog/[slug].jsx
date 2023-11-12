@@ -1,22 +1,22 @@
-import Head from 'next/head'
-import { useEffect, useRef, useState } from 'react';
+import Head from "next/head";
+import { useEffect, useRef, useState } from "react";
 
-import ReactMarkdown from "react-markdown"
-import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm'
+import ReactMarkdown from "react-markdown";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
-import Share from '@/components/Blog/Pages/Share';
-import componentMapping from '@/components/Blog/Pages/Markdown';
-import SelectedTextMenu from '@/components/Blog/Pages/SelectedTextMenu';
-import DarkMode from '@/components/Blog/Pages/DarkMode';
-import MetaData from '@/components/Blog/Pages/MetaData';
-import ReadMore from '@/components/Blog/Pages/ReadMore';
+import Share from "@/components/Blog/Pages/Share";
+import componentMapping from "@/components/Blog/Pages/Markdown";
+import SelectedTextMenu from "@/components/Blog/Pages/SelectedTextMenu";
+import DarkMode from "@/components/Blog/Pages/DarkMode";
+import MetaData from "@/components/Blog/Pages/MetaData";
+import ReadMore from "@/components/Blog/Pages/ReadMore";
 import { calculateReadingTime } from "markdown-reading-time";
 
-import styles from '@/styles/BlogArticle.module.css'
-import YourSupportIsAllWeNeed from '@/components/Blog/Pages/YourSupportIsAllWeNeed';
-import TableOfContents from '@/components/Blog/Pages/TableOfContents';
-import blogArticles from '@/blogdata';
+import styles from "@/styles/BlogArticle.module.css";
+import YourSupportIsAllWeNeed from "@/components/Blog/Pages/YourSupportIsAllWeNeed";
+import TableOfContents from "@/components/Blog/Pages/TableOfContents";
+import blogArticles from "@/blogdata";
 
 export async function getStaticPaths(context) {
     const posts = blogArticles;
@@ -30,11 +30,11 @@ export async function getStaticPaths(context) {
 export async function getStaticProps({ params }) {
     try {
         const posts = blogArticles;
-        const postIndex = posts.findIndex(p => p.slug === params.slug);
+        const postIndex = posts.findIndex((p) => p.slug === params.slug);
         if (postIndex == -1) {
             return {
                 notFound: true,
-            }
+            };
         }
         const post = posts[postIndex];
         const { minutes } = calculateReadingTime(post.content, {
@@ -47,16 +47,14 @@ export async function getStaticProps({ params }) {
                     minutes,
                     readMoreArticles: [],
                 },
-                slug: params.slug
+                slug: params.slug,
             },
-            revalidate: 120
         };
-    }
-    catch (err) {
+    } catch (err) {
         console.log(err);
         return {
             notFound: true,
-        }
+        };
     }
 }
 
@@ -81,9 +79,8 @@ export default function BlogPost({ post, slug }) {
             const y = document.documentElement.scrollTop + rect.top - 10;
             if (y > lowerLimit - 20 && y < upperLimit) {
                 setTooltipPosition({ x, y });
-            }
-            else {
-                setTooltipPosition({ x: 0, y: 0 })
+            } else {
+                setTooltipPosition({ x: 0, y: 0 });
             }
             setSelectedText(currSelectedText);
         } else {
@@ -93,11 +90,14 @@ export default function BlogPost({ post, slug }) {
 
     useEffect(() => {
         if (document) {
-            document.addEventListener('selectionchange', handleTextSelection);
+            document.addEventListener("selectionchange", handleTextSelection);
         }
         return () => {
             if (document) {
-                document.removeEventListener("selectionchange", handleTextSelection);
+                document.removeEventListener(
+                    "selectionchange",
+                    handleTextSelection
+                );
             }
         };
     }, []);
@@ -107,7 +107,10 @@ export default function BlogPost({ post, slug }) {
             <Head>
                 <title>{post.title}</title>
                 <meta name="description" content={post.description} />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
                 <meta name="keywords" content={keywordsString} />
                 <link rel="icon" href="/favicon.ico" />
                 <meta property="og:image" content={post.imageThumbnail} />
@@ -116,45 +119,61 @@ export default function BlogPost({ post, slug }) {
                 <meta property="og:image:height" content="1024" />
             </Head>
             <DarkMode />
-            <main
-                ref={mainBody}
-                className='py-16 space-y-6'
-            >
-                <div className='flex w-full divide-x'>
-                    <div className='md:w-2/3 h-full'>
-                        <div className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 dark:prose-invert md:col-span-2`}>
+            <main ref={mainBody} className="py-16 space-y-6">
+                <div className="flex w-full divide-x">
+                    <div className="md:w-2/3 h-full">
+                        <div
+                            className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 dark:prose-invert md:col-span-2`}
+                        >
                             <section>
                                 <MetaData post={post} />
                                 <div ref={startingMainContent}>
                                     <ReactMarkdown
                                         remarkPlugins={[rehypeSlug, remarkGfm]}
                                         components={componentMapping}
-                                    >{post.content}
+                                    >
+                                        {post.content}
                                     </ReactMarkdown>
                                 </div>
-                                {selectedText && <SelectedTextMenu selectedText={selectedText} tooltipPosition={tooltipPosition} setIsCopied={setIsCopied} />}
-                                <div className='italics text-sm font-light'>
-                                    DISCLAIMER: The author assumes full responsibility for the content and perspectives presented in this article, including proper citation and licensing of any images incorporated. All sources referenced in this article are the author&apos;s sole responsibility.
+                                {selectedText && (
+                                    <SelectedTextMenu
+                                        selectedText={selectedText}
+                                        tooltipPosition={tooltipPosition}
+                                        setIsCopied={setIsCopied}
+                                    />
+                                )}
+                                <div className="italics text-sm font-light">
+                                    DISCLAIMER: The author assumes full
+                                    responsibility for the content and
+                                    perspectives presented in this article,
+                                    including proper citation and licensing of
+                                    any images incorporated. All sources
+                                    referenced in this article are the
+                                    author&apos;s sole responsibility.
                                 </div>
                             </section>
                             <div ref={shareButtons}>
                                 <Share slug={slug} title={post.title} />
                             </div>
-                            {isCopied && <div className='bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2'>Copied</div>}
+                            {isCopied && (
+                                <div className="bg-black text-white dark:text-black dark:bg-slate-200 p-2 text-sm rounded-lg fixed bottom-5 sm:bottom-10 left-1/2 transform -translate-x-1/2">
+                                    Copied
+                                </div>
+                            )}
                         </div>
                     </div>
-                    <div className='hidden md:block md:w-1/3 h-full sticky top-0 right-0'>
+                    <div className="hidden md:block md:w-1/3 h-full sticky top-0 right-0">
                         <TableOfContents tocMarkdown={post.content} />
                     </div>
                 </div>
                 <YourSupportIsAllWeNeed />
                 <ReadMore
                     readMoreArticles={post.readMoreArticles}
-                    className='prose-normal'
+                    className="prose-normal"
                     theme="light"
                     enableDarkMode={true}
                 />
             </main>
         </div>
-    )
+    );
 }

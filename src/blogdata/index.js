@@ -4,6 +4,9 @@ import DevelopmentOfClosedLoopRecyclingSystem from "@/blogdata/articles/developm
 import TheImpactOfColonialismOnAfricanFashion from "@/blogdata/articles/the-impact-of-colonialism-on-african-fashion.md"
 import TheRoleOfInternationalOrganizationsInShapingTextileProductionPoliciesAndGuidelines from "@/blogdata/articles/the-role-of-international-organizations-in-shaping-textile-production-policies-and-guidelines.md"
 import SustainableFashionAsASolutionToTheFashionIndustrysImpactOnWastefulness from "@/blogdata/articles/sustainable-fashion-a-solution-to-fast-fashions-wastefulness.md"
+import RoleOfChemicalRecyclingInPromotingSustainableFashion from "@/blogdata/articles/role-of-chemical-recycling-in-promoting-sustainable-waste-management.md"
+import RoleOfAfricanTextilesInAfricanCultureAndIdentity from "@/blogdata/articles/role-of-african-textiles-in-african-culture-and-identity.md"
+import RoleOfTechnologyInModernClothingProduction from "@/blogdata/articles/role-of-technology-in-modern-clothing-production.md"
 
 const authors = [
     {
@@ -14,7 +17,7 @@ const authors = [
     },
     {
         name: "Nafeesa Javed",
-        href: "https://www.linkedin.com/in/sak1sham/",
+        href: "http://www.linkedin.com/in/Nafeesaa-Javed",
         pic: "",
         bio: "",
     },
@@ -42,9 +45,49 @@ const authors = [
         pic: "https://iili.io/HrPFCj1.jpg",
         bio: "",
     },
+    {
+        name: "Mah Jabeen",
+        href: "https://www.linkedin.com/in/mah-jabeen-b520b724a",
+        pic: "",
+        bio: "",
+    },
 ]
 
 const blogArticles = [
+    {
+        title: "Role of Technology in Modern Clothing Production",
+        slug: "role-of-technology-in-modern-clothing-production",
+        description: "",
+        tags: ["fashion-industry"],
+        seoKeywords: ["fashion-industry"],
+        authorId: 2,
+        imageThumbnail: "https://iili.io/HNy3Ehu.jpg",
+        date: "March 30, 2023",
+        content: RoleOfTechnologyInModernClothingProduction,
+    },
+    {
+        title: "The Role of Textiles in African Culture and Identity",
+        slug: "role-of-african-textiles-in-african-culture-and-identity",
+        description: "",
+        tags: ["african-fashion"],
+        seoKeywords: ["african-fashion"],
+        authorId: 1,
+        imageThumbnail: "https://iili.io/HwA0mkQ.png",
+        date: "March 23, 2023",
+        content: RoleOfAfricanTextilesInAfricanCultureAndIdentity,
+        isImageDark: true,
+    },
+    {
+        title: "Role of Chemical Recycling in Promoting Sustainable Waste Management",
+        slug: "role-of-chemical-recycling-in-promoting-sustainable-waste-management",
+        description: "",
+        tags: ["closed-loop recycling", "sustainable-future"],
+        seoKeywords: ["closed-loop recycling", "sustainable-future"],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/HhhS20Q.jpg",
+        date: "March 22, 2023",
+        content: RoleOfChemicalRecyclingInPromotingSustainableFashion,
+    },
     {
         title: "Sustainable Fashion as a Solution to the Fashion Industry's Impact on Wastefulness",
         slug: "sustainable-fashion-a-solution-to-fast-fashions-wastefulness",
@@ -53,7 +96,7 @@ const blogArticles = [
         seoKeywords: ["fashion-industry", "sustainable-fashion"],
         authorId: 5,
         imageThumbnail: "https://i.imgur.com/lUAaWfB.jpeg",
-        date: "March 23, 2023",
+        date: "March 21, 2023",
         content: SustainableFashionAsASolutionToTheFashionIndustrysImpactOnWastefulness,
     },
     {

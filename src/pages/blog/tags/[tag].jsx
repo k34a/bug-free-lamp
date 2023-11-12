@@ -1,7 +1,7 @@
-import Head from 'next/head'
-import { getAllTags } from '../../../lib/notion/tags';
-import { getTopPublished } from '../../../lib/notion/blog';
-import BlogList from '@/components/Blog/BlogList';
+import Head from "next/head";
+import { getAllTags } from "../../../lib/notion/tags";
+import { getTopPublished } from "../../../lib/notion/blog";
+import BlogList from "@/components/Blog/BlogList";
 
 export async function getStaticPaths(context) {
     const tags = await getAllTags();
@@ -14,42 +14,49 @@ export async function getStaticPaths(context) {
 
 export async function getStaticProps({ params }) {
     try {
-        const posts = await getTopPublished(30, params.tag)
-        if(!posts) {
+        const posts = await getTopPublished(30, params.tag);
+        if (!posts) {
             return {
                 notFound: true,
-            }
+            };
         }
         return {
             props: {
                 posts,
-                tag: params.tag
+                tag: params.tag,
             },
-            revalidate: 120
         };
-    }
-    catch (err) {
+    } catch (err) {
         console.log(err);
         return {
             notFound: true,
-        }
+        };
     }
 }
 
 export default function BlogPost({ posts, tag }) {
-    if (!posts) return <h1>No posts</h1>
-    const title = `Articles on ${tag} - Larry Rowbs Foundation`
+    if (!posts) return <h1>No posts</h1>;
+    const title = `Articles on ${tag} - Larry Rowbs Foundation`;
     return (
         <>
             <Head>
                 <title>{title}</title>
-                <meta name="description" content="The Larry Rowbs Foundation Blog. Dive into the latest news, updates, and educational content on making fashion sustainable." />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta
+                    name="description"
+                    content="The Larry Rowbs Foundation Blog. Dive into the latest news, updates, and educational content on making fashion sustainable."
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <BlogList data={posts} title={`Curated list of Articles on ${tag}`}/>
+                <BlogList
+                    data={posts}
+                    title={`Curated list of Articles on ${tag}`}
+                />
             </main>
         </>
-    )
+    );
 }
