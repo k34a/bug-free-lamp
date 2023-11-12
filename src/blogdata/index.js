@@ -174,7 +174,7 @@ const blogArticles = [
         imageThumbnail: "https://iili.io/HSOrNdG.jpg",
         date: "May 22, 2023",
         content: TheImpactOfTextileWasteOnMarineEcosystemAndThePotentialForRecyclingToMitigateThisImpact,
-        isImageDark: true,
+        isImageDark: false,
     },
     {
         title: "The Role of Ethical Fashion in Promoting Sustainable Fashion",
@@ -333,7 +333,7 @@ const blogArticles = [
         imageThumbnail: "https://iili.io/HGslVKx.png",
         date: "February 23, 2023",
         content: EnvironmentalImpactsOfFastFashion,
-        isImageDark: true,
+        isImageDark: false,
     },
     {
         title: "Recycle Old Clothes into Fashionable Items",

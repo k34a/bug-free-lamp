@@ -13,7 +13,6 @@ import MetaData from "@/components/Blog/Pages/MetaData";
 import ReadMore from "@/components/Blog/Pages/ReadMore";
 import { calculateReadingTime } from "markdown-reading-time";
 
-import styles from "@/styles/BlogArticle.module.css";
 import YourSupportIsAllWeNeed from "@/components/Blog/Pages/YourSupportIsAllWeNeed";
 import TableOfContents from "@/components/Blog/Pages/TableOfContents";
 import blogArticles from "@/blogdata";
@@ -40,12 +39,19 @@ export async function getStaticProps({ params }) {
         const { minutes } = calculateReadingTime(post.content, {
             wordsPerMinute: 200,
         });
+        const articlesListWithoutCurrent = blogArticles.filter((_, index) => {
+            return index != postIndex;
+        });
+        const readMoreArticles = [...articlesListWithoutCurrent].splice(
+            Math.max(postIndex - 3, 0),
+            2
+        );
         return {
             props: {
                 post: {
                     ...post,
                     minutes,
-                    readMoreArticles: [],
+                    readMoreArticles,
                 },
                 slug: params.slug,
             },
@@ -122,9 +128,7 @@ export default function BlogPost({ post, slug }) {
             <main ref={mainBody} className="py-16 space-y-6">
                 <div className="flex w-full divide-x">
                     <div className="md:w-2/3 h-full">
-                        <div
-                            className={`${styles.article} break-words prose prose-lg mx-auto w-11/12 dark:prose-invert md:col-span-2`}
-                        >
+                        <div className="break-words prose prose-lg mx-auto w-11/12 m-auto dark:prose-invert md:col-span-2">
                             <section>
                                 <MetaData post={post} />
                                 <div ref={startingMainContent}>

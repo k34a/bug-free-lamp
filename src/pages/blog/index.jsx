@@ -2,16 +2,8 @@ import BlogList from "@/components/Blog/BlogList";
 import Head from "next/head";
 import blogArticles from "@/blogdata";
 
-export async function getStaticProps(context) {
-    const data = blogArticles;
-    return {
-        props: {
-            posts: data,
-        },
-    };
-}
-
-export default function Home({ posts }) {
+export default function Home() {
+    const posts = blogArticles;
     if (!posts) return <h1>No posts</h1>;
     return (
         <>

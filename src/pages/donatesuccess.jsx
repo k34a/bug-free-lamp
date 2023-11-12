@@ -19,7 +19,7 @@ export default function Donate() {
             </Head>
             <main>
                 <div className="w-7/8 md:w-2/3 h-screen m-auto flex flex-col items-center justify-center">
-                    <h1 className="text-4xl font-black text-center m-12 opacity-70 text-rose-600">
+                    <h1 className="text-4xl font-black text-center m-12 opacity-70 text-green-600">
                         Thank you for supporting us! You are truly a Change
                         Maker &#128522;
                     </h1>

@@ -19,7 +19,7 @@ export default function Donate() {
             </Head>
             <main className="py-6 md:py-12 word-break">
                 <div className="w-11/12 md:w-2/3 m-auto prose md:prose-lg">
-                    <h1 className="text-3xl md:text-4xl font-black md:text-center m-12 opacity-70 text-rose-600">
+                    <h1 className="text-3xl md:text-4xl font-black md:text-center m-12 opacity-70 text-green-600">
                         Support us and be a Sustainable Fashion Hero!
                     </h1>
                     <p>
@@ -37,7 +37,7 @@ export default function Donate() {
                     </p>
                     <ol>
                         <li>
-                            <span className="font-bold text-sky-500">
+                            <span className="font-bold text-green-500">
                                 Promote Sustainable Fashion
                             </span>
                             : Your donation supports initiatives that raise
@@ -45,7 +45,7 @@ export default function Donate() {
                             for the environment and society.
                         </li>
                         <li>
-                            <span className="font-bold text-pink-500">
+                            <span className="font-bold text-green-500">
                                 Support Workers&apos; Rights
                             </span>
                             : Your donation helps us improve the well-being of
@@ -62,7 +62,7 @@ export default function Donate() {
                             industry.
                         </li>
                         <li>
-                            <span className="font-bold text-orange-500">
+                            <span className="font-bold text-green-500">
                                 Make a Difference
                             </span>
                             : Your donation can create a positive change and

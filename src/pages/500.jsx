@@ -25,7 +25,7 @@ export default function Error() {
                     <p className="text-xl my-4">
                         Our engineers are working on resolving this error.
                     </p>
-                    <button class="my-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                    <button class="my-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
                         <Link href="/">Go home</Link>
                     </button>
                 </div>

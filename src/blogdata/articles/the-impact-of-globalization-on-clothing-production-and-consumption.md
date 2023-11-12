@@ -68,24 +68,22 @@ As the fashion industry moves forward, businesses need to embrace sustainable pr
 
 -   **How has globalization affected clothing production costs?**
 
-Globalization has led to the outsourcing of clothing production to countries with lower labor costs, reducing production expenses for manufacturers.
+    Globalization has led to the outsourcing of clothing production to countries with lower labor costs, reducing production expenses for manufacturers.
 
 -   **What are the social implications of globalization on the clothing industry?**
 
-Globalization has created employment opportunities in developing countries but has also raised concerns about working conditions and labor rights.
+    Globalization has created employment opportunities in developing countries but has also raised concerns about working conditions and labor rights.
 
 -   **How has globalization influenced fashion trends?**
 
-Globalization has facilitated the exchange of fashion trends and styles, leading to greater diversity and cultural exchange in the global
-
-fashion landscape.
+    Globalization has facilitated the exchange of fashion trends and styles, leading to greater diversity and cultural exchange in the global fashion landscape.
 
 -   **What steps are being taken to address the environmental impact of the clothing industry?**
 
-The industry is adopting sustainable practices such as using eco-friendly materials, implementing ethical sourcing, and promoting circular economy principles.
+    The industry is adopting sustainable practices such as using eco-friendly materials, implementing ethical sourcing, and promoting circular economy principles.
 
 ## References
 
--   [Effects of Industrialization and Globalization on Fashion Producers\*.](https://www.ukessays.com/essays/fashion/effects-of-industrialization-and-globalization-on-fashion-producers-4236.php) (2023, March 21).
+-   [Effects of Industrialization and Globalization on Fashion Producers.](https://www.ukessays.com/essays/fashion/effects-of-industrialization-and-globalization-on-fashion-producers-4236.php) (2023, March 21).
 
-Bhutia, T. N. (n.d.). _[Globalisation And The Impacts Of Fast Fashion_. Center for Economic, Strategic and Political Discourse.](https://cespd.org/article/discourse/globalisation-and-the-impacts-of-fast-fashion/)
+-   Bhutia, T. N. (n.d.). [Globalisation And The Impacts Of Fast Fashion. Center for Economic, Strategic and Political Discourse.](https://cespd.org/article/discourse/globalisation-and-the-impacts-of-fast-fashion/)

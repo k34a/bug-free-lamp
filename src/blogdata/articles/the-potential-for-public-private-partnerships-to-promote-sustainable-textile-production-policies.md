@@ -41,7 +41,7 @@ Both entities are working together to optimize resource consumption and maximize
 
 The dyeing process takes a lot of water. Huntsman Avitera reactive dyes consume one-third less energy and water during the dyeing. Genomatica and Aquafil have joined forces to make Caprolactam a component in nylon production using renewable plant-based materials instead of relying on oil sources. These efforts reduce waste and enhance environmental performance throughout the manufacturing process.
 
-1. **Empowering Local Communities**
+2. **Empowering Local Communities**
 
 Employees are like a skeleton for any industry. Both sectors jointly work for the social welfare of their local employees. Local communities face difficulty in selling their handmade products at the market price. PPPs help them by promoting their products to the market. Also, these kinds of partnerships work for safe working conditions.
 
