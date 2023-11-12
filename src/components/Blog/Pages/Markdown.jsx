@@ -69,11 +69,10 @@ const h3Md = ({ node, ...props }) => (
 );
 
 const aMd = (props) => {
-    let url = new URL(props.href);
     const classes = `text-green-600 dark:text-green-200`;
-    if (hosts.includes(url.hostname)) {
+    if (props.href.startsWith("/")) {
         return (
-            <Link href={url.pathname} className={classes}>
+            <Link href={props.href} className={classes}>
                 {props.children}
             </Link>
         );

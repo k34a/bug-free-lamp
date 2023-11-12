@@ -79,8 +79,8 @@ function YourSupportIsAllWeNeed() {
                         as={Link}
                         href="/donate"
                         aria-label="Support our mission"
-                        color="success"
                         size="lg"
+                        className="bg-green-700 text-white dark:bg-green-300 dark:text-black font-bold"
                     >
                         Support our mission
                     </Button>

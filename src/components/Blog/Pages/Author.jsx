@@ -16,6 +16,7 @@ const Author = (props) => {
             <div>
                 <Link
                     href={props.authorHref || "#"}
+                    target="_blank"
                     className="!no-underline font-bold capitalize"
                 >
                     {props.authorName}
