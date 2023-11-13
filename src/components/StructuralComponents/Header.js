@@ -1,165 +1,74 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { IoReader, IoCall } from 'react-icons/io5';
-import { FaHome, FaWalking } from 'react-icons/fa';
-import { RiTeamFill } from 'react-icons/ri';
-import { AiFillHeart } from 'react-icons/ai';
-import { BiDotsVerticalRounded } from 'react-icons/bi';
-import { BsLightningFill } from 'react-icons/bs';
+import React from "react";
+import {
+    Navbar,
+    NavbarBrand,
+    NavbarContent,
+    NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem
+} from "@nextui-org/react";
 
-const MenuItems = {
-    main: [
-        ["Home", <FaHome key="home" size={24} />, '/'],
-        ["Read Articles", <IoReader key="blog" size={24} />, '/blog'],
-        ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
-        ["Donate", <AiFillHeart key="blog" size={24} />, '/donate'],
-        ["Contact", <IoCall key="blog" size={24} />, '/contact'],
-    ],
-    extra: [
-        ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Sustainability Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
-    ]
-}
+export default function App() {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-const SmallMenuItems = {
-    main: [
-        ["Home", <FaHome key="home" size={24} />, '/'],
-        ["Read Articles", <IoReader key="blog" size={24} />, '/blog'],
-        ["Donate", <AiFillHeart key="blog" size={24} />, '/donate'],
-    ],
-    extra: [
-        ["Join", <RiTeamFill key="blog" size={24} />, '/join'],
-        ["Contact", <IoCall key="blog" size={24} />, '/contact'],
-        ["Walk With Travis", <FaWalking key="blog" size={24} />, '/walkwithtravis'],
-        ["Sustainability Quiz", <BsLightningFill key="blog" size={24} />, '/quiztime'],
-    ]
-}
-
-const Header = (props) => {
-    const {isMenuOpen, setIsMenuOpen} = props
-    const [hydrated, setHydrated] = useState(false)
-
-    useEffect(() => {
-        setHydrated(true);
-    }, []);
-
-    if (!hydrated) {
-        return null;
-    }
-
-    const normalHeader = (
-        <div className="fixed top-0 left-0 flex h-screen space-x-6 bg-violet-700 z-50 shadow-2xl">
-            <div
-                className={`flex flex-col items-center h-full overflow-hidden text-gray-100 bg-violet-700 rounded`}
-                onMouseEnter={(e) => { setIsMenuOpen(true) }}
-                onMouseLeave={(e) => { setIsMenuOpen(false) }}
-            >
-                <Link className="flex items-center mt-3 w-full px-4" href="/">
-                    <img
-                        className="rounded"
-                        src='/logo.webp'
-                        width={32}
-                        height={32}
-                        alt="Logo"
-                    />
-                    {isMenuOpen && <span className="ml-2 text-normal font-bold">Larry Rowbs Foundation</span>}
-                </Link>
-                <div className="w-full px-2">
-                    <div className="flex flex-col items-center justify-center w-full mt-3 border-t border-gray-400">
-                        {MenuItems.main.map((ele, index)=> {
-                            return (
-                                <Link 
-                                    key={index} 
-                                    className="flex items-center px-3 w-full h-12 mt-2 rounded hover:bg-violet-500 hover:text-gray-300"
-                                    href={ele[2]}
-                                >
-                                    {ele[1]}
-                                    {isMenuOpen && <span className="ml-3 text-sm font-medium">{ele[0]}</span>}
-                                </Link>
-                            );
-                        })}
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-full mt-3 border-t border-gray-400">
-                        {MenuItems.extra.map((ele, index) => {
-                            return (
-                                <Link
-                                    key={index}
-                                    className="flex items-center px-3 w-full h-12 mt-2 rounded hover:bg-violet-500 hover:text-gray-300"
-                                    href={ele[2]}
-                                >
-                                    {ele[1]}
-                                    {isMenuOpen && <span className="ml-3 text-sm font-medium">{ele[0]}</span>}
-                                </Link>
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-    
-    const smallScreenHeader = (
-        <div className="z-50 w-screen fixed top-0 left-0 text-white">
-            <div className="flex justify-around items-center bg-violet-700 shadow h-16">
-                <div className="rounded p-2">
-                    <Link href="/">
-                        <img
-                            className="rounded"
-                            src='/logo.webp'
-                            width={32}
-                            height={32}
-                            alt="Logo"
-                        />
-                    </Link>
-                </div>
-                {SmallMenuItems.main.map((ele, index) => {
-                    return (
-                        <div
-                            className="rounded p-2"
-                            key={index}
-                        >
-                            <Link href={ele[2]}>
-                                {ele[1]}
-                            </Link>
-                        </div>
-                    );
-                })}
-                <div 
-                    className="rounded p-2"
-                    onClick={(e) => {setIsMenuOpen(!isMenuOpen)}}
-                >
-                    <BiDotsVerticalRounded size={24}/>
-                </div>
-            </div>
-            <div 
-                className="w-full flex justify-end"
-                onClick={(e) => { setIsMenuOpen(false) }}
-            >
-                {isMenuOpen && <div className="z-50 bg-black divide-y divide-gray-100 rounded-lg shadow w-44 text-slate-100">
-                    <ul className="py-2 text-sm">
-                        {SmallMenuItems.extra.map((ele, index) => {
-                            return (
-                                <li
-                                    key={index}
-                                >
-                                    <Link href={ele[2]} className="block px-4 py-2 hover:bg-gray-600">
-                                        {ele[0]}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>}
-            </div>
-        </div>
-    )
+    const menuItems = [
+        ["Home", "/"],
+        ["Blog", "/blog"],
+        ["Join", "/join"],
+        ["Contact", "/contact"],
+        ["Donate", "/donate"],
+    ];
 
     return (
-        <>
-            <div className="hidden sm:block">{normalHeader}</div>
-            <div className="block sm:hidden">{smallScreenHeader}</div>
-        </>
+        <Navbar onMenuOpenChange={setIsMenuOpen}>
+            <NavbarContent>
+                <NavbarMenuToggle
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    className="sm:hidden"
+                />
+                <NavbarBrand>
+                    <Link href="/" underline="none" className="font-bold text-inherit">Larry Rowbs Foundation</Link>
+                </NavbarBrand>
+            </NavbarContent>
+
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                <NavbarItem>
+                    <Link color="foreground" href="/blog">
+                        Blog
+                    </Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link href="/join" color="foreground">
+                        Join
+                    </Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link href="/contact" color="foreground">
+                        Contact
+                    </Link>
+                </NavbarItem>
+            </NavbarContent>
+            <NavbarContent justify="end">
+                <NavbarItem className="hidden sm:flex">
+                    <Button as={Link} color="success" href="/donate" variant="flat">
+                        Donate
+                    </Button>
+                </NavbarItem>
+            </NavbarContent>
+            <NavbarMenu>
+                {menuItems.map((item, index) => (
+                    <NavbarMenuItem key={index}>
+                        <Link
+                            color={
+                                item[0] === "Donate" ? "success" : "foreground"
+                            }
+                            className="w-full"
+                            href={item[1]}
+                            size="lg"
+                        >
+                            {item[0]}
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
+            </NavbarMenu>
+        </Navbar>
     );
 }
-
-export default Header

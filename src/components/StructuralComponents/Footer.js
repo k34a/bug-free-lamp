@@ -1,3 +1,4 @@
+import React from "react";
 import { validateEmail } from "@/lib/commonFrontEndFns";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Link from "next/link";
@@ -79,7 +80,7 @@ export default function Footer() {
                                         <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
                                     </div>
                                     <input
-                                        className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-blue-500 focus:border-blue-500"
+                                        className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-green-500 focus:border-green-500"
                                         placeholder="What's your email?"
                                         type="text"
                                         id="email"
@@ -92,7 +93,7 @@ export default function Footer() {
                                 <div>
                                     <button
                                         type="submit"
-                                        className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-blue-700 border-blue-600 sm:rounded-none sm:rounded-r-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:cursor-not-allowed"
+                                        className="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-green-700 border-green-600 sm:rounded-none sm:rounded-r-lg hover:bg-green-800 focus:ring-4 focus:ring-green-300 disabled:cursor-not-allowed"
                                         disabled={loading}
                                         onClick={e => setHcaptchaVisible(true)}
                                     >
@@ -133,11 +134,11 @@ export default function Footer() {
             </div>
             <div className="text-center px-6 text-sm">
                 <span>&copy; Copyright 2019-{new Date().getFullYear()} </span>
-                <Link className="text-yellow-200" href="/">Larry Rowbs Foundation</Link>
+                <Link className="text-green-200" href="/">Larry Rowbs Foundation</Link>
             </div>
             <div className="text-center px-3 text-sm leading-relaxed">
                 <p>
-                    Website by <a className="text-yellow-200" href="https://www.instagram.com/ggsaksham/" target="_blank" rel="noreferrer noopenner">ggsaksham</a>
+                    Website by <a className="text-green-200" href="https://www.instagram.com/ggsaksham/" target="_blank" rel="noreferrer noopenner">Saksham Garg</a>
                 </p>
             </div>
         </section>
