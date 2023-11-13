@@ -79,7 +79,7 @@ const blogArticles = [
     {
         title: "The Role of Transparency in Sustainable Fashion Supply Chains",
         slug: "the-role-of-transparency-in-sustainable-fashion-supply-chain",
-        description: "",
+        description: "Fashion's green shift by Transparency, sustainability, and responsible sourcing. Learn how these key trends are reshaping the industry.",
         tags: ["sustainable-fashion", "transparency-in-fashion"],
         seoKeywords: ["sustainable-fashion", "transparency-in-fashion"],
         authorId: 4,
@@ -90,7 +90,7 @@ const blogArticles = [
     {
         title: "The Impact of Globalization on Clothing Production and Consumption",
         slug: "the-impact-of-globalization-on-clothing-production-and-consumption",
-        description: "",
+        description: "How Globalization Rewove the Fabric of Clothing Making and Wearing|| Dive into the insights shared here",
         tags: ["fashion-industry", "clothing-production"],
         seoKeywords: ["fashion-industry", "clothing-production"],
         authorId: 3,
@@ -101,7 +101,7 @@ const blogArticles = [
     {
         title: "The Potential for Public-Private Partnerships to Promote Sustainable Textile Production Practices",
         slug: "the-potential-for-public-private-partnerships-to-promote-sustainable-textile-production-policies",
-        description: "",
+        description: "Fashion's green shift by Transparency, sustainability, and responsible sourcing. Learn how these key trends are reshaping the industry.",
         tags: ["sustainable-fashion", 'sustainable-standards'],
         seoKeywords: ["sustainable-fashion", 'sustainable-standards'],
         authorId: 6,
@@ -112,7 +112,7 @@ const blogArticles = [
     {
         title: "The Evolution of Clothing Materials over the Time",
         slug: "the-evolution-of-clothing-materials-over-the-time",
-        description: "",
+        description: "Have you gone through the Evolution of clothing materials || Get dive to get a flashback",
         tags: ["sustainable-future", 'fashion-industry', 'african-fashion'],
         seoKeywords: ["sustainable-future", 'fashion-industry', 'african-fashion'],
         authorId: 6,
@@ -123,7 +123,7 @@ const blogArticles = [
     {
         title: "The Journey of Tonye Raine",
         slug: "the-journey-of-tonye-raine",
-        description: "",
+        description: "Tonye's journey from rural Nigeria to becoming a sustainable fashion advocate, transforming the industry with passion and resourcefulness.",
         tags: ["lrf-member-story"],
         seoKeywords: ["lrf-member-story"],
         authorId: 5,
@@ -134,7 +134,7 @@ const blogArticles = [
     {
         title: "The Impact of Free Trade Agreements on Textile Production Regulations",
         slug: "the-impact-of-free-trade-agreements-on-textile-production-regulations",
-        description: "",
+        description: "Examine the implications of free trade agreements on textile production regulations and the global trade landscape.",
         tags: ["textile-policies", "textile-regulations"],
         seoKeywords: ["textile-policies", "textile-regulations"],
         authorId: 5,
@@ -145,7 +145,7 @@ const blogArticles = [
     {
         title: "The Impact of Globalization on African Fashion",
         slug: "the-impact-of-globalization-on-african-fashion",
-        description: "",
+        description: "Experience the transformative power of globalization on African fashion as traditional prints intertwine with modern trends. ",
         tags: ["african-fashion"],
         seoKeywords: ["african-fashion"],
         authorId: 6,
@@ -156,7 +156,7 @@ const blogArticles = [
     {
         title: "The Different Processes of Recycling with Different Materials",
         slug: "the-different-processes-of-recycling-with-different-materials",
-        description: "",
+        description: "Discover the intricate world of recycling with various materials! From exploring the difference between upcycling and recycling to analyzing the benefits of different manufacturing processes and their impact on the environment.",
         tags: ["upcycling", "recycling", "ethical-fashion"],
         seoKeywords: ["upcycling", "recycling", "ethical-fashion"],
         authorId: 4,
@@ -167,7 +167,7 @@ const blogArticles = [
     {
         title: "The Impact of Textile Waste on Marine Ecosystems and the Potential for Recycling to Mitigate This Impact",
         slug: "the-impact-of-textile-waste-on-marine-ecosystem-and-the-potential-for-reycling-to-mitigate-this-impact",
-        description: "",
+        description: "The fashion industry has a dirty little secret | Its contribution to textile waste is harming our ocean  | Read on to find out how recycling can make a difference.",
         tags: ["sustainable-fashion", "ethical-fashion"],
         seoKeywords: ["sustainable-fashion", "ethical-fashion"],
         authorId: 3,
@@ -179,7 +179,7 @@ const blogArticles = [
     {
         title: "The Role of Ethical Fashion in Promoting Sustainable Fashion",
         slug: "role-of-ethical-fashion-in-sustainable-fashion",
-        description: "",
+        description: "Ethical fashion's impact on Sustainable Fashion | Unlock  the potential for a greener future here.",
         tags: ["sustainable-fashion", "ethical-fashion"],
         seoKeywords: ["sustainable-fashion", "ethical-fashion"],
         authorId: 2,
@@ -191,7 +191,7 @@ const blogArticles = [
     {
         title: "The History of Textile Production Regulations in The United States, The United Kingdom, Europe, Africa and Asia",
         slug: "textile-production-regulations-in-united-states-united-kingdom-europe-africa-asia",
-        description: "",
+        description: "From early labor laws to sustainable practices | Explore the evolution of textile production regulations in the US, UK, Europe, Africa, and Asia. ",
         tags: ["textile-policies", "textile-regulations", "labor-laws"],
         seoKeywords: ["textile-policies", "textile-regulations", "labor-laws"],
         authorId: 1,
@@ -202,7 +202,7 @@ const blogArticles = [
     {
         title: "The Benefits and Challenges of Upcycling",
         slug: "benefits-and-challenges-of-upcycling-in-sustainable-fashion",
-        description: "",
+        description: "Want to know how challenges and benefits of upcycling reshape sustainable fashion? | Explore more right here.",
         tags: ["upcycling"],
         seoKeywords: ["upcycling"],
         authorId: 6,
@@ -213,7 +213,7 @@ const blogArticles = [
     {
         title: "Traditional Weaving and Dyeing Techniques Used in Africa",
         slug: "traditional-weaving-and-dyeing-techniques-used-in-africa",
-        description: "",
+        description: "How weaving and dyeing techniques was used in Africa for cloth production? Explore it now for more details.",
         tags: ["fashion-industry", "african-fashion"],
         seoKeywords: ["fashion-industry", "african-fashion"],
         authorId: 5,
@@ -224,7 +224,7 @@ const blogArticles = [
     {
         title: "Innovative Uses of Recycled Materials in Fashion Design",
         slug: "innovative-uses-of-recycled-materials-in-fashion-design",
-        description: "",
+        description: "How recycled material could be used effectively in designing fashion| Explore it now.",
         tags: ["fashion-industry"],
         seoKeywords: ["fashion-industry"],
         authorId: 4,
@@ -235,7 +235,7 @@ const blogArticles = [
     {
         title: "The Impact of Environmental and Social Movements on Textile Production Policies",
         slug: "impact-of-environmental-and-social-movements-on-textile-production-policies",
-        description: "",
+        description: "Eco and social movements reshape textile production policies for a greener world | Read further right here.",
         tags: ["textile-policies"],
         seoKeywords: ["textile-policies"],
         authorId: 3,
@@ -247,7 +247,7 @@ const blogArticles = [
     {
         title: "Role of Technology in Modern Clothing Production",
         slug: "role-of-technology-in-modern-clothing-production",
-        description: "",
+        description: "Technology will change ways of producing clothes in the future.",
         tags: ["fashion-industry"],
         seoKeywords: ["fashion-industry"],
         authorId: 2,
@@ -258,7 +258,7 @@ const blogArticles = [
     {
         title: "The Role of Textiles in African Culture and Identity",
         slug: "role-of-african-textiles-in-african-culture-and-identity",
-        description: "",
+        description: "Uniting cultures through African fabrics? | Dive into the African textiles world here.",
         tags: ["african-fashion"],
         seoKeywords: ["african-fashion"],
         authorId: 1,
@@ -270,7 +270,7 @@ const blogArticles = [
     {
         title: "Role of Chemical Recycling in Promoting Sustainable Waste Management",
         slug: "role-of-chemical-recycling-in-promoting-sustainable-waste-management",
-        description: "",
+        description: "Chemical recycling of waste| Promote sustainable waste management with Larry Rowbs Foundation ",
         tags: ["closed-loop recycling", "sustainable-future"],
         seoKeywords: ["closed-loop recycling", "sustainable-future"],
         authorId: 6,
@@ -281,7 +281,7 @@ const blogArticles = [
     {
         title: "Sustainable Fashion as a Solution to the Fashion Industry's Impact on Wastefulness",
         slug: "sustainable-fashion-a-solution-to-fast-fashions-wastefulness",
-        description: "",
+        description: "Wastefulness in fast fashion? | Discover sustainable solutions now.",
         tags: ["fashion-industry", "sustainable-fashion"],
         seoKeywords: ["fashion-industry", "sustainable-fashion"],
         authorId: 5,
@@ -292,7 +292,7 @@ const blogArticles = [
     {
         title: "The Role of International Organizations in Shaping Textile Production Policies and Guidelines",
         slug: "the-role-of-international-organizations-in-shaping-textile-production-policies-and-guidelines",
-        description: "",
+        description: "How international organizations will shape policies and guidelines in Europe? Explore more it with Larry Rowbs Foundation",
         tags: ["sustainable-future"],
         seoKeywords: ["sustainable-future"],
         authorId: 4,
@@ -303,7 +303,7 @@ const blogArticles = [
     {
         title: "The Impact of Colonialism on African Fashion",
         slug: "the-impact-of-colonialism-on-african-fashion",
-        description: "",
+        description: "How European colonialism influenced African fashion? | Explore modern sustainable fashion with Larry Rowbs Foundation",
         tags: ["african-fashion", "sustainable-fashion"],
         seoKeywords: ["african-fashion", "sustainable-fashion"],
         authorId: 3,
@@ -315,7 +315,7 @@ const blogArticles = [
     {
         title: "Development of Closed-Loop Recycling System",
         slug: "development-of-closed-loop-recycling-system",
-        description: "",
+        description: "Can fashion be sustainable? | Closed-loop recycling & bio-based methods | Textile industry's sustainability explored",
         tags: ["closed-loop recycling", "sustainable-fashion"],
         seoKeywords: ["closed-loop recycling", "sustainable-fashion"],
         authorId: 2,
@@ -326,7 +326,7 @@ const blogArticles = [
     {
         title: "The Environmental Impact Of Fast Fashion On Landfills",
         slug: "the-environmental-impacts-of-fast-fashion-on-landfills",
-        description: "",
+        description: "Fast fashion's harm to environment & landfills | Learn how Larry Rowbs Foundation promotes responsible production & consumption.",
         tags: ["fast-fashion", "landfills"],
         seoKeywords: ["fast-fashion", "landfills"],
         authorId: 1,

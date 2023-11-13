@@ -1,11 +1,14 @@
 import Head from "next/head";
-import { getAllTags } from "../../../lib/notion/tags";
-import { getTopPublished } from "../../../lib/notion/blog";
 import BlogList from "@/components/Blog/BlogList";
+import blogArticles from "@/blogdata";
 
 export async function getStaticPaths(context) {
-    const tags = await getAllTags();
-    const paths = tags.map((tag) => ({ params: { tag } }));
+    const tags = [];
+    blogArticles.forEach((article) => {
+        tags.concat(article.tags);
+    });
+    const uniqueTags = Array.from(new Set(tags));
+    const paths = uniqueTags.map((tag) => ({ params: { tag } }));
     return {
         paths,
         fallback: "blocking",
@@ -14,12 +17,9 @@ export async function getStaticPaths(context) {
 
 export async function getStaticProps({ params }) {
     try {
-        const posts = await getTopPublished(30, params.tag);
-        if (!posts) {
-            return {
-                notFound: true,
-            };
-        }
+        const posts = blogArticles.filter((article) => {
+            return article.tags.includes(params.tag);
+        });
         return {
             props: {
                 posts,
