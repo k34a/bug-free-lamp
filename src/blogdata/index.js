@@ -22,6 +22,8 @@ import TheEvolutionOfClothingMaterialsOverTheTime from "@/blogdata/articles/the-
 import ThePotentialForPublicPrivatePartnershipsToPromoteSustainableTextileProductionPolicies from "@/blogdata/articles/the-potential-for-public-private-partnerships-to-promote-sustainable-textile-production-policies.md"
 import TheImpactOfGlobalizationOnClothingProductionAndConsumption from "@/blogdata/articles/the-impact-of-globalization-on-clothing-production-and-consumption.md"
 import TheRoleOfTransparencyInSustainableFashionSupplyChain from "@/blogdata/articles/the-role-of-transparency-in-sustainable-fashion-supply-chain.md"
+import WhatHappensClothingAtEndOfLifecycle from "@/blogdata/articles/what-happens-clothing-at-end-of-lifecycle.md"
+import EnvironmentalImpactsOfFashionIndustry from "@/blogdata/articles/environmental-impacts-of-fashion-industry.md"
 
 const authors = [
     {
@@ -76,6 +78,29 @@ const authors = [
 ]
 
 const blogArticles = [
+    {
+        title: "Environmental Impacts of the Fashion Industry",
+        slug: "environmental-impacts-of-fashion-industry",
+        description: "Fashion's green shift by Transparency, sustainability, and responsible sourcing. Learn how these key trends are reshaping the industry.",
+        tags: ["fashion-industry", "carbon-footprints", "environmental-effects"],
+        seoKeywords: ["fashion-industry", "carbon-footprints", "environmental-effects"],
+        authorId: 6,
+        imageThumbnail: "https://freeimghost.net/images/2023/09/15/pexels-chris-leboutillier-929382.jpeg",
+        date: "November 28, 2023",
+        content: EnvironmentalImpactsOfFashionIndustry,
+        isImageDark: true,
+    },
+    {
+        title: "What happens to clothing when it comes to the end of its lifecycle?",
+        slug: "what-happens-clothing-at-end-of-lifecycle",
+        description: "Discover the fascinating journey of textiles from creation to disposal. Know the sustainable practices of recycling, reusing and recycling, and the environmental impact of clothing that ends up in landfills",
+        tags: ["clothing-lifecycle", "clothing"],
+        seoKeywords: ["clothing-lifecycle", "clothing"],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/HLjwIcX.jpg",
+        date: "November 28, 2023",
+        content: WhatHappensClothingAtEndOfLifecycle,
+    },
     {
         title: "The Role of Transparency in Sustainable Fashion Supply Chains",
         slug: "the-role-of-transparency-in-sustainable-fashion-supply-chain",
