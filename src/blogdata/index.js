@@ -81,7 +81,7 @@ const blogArticles = [
     {
         title: "Environmental Impacts of the Fashion Industry",
         slug: "environmental-impacts-of-fashion-industry",
-        description: "Fashion's green shift by Transparency, sustainability, and responsible sourcing. Learn how these key trends are reshaping the industry.",
+        description: "Let's explore the environmental impacts of fashion industry and uncover the staggering statistics of fashion waste, pollution and carbon footprint.",
         tags: ["fashion-industry", "carbon-footprints", "environmental-effects"],
         seoKeywords: ["fashion-industry", "carbon-footprints", "environmental-effects"],
         authorId: 6,
