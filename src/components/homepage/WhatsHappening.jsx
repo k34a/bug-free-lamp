@@ -63,9 +63,11 @@ export default function WhatsHappening() {
                         return (
                             <img
                                 src={src}
+                                width={800}
+                                height={800}
                                 alt="Landfills in Africa filled with used clothes donated to developing nations"
                                 key={index}
-                                className="rounded sm:rounded-lg drop-shadow-md sm:drop-shadow-lg"
+                                className="rounded sm:rounded-lg drop-shadow-md sm:drop-shadow-lg max-w-full max-h-full"
                             />
                         );
                     })}
