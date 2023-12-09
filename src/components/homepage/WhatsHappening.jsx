@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Link } from "@nextui-org/react";
 
 const landfillImages = [
-    "/dumped-clothes/1.jpeg",
-    "/dumped-clothes/2.jpeg",
-    "/dumped-clothes/3.jpg",
-    "/dumped-clothes/4.jpg",
+    "/dumped-clothes/1.webp",
+    "/dumped-clothes/2.webp",
+    "/dumped-clothes/3.webp",
+    "/dumped-clothes/4.webp",
 ];
 
 export default function WhatsHappening() {
