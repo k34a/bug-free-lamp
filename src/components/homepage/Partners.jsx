@@ -1,4 +1,5 @@
 import { Button, Link } from "@nextui-org/react";
+import Image from "next/image";
 import React from "react";
 
 export default function Partners() {
@@ -14,9 +15,16 @@ export default function Partners() {
                 <div className="grid divide-y-4">
                     <div className="grid md:grid-cols-2 gap-4 m-2">
                         <div className="m-2 flex justify-center items-center">
-                            <img
-                                src="/Christian-Ministry-Alliance.png"
+                            <Image
+                                src="/Christian-Ministry-Alliance.webp"
                                 alt="Christian Ministry Alliance"
+                                loading="lazy"
+                                width={800}
+                                height={400}
+                                loader={({ src }) => {
+                                    return src;
+                                }}
+                                className="max-w-full max-h-full"
                             />
                         </div>
                         <div className="m-2 md:text-lg lg:text-xl">
@@ -39,9 +47,16 @@ export default function Partners() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-4 m-2">
                         <div className="m-2 flex justify-center items-center">
-                            <img
+                            <Image
                                 src="/WorldWideWeavingOfWomen.webp"
                                 alt="World Wide Weaving Of Women"
+                                loading="lazy"
+                                width={800}
+                                height={400}
+                                loader={({ src }) => {
+                                    return src;
+                                }}
+                                className="max-w-full max-h-full"
                             />
                         </div>
                         <div className="m-2 md:text-lg lg:text-xl">

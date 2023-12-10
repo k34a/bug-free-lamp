@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Link, Image } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import NextImage from "next/image";
 
 const landfillImages = [
-    "/dumpedclothes/1.jpeg",
-    "/dumpedclothes/2.jpeg",
-    "/dumpedclothes/3.jpg",
-    "/dumpedclothes/4.jpg",
+    "/dumpedclothes/1.webp",
+    "/dumpedclothes/2.webp",
+    "/dumpedclothes/3.webp",
+    "/dumpedclothes/4.webp",
 ];
 
 export default function WhatsHappening() {
@@ -62,8 +62,7 @@ export default function WhatsHappening() {
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                     {landfillImages.map((src, index) => {
                         return (
-                            <Image
-                                as={NextImage}
+                            <NextImage
                                 src={src}
                                 width={800}
                                 height={800}
