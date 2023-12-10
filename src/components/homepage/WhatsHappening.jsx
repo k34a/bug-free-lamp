@@ -1,11 +1,12 @@
 import React from "react";
 import { Button, Link } from "@nextui-org/react";
+import Image from "next/image";
 
 const landfillImages = [
-    "/dumped-clothes/1.webp",
-    "/dumped-clothes/2.webp",
-    "/dumped-clothes/3.webp",
-    "/dumped-clothes/4.webp",
+    "/dumped-clothes/1.jpeg",
+    "/dumped-clothes/2.jpeg",
+    "/dumped-clothes/3.jpg",
+    "/dumped-clothes/4.jpg",
 ];
 
 export default function WhatsHappening() {
@@ -65,6 +66,7 @@ export default function WhatsHappening() {
                                 src={src}
                                 width={800}
                                 height={800}
+                                loading="lazy"
                                 alt="Landfills in Africa filled with used clothes donated to developing nations"
                                 key={index}
                                 className="rounded sm:rounded-lg drop-shadow-md sm:drop-shadow-lg max-w-full max-h-full"
