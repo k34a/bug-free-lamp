@@ -6,6 +6,7 @@ import Head from "next/head";
 
 import { Button, Link } from "@nextui-org/react";
 import YoutubeVideo from "@/components/Youtube";
+import AnimationVideo from "@/components/homepage/AnimationVideo";
 
 const benefits = [
     {
@@ -83,7 +84,7 @@ export default function Home() {
                     </Button>
                 </div>
                 <div className="w-11/12 sm:w-3/4 md:w-3/5 mx-auto drop-shadow-lg md:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
-                    <YoutubeVideo videoId="sNYn-M6TfII" />
+                    <AnimationVideo />
                 </div>
                 <div className="w-11/12 sm:w-3/4 mx-auto flex flex-col gap-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-5 items-start">
