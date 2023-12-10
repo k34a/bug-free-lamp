@@ -70,6 +70,9 @@ export default function WhatsHappening() {
                                 loading="lazy"
                                 alt="Landfills in Africa filled with used clothes donated to developing nations"
                                 key={index}
+                                loader={({ src }) => {
+                                    return src;
+                                }}
                                 className="rounded sm:rounded-lg drop-shadow-md sm:drop-shadow-lg max-w-full max-h-full"
                             />
                         );
