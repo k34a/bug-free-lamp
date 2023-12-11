@@ -1,30 +1,3 @@
-import RecycleOldClothesIntoFashionableItems from "@/blogdata/articles/recycle-old-clothes-into-fashionable-items.md"
-import EnvironmentalImpactsOfFastFashion from "@/blogdata/articles/the-environmental-impacts-of-fast-fashion-on-landfills.md"
-import DevelopmentOfClosedLoopRecyclingSystem from "@/blogdata/articles/development-of-closed-loop-recycling-system.md"
-import TheImpactOfColonialismOnAfricanFashion from "@/blogdata/articles/the-impact-of-colonialism-on-african-fashion.md"
-import TheRoleOfInternationalOrganizationsInShapingTextileProductionPoliciesAndGuidelines from "@/blogdata/articles/the-role-of-international-organizations-in-shaping-textile-production-policies-and-guidelines.md"
-import SustainableFashionAsASolutionToTheFashionIndustrysImpactOnWastefulness from "@/blogdata/articles/sustainable-fashion-a-solution-to-fast-fashions-wastefulness.md"
-import RoleOfChemicalRecyclingInPromotingSustainableFashion from "@/blogdata/articles/role-of-chemical-recycling-in-promoting-sustainable-waste-management.md"
-import RoleOfAfricanTextilesInAfricanCultureAndIdentity from "@/blogdata/articles/role-of-african-textiles-in-african-culture-and-identity.md"
-import RoleOfTechnologyInModernClothingProduction from "@/blogdata/articles/role-of-technology-in-modern-clothing-production.md"
-import ImpactOfEnvironmentalAndSocialMovementsOnTextileProductionPolicies from "@/blogdata/articles/impact-of-environmental-and-social-movements-on-textile-production-policies.md"
-import InnovativeUsesOfRecycledMaterialsInFashionDesign from "@/blogdata/articles/innovative-uses-of-recycled-materials-in-fashion-design.md"
-import TraditionalWeavingAndDyeingTechniquesUsedInAfrica from "@/blogdata/articles/traditional-weaving-and-dyeing-techniques-used-in-africa.md"
-import BenefitsAndChallengesOfUpcyclingInSustainableFashion from "@/blogdata/articles/benefits-and-challenges-of-upcycling-in-sustainable-fashion.md"
-import TextileProductionRegulationsInUnitedStatesUnitedKingdomEuropeAfricaAsia from "@/blogdata/articles/textile-production-regulations-in-united-states-united-kingdom-europe-africa-asia.md"
-import RoleOfEthicalFashionInSustainableFashion from "@/blogdata/articles/role-of-ethical-fashion-in-sustainable-fashion.md"
-import TheImpactOfTextileWasteOnMarineEcosystemAndThePotentialForRecyclingToMitigateThisImpact from "@/blogdata/articles/the-impact-of-textile-waste-on-marine-ecosystem-and-the-potential-for-reycling-to-mitigate-this-impact.md"
-import TheDifferentProcessesOfRecyclingWithDifferentMaterials from "@/blogdata/articles/the-different-processes-of-recycling-with-different-materials.md"
-import TheImpactOfGlobalizationOnAfricanFashion from "@/blogdata/articles/the-impact-of-globalization-on-african-fashion.md"
-import TheImpactOfFreeTradeAgreementsOnTextileProductionRegulations from "@/blogdata/articles/the-impact-of-free-trade-agreements-on-textile-production-regulations.md"
-import TheJourneyOfTonyeRaine from "@/blogdata/articles/the-journey-of-tonye-raine.md"
-import TheEvolutionOfClothingMaterialsOverTheTime from "@/blogdata/articles/the-evolution-of-clothing-materials-over-the-time.md"
-import ThePotentialForPublicPrivatePartnershipsToPromoteSustainableTextileProductionPolicies from "@/blogdata/articles/the-potential-for-public-private-partnerships-to-promote-sustainable-textile-production-policies.md"
-import TheImpactOfGlobalizationOnClothingProductionAndConsumption from "@/blogdata/articles/the-impact-of-globalization-on-clothing-production-and-consumption.md"
-import TheRoleOfTransparencyInSustainableFashionSupplyChain from "@/blogdata/articles/the-role-of-transparency-in-sustainable-fashion-supply-chain.md"
-import WhatHappensClothingAtEndOfLifecycle from "@/blogdata/articles/what-happens-clothing-at-end-of-lifecycle.md"
-import EnvironmentalImpactsOfFashionIndustry from "@/blogdata/articles/environmental-impacts-of-fashion-industry.md"
-
 const authors = [
     {
         name: "Saksham Garg",
@@ -79,6 +52,16 @@ const authors = [
 
 const blogArticles = [
     {
+        title: "Innovative Approaches for Recycling Textiles Contaminated with Dyes and Other Chemicals",
+        slug: "innovative-approaches-for-textile-recycling",
+        description: "Dyeing and finishing tricks weave magic into otherwise plain clothes. Their impact on the environment, however, is far from enchanting. Recycling clothes laden with sneaky chemicals is tedious at best (impossible at worst!).",
+        tags: ["sustainable-coloration", "synthetic-dyes", "functional-finishes", "innovative-approaches"],
+        seoKeywords: ["sustainable-coloration", "synthetic-dyes", "functional-finishes", "innovative-approaches"],
+        authorId: 5,
+        imageThumbnail: "https://iili.io/J90ZBRe.jpg",
+        date: "December 12, 2023",
+    },
+    {
         title: "Environmental Impacts of the Fashion Industry",
         slug: "environmental-impacts-of-fashion-industry",
         description: "Let's explore the environmental impacts of fashion industry and uncover the staggering statistics of fashion waste, pollution and carbon footprint.",
@@ -87,7 +70,6 @@ const blogArticles = [
         authorId: 6,
         imageThumbnail: "https://freeimghost.net/images/2023/09/15/pexels-chris-leboutillier-929382.jpeg",
         date: "November 28, 2023",
-        content: EnvironmentalImpactsOfFashionIndustry,
         isImageDark: true,
     },
     {
@@ -99,7 +81,6 @@ const blogArticles = [
         authorId: 6,
         imageThumbnail: "https://iili.io/HLjwIcX.jpg",
         date: "November 28, 2023",
-        content: WhatHappensClothingAtEndOfLifecycle,
     },
     {
         title: "The Role of Transparency in Sustainable Fashion Supply Chains",
@@ -110,7 +91,6 @@ const blogArticles = [
         authorId: 4,
         imageThumbnail: "https://iili.io/JH6j6NI.png",
         date: "September 18, 2023",
-        content: TheRoleOfTransparencyInSustainableFashionSupplyChain,
     },
     {
         title: "The Impact of Globalization on Clothing Production and Consumption",
@@ -121,7 +101,6 @@ const blogArticles = [
         authorId: 3,
         imageThumbnail: "https://iili.io/HipyXu2.jpg",
         date: "August 15, 2023",
-        content: TheImpactOfGlobalizationOnClothingProductionAndConsumption,
     },
     {
         title: "The Potential for Public-Private Partnerships to Promote Sustainable Textile Production Practices",
@@ -132,7 +111,6 @@ const blogArticles = [
         authorId: 6,
         imageThumbnail: "https://iili.io/HZwWmv9.jpg",
         date: "August 1, 2023",
-        content: ThePotentialForPublicPrivatePartnershipsToPromoteSustainableTextileProductionPolicies,
     },
     {
         title: "The Evolution of Clothing Materials over the Time",
@@ -143,7 +121,6 @@ const blogArticles = [
         authorId: 6,
         imageThumbnail: "https://iili.io/HPAkLjR.jpg",
         date: "June 23, 2023",
-        content: TheEvolutionOfClothingMaterialsOverTheTime,
     },
     {
         title: "The Journey of Tonye Raine",
@@ -154,7 +131,6 @@ const blogArticles = [
         authorId: 5,
         imageThumbnail: "https://iili.io/H6YAG72.jpg",
         date: "June 12, 2023",
-        content: TheJourneyOfTonyeRaine,
     },
     {
         title: "The Impact of Free Trade Agreements on Textile Production Regulations",
@@ -165,7 +141,6 @@ const blogArticles = [
         authorId: 5,
         imageThumbnail: "https://iili.io/HUeMUNV.jpg",
         date: "June 2, 2023",
-        content: TheImpactOfFreeTradeAgreementsOnTextileProductionRegulations,
     },
     {
         title: "The Impact of Globalization on African Fashion",
@@ -176,7 +151,6 @@ const blogArticles = [
         authorId: 6,
         imageThumbnail: "https://iili.io/HS8fkPV.jpg",
         date: "May 30, 2023",
-        content: TheImpactOfGlobalizationOnAfricanFashion,
     },
     {
         title: "The Different Processes of Recycling with Different Materials",
@@ -187,7 +161,6 @@ const blogArticles = [
         authorId: 4,
         imageThumbnail: "https://iili.io/HU3VYFI.png",
         date: "May 23, 2023",
-        content: TheDifferentProcessesOfRecyclingWithDifferentMaterials,
     },
     {
         title: "The Impact of Textile Waste on Marine Ecosystems and the Potential for Recycling to Mitigate This Impact",
@@ -198,7 +171,6 @@ const blogArticles = [
         authorId: 3,
         imageThumbnail: "https://iili.io/HSOrNdG.jpg",
         date: "May 22, 2023",
-        content: TheImpactOfTextileWasteOnMarineEcosystemAndThePotentialForRecyclingToMitigateThisImpact,
         isImageDark: false,
     },
     {
@@ -210,7 +182,6 @@ const blogArticles = [
         authorId: 2,
         imageThumbnail: "https://iili.io/H8sReUb.jpg",
         date: "May 4, 2023",
-        content: RoleOfEthicalFashionInSustainableFashion,
         isImageDark: true,
     },
     {
@@ -222,7 +193,6 @@ const blogArticles = [
         authorId: 1,
         imageThumbnail: "https://iili.io/HST8gXp.png",
         date: "May 2, 2023",
-        content: TextileProductionRegulationsInUnitedStatesUnitedKingdomEuropeAfricaAsia,
     },
     {
         title: "The Benefits and Challenges of Upcycling",
@@ -233,7 +203,6 @@ const blogArticles = [
         authorId: 6,
         imageThumbnail: "https://iili.io/HNVRHb4.jpg",
         date: "April 6, 2023",
-        content: BenefitsAndChallengesOfUpcyclingInSustainableFashion,
     },
     {
         title: "Traditional Weaving and Dyeing Techniques Used in Africa",
@@ -244,7 +213,6 @@ const blogArticles = [
         authorId: 5,
         imageThumbnail: "https://iili.io/HOBaln4.jpg",
         date: "April 5, 2023",
-        content: TraditionalWeavingAndDyeingTechniquesUsedInAfrica,
     },
     {
         title: "Innovative Uses of Recycled Materials in Fashion Design",
@@ -255,7 +223,6 @@ const blogArticles = [
         authorId: 4,
         imageThumbnail: "https://iili.io/HNUaS8F.png",
         date: "April 2, 2023",
-        content: InnovativeUsesOfRecycledMaterialsInFashionDesign,
     },
     {
         title: "The Impact of Environmental and Social Movements on Textile Production Policies",
@@ -266,7 +233,6 @@ const blogArticles = [
         authorId: 3,
         imageThumbnail: "https://iili.io/Hw1PbgR.jpg",
         date: "March 31, 2023",
-        content: ImpactOfEnvironmentalAndSocialMovementsOnTextileProductionPolicies,
         isImageDark: true,
     },
     {
@@ -278,7 +244,6 @@ const blogArticles = [
         authorId: 2,
         imageThumbnail: "https://iili.io/HNy3Ehu.jpg",
         date: "March 30, 2023",
-        content: RoleOfTechnologyInModernClothingProduction,
     },
     {
         title: "The Role of Textiles in African Culture and Identity",
@@ -289,7 +254,6 @@ const blogArticles = [
         authorId: 1,
         imageThumbnail: "https://iili.io/HwA0mkQ.png",
         date: "March 23, 2023",
-        content: RoleOfAfricanTextilesInAfricanCultureAndIdentity,
         isImageDark: true,
     },
     {
@@ -301,7 +265,6 @@ const blogArticles = [
         authorId: 6,
         imageThumbnail: "https://iili.io/HhhS20Q.jpg",
         date: "March 22, 2023",
-        content: RoleOfChemicalRecyclingInPromotingSustainableFashion,
     },
     {
         title: "Sustainable Fashion as a Solution to the Fashion Industry's Impact on Wastefulness",
@@ -312,7 +275,6 @@ const blogArticles = [
         authorId: 5,
         imageThumbnail: "https://i.imgur.com/lUAaWfB.jpeg",
         date: "March 21, 2023",
-        content: SustainableFashionAsASolutionToTheFashionIndustrysImpactOnWastefulness,
     },
     {
         title: "The Role of International Organizations in Shaping Textile Production Policies and Guidelines",
@@ -323,7 +285,6 @@ const blogArticles = [
         authorId: 4,
         imageThumbnail: "https://iili.io/HMZpEV2.jpg",
         date: "March 6, 2023",
-        content: TheRoleOfInternationalOrganizationsInShapingTextileProductionPoliciesAndGuidelines,
     },
     {
         title: "The Impact of Colonialism on African Fashion",
@@ -334,7 +295,6 @@ const blogArticles = [
         authorId: 3,
         imageThumbnail: "https://iili.io/HM3rBHl.jpg",
         date: "March 3, 2023",
-        content: TheImpactOfColonialismOnAfricanFashion,
         isImageDark: true,
     },
     {
@@ -346,7 +306,6 @@ const blogArticles = [
         authorId: 2,
         imageThumbnail: "https://www.polyestertime.com/wp-content/uploads/2017/04/Closed-loop-recycling-system-19-04-2017.jpg",
         date: "February 25, 2023",
-        content: DevelopmentOfClosedLoopRecyclingSystem,
     },
     {
         title: "The Environmental Impact Of Fast Fashion On Landfills",
@@ -357,7 +316,6 @@ const blogArticles = [
         authorId: 1,
         imageThumbnail: "https://iili.io/HGslVKx.png",
         date: "February 23, 2023",
-        content: EnvironmentalImpactsOfFastFashion,
         isImageDark: false,
     },
     {
@@ -369,9 +327,12 @@ const blogArticles = [
         authorId: 0,
         imageThumbnail: "https://iili.io/H8mfxQ1.png",
         date: 'December 12, 2023',
-        content: RecycleOldClothesIntoFashionableItems
     },
 ]
+
+blogArticles.forEach((article, index) => {
+    blogArticles[index]["content"] = require(`@/blogdata/articles/${article.slug}.md`).default
+})
 
 export default blogArticles;
 export { authors }
