@@ -6,50 +6,42 @@ In Africa, intricately designed textiles have applications ranging from clothing
 
 ![Vividly adorned African textiles depict the tale of a rich heritage.](https://iili.io/HOBaln4.jpg)
 
-The textile-making process begins with the processing of yarn to be used in [weaving](https://larryrowbsfoundation.org/blog/innovative-uses-of-recycled-materials-in-fashion-design). Woven textiles can be further embellished with such techniques as dyeing, painting, stamping, embroidery, patchwork, or appliqué.
-Fibers traditionally used to weave African textiles include cotton, silk, wool, raffia (Raffia palm leaves), bark, and fibers like jute and flax (for linen). Synthetic fibers like rayon, lurex, acrylic, and polyester are now used. Interweaving threads of lurex (a polyester fiber encasing a metallic insert) provide a much-adored shiny look.
-From a list, that is not exhaustive, select weaving techniques and dyeing techniques popular in African tradition are explored ahead.
+The textile-making process begins with the processing of yarn to be used in [weaving](https://larryrowbsfoundation.org/blog/innovative-uses-of-recycled-materials-in-fashion-design). Woven textiles can be further embellished with such techniques as dyeing, painting, stamping, embroidery, patchwork, or appliqué. Fibers traditionally used to weave African textiles include cotton, silk, wool, raffia (Raffia palm leaves), bark, and fibers like jute and flax (for linen). Synthetic fibers like rayon, lurex, acrylic, and polyester are now used. Interweaving threads of lurex (a polyester fiber encasing a metallic insert) provide a much-adored shiny look. From a list, that is not exhaustive, select weaving techniques and dyeing techniques popular in African tradition are explored ahead.
 
 ## Traditional African Weaving Techniques
 
-Weaving is a process of creating fabric from thread or yarn. The warp (longitudinal) threads are held taut on a loom while the weft (transverse) thread is drawn through and slid under and over warp threads.
-African textiles utilize a blend of weaving techniques. Some of them are discussed further:
+Weaving is a process of creating fabric from thread or yarn. The warp (longitudinal) threads are held taut on a loom while the weft (transverse) thread is drawn through and slid under and over warp threads. African textiles utilize a blend of weaving techniques. Some of them are discussed further:
 
-### Strip Weaving:
+### Strip Weaving
 
-Narrow strips of cloth, typically measuring a few inches in width and several feet in length, once woven, are placed end-to-end and sewn together to form a larger fabric that has a patchwork-like appearance. This technique imparts versatility to textiles, with strips of different colored yarns/threads adorned by diverse shapes and
-patterns bound into a single fabric. Strip weaving is generally observed in textiles hailing from West Africa.
-Popular examples are the Kente (KEN-tay), Bokolanfini (boh-koh-Lan-FEE-nee) (mudcloth), and Aso Òkè (ah-SHOH-kee) textiles.
+Narrow strips of cloth, typically measuring a few inches in width and several feet in length, once woven, are placed end-to-end and sewn together to form a larger fabric that has a patchwork-like appearance. This technique imparts versatility to textiles, with strips of different colored yarns/threads adorned by diverse shapes and patterns bound into a single fabric. Strip weaving is generally observed in textiles hailing from West Africa. Popular examples are the Kente (KEN-tay), Bokolanfini (boh-koh-Lan-FEE-nee) (mudcloth), and Aso Òkè (ah-SHOH-kee) textiles.
 
 ![A narrow strip of Kente cloth being woven on a loom.](https://iili.io/HOB7sea.jpg)
 
-### Plain Weave:
+### Plain Weave
 
 The simplest weaving structure where each weft thread goes over and under alternating warp threads produces a simple over-under pattern. Raffia cloth (Kuba, Congo) is woven from raffia fibers in a plain weave structure.
 
 By varying the relative thickness of the warp and weft yarns, stripes can be produced along the fabric’s length or width, respectively. Integration of two or more dyed yarns gives rise to vibrant striped and checked patterns.
 
--   Warp-Faced Textiles:
+### Warp-Faced Textiles
 
-Closely packed warp yarns weave a pattern that sits on a scaffolding of weft yarn.
+Closely packed warp yarns weave a pattern that sits on a scaffolding of weft yarn. Fibers of tightly packed weft yarn constitute the pattern that is supported by a warp yarn framework. Weavers of Mali Fulani traditionally weave weft-faced blankets using yarn from the wool of local sheep. This weave structure is used in most North African clothing and carpets, in general.
 
--   Weft-Faced Textiles: Fibers of tightly packed weft yarn constitute the pattern that is supported by a warp yarn framework. Weavers of Mali Fulani traditionally weave weft-faced blankets using yarn from the wool of local
-    sheep. This weave structure is used in most North African clothing and carpets, in general.
--   Balanced Plain Weave: It comprises of warp and weft yarns in a nearly equal ratio with each being equally visible as is observed in cloth woven in Somalia.
+-   Balanced Plain Weave - It comprises of warp and weft yarns in a nearly equal ratio with each being equally visible as is observed in cloth woven in Somalia. Float weaving, openwork, pile weave, and tapestry weave are some of the decorative weaves that enhance the adornment of textiles.
 
-Float weaving, openwork, pile weave, and tapestry weave are some of the decorative weaves that enhance the adornment of textiles.
-
--   Supplementary Weft-Float: A sub-category of float weaving, this technique uses additional (supplementary) weft yarn(s) inserted through select warps, spaced evenly, to create a decorative floating pattern that does not interlace with the warp but forms a raised surface pattern. This technique is used in Kente and Akwete (ah-KWE-te) clothing. Variations of supplementary weft weaving patterns were widespread in ancient Egyptian textiles.
+-   Supplementary Weft-Float - A sub-category of float weaving, this technique uses additional (supplementary) weft yarn(s) inserted through select warps, spaced evenly, to create a decorative floating pattern that does not interlace with the warp but forms a raised surface pattern. This technique is used in Kente and Akwete (ah-KWE-te) clothing. Variations of supplementary weft weaving patterns were widespread in ancient Egyptian textiles.
 
 ![Kente cloth](https://iili.io/HORo0dB.jpg)
 
-The Kente cloth is a complex combination of weaving techniques with alternating weft-faced and warp-faced areas coupled with supplementary weft-float patterns in narrow strips of cloth. The application of such techniques in a wider design is an arduous process, demanding extraordinary skill and precision. Traditionally, it was woven exclusively for the Ashanti royalty but now is accessible to anyone who can bear its expense.
-Akwete is woven by Igobo women from cotton fibers with rayon, silk, or lurex threads making decorative motifs.
-It is generally used as women’s wrappers.
+-   The Kente cloth is a complex combination of weaving techniques with alternating weft-faced and warp-faced areas coupled with supplementary weft-float patterns in narrow strips of cloth. The application of such techniques in a wider design is an arduous process, demanding extraordinary skill and precision. Traditionally, it was woven exclusively for the Ashanti royalty but now is accessible to anyone who can bear its expense.
 
--   Openwork Weave: This provides a lacey appearance to the fabric. Holes are woven in the yarn by inserting a comb between the warp threads and weaving around its teeth.
+-   Akwete is woven by Igobo women from cotton fibers with rayon, silk, or lurex threads making decorative motifs.
+    It is generally used as women’s wrappers.
 
-Aso Òkè, a ceremonial fabric of Nigeria’s Yoruba tribe, is an excellent example of the warp-faced and supplementary weft patterns with occasional use of openwork structures.
+### Openwork Weave
+
+This provides a lacey appearance to the fabric. Holes are woven in the yarn by inserting a comb between the warp threads and weaving around its teeth. Aso Òkè, a ceremonial fabric of Nigeria’s Yoruba tribe, is an excellent example of the warp-faced and supplementary weft patterns with occasional use of openwork structures.
 
 ## Traditional Dyeing Techniques Used in Africa
 

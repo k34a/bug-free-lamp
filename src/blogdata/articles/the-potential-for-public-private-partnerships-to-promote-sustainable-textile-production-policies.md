@@ -14,8 +14,7 @@ expenses of any project, the private sector can finance it to complete the proje
 
 ### Circular Economy and Stakeholder Engagement: Fostering Sustainability Culture
 
-This public-private partnership is a holistic approach to establishing sustainable textile production. When transitioning from linear model production to circular economic practices, we encounter many issues related to cost, time management, manufacturing, production, etc. Sustainability issues include resource consumption, fast fashion and overconsumption, waste management, deforestation, land use, labor rights, and working conditions. This requires multiple stakeholders to tackle those issues effectively.
-So, private enterprises, government bodies, and industry associations should share their responsibility and expertise to lead a comprehensive strategy for this industry.
+This public-private partnership is a holistic approach to establishing sustainable textile production. When transitioning from linear model production to circular economic practices, we encounter many issues related to cost, time management, manufacturing, production, etc. Sustainability issues include resource consumption, fast fashion and overconsumption, waste management, deforestation, land use, labor rights, and working conditions. This requires multiple stakeholders to tackle those issues effectively. So, private enterprises, government bodies, and industry associations should share their responsibility and expertise to lead a comprehensive strategy for this industry.
 
 ### Channelize the Private Sector Technology
 
