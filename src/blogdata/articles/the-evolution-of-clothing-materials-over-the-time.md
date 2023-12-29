@@ -12,20 +12,15 @@ In the early stages of human history, clothing was made primarily from natural m
 
 ![The Evolution of Clothing Materials over the Time 2](https://iili.io/HPnzGat.jpg)
 
-One of the earliest and fundamental garments worn by individuals, regardless of gender, was referred to as the
-"Doric Chiton." This essential attire consisted of a substantial piece of woolen or linen fabric that was artfully draped around the body or fastened using buttons or pins. This was very popular in ancient Greece.
+One of the earliest and fundamental garments worn by individuals, regardless of gender, was referred to as the "Doric Chiton." This essential attire consisted of a substantial piece of woolen or linen fabric that was artfully draped around the body or fastened using buttons or pins. This was very popular in ancient Greece.
 
-The invention of the loom around 4000 BCE marked a significant advancement in textile production. It enabled the weaving of more complex fabrics, such as linen and wool, which were more comfortable and durable than animal
-skins. The fabric was often hand-spun and hand-woven. Wool was obtained from the sheep which involves shearing
-the sheep every year at the end of winter, cleaning and carding the wool, spinning and weaving, and then dying. Wool-made clothes are considered warmer.
+The invention of the loom around 4000 BCE marked a significant advancement in textile production. It enabled the weaving of more complex fabrics, such as linen and wool, which were more comfortable and durable than animal skins. The fabric was often hand-spun and hand-woven. Wool was obtained from the sheep which involves shearing the sheep every year at the end of winter, cleaning and carding the wool, spinning and weaving, and then dying. Wool-made clothes are considered warmer.
 
-Silk, produced from the cocoons of silkworms, was developed in ancient China around 4000 BC. It became highly prized and sought after due to its luxurious texture and appearance. Silk production eventually spread to other
-parts of the world, including India, Persia, and Europe.
+Silk, produced from the cocoons of silkworms, was developed in ancient China around 4000 BC. It became highly prized and sought after due to its luxurious texture and appearance. Silk production eventually spread to other parts of the world, including India, Persia, and Europe.
 
 ### Synthetic Materials
 
-The development of synthetic materials began in the late 19th century and gained momentum in the 20th century.
-Rayon was the first synthetic fiber created as a cheap alternative to silk. Later, humans developed other synthetic materials such as nylon, polyester, and acrylic. These materials were durable, affordable, and offered more wrinkle resistance.
+The development of synthetic materials began in the late 19th century and gained momentum in the 20th century. Rayon was the first synthetic fiber created as a cheap alternative to silk. Later, humans developed other synthetic materials such as nylon, polyester, and acrylic. These materials were durable, affordable, and offered more wrinkle resistance.
 
 ### Cotton Material
 
@@ -47,8 +42,7 @@ These fabrics boast a range of exceptional properties, such as moisture-wicking,
 
 As environmental issues are rising, so has the fashion industry shifted towards eco-friendly and sustainable clothing. Manufacturers and designers are utilizing organic cotton, bark, hemp, bamboo, and recycled fibers to create sustainable fashion options. Organic cotton is cultivated without synthetic pesticides that are harmful to the environment. Bark and hemp were introduced in Japan around 5500 BC. Hemp and bamboo-originated fabrics are sustainable choices that require less water consumption and grow quickly. Recycled fibers, including polyester derived from recycled plastic bottles, help reduce waste and decrease reliance on virgin resources.
 
-The Larry Rowbs Foundation works on sustainable clothing by recycling old and worn-out clothes to produce more
-fashionable, sleek, and eco-friendly clothes
+The Larry Rowbs Foundation works on sustainable clothing by recycling old and worn-out clothes to produce more fashionable, sleek, and eco-friendly clothes
 
 ## Summary
 
@@ -56,6 +50,6 @@ Unraveling the journey from fabric draping to contemporary casual wear like T-sh
 
 ## Reference
 
-Sheryl Perkins. (2013). [‘Apparel History Timeline – The Evolution of Clothing over Time’](https://www.blankstyle.com/articles/apparel-history-timeline-evolution-clothing-over-time)
+-   Sheryl Perkins. (2013). [‘Apparel History Timeline – The Evolution of Clothing over Time’](https://www.blankstyle.com/articles/apparel-history-timeline-evolution-clothing-over-time)
 
-Umer Hameed. (2023). [‘Evolution of clothes’](https://www.researchgate.net/publication/370935169_Evolution_of_clothes)
+-   Umer Hameed. (2023). [‘Evolution of clothes’](https://www.researchgate.net/publication/370935169_Evolution_of_clothes)

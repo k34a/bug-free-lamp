@@ -2,8 +2,7 @@ The fashion industry has a dirty little secret: its contribution to textile wast
 
 ## Introduction
 
-Fast fashion has taken the world by storm. It's easy to see why – trendy clothes at affordable prices are available at our fingertips. However, the convenience of fast fashion has come at a heavy price. The industry's contribution to textile waste is causing significant harm to marine ecosystems. Synthetic fabrics such as polyester, nylon, and acrylic, which are commonly used in fast fashion, take hundreds of years to break down, releasing
-harmful chemicals and microplastics into the ocean.
+Fast fashion has taken the world by storm. It's easy to see why – trendy clothes at affordable prices are available at our fingertips. However, the convenience of fast fashion has come at a heavy price. The industry's contribution to textile waste is causing significant harm to marine ecosystems. Synthetic fabrics such as polyester, nylon, and acrylic, which are commonly used in fast fashion, take hundreds of years to break down, releasing harmful chemicals and microplastics into the ocean.
 
 The impact of textile waste on marine ecosystems is undeniable. It's time to take action to protect our oceans, and recycling could be the solution we need. In this article, we'll explore the effects of textile waste on marine ecosystems, the potential of recycling to mitigate this impact, and what we can do to make a difference.
 
@@ -37,8 +36,7 @@ Textile waste can be recycled into new products, such as clothing, insulation, a
 
 ### Turning Textile Waste into Raw Materials
 
-Textile waste can also be turned into raw materials like cotton fibers or polyester yarns. These raw materials
-can be used to create new textiles, reducing the demand for virgin materials, and preventing waste from entering our oceans.
+Textile waste can also be turned into raw materials like cotton fibers or polyester yarns. These raw materials can be used to create new textiles, reducing the demand for virgin materials, and preventing waste from entering our oceans.
 
 By closing the loop on textile production, we can reduce the fashion industry’s environmental impact and protect our oceans.
 
@@ -58,9 +56,7 @@ By closing the loop on textile production, we can reduce the fashion industry’
 
 4.  **Can consumers play a role in reducing textile waste?**
 
-            Yes, consumers can play a role in reducing textile waste by shopping for sustainable fashion, donating
-
-    clothes to charity, and recycling old clothes. By making more conscious choices when it comes to fashion, consumers can reduce the demand for fast fashion and help mitigate the impact of textile waste on marine ecosystems.
+        Yes, consumers can play a role in reducing textile waste by shopping for sustainable fashion, donating clothes to charity, and recycling old clothes. By making more conscious choices when it comes to fashion, consumers can reduce the demand for fast fashion and help mitigate the impact of textile waste on marine ecosystems.
 
 ## Conclusion
 

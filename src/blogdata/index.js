@@ -52,6 +52,16 @@ const authors = [
 
 const blogArticles = [
     {
+        title: "Challenges and Criticisms of Sustainable Fashion",
+        slug: "challenges-criticism-sustainable-fashion",
+        description: "Addressing sustainability challenges in fashion: high raw material costs, opaque supply chains, skilled labor shortages, global complexities, and consumer education gaps.",
+        tags: ["criticism-ethical-fashion", "sustainable-fashion-challenges", "obstacles-for-sustainability"],
+        seoKeywords: ["criticism-ethical-fashion", "sustainable-fashion-challenges", "obstacles-for-sustainability"],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/JuCzihl.png",
+        date: "December 19, 2023",
+    },
+    {
         title: "Innovative Approaches for Recycling Textiles Contaminated with Dyes and Other Chemicals",
         slug: "innovative-approaches-for-textile-recycling",
         description: "Dyeing and finishing tricks weave magic into otherwise plain clothes. Their impact on the environment, however, is far from enchanting. Recycling clothes laden with sneaky chemicals is tedious at best (impossible at worst!).",

@@ -35,8 +35,7 @@ The basics of the recycling process vary from material to material depending on 
 
 -   Sorting: The collected materials are sorted mechanically according to their type, such as paper, plastic, glass, or metal. This step requires a lot of time.
 -   Processing: The sorted materials are subjected to processing. All types of contaminants are removed and prepared for reuse. This can involve shredding, washing, melting, or other techniques.
--   Manufacturing: The processed materials are used to manufacture new products, such as recycled paper, plastic
-    lumber, aluminum cans, or clothes.
+-   Manufacturing: The processed materials are used to manufacture new products, such as recycled paper, plastic lumber, aluminum cans, or clothes.
 -   Distribution: The new products are distributed to consumers and businesses for use.
 
 It is important to consider the environmental impact of the process. This can include reducing energy consumption, using eco-friendly materials, and implementing sustainable practices throughout the process.
@@ -47,8 +46,7 @@ In daily life, production processes are essential for creating goods and product
 
 1. Conventional Production
 
-It is the established and widely used process that typically involves the use of non-renewable resources, such
-as fossil fuels, and generates large amounts of waste and pollution. This process can handle large production volumes and is usually cost-effective.
+It is the established and widely used process that typically involves the use of non-renewable resources, such as fossil fuels, and generates large amounts of waste and pollution. This process can handle large production volumes and is usually cost-effective.
 
 1. Sustainable Production
 
