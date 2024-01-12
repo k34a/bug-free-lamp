@@ -27,22 +27,24 @@ export default function Partners() {
                                 className="max-w-full max-h-full"
                             />
                         </div>
-                        <div className="m-2 md:text-lg lg:text-xl">
-                            We are proud to announce that{" "}
-                            <a
-                                className="underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://christianministryalliance.org"
-                            >
-                                the Christian Ministry Alliance
-                            </a>{" "}
-                            has endorsed our work and vision.
-                            <br />
-                            <br />
-                            The Christian Ministry Alliance is a registered
-                            501(c)(3) Corporation with the U.S. Internal Revenue
-                            Service.
+                        <div className="flex items-center justify-center">
+                            <div className="m-2 md:text-lg lg:text-xl">
+                                We are proud to announce that{" "}
+                                <a
+                                    className="underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="https://christianministryalliance.org"
+                                >
+                                    the Christian Ministry Alliance
+                                </a>{" "}
+                                has endorsed our work and vision.
+                                <br />
+                                <br />
+                                The Christian Ministry Alliance is a registered
+                                501(c)(3) Corporation with the U.S. Internal Revenue
+                                Service.
+                            </div>
                         </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4 m-2">
@@ -59,21 +61,23 @@ export default function Partners() {
                                 className="max-w-full max-h-full"
                             />
                         </div>
-                        <div className="m-2 md:text-lg lg:text-xl">
-                            <a
-                                className="underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://www.joy-of-weaving-wwwow.com/"
-                            >
-                                World Wide Weaving of Women
-                            </a>
-                            , an initiative fostering a global network for women
-                            engaged in textile art, has partnered with the Larry
-                            Rowbs Foundation to support the development of a
-                            sustainable textile industry.
-                            <br />
-                            <br />
+                        <div className="flex items-center justify-center">
+                            <div className="m-2 md:text-lg lg:text-xl">
+                                <a
+                                    className="underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="https://www.joy-of-weaving-wwwow.com/"
+                                >
+                                    World Wide Weaving of Women
+                                </a>
+                                , an initiative fostering a global network for women
+                                engaged in textile art, has partnered with the Larry
+                                Rowbs Foundation to support the development of a
+                                sustainable textile industry.
+                                <br />
+                                <br />
+                            </div>
                         </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4 m-2">
@@ -82,7 +86,7 @@ export default function Partners() {
                                 src="/birch-citadel.png"
                                 alt="Birch Citadel"
                                 loading="lazy"
-                                width={800}
+                                width={500}
                                 height={400}
                                 loader={({ src }) => {
                                     return src;
@@ -90,20 +94,22 @@ export default function Partners() {
                                 className="max-w-full max-h-full"
                             />
                         </div>
-                        <div className="m-2 md:text-lg lg:text-xl">
-                            <a
-                                className="underline"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://www.linkedin.com/company/birch-citadel/"
-                            >
-                                Birch Citadel
-                            </a>
-                            Our valued partner providing pro bono legal support 
-                            for Larry Rowbs Foundation&apos;s mission to combat fast 
-                            fashion&apos;s impact in Uganda.
-                            <br />
-                            <br />
+                        <div className="flex items-center justify-center">
+                            <div className="m-2 md:text-lg lg:text-xl">
+                                <a
+                                    className="underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="https://www.linkedin.com/company/birch-citadel/"
+                                >
+                                    Birch Citadel
+                                </a>
+                                : Our valued partner providing pro bono legal support 
+                                for Larry Rowbs Foundation&apos;s mission to combat fast 
+                                fashion&apos;s impact in Uganda.
+                                <br />
+                                <br />
+                            </div>
                         </div>
                     </div>
                 </div>
