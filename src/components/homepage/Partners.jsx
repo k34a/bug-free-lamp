@@ -76,6 +76,36 @@ export default function Partners() {
                             <br />
                         </div>
                     </div>
+                    <div className="grid md:grid-cols-2 gap-4 m-2">
+                        <div className="m-2 flex justify-center items-center">
+                            <Image
+                                src="/birch-citadel.png"
+                                alt="Birch Citadel"
+                                loading="lazy"
+                                width={800}
+                                height={400}
+                                loader={({ src }) => {
+                                    return src;
+                                }}
+                                className="max-w-full max-h-full"
+                            />
+                        </div>
+                        <div className="m-2 md:text-lg lg:text-xl">
+                            <a
+                                className="underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href="https://www.linkedin.com/company/birch-citadel/"
+                            >
+                                Birch Citadel
+                            </a>
+                            Our valued partner providing pro bono legal support 
+                            for Larry Rowbs Foundation's mission to combat fast 
+                            fashion's impact in Uganda.
+                            <br />
+                            <br />
+                        </div>
+                    </div>
                 </div>
                 <div className="flex items-center justify-center">
                     <Button
