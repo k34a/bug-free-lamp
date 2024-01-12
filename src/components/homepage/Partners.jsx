@@ -100,7 +100,7 @@ export default function Partners() {
                                 Birch Citadel
                             </a>
                             Our valued partner providing pro bono legal support 
-                            for Larry Rowbs Foundation's mission to combat fast 
+                            for Larry Rowbs Foundation&apos;s mission to combat fast 
                             fashion's impact in Uganda.
                             <br />
                             <br />
