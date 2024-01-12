@@ -101,7 +101,7 @@ export default function Partners() {
                             </a>
                             Our valued partner providing pro bono legal support 
                             for Larry Rowbs Foundation&apos;s mission to combat fast 
-                            fashion's impact in Uganda.
+                            fashion&apos;s impact in Uganda.
                             <br />
                             <br />
                         </div>
