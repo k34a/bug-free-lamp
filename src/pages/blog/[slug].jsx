@@ -125,7 +125,7 @@ export default function BlogPost({ post, slug }) {
                 <meta property="og:image:height" content="1024" />
             </Head>
             <DarkMode />
-            <main ref={mainBody} className="py-16 space-y-6">
+            <main ref={mainBody} className="py-16 space-y-9">
                 <div className="flex w-full divide-x">
                     <div className="md:w-2/3 h-full">
                         <div className="break-words prose prose-lg mx-auto w-11/12 m-auto dark:prose-invert md:col-span-2">

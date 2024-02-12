@@ -52,6 +52,16 @@ const authors = [
 
 const blogArticles = [
     {
+        title: "Designing a Better Future: Ethical Manufacturing Practices in Fashion",
+        slug: "designing-better-future-ethical-manufacturing-practices-in-fashion",
+        description: "Explore the transformative journey of ethical fashion in Africa, focusing on sustainability, fair practices, and empowering local communities.",
+        tags: ["ethical-fashion", "sustainable-practices", "african-fashion-initiatives"],
+        seoKeywords: ["ethical-fashion", "sustainable-practices", "african-fashion-initiatives"],
+        authorId: 6,
+        imageThumbnail: "https://iili.io/J1PQpN1.webp",
+        date: "February 12, 2024",
+    },
+    {
         title: "Challenges and Criticisms of Sustainable Fashion",
         slug: "challenges-criticism-sustainable-fashion",
         description: "Addressing sustainability challenges in fashion: high raw material costs, opaque supply chains, skilled labor shortages, global complexities, and consumer education gaps.",

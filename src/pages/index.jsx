@@ -5,7 +5,6 @@ import Partners from "@/components/homepage/Partners";
 import Head from "next/head";
 
 import { Button, Link } from "@nextui-org/react";
-import YoutubeVideo from "@/components/Youtube";
 import AnimationVideo from "@/components/homepage/AnimationVideo";
 
 const benefits = [
