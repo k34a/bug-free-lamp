@@ -30,7 +30,7 @@ const detailsMembers = [
     {
         Name: "Saksham Garg",
         Role: "Media Strategy & Communications",
-        Bio: "Explorer, Software Developer with experienc,e at all scales (startups, government organizations and MNCs), Bachelors from Indian Institute of Technology Delhi",
+        Bio: "Transforming businesses into money minting units by strategically saving costs, and boosting sales. All about software, automation, and hustle",
         LinkedIn: "https://www.linkedin.com/in/sak1sham/",
     },
     {
