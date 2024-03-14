@@ -28,6 +28,12 @@ const detailsMembers = [
         LinkedIn: "https://www.linkedin.com/in/lin-sheppard/",
     },
     {
+        Name: "Saksham Garg",
+        Role: "Media Strategy & Communications",
+        Bio: "Explorer, Software Developer with experienc,e at all scales (startups, government organizations and MNCs), Bachelors from Indian Institute of Technology Delhi",
+        LinkedIn: "https://www.linkedin.com/in/sak1sham/",
+    },
+    {
         Name: "Susan Chapin",
         Role: "Board of Directors",
         Bio: "Senior Sustainability and Energy Risk Pro, BS in Chemis,try, certified in ESG Disclosures & Frameworks. Formulate policies & build world-class GRC frameworks for ESG goals & disclosures. Expert on legislative & regulatory matters, lobbies for climate-based legislation",
