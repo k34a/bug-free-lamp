@@ -29,7 +29,7 @@ const detailsMembers = [
     },
     {
         Name: "Saksham Garg",
-        Role: "Media Strategy & Communications",
+        Role: "Technology Lead",
         Bio: "Transforming businesses into money minting units by strategically saving costs, and boosting sales. All about software, automation, and hustle",
         LinkedIn: "https://www.linkedin.com/in/sak1sham/",
     },
@@ -50,6 +50,12 @@ const detailsMembers = [
         Role: "Board Member",
         Bio: "Slow fashion maven, zero-waste artist. Founder of DNA Sustain,able Threds. Award-winning filmmaker. Sustainable fashion advocate. SB62 Bill influencer. Inspiring change for 20+ years.",
         LinkedIn: "https://www.linkedin.com/in/clementinamasarwehdesigner/",
+    },
+    {
+        Name: "Dominic Barbuto",
+        Role: "Game Development Lead",
+        Bio: "A professional game developer, graduated from Full Sail University, Founder-Domention Studios",
+        LinkedIn: "https://www.linkedin.com/in/dombarbuto",
     },
 ];
 

@@ -1,11 +1,11 @@
+import { Avatar } from "@nextui-org/react";
 import React from "react";
 export default function TeamMemberCard(props) {
     return (
         <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
             <div className="flex flex-col">
                 <a href="#" className="mx-auto">
-                    <img alt="" className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                        src={`/team/${props.name}.jpeg`} />
+                    <Avatar isBordered radius="sm" className="w-32 h-32 text-large" src={`/team/${props.name}.jpeg`} />
                 </a>
 
                 <div className="text-center mt-6">

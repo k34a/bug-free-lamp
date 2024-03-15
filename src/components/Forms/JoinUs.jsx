@@ -95,7 +95,7 @@ const JoinUs = () => {
     };
 
     return (
-        <div className="w-5/6 max-w-lg my-12 m-auto">
+        <div className="w-11/12 sm:w-5/6 md:w-3/4 lg:w-1/2 my-12 m-auto">
             <h1 className="text-4xl mb-8 font-bold">Join Us</h1>
             <p>
                 We live by the principles of working together to overcome any
