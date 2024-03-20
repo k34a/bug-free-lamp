@@ -60,7 +60,7 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="flex flex-col pt-18 sm:pt-24 md:pt-30 gap-16 sm:gap-24 md:gap-30">
+            <div className="flex flex-col pt-18 sm:pt-24 pb-6 md:pt-30 gap-16 sm:gap-24 md:gap-30">
                 <div className="px-3 text-center flex flex-col items-center justify-center gap-8 md:gap-12">
                     <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-stone-700 to-emerald-600 bg-clip-text text-transparent">
                         Making fashion sustainable
@@ -119,6 +119,29 @@ export default function Home() {
                         >
                             Read More
                         </Button>
+                    </div>
+                </div>
+                <div className="">
+                    <div className="bg-red-200 px-9 py-9 w-11/12 md:w-3/4 mx-auto rounded-xl ">
+                        <p className="text-lg md:text-xl lg:text-2xl text-green-700">
+                            <span className="text-red-600">Fun fact:</span> We
+                            are developing the{" "}
+                            <Link
+                                href="/larry-rowbs-adventure"
+                                className="font-semibold text-lg md:text-xl lg:text-2xl text-green-700 underline"
+                            >
+                                world&apos;s first eduventurous game
+                            </Link>{" "}
+                            to make the fashion industry more sustainable. Find
+                            more about it{" "}
+                            <Link
+                                href="/larry-rowbs-adventure"
+                                className="font-semibold text-lg md:text-xl lg:text-2xl text-green-700 underline"
+                            >
+                                here
+                            </Link>
+                            .
+                        </p>
                     </div>
                 </div>
                 <WhatsHappening />
