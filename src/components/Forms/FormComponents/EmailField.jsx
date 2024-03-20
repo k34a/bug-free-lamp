@@ -1,4 +1,5 @@
 import React from "react";
+
 function EmailField(props) {
     const name = props.name;
     const required = props.required || false;

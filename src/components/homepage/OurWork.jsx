@@ -20,7 +20,7 @@ export default function OurWork() {
                 <div className="w-4/5 mx-auto my-24 lg:col-span-2 space-y-8 md:text-lg lg:text-xl">
                     <div className="bg-gradient-to-r from-stone-700 to-emerald-600 bg-clip-text text-transparent">
                         <span className="text-3xl sm:text-4xl md:text-5xl font-bold">
-                            We are transforming the fashion industry?
+                            We are transforming the fashion industry
                         </span>{" "}
                         <br />
                         <span className="text-2xl sm:text-3xl md:text-4xl">
