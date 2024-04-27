@@ -1,10 +1,6 @@
 import React from "react";
-import { validateEmail } from "@/lib/commonFrontEndFns";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Link from "next/link";
-import { useRef, useState } from "react";
 import { ImLeaf } from "react-icons/im";
-import { ThreeDots } from "react-loader-spinner";
 import SubscribeEmail from "../Forms/SubscribeEmail";
 
 export default function Footer() {
@@ -82,11 +78,11 @@ export default function Footer() {
                     Website by{" "}
                     <a
                         className="text-green-200"
-                        href="https://www.instagram.com/ggsaksham/"
+                        href="https://k34a.github.io"
                         target="_blank"
                         rel="noreferrer noopenner"
                     >
-                        Saksham Garg
+                        k34a
                     </a>
                 </p>
             </div>

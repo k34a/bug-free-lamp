@@ -16,6 +16,7 @@ import { calculateReadingTime } from "markdown-reading-time";
 import YourSupportIsAllWeNeed from "@/components/Blog/Pages/YourSupportIsAllWeNeed";
 import TableOfContents from "@/components/Blog/Pages/TableOfContents";
 import blogArticles from "@/blogdata";
+import Comments from "@/components/Blog/Pages/Comments";
 
 export async function getStaticPaths(context) {
     const posts = blogArticles;
@@ -171,6 +172,9 @@ export default function BlogPost({ post, slug }) {
                     </div>
                 </div>
                 <YourSupportIsAllWeNeed />
+                <div className="w-11/12 sm:w-5/6 md:w-3/4 m-auto">
+                    <Comments />
+                </div>
                 <ReadMore
                     readMoreArticles={post.readMoreArticles}
                     className="prose-normal"
