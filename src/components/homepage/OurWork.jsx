@@ -137,13 +137,13 @@ export default function OurWork() {
                     <h2 className="text-xl lg:text-2xl md:text-3xl font-bold py-6">
                         We have initiated a fundraiser on{" "}
                         <a
-                            href="https://www.gofundme.com/f/larry-rowbs-clothing-recycling-initiative"
-                            title="Go Fund Me Fundraiser"
+                            href="https://www.civicdawn.org/funds/campaign/CPNA00A00A11"
+                            title="Civic Dawn Fundraiser"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline"
                         >
-                            Gofundme
+                            Civic Dawn
                         </a>
                         . Please donate to support our project.
                     </h2>

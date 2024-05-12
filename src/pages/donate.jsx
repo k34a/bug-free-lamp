@@ -18,7 +18,7 @@ export default function Donate() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="py-6 md:py-12 word-break">
-                <div className="w-11/12 md:w-2/3 m-auto prose md:prose-lg">
+                {/* <div className="w-11/12 md:w-2/3 m-auto prose md:prose-lg">
                     <h1 className="text-3xl md:text-4xl font-black md:text-center m-12 opacity-70 text-green-600">
                         Support us and be a Sustainable Fashion Hero!
                     </h1>
@@ -79,7 +79,16 @@ export default function Donate() {
                     </p>
                     <p>Thank you for your support!</p>
                 </div>
-                <DonateForm />
+                <DonateForm /> */}
+                <iframe
+                    src="https://www.civicdawn.org/funds/embed/ORGA014E1/donate"
+                    height="500px"
+                    width="440px"
+                    className="border-0 w-11/12 xs:w-5/6 sm:w-4/5 md:w-3/4 m-auto"
+                    style={{
+                        border: "none",
+                    }}
+                ></iframe>
             </main>
         </>
     );
