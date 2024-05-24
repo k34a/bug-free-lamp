@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ImLeaf } from "react-icons/im";
+import { Tooltip, Button } from "@nextui-org/react";
 import SubscribeEmail from "../Forms/SubscribeEmail";
 
 export default function Footer() {
@@ -49,19 +49,6 @@ export default function Footer() {
                     <i className="fa fa-linkedin"></i>
                 </a>
             </div>
-            <div className="flex v-screen justify-center items-center">
-                <a
-                    href="https://www.websitecarbon.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="decoration-green-300"
-                >
-                    <div className="border-green-300 border-4 text-green-300 font-medium inline-flex items-center px-4 py-3 rounded-lg w-full">
-                        <ImLeaf size={24} className="mr-2" />
-                        This website emits 0.38g of CO2
-                    </div>
-                </a>
-            </div>
             <div className="flex justify-center">
                 <Link href="/terms" className="mr-6 text-slate-200 text-sm">
                     Terms & Conditions
@@ -74,17 +61,43 @@ export default function Footer() {
                 </Link>
             </div>
             <div className="text-center px-3 text-sm leading-relaxed">
-                <p>
-                    Website by{" "}
-                    <a
-                        className="text-green-200"
-                        href="https://k34a.github.io"
-                        target="_blank"
-                        rel="noreferrer noopenner"
+                <Tooltip
+                    content={
+                        <div className="w-54 flex flex-col gap-2 p-2">
+                            <h1 className="font-bold text-lg">
+                                Transforming your ideas into reality.
+                            </h1>
+                            <a
+                                href="mailto:k34a@live.in"
+                                className="text-green-700"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Have a quesion?
+                            </a>
+                            <a
+                                className="text-green-700"
+                                href="https://k34a.github.io"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Visit our Site
+                            </a>
+                        </div>
+                    }
+                >
+                    <div
+                        variant="bordered"
+                        className="flex items-center justify-center "
                     >
-                        k34a
-                    </a>
-                </p>
+                        <div className="text-white border-white bg-black">
+                            Site designed & developed by{" "}
+                            <span className="text-green-300">
+                                k34a Technologies
+                            </span>
+                        </div>
+                    </div>
+                </Tooltip>
             </div>
         </section>
     );

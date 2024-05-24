@@ -40,4 +40,4 @@ A question will pop into our minds: How can clothes be recycled? Indeed, they ca
 
 ## Credits
 
-Image: [source](ttps://fault-magazine.com/)
+Image: [source](https://fault-magazine.com/)
