@@ -63,25 +63,19 @@ export default function Footer() {
             <div className="text-center px-3 text-sm leading-relaxed">
                 <Tooltip
                     content={
-                        <div className="w-54 flex flex-col gap-2 p-2">
-                            <h1 className="font-bold text-lg">
-                                Transforming your ideas into reality.
-                            </h1>
+                        <div className="w-[270px] flex flex-col gap-2 p-2">
+                            <h2 className="font-bold">K34a</h2>
+                            <p>
+                                Your product. Our craft. Let&apos;s collaborate
+                                to make an impact.
+                            </p>
                             <a
                                 href="mailto:k34a@live.in"
                                 className="text-green-700"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Have a quesion?
-                            </a>
-                            <a
-                                className="text-green-700"
-                                href="https://k34a.github.io"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                Visit our Site
+                                Contact us
                             </a>
                         </div>
                     }
@@ -92,9 +86,7 @@ export default function Footer() {
                     >
                         <div className="text-white border-white bg-black">
                             Site designed & developed by{" "}
-                            <span className="text-green-300">
-                                k34a Technologies
-                            </span>
+                            <span className="text-green-300">k34a</span>
                         </div>
                     </div>
                 </Tooltip>
