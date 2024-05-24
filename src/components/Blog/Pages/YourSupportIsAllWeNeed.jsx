@@ -11,7 +11,7 @@ import {
 
 function YourSupportIsAllWeNeed() {
     return (
-        <div className="w-11/12 sm:w-3/4 md:w-1/2 m-auto">
+        <div className="w-11/12 sm:w-4/5 md:w-3/4 lg:w-1/2 m-auto">
             <Card isBlurred className="p-2">
                 <CardHeader>
                     <h2 className="font-bold sm:text-lg md:text-xl">

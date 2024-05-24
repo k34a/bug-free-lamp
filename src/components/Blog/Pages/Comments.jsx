@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Giscus from "@giscus/react";
+import useDarkMode from "@/lib/useDarkMode";
 
 const Comments = () => {
+    const [theme, setTheme] = useState(useDarkMode()[0]);
+    useEffect(() => {
+        function listenStorageChange() {
+            const color = localStorage.getItem("theme");
+            if (color) {
+                setTheme(color);
+            } else {
+                setTheme("preferred_color_scheme");
+            }
+        }
+        window.addEventListener("storage", listenStorageChange);
+        return () => window.removeEventListener("storage", listenStorageChange);
+    }, [theme]);
+
     return (
         <Giscus
             id="comments"
@@ -14,7 +29,7 @@ const Comments = () => {
             reactionsEnabled="1"
             emitMetadata="0"
             inputPosition="top"
-            theme="preferred_color_scheme"
+            theme={theme == "dark" ? "dark" : "light_high_contrast"}
             lang="en"
             loading="lazy"
         />
