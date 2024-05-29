@@ -172,9 +172,6 @@ export default function BlogPost({ post, slug }) {
                     </div>
                 </div>
                 <YourSupportIsAllWeNeed />
-                <div className="w-11/12 sm:w-5/6 md:w-3/4 m-auto">
-                    <Comments />
-                </div>
                 <ReadMore
                     readMoreArticles={post.readMoreArticles}
                     className="prose-normal"
