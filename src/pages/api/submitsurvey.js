@@ -37,16 +37,16 @@ export default async function handler(req, res) {
                     },
                 ],
             },
-            await notion.pages.create({
-                parent: {
-                    database_id: process.env[dbId],
-                },
-                properties
-            });
+                await notion.pages.create({
+                    parent: {
+                        database_id: process.env[dbId],
+                    },
+                    properties
+                });
             res.status(200).json({});
         }
         catch (err) {
-            console.log(err)
+            console.error(err)
             res.status(400).json(err);
         }
     }

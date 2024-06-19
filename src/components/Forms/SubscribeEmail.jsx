@@ -22,7 +22,7 @@ const SubscribeEmail = (props) => {
             setToken("");
         } else {
             const subscriber = { email, token, type: props.formType };
-            console.log(subscriber);
+            console.info(subscriber);
             const response = await fetch("/api/subscribe", {
                 method: "POST",
                 body: JSON.stringify(subscriber),

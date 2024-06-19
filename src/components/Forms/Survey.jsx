@@ -66,7 +66,7 @@ const SurveyForm = (props) => {
             invalidFieldsInSubmittedData &&
             Object.keys(invalidFieldsInSubmittedData).length === 0
         ) {
-            console.log("Submitted");
+            console.info("Submitted");
             const response = await fetch("/api/submitsurvey", {
                 method: "POST",
                 body: JSON.stringify({

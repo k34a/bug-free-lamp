@@ -165,6 +165,7 @@ export default async function handler(req, res) {
                     },
                 },
             });
+            console.info('Saved data to notion.')
             const mainBody = `
                 <div class="container">
                     <h1 class="heading">A new application to join LRF!</h1>
@@ -181,11 +182,12 @@ export default async function handler(req, res) {
                 </div>
             `;
             emailBody = emailBody.replace("{{EmailBody}}", mainBody)
-            emailNotifier("info@larryrowbsfoundation.org", "New Application to join the Larry Rowbs Foundation", emailBody)
+            await emailNotifier("info@larryrowbsfoundation.org", "New Application to join the Larry Rowbs Foundation", emailBody)
+            console.info('Email sent to the admins.')
             res.status(200).json({});
         }
         catch (err) {
-            console.log(err)
+            console.error(err)
             res.status(400).json(err);
         }
     }

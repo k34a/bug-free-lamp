@@ -91,7 +91,7 @@ export default async function handler(req, res) {
         const notion = new Client({
             auth: process.env.NOTION_WRITE_TOKEN,
         });
-        try{
+        try {
             await notion.pages.create({
                 parent: {
                     database_id: process.env.NOTION_CONTACTUS,
@@ -141,11 +141,13 @@ export default async function handler(req, res) {
                 </div>
             `;
             emailBody = emailBody.replace("{{EmailBody}}", mainBody)
-            emailNotifier("info@larryrowbsfoundation.org", "New query for the Larry Rowbs Foundation", emailBody)
+            console.info('Saved data to notion.')
+            await emailNotifier("info@larryrowbsfoundation.org", "New query for the Larry Rowbs Foundation", emailBody)
+            console.info('Email sent to the admins.')
             res.status(200).json({});
         }
-        catch(err){
-            console.log(err)
+        catch (err) {
+            console.error(err)
             res.status(400).json(err);
         }
     }

@@ -17,10 +17,12 @@ export async function emailNotifier(emailid, emailSubject, emailBody) {
         subject: emailSubject,
         html: emailBody
     }
+    console.info(`Trying to send email to ${emailId} with subject: ${emailSubject}.`)
     transporter.sendMail(mailData, function (err, info) {
         if (err) {
             throw err;
         } else {
+            console.info(info);
             transporter.close();
             return true;
         }
