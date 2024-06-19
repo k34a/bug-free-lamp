@@ -119,7 +119,7 @@ export default async function handler(req, res) {
                     },
                 },
             });
-            emailNotifier(req.body.email, emailSubject, emailBody);
+            await emailNotifier(req.body.email, emailSubject, emailBody);
             res.status(200).json({});
         } catch (err) {
             console.log(err);
