@@ -1,4 +1,4 @@
-export async function emailNotifier(emailid, emailSubject, emailBody) {
+export async function emailNotifier(emailID, emailSubject, emailBody) {
     const fromEmailId = process.env.FROM_EMAIL_ID;
     const fromEmailPassword = process.env.FROM_EMAIL_PASSWORD;
     let nodemailer = require('nodemailer')
@@ -13,11 +13,11 @@ export async function emailNotifier(emailid, emailSubject, emailBody) {
     });
     const mailData = {
         from: fromEmailId,
-        to: emailid,
+        to: emailID,
         subject: emailSubject,
         html: emailBody
     }
-    console.info(`Trying to send email to ${emailId} with subject: ${emailSubject}.`)
+    console.info(`Trying to send email to ${emailID} with subject: ${emailSubject}.`)
     transporter.sendMail(mailData, function (err, info) {
         if (err) {
             throw err;
