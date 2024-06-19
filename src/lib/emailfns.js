@@ -18,9 +18,9 @@ export async function emailNotifier(emailid, emailSubject, emailBody) {
         html: emailBody
     }
     transporter.sendMail(mailData, function (err, info) {
-        if (err)
+        if (err) {
             throw err;
-        else{
+        } else {
             transporter.close();
             return true;
         }
