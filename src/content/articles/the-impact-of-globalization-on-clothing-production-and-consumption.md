@@ -2,7 +2,9 @@
 title: The Impact of Globalization on Clothing Production and Consumption
 author: samra.arshad
 publishedOn: August 15, 2023
-tags: fashion-industry, clothing-production
+tags:
+    - fashion-industry
+    - clothing-production
 summary: How Globalization Rewove the Fabric of Clothing Making and Wearing|| Dive into the insights shared here
 previewImage: /assets/images/HipyXu2.webp
 ---

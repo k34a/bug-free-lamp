@@ -2,7 +2,8 @@
 title: Role of Technology in Modern Clothing Production
 author: qurah.tul.ain
 publishedOn: March 30, 2023
-tags: fashion-industry
+tags:
+    - fashion-industry
 summary: Technology will transform the future of clothing production, making it more efficient, sustainable, and innovative. Let's see how.
 previewImage: /assets/images/HNy3Ehu.webp
 ---

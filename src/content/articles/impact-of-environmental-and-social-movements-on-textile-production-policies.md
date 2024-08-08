@@ -1,8 +1,9 @@
 ---
-title: The Impact of Environmental and Social Movements on Textile Production Policies
+title: Impact of Environmental and Social Movements on Textile Production Policies
 author: samra.arshad
 publishedOn: March 31, 2023
-tags: textile-policies
+tags:
+    - textile-policies
 summary: Eco and social movements reshape textile production policies for a greener world | Read further right here.
 previewImage: /assets/images/Hw1PbgR.webp
 ---

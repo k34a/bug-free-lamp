@@ -1,8 +1,11 @@
 ---
-title: Designing a Better Future - Ethical Manufacturing Practices in Fashion
+title: Ethical Manufacturing Practices in Fashion
 author: mah.jabeen
 publishedOn: February 12, 2024
-tags: ethical-fashion, sustainable-practices, african-fashion-initiatives
+tags:
+    - ethical-fashion
+    - sustainable-practices
+    - african-fashion-initiatives
 summary: Explore the transformative journey of ethical fashion in Africa, focusing on sustainability, fair practices, and empowering local communities.
 previewImage: /assets/images/J1PQpN1.webp
 ---

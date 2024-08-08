@@ -14,13 +14,9 @@ interface FaqItem {
 
 export default function FAQItem(props: FaqItem) {
     return (
-        <div
-            className={`p-2 rounded border-2 border-gray-300 my-6 ${
-                props.isOpen ? "bg-gray-200" : ""
-            }`}
-        >
+        <div className={`rounded ${props.isOpen ? "bg-gray-200" : ""}`}>
             <h3
-                className="font-semibold cursor-pointer"
+                className="p-2 sm:p-4 font-semibold cursor-pointer"
                 onClick={(e) => {
                     if (props.isOpen) props.setIsOpen(-1);
                     else props.setIsOpen(props.faqindex);
@@ -36,7 +32,7 @@ export default function FAQItem(props: FaqItem) {
             </h3>
             <p
                 className={`word-break ${
-                    props.isOpen ? "block mx-2 sm:mx-6 my-6" : "hidden"
+                    props.isOpen ? "block mx-2 sm:mx-6 mb-6" : "hidden"
                 }`}
             >
                 {props.answer}

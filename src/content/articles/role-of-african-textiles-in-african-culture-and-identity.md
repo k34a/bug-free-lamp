@@ -2,7 +2,8 @@
 title: The Role of Textiles in African Culture and Identity
 author: nafeesa.javed
 publishedOn: March 23, 2023
-tags: african-fashion
+tags:
+    - african-fashion
 summary: Uniting cultures through African fabrics? | In this article, we will take a dive into the amazing world of African textiles!
 previewImage: /assets/images/HwA0mkQ.webp
 ---

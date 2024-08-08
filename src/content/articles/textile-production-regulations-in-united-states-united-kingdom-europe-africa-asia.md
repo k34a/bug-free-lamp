@@ -1,8 +1,11 @@
 ---
-title: The History of Textile Production Regulations in the US, UK, Europe, Africa and Asia
+title: History of Textile Production Regulations in the US, UK, Europe, Africa and Asia
 author: nafeesa.javed
 publishedOn: May 2, 2023
-tags: textile-policies, textile-regulations, labor-laws
+tags:
+    - textile-policies
+    - textile-regulations
+    - labor-laws
 summary: From early labor laws to sustainable practices | Explore the evolution of textile production regulations in the US, UK, Europe, Africa, and Asia.
 previewImage: /assets/images/HST8gXp.webp
 ---

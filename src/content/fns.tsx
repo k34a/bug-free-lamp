@@ -51,7 +51,17 @@ const ArticleFrontMatterSchema = z.object({
         .refine((val) => moment(val, DATE_FORMAT, true).isValid(), {
             message: `'modifiedOn' should be of format '${DATE_FORMAT}'`,
         }),
-    tags: z.string().default(""),
+    tags: z
+        .array(
+            z
+                .string()
+                .min(1)
+                .refine((val) => /^[A-Za-z0-9-]+$/.test(val), {
+                    message:
+                        "Tags should only contain alphabets, numbers or a hyphen.",
+                })
+        )
+        .min(1),
     previewImage: z
         .string()
         .min(5)
@@ -77,7 +87,7 @@ const ArticleFrontMatterSchema = z.object({
 });
 
 function readingTime(post: string) {
-    const WORDS_PER_MINUTE = 200;
+    const WORDS_PER_MINUTE = 150;
     const matches = post.match(/\w+/g);
 
     if (matches) {
@@ -118,9 +128,7 @@ const getArticle = (slug: string): BlogArticle | null => {
 
     const authorDetails = authors[articleDetails.author];
 
-    const tags = (articleDetails.tags as string)
-        .split(",")
-        .map((tag) => tag.trim());
+    const tags = articleDetails.tags;
 
     return {
         slug: slug,
@@ -185,7 +193,6 @@ const getAllTags = _.memoize((): Array<Tag> => {
             count: articles.filter((a) => a.tags.includes(t)).length,
         };
     });
-
     return tagList;
 });
 

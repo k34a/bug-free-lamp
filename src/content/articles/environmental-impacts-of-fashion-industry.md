@@ -2,7 +2,10 @@
 title: Environmental Impacts of the Fashion Industry
 author: mah.jabeen
 publishedOn: November 28, 2023
-tags: fashion-industry, carbon-footprints, environmental-effects
+tags:
+    - fashion-industry
+    - carbon-footprints
+    - environmental-effects
 summary: Let's explore the environmental impacts of the fashion industry and uncover the staggering statistics of fashion waste, pollution, and carbon footprint.
 previewImage: /assets/images/pexels-chris-leboutillier-929382.webp
 ---

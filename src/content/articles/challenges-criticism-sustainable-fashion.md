@@ -2,7 +2,10 @@
 title: Challenges and Criticisms of Sustainable Fashion
 author: mah.jabeen
 publishedOn: December 19, 2023
-tags: criticism-ethical-fashion, sustainable-fashion-challenges, obstacles-for-sustainability
+tags:
+    - criticism-ethical-fashion
+    - sustainable-fashion-challenges
+    - obstacles-for-sustainability
 summary: Addressing sustainability challenges in fashion - high raw material costs, opaque supply chains, skilled labor shortages, global complexities, and consumer education gaps.
 previewImage: /assets/images/JuCzihl.webp
 ---
