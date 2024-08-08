@@ -52,7 +52,7 @@ const Blog = ({ params }: PageProps) => {
                         {article.tags.map((tag, index) => {
                             return (
                                 <Link
-                                    href={`/blog?tags=${tag}`}
+                                    href={`/blog/tags/${tag}`}
                                     key={index}
                                     className="border-2 border-red-500 px-3 py-1 rounded-lg flex gap-2 items-center no-underline"
                                 >
