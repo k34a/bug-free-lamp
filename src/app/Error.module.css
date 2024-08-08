@@ -1,0 +1,14 @@
+.image {
+    animation: animate infinite 5s alternate ease-in-out;
+    transform-origin: 50% 50% 0px;
+}
+
+@keyframes animate {
+    from {
+        transform: translate3d(0px, -50px, 0px) rotate(0deg);
+    }
+
+    to {
+        transform: translate3d(30px, 10px, 10px) rotate(2deg);
+    }
+}

@@ -1,0 +1,9 @@
+.secondaryLink {
+    background: linear-gradient(to left, white 50%, rgb(47, 192, 71) 50%) right;
+    background-size: 200%;
+    transition: 0.5s ease-out;
+}
+
+.secondaryLink:hover {
+    background-position: left;
+}
