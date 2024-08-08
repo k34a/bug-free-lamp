@@ -8,6 +8,38 @@ interface PageProps {
     };
 }
 
+export async function generateStaticParams() {
+    const { totalPages } = getBlogAriclesList();
+    return Array.from({ length: totalPages }, (_, i) => ({
+        num: (i + 1).toString(),
+    }));
+}
+
+export async function generateMetadata() {
+    const desc =
+        "The Larry Rowbs Foundation Blog. Dive into the latest news, updates, and educational content on making fashion sustainable.";
+    const title = "Blog | Larry Rowbs Foundation";
+    return {
+        title: title,
+        twitter: {
+            title: title,
+            description: desc,
+            site: "larryrowbsfoundation.org",
+        },
+        openGraph: {
+            title: title,
+            description: desc,
+            locale: "en_US",
+            site_name: "Larry Rowbs Foundation",
+            type: "article",
+        },
+        description: desc,
+        keywords: "sustainable-fashion, africa",
+        author: "Larry Rowbs Foundation",
+        robots: "index, follow",
+    };
+}
+
 const Page = (props: PageProps) => {
     let pageNum = parseInt(props.params.num);
     if (isNaN(pageNum) || pageNum < 1) {
