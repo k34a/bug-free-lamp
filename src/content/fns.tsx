@@ -229,6 +229,27 @@ const searchArticles = (
     return articles;
 };
 
-export { getAllArticles, searchArticles, getAllTags };
+const getBlogAriclesList = (
+    searchQuery: string = "",
+    tags: Array<string> = [],
+    page: number = 1
+) => {
+    const POSTS_PER_PAGE = 10;
+    let articles = searchArticles(searchQuery, tags);
+    const allTags = getAllTags();
+
+    const totalPages = Math.max(Math.ceil(articles.length / POSTS_PER_PAGE), 1);
+
+    const start = (page - 1) * POSTS_PER_PAGE;
+    const end = start + POSTS_PER_PAGE;
+    articles = articles.slice(start, end);
+
+    // Remove content from the response to reduce the payload size and manage bandwidth effeciently
+    articles.map((a) => ({ ...a, content: "" }));
+
+    return { articles, allTags, totalPages };
+};
+
+export { getAllArticles, searchArticles, getAllTags, getBlogAriclesList };
 
 export type { BlogArticle, Tag };
