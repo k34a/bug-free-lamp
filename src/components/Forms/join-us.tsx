@@ -312,8 +312,7 @@ const JoinUsForm = () => {
                     <button
                         className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed"
                         type="submit"
-                        disabled={loading}
-                        // disabled={loading || formData.token.length === 0}
+                        disabled={loading || formData.token.length === 0}
                     >
                         {loading ? "Submitting..." : "Join us"}
                     </button>
