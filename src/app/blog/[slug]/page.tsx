@@ -12,6 +12,13 @@ interface PageProps {
     };
 }
 
+export async function generateStaticParams() {
+    const articles = getAllArticles();
+    return articles.map((article) => ({
+        slug: article.slug,
+    }));
+}
+
 const Blog = ({ params }: PageProps) => {
     const allArticles = getAllArticles();
     const i = allArticles.map((a) => a.slug).indexOf(params.slug);

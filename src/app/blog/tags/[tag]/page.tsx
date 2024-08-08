@@ -1,10 +1,15 @@
 import CardList from "@/components/blog/card-list";
-import { getBlogAriclesList } from "@/content/fns";
+import { getAllTags, getBlogAriclesList } from "@/content/fns";
 
 interface PageProps {
     params: {
         tag: string;
     };
+}
+
+export async function generateStaticParams() {
+    const tags = getAllTags();
+    return tags.map((t) => ({ tag: t.tag }));
 }
 
 const Page = (props: PageProps) => {

@@ -8,6 +8,13 @@ interface PageProps {
     };
 }
 
+export async function generateStaticParams() {
+    const { totalPages } = getBlogAriclesList();
+    return Array.from({ length: totalPages }, (_, i) => ({
+        num: (i + 1).toString(),
+    }));
+}
+
 const Page = (props: PageProps) => {
     let pageNum = parseInt(props.params.num);
     if (isNaN(pageNum) || pageNum < 1) {
