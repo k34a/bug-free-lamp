@@ -7,6 +7,30 @@ interface PageProps {
     };
 }
 
+export async function generateMetadata({ params }: PageProps) {
+    const title = `Blog - ${params.tag} | Larry Rowbs Foundation`;
+    const desc = `Read articles related to ${params.tag}. Dive into the latest news, updates, and educational content on making fashion sustainable.`;
+    return {
+        title: title,
+        twitter: {
+            title: title,
+            description: desc,
+            site: "larryrowbsfoundation.org",
+        },
+        openGraph: {
+            title: title,
+            description: desc,
+            locale: "en_US",
+            site_name: "Larry Rowbs Foundation",
+            type: "article",
+        },
+        description: desc,
+        keywords: "sustainable-fashion, africa",
+        author: "Larry Rowbs Foundation",
+        robots: "index, follow",
+    };
+}
+
 export async function generateStaticParams() {
     const tags = getAllTags();
     return tags.map((t) => ({ tag: t.tag }));

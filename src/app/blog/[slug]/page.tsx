@@ -12,6 +12,37 @@ interface PageProps {
     };
 }
 
+export async function generateMetadata({ params }: PageProps) {
+    const allArticles = getAllArticles();
+    const i = allArticles.map((a) => a.slug).indexOf(params.slug);
+
+    if (i === -1) {
+        return {};
+    }
+
+    const article = allArticles[i];
+
+    return {
+        title: article.title,
+        twitter: {
+            title: article.title,
+            description: article.meta.description,
+            site: "larryrowbsfoundation.org",
+        },
+        openGraph: {
+            title: article.title,
+            description: article.meta.description,
+            locale: "en_US",
+            site_name: "Larry Rowbs Foundation",
+            type: "article",
+        },
+        description: article.meta.description,
+        keywords: article.tags.join(", "),
+        author: article.meta.author.name,
+        robots: "index, follow",
+    };
+}
+
 export async function generateStaticParams() {
     const articles = getAllArticles();
     return articles.map((article) => ({
