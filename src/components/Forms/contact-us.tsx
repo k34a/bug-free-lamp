@@ -70,6 +70,7 @@ const JoinUsForm = () => {
                 message: errors.message ? errors.message[0] : "",
                 token: "",
             });
+            setFormData((v) => ({ ...v, token: "" }));
             refTurnstile.current?.reset();
             return;
         }
@@ -85,6 +86,7 @@ const JoinUsForm = () => {
         const json = await response.json();
         if (!response.ok) {
             setError(json.error);
+            setFormData((v) => ({ ...v, token: "" }));
         } else {
             setIsSubmitted(true);
             setFormData(defaultFormData);

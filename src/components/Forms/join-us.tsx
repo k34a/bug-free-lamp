@@ -99,6 +99,7 @@ const JoinUsForm = () => {
                 resume: errors.resume ? errors.resume[0] : "",
                 token: "",
             });
+            setFormData((v) => ({ ...v, token: "" }));
             refTurnstile.current?.reset();
             return;
         }
@@ -114,6 +115,7 @@ const JoinUsForm = () => {
         const json = await response.json();
         if (!response.ok) {
             setError(json.error);
+            setFormData((v) => ({ ...v, token: "" }));
         } else {
             setIsSubmitted(true);
             setFormData(defaultFormData);
