@@ -2,7 +2,9 @@
 title: The Potential for Public-Private Partnerships to Promote Sustainable Textile Production Practices
 author: mah.jabeen
 publishedOn: August 1, 2023
-tags: sustainable-fashion, sustainable-standards
+tags:
+    - sustainable-fashion
+    - sustainable-standards
 summary: Fashion's green shift by Transparency, sustainability, and responsible sourcing. Learn how these key trends are reshaping the industry.
 previewImage: /assets/images/HZwWmv9.webp
 ---

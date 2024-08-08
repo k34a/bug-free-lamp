@@ -2,7 +2,8 @@
 title: The Role of International Organizations in Shaping Textile Production Policies and Guidelines
 author: farwa.ramzan
 publishedOn: March 6, 2023
-tags: sustainable-future
+tags:
+    - sustainable-future
 summary: How international organizations will shape policies and guidelines in Europe? Explore more with Larry Rowbs Foundation.
 previewImage: /assets/images/HMZpEV2.webp
 ---

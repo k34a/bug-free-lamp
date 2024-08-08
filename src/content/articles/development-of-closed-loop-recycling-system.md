@@ -2,7 +2,9 @@
 title: Development of Closed-Loop Recycling System
 author: qurah.tul.ain
 publishedOn: February 25, 2023
-tags: closed-loop recycling, sustainable-fashion
+tags:
+    - closed-loop-recycling
+    - sustainable-fashion
 summary: Can fashion be sustainable? | Closed-loop recycling & bio-based methods | Textile industry's sustainability explored
 previewImage: /assets/images/Closed-loop-recycling-system-19-04-2017.webp
 ---

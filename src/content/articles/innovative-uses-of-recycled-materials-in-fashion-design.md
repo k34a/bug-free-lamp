@@ -2,7 +2,8 @@
 title: Innovative Uses of Recycled Materials in Fashion Design
 author: farwa.ramzan
 publishedOn: April 2, 2023
-tags: fashion-industry
+tags:
+    - fashion-industry
 summary: In this article, we will be discussing how a recycled material can be used effectively in designing fashion | Explore it now.
 previewImage: /assets/images/HNUaS8F.webp
 ---

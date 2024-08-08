@@ -2,7 +2,9 @@
 title: The Environmental Impact Of Fast Fashion On Landfills
 author: nafeesa.javed
 publishedOn: February 23, 2023
-tags: fast-fashion, landfills
+tags:
+    - fast-fashion
+    - landfills
 summary: Fast fashion's harm to environment & landfills | Learn how Larry Rowbs Foundation promotes responsible production & consumption.
 previewImage: /assets/images/HGslVKx.webp
 ---

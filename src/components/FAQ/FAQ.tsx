@@ -17,29 +17,29 @@ export default function FAQ(props: FAQProps) {
     const [isOpen, setIsOpen] = useState(-1);
 
     return (
-        <div className="my-12">
-            <h2 className="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">
-                {props.heading}
-            </h2>
-            <p className="text-base leading-relaxed w-4/5 xl:w-2/4 lg:w-3/4 m-auto text-center">
-                {props.description}
-            </p>
-            <div className="flex flex-wrap w-11/12 sm:w-9/12 lg:w-3/5 m-auto sm:mb-2">
-                <div className="w-full px-4 py-2">
-                    {props.faqs.map((ele, index) => {
-                        return (
-                            <FAQItem
-                                {...ele}
-                                question={ele.ques}
-                                answer={ele.ans}
-                                isOpen={isOpen == index}
-                                setIsOpen={setIsOpen}
-                                faqindex={index}
-                                key={index}
-                            />
-                        );
-                    })}
-                </div>
+        <div className="my-12 w-11/12 max-w-screen-sm mx-auto grid gap-5">
+            <div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-center title-font text-gray-900 mb-4">
+                    {props.heading}
+                </h2>
+                <p className="text-base leading-relaxed text-center">
+                    {props.description}
+                </p>
+            </div>
+            <div className="grid grid-cols-1 divide-y-2">
+                {props.faqs.map((ele, index) => {
+                    return (
+                        <FAQItem
+                            {...ele}
+                            question={ele.ques}
+                            answer={ele.ans}
+                            isOpen={isOpen == index}
+                            setIsOpen={setIsOpen}
+                            faqindex={index}
+                            key={index}
+                        />
+                    );
+                })}
             </div>
         </div>
     );

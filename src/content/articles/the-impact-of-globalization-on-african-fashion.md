@@ -2,7 +2,8 @@
 title: The Impact of Globalization on African Fashion
 author: mah.jabeen
 publishedOn: May 30, 2023
-tags: african-fashion
+tags:
+    - african-fashion
 summary: Experience the transformative power of globalization on African fashion as traditional prints intertwine with modern trends.
 previewImage: /assets/images/HS8fkPV.webp
 ---

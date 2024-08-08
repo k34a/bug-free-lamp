@@ -2,7 +2,9 @@
 title: The Role of Ethical Fashion in Promoting Sustainable Fashion
 author: qurah.tul.ain
 publishedOn: May 4, 2023
-tags: sustainable-fashion, ethical-fashion
+tags:
+    - sustainable-fashion
+    - ethical-fashion
 summary: Discover ethical fashion's role in sustainability. In this article, we will unlock a greener future with sustainable fashion insights.
 previewImage: /assets/images/H8sReUb.webp
 ---

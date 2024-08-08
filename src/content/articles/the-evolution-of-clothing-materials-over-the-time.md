@@ -2,7 +2,10 @@
 title: The Evolution of Clothing Materials over the Time
 author: mah.jabeen
 publishedOn: June 23, 2023
-tags: sustainable-future, fashion-industry, african-fashion
+tags:
+    - sustainable-future
+    - fashion-industry
+    - african-fashion
 summary: Have you ever wondered how the clothing materials have evolved over time? Let's dive in and get a flashback of this transformational journey.
 previewImage: /assets/images/HPAkLjR.webp
 ---

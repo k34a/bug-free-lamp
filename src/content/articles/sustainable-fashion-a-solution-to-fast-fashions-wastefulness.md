@@ -2,7 +2,9 @@
 title: Sustainable Fashion as a Solution to the Fashion Industry's Impact on Wastefulness
 author: khadija.abdul.majid
 publishedOn: March 21, 2023
-tags: fashion-industry, sustainable-fashion
+tags:
+    - fashion-industry
+    - sustainable-fashion
 summary: Explore the wastefulness of fast fashion and discover sustainable solutions to make a positive impact on the environment, and how LRF is committed to this cause
 previewImage: /assets/images/lUAaWfB.webp
 ---

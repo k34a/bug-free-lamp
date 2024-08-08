@@ -2,7 +2,8 @@
 title: The Journey of Tonye Raine
 author: khadija.abdul.majid
 publishedOn: June 12, 2023
-tags: lrf-member-story
+tags:
+    - lrf-member-story
 summary: Tonye's journey from rural Nigeria to becoming a sustainable fashion advocate, transforming the industry with passion and resourcefulness.
 previewImage: /assets/images/H6YAG72.webp
 ---

@@ -2,7 +2,8 @@
 title: The Benefits and Challenges of Upcycling
 author: mah.jabeen
 publishedOn: April 6, 2023
-tags: upcycling
+tags:
+    - upcycling
 summary: Want to know how challenges and benefits of upcycling reshape sustainable fashion? | Explore more right here.
 previewImage: /assets/images/HNVRHb4.webp
 ---

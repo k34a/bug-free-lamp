@@ -2,7 +2,9 @@
 title: The Role of Transparency in Sustainable Fashion Supply Chains
 author: farwa.ramzan
 publishedOn: September 18, 2023
-tags: sustainable-fashion, transparency-in-fashion
+tags:
+    - sustainable-fashion
+    - transparency-in-fashion
 summary: Fashion's green shift by Transparency, sustainability, and responsible sourcing. Learn how these key trends are reshaping the industry.
 previewImage: /assets/images/JH6j6NI.webp
 ---

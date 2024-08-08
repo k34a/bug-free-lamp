@@ -2,7 +2,9 @@
 title: The Impact of Free Trade Agreements on Textile Production Regulations
 author: khadija.abdul.majid
 publishedOn: June 2, 2023
-tags: textile-policies, textile-regulations
+tags:
+    - textile-policies
+    - textile-regulations
 summary: Examine the implications of free trade agreements on textile production regulations and the global trade landscape.
 previewImage: /assets/images/HUeMUNV.webp
 ---

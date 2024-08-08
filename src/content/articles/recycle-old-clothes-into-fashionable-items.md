@@ -2,7 +2,8 @@
 title: Recycle Old Clothes into Fashionable Items
 author: saksham.garg
 publishedOn: December 12, 2023
-tags: sustainable-fashion
+tags:
+    - sustainable-fashion
 summary: Do you want to recycle old clothes? Here we explain a commonly used process. Know how Larry Rowbs Foundation brings sustainability in Africa.
 previewImage: /assets/images/H8mfxQ1.webp
 ---

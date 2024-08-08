@@ -2,7 +2,9 @@
 title: Traditional Weaving and Dyeing Techniques Used in Africa
 author: khadija.abdul.majid
 publishedOn: April 5, 2023
-tags: fashion-industry, african-fashion
+tags:
+    - fashion-industry
+    - african-fashion
 summary: How weaving and dyeing techniques were used in Africa for cloth production? Explore it now for more details.
 previewImage: /assets/images/HOBaln4.webp
 ---

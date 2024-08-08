@@ -2,7 +2,9 @@
 title: What happens to clothing when it comes to the end of its lifecycle?
 author: mah.jabeen
 publishedOn: November 28, 2023
-tags: clothing-lifecycle, clothing
+tags:
+    - clothing-lifecycle
+    - clothing
 summary: Discover the fascinating journey of textiles from creation to disposal. Know the sustainable practices of 3Rs, and the environmental impact of clothing waste.
 previewImage: /assets/images/HLjwIcX.webp
 ---

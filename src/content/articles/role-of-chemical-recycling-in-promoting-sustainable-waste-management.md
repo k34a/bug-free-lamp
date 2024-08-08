@@ -2,7 +2,9 @@
 title: Role of Chemical Recycling in Promoting Sustainable Waste Management
 author: mah.jabeen
 publishedOn: March 22, 2023
-tags: closed-loop recycling, sustainable-future
+tags:
+    - closed-loop-recycling
+    - sustainable-future
 summary: Promote sustainable waste management with Larry Rowbs Foundation. Support chemical recycling of waste for a greener future.
 previewImage: /assets/images/HhhS20Q.webp
 ---

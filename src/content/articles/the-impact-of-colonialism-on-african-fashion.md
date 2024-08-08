@@ -2,7 +2,9 @@
 title: The Impact of Colonialism on African Fashion
 author: samra.arshad
 publishedOn: March 3, 2023
-tags: african-fashion, sustainable-fashion
+tags:
+    - african-fashion
+    - sustainable-fashion
 summary: How European colonialism influenced African fashion? | Explore modern sustainable fashion with Larry Rowbs Foundation
 previewImage: /assets/images/HM3rBHl.webp
 ---

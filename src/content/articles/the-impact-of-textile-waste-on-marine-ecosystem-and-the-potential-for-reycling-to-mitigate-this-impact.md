@@ -2,7 +2,9 @@
 title: Impact of Textile Waste on Marine Ecosystems and Potential of Recycling to Mitigate this
 author: samra.arshad
 publishedOn: May 22, 2023
-tags: sustainable-fashion, ethical-fashion
+tags:
+    - sustainable-fashion
+    - ethical-fashion
 summary: The fashion industry has a dirty little secret- its contribution to textile waste is harming our ocean | Read on to find out how recycling can make a difference.
 previewImage: /assets/images/HSOrNdG.webp
 ---

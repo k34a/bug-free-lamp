@@ -2,7 +2,9 @@
 title: Can the practice of minimalism help solve the problems in the fashion industry?
 author: rowaiye.olanrewaju
 publishedOn: May 22, 2024
-tags: minimalism, sustainable-practices
+tags:
+    - minimalism
+    - sustainable-practices
 summary: Explore the transformative journey of ethical fashion in Africa, focusing on sustainability, fair practices, and empowering local communities.
 previewImage: /assets/images/Jsc7LAv.webp
 ---

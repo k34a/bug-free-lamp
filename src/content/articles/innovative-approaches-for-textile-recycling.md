@@ -2,7 +2,11 @@
 title: Innovative Approaches for Recycling Textiles Contaminated with Dyes and Other Chemicals
 author: khadija.abdul.majid
 publishedOn: December 12, 2023
-tags: sustainable-coloration, synthetic-dyes, functional-finishes, innovative-approaches
+tags:
+    - sustainable-coloration
+    - synthetic-dyes
+    - functional-finishes
+    - innovative-approaches
 summary: Dyeing and finishing enhance plain clothes but harm the environment. Recycling chemically-treated clothes is challenging and often impossible.
 previewImage: /assets/images/J90ZBRe.webp
 ---

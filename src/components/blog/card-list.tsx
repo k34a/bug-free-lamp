@@ -22,7 +22,7 @@ const CardList = (props: CardListProps) => {
         );
     }
     return (
-        <div className="grid grid-col-1 gap-8 w-11/12 md:w-1/2 m-auto ">
+        <div className="grid grid-col-1 gap-8 w-11/12 max-w-screen-sm m-auto ">
             <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">
                 {props.title}
             </h1>

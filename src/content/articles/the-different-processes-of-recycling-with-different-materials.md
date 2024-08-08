@@ -2,7 +2,10 @@
 title: The Different Processes of Recycling with Different Materials
 author: farwa.ramzan
 publishedOn: May 23, 2023
-tags: upcycling, recycling, ethical-fashion
+tags:
+    - upcycling
+    - recycling
+    - ethical-fashion
 summary: Explore the world of recycling, learn about upcycling vs. recycling, and analyze the benefits of various manufacturing processes and their environmental impact.
 previewImage: /assets/images/HU3VYFI.webp
 ---
