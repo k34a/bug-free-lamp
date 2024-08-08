@@ -13,37 +13,27 @@ export const emailNotifier = async (
         return true;
     }
 
-    return new Promise<boolean>((resolve, reject) => {
-        const transporter = createTransport({
-            host: "smtp.zoho.in",
-            secure: true,
-            port: 465,
-            auth: {
-                user: fromEmailId,
-                pass: fromEmailPassword,
-            },
-        });
-
-        const mailData = {
-            from: fromEmailId,
-            to: emailID,
-            subject: emailSubject,
-            html: emailBody,
-        };
-
-        console.info(
-            `Trying to send email to '${emailID}' with subject: '${emailSubject}'.`
-        );
-
-        transporter.sendMail(mailData, function (err, info) {
-            if (err) {
-                console.error(err);
-                resolve(false);
-            } else {
-                console.info(info);
-                transporter.close();
-                resolve(true);
-            }
-        });
+    const transporter = createTransport({
+        host: "smtp.zoho.in",
+        secure: true,
+        port: 465,
+        auth: {
+            user: fromEmailId,
+            pass: fromEmailPassword,
+        },
     });
+
+    const mailData = {
+        from: fromEmailId,
+        to: emailID,
+        subject: emailSubject,
+        html: emailBody,
+    };
+
+    console.info(
+        `Trying to send email to '${emailID}' with subject: '${emailSubject}'.`
+    );
+
+    const info = await transporter.sendMail(mailData);
+    console.info(info);
 };
