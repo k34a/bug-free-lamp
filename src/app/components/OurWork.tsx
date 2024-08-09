@@ -126,15 +126,9 @@ export default function OurWork() {
                 <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto text-white">
                     <h2 className="text-xl lg:text-2xl md:text-3xl font-bold py-6">
                         We have initiated a fundraiser on{" "}
-                        <a
-                            href="https://www.civicdawn.org/funds/campaign/CPNA00A00A11"
-                            title="Civic Dawn Fundraiser"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline"
-                        >
-                            Civic Dawn
-                        </a>
+                        <Link href="/donate" className="underline">
+                            Go fund me
+                        </Link>
                         . Please donate to support our project.
                     </h2>
                 </div>
