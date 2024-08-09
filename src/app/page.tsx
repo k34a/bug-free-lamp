@@ -5,6 +5,7 @@ import AnimationVideo from "@/app/components/AnimationVideo";
 import Image from "next/image";
 import Link from "next/link";
 import SubscribeEmail from "@/components/Forms/subscribe-email";
+import VimeoPlayer from "react-player/vimeo";
 
 const benefits = [
     {
@@ -68,7 +69,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div className="w-11/12 sm:w-3/4 md:w-3/5 mx-auto drop-shadow-lg md:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
-                    <AnimationVideo />
+                    <AnimationVideo src="/AnimationVideo.mp4" />
                 </div>
                 <div className="w-11/12 sm:w-3/4 mx-auto flex flex-col gap-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center">
@@ -141,6 +142,9 @@ export default function Home() {
                     />
                 </div>
                 <WhatsHappening />
+                <div className="w-11/12 sm:w-3/4 md:w-3/5 mx-auto drop-shadow-lg md:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
+                    <AnimationVideo src="/larry01 (360p).mp4" />
+                </div>
                 <OurWork />
                 <Partners />
                 <div>

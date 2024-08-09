@@ -13,6 +13,7 @@
     "@notionhq/client": "^2.2.15",
     "@t3-oss/env-nextjs": "^0.11.0",
     "@tailwindcss/typography": "^0.5.13",
+    "@u-wave/react-vimeo": "^0.9.11",
     "framer-motion": "^11.3.21",
     "gray-matter": "^4.0.3",
     "moment": "^2.30.1",
