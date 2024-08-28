@@ -13,6 +13,7 @@ const SubscribeEmail = () => {
                 background: "white",
                 margin: "auto",
             }}
+            loading="lazy"
         ></iframe>
     );
 };
