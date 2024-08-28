@@ -52,16 +52,7 @@ const Page = () => {
                     <YoutubeVideo videoId="geGdb89rU98" />
                 </div>
                 <div>
-                    <SubscribeEmail
-                        heading="Can we count on your pledge for our upcoming project?"
-                        formName="game-preregistration"
-                        submitButton={{
-                            text: "Signup",
-                            onLoading: "loading...",
-                        }}
-                        successMessage="Thank you for signing up for the Larry Rowbs Adventure."
-                        info="Get project news and updates by providing your email."
-                    />
+                    <SubscribeEmail />
                 </div>
                 <p>
                     Our goal is to make fashion sustainable - one step at a
@@ -181,16 +172,7 @@ const Page = () => {
                     </a>
                 </p>
                 <div>
-                    <SubscribeEmail
-                        heading="Can we count on your pledge for our upcoming project?"
-                        formName="game-preregistration"
-                        submitButton={{
-                            text: "Signup",
-                            onLoading: "loading...",
-                        }}
-                        successMessage="Thank you for signing up for the Larry Rowbs Adventure."
-                        info="Get project news and updates by providing your email."
-                    />
+                    <SubscribeEmail />
                 </div>
                 <hr />
                 <Link

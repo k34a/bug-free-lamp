@@ -129,17 +129,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div>
-                    <SubscribeEmail
-                        heading="Stay tuned for latest updates!"
-                        desc="We post regular updates about the sustainability practices in the fashion industry."
-                        formName="email-subscribe"
-                        submitButton={{
-                            text: "Subscribe",
-                            onLoading: "Subscribing...",
-                        }}
-                        successMessage="Thank you for subscribing!"
-                        info="We won't spam you, promise :)"
-                    />
+                    <SubscribeEmail />
                 </div>
                 <WhatsHappening />
                 <div className="w-11/12 sm:w-3/4 md:w-3/5 mx-auto drop-shadow-lg md:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
@@ -148,17 +138,7 @@ export default function Home() {
                 <OurWork />
                 <Partners />
                 <div>
-                    <SubscribeEmail
-                        heading="Subscribe and stay tuned for latest updates!"
-                        desc="Learn about the roadmap progress, announcements and events conducted by signing up for our weekly newsletter."
-                        formName="email-subscribe"
-                        submitButton={{
-                            text: "Subscribe",
-                            onLoading: "Subscribing...",
-                        }}
-                        successMessage="Thank you for subscribing!"
-                        info="We won't spam you, promise :)"
-                    />
+                    <SubscribeEmail />
                 </div>
             </div>
         </main>
