@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import CookieConsent from "@/components/cookies";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <GoogleAnalytics gaId="G-CL7HRH1ZH9" />
             <CookieConsent />
             <body className={inter.className}>
                 <Header />
