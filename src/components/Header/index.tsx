@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
+
 import styles from "./header.module.css";
 
 const SecondaryLinks = [
@@ -14,6 +17,7 @@ const SecondaryLinks = [
 
 const Header = () => {
     const [menuBarOpen, setMenuBarOpen] = useState(false);
+    const { data: session, status } = useSession();
 
     return (
         <>
@@ -44,7 +48,29 @@ const Header = () => {
                         );
                     })}
                 </div>
-                <div className="hidden sm:flex">
+                <div className="hidden sm:flex sm:gap-4 items-center">
+                    <div>
+                        {status === "authenticated" && (
+                            <button
+                                onClick={() =>
+                                    signOut({
+                                        callbackUrl: "/",
+                                    })
+                                }
+                                className="py-2 px-2 rounded-lg border border-slate-500 "
+                            >
+                                Logout
+                            </button>
+                        )}
+                        {status === "unauthenticated" && (
+                            <Link
+                                href="/login"
+                                className="py-2 px-2 rounded-lg border border-slate-500 "
+                            >
+                                Login
+                            </Link>
+                        )}
+                    </div>
                     <Link
                         href="/donate"
                         className="py-2 px-3 bg-green-700 hover:bg-green-500 duration-200 text-white rounded-lg font-bold"

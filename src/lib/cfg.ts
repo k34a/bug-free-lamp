@@ -11,6 +11,7 @@ export const ENV = createEnv({
         NOTION_SUBSCRIBE: z.string(),
         NOTION_JOINUS: z.string(),
         NOTION_CONTACTUS: z.string(),
+        MONGODB_URI: z.string(),
     },
     client: {
         NEXT_PUBLIC_TURNSTILE_SITE_KEY: z.string(),
@@ -26,5 +27,6 @@ export const ENV = createEnv({
         NOTION_SUBSCRIBE: process.env.NOTION_SUBSCRIBE,
         NOTION_JOINUS: process.env.NOTION_JOINUS,
         NOTION_CONTACTUS: process.env.NOTION_CONTACTUS,
+        MONGODB_URI: process.env.MONGODB_URI,
     },
 });

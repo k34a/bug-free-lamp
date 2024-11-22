@@ -22,3 +22,24 @@ export const validateURL = (s: string): boolean => {
         /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
     return regexp.test(s);
 };
+
+export const validatePassword = (password: string): boolean => {
+    const minLength = 8;
+    const maxLength = 20;
+
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasDigits = /\d/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    const isLengthValid =
+        password.length >= minLength && password.length <= maxLength;
+
+    // All conditions must be true
+    return (
+        hasUpperCase &&
+        hasLowerCase &&
+        hasDigits &&
+        hasSpecialChar &&
+        isLengthValid
+    );
+};
