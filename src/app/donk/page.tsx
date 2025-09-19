@@ -78,9 +78,9 @@ export default function DonkPage() {
                             <p className="text-lg text-gray-700 leading-relaxed">
                                 Every year, millions of tons of clothing end up
                                 in landfills, creating environmental disasters
-                                that affect communities worldwide. These aren't
-                                just clothes - they're missed opportunities for
-                                dignity, employment, and hope.
+                                that affect communities worldwide. These
+                                aren&apos;t just clothes - they&apos;re missed
+                                opportunities for dignity, employment, and hope.
                             </p>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="bg-red-50 p-4 rounded-lg border border-red-200">
@@ -114,7 +114,7 @@ export default function DonkPage() {
                         <div className="flex items-center">
                             <div>
                                 <h4 className="text-xl font-bold text-gray-800 mb-3">
-                                    Fast Fashion's Hidden Cost
+                                    Fast Fashion&apos;s Hidden Cost
                                 </h4>
                                 <p className="text-gray-700">
                                     Behind every discarded garment is a story of
@@ -205,9 +205,9 @@ export default function DonkPage() {
 
                     <div className="text-center mt-12">
                         <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
-                            Your choice doesn’t just reduce waste—it helps end{' '}
-                            <b>child trafficking and labor</b> in the fashion
-                            industry.
+                            Your choice doesn&apos;t just reduce waste—it helps
+                            end <b>child trafficking and labor</b> in the
+                            fashion industry.
                         </p>
                     </div>
                 </div>
@@ -245,8 +245,9 @@ export default function DonkPage() {
                         <div className="lg:col-span-2 space-y-6">
                             <div className="bg-emerald-50 p-6 rounded-xl border border-emerald-200">
                                 <blockquote className="text-lg md:text-xl font-medium text-emerald-800 italic mb-4">
-                                    "When we carry together, we create change.
-                                    When we create change, hope is reborn."
+                                    &ldquo;When we carry together, we create
+                                    change. When we create change, hope is
+                                    reborn.&rdquo;
                                 </blockquote>
                                 <p className="text-emerald-700">
                                     Don K is a humble yet determined donkey with
@@ -296,9 +297,9 @@ export default function DonkPage() {
                             <p className="text-lg text-gray-700 leading-relaxed">
                                 Born in the shadow of a bustling marketplace
                                 where mountains of discarded clothes piled high,
-                                Don K learned that a donkey's strength isn't
-                                just for hauling loads, but for carrying burdens
-                                that others cannot bear.
+                                Don K learned that a donkey&apos;s strength
+                                isn&apos;t just for hauling loads, but for
+                                carrying burdens that others cannot bear.
                             </p>
                             <p className="text-lg text-gray-700 leading-relaxed">
                                 One day, he noticed colors buried beneath the
@@ -520,7 +521,7 @@ export default function DonkPage() {
                             </h2>
                             <p className="text-lg text-gray-700 leading-relaxed mb-6">
                                 The e.don Movement is more than environmental
-                                action - it's about creating belonging,
+                                action - it&apos;s about creating belonging,
                                 fostering unity, and building a global community
                                 that carries change together.
                             </p>

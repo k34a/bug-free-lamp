@@ -38,8 +38,8 @@ export default function EdonTeaserBanner() {
                                 </div>
                             </div>
                             <blockquote className="text-base md:text-lg font-medium text-emerald-800 italic">
-                                "When we carry together, we create change. When
-                                we create change, hope is reborn."
+                                &ldquo;When we carry together, we create change.
+                                When we create change, hope is reborn.&rdquo;
                             </blockquote>
                         </div>
 
