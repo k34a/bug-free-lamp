@@ -603,7 +603,7 @@ export default function DonkPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="py-16 bg-gradient-to-r from-emerald-600 to-blue-600">
+            <section className="py-16 bg-gradient-to-b from-emerald-600 via-blue-600 to-white">
                 <div className="container mx-auto px-4 text-center text-white">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">
                         Join the Movement
