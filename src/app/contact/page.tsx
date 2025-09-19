@@ -1,14 +1,14 @@
-import ContactUs from "@/components/Forms/contact-us";
-import FAQ from "@/components/FAQ/FAQ";
-import { Metadata } from "next";
-import { BiEnvelope, BiHome, BiPhoneCall } from "react-icons/bi";
-import { faqs } from "./cfg";
+import ContactUs from '@/components/Forms/contact-us'
+import FAQ from '@/components/FAQ/FAQ'
+import { Metadata } from 'next'
+import { BiEnvelope, BiHome, BiPhoneCall } from 'react-icons/bi'
+import { faqs } from './cfg'
 
 export const metadata: Metadata = {
-    title: "Contact us - Larry Rowbs Foundation",
+    title: 'Contact us - Larry Rowbs Foundation',
     description:
-        "Get in touch. Have a question? Send us a note using the form below and someone from the Larry Rowbs Foundation team will be in touch soon.",
-};
+        'Get in touch. Have a question? Send us a note using the form below and someone from the Larry Rowbs Foundation team will be in touch soon.',
+}
 
 export default function Contact() {
     return (
@@ -41,5 +41,5 @@ export default function Contact() {
                 </div>
             </main>
         </>
-    );
+    )
 }

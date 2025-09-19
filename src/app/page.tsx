@@ -1,49 +1,49 @@
-import OurWork from "@/app/components/OurWork";
-import WhatsHappening from "@/app/components/WhatsHappening";
-import Partners from "@/app/components/Partners";
-import AnimationVideo from "@/app/components/AnimationVideo";
-import Image from "next/image";
-import Link from "next/link";
-import SubscribeEmail from "@/components/Forms/subscribe-email";
-import VimeoPlayer from "react-player/vimeo";
+import OurWork from '@/app/components/OurWork'
+import WhatsHappening from '@/app/components/WhatsHappening'
+import Partners from '@/app/components/Partners'
+import AnimationVideo from '@/app/components/AnimationVideo'
+import Image from 'next/image'
+import Link from 'next/link'
+import SubscribeEmail from '@/components/Forms/subscribe-email'
+import EdonTeaserBanner from '@/components/donk/banner'
 
 const benefits = [
     {
-        title: "Creating More Jobs",
-        icon: "/iconmonstr-party-22.svg",
+        title: 'Creating More Jobs',
+        icon: '/iconmonstr-party-22.svg',
         description: (
             <>
                 Sustainable fashion gives a boost to the economies of
-                underdeveloped areas. It creates new jobs and <b>fair-wage</b>{" "}
+                underdeveloped areas. It creates new jobs and <b>fair-wage</b>{' '}
                 opportunities.
             </>
         ),
     },
     {
-        title: "Ensuring Better Health",
-        icon: "/basketball-player-scoring-svgrepo-com.svg",
+        title: 'Ensuring Better Health',
+        icon: '/basketball-player-scoring-svgrepo-com.svg',
         description: (
             <>
                 Fast fashion harms the environment and threatens health with
-                toxic chemicals. We&apos;re committed to safe,{" "}
-                <b>sustainable</b> clothing for a greener, <b>healthier</b>{" "}
+                toxic chemicals. We&apos;re committed to safe,{' '}
+                <b>sustainable</b> clothing for a greener, <b>healthier</b>{' '}
                 world.
             </>
         ),
     },
     {
-        title: "Providing Free Education",
-        icon: "/iconmonstr-school-30.svg",
+        title: 'Providing Free Education',
+        icon: '/iconmonstr-school-30.svg',
         description: (
             <>
-                Fashion school costs <b>$$$</b>. We will fund a{" "}
+                Fashion school costs <b>$$$</b>. We will fund a{' '}
                 <b>Charitable Fashion School</b> with revenue from selling
                 sustainable fashion, offering free education to drive industry
                 change.
             </>
         ),
     },
-];
+]
 
 export default function Home() {
     return (
@@ -93,7 +93,7 @@ export default function Home() {
                                         {benefit.description}
                                     </p>
                                 </div>
-                            );
+                            )
                         })}
                     </div>
                     <div className="flex justify-center items-center">
@@ -109,15 +109,15 @@ export default function Home() {
                     <div className="bg-red-200 px-9 py-9 w-11/12 md:w-3/4 mx-auto rounded-xl ">
                         <p className="text-lg md:text-xl lg:text-2xl text-green-700">
                             <span className="text-red-600">Fun fact:</span> We
-                            are developing the{" "}
+                            are developing the{' '}
                             <Link
                                 href="/larry-rowbs-adventure"
                                 className="font-semibold text-lg md:text-xl lg:text-2xl text-green-700 underline"
                             >
                                 world&apos;s first eduventurous game
-                            </Link>{" "}
+                            </Link>{' '}
                             to make the fashion industry more sustainable. Find
-                            more about it{" "}
+                            more about it{' '}
                             <Link
                                 href="/larry-rowbs-adventure"
                                 className="font-semibold text-lg md:text-xl lg:text-2xl text-green-700 underline"
@@ -136,11 +136,12 @@ export default function Home() {
                     <AnimationVideo src="/larry01 (360p).mp4" />
                 </div>
                 <OurWork />
+                <EdonTeaserBanner />
                 <Partners />
                 <div>
                     <SubscribeEmail />
                 </div>
             </div>
         </main>
-    );
+    )
 }

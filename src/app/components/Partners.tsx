@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 
 export default function Partners() {
     return (
@@ -26,7 +26,7 @@ export default function Partners() {
                         </div>
                         <div className="flex items-center justify-center">
                             <div className="m-2 md:text-lg lg:text-xl">
-                                We are proud to announce that{" "}
+                                We are proud to announce that{' '}
                                 <a
                                     className="underline"
                                     target="_blank"
@@ -34,7 +34,7 @@ export default function Partners() {
                                     href="https://christianministryalliance.org"
                                 >
                                     the Christian Ministry Alliance
-                                </a>{" "}
+                                </a>{' '}
                                 has endorsed our work and vision.
                                 <br />
                                 <br />
@@ -104,6 +104,39 @@ export default function Partners() {
                             </div>
                         </div>
                     </div>
+                    <div className="grid md:grid-cols-2 gap-4 m-2">
+                        <div className="m-2 flex justify-center items-center">
+                            <Image
+                                src="/images/soulu-logo-clean.png"
+                                alt="SOULU"
+                                loading="lazy"
+                                width={500}
+                                height={300}
+                                className="max-w-full max-h-full"
+                            />
+                        </div>
+                        <div className="flex items-center justify-center">
+                            <div className="m-2 md:text-lg lg:text-xl">
+                                We are proud to partner with{' '}
+                                <a
+                                    className="underline"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="https://soulu.com.au/"
+                                >
+                                    SOULU
+                                </a>
+                                on the{' '}
+                                <Link className="underline" href="/donk">
+                                    e.don Movement
+                                </Link>
+                                . Together with LRF, they help turn fashion
+                                waste into rebirthed clothing while fighting{' '}
+                                <b>child trafficking and labor</b> in fast
+                                fashion.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="flex items-center justify-center">
                     <Link
@@ -115,5 +148,5 @@ export default function Partners() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
