@@ -9,6 +9,7 @@ export default function PreorderSection() {
     return (
         <section className="container mx-auto px-4 py-10">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
+                {/* Left image + message */}
                 <motion.div
                     initial={{ x: -20, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -30,6 +31,7 @@ export default function PreorderSection() {
                     </p>
                 </motion.div>
 
+                {/* Right pre-order card */}
                 <motion.div
                     initial={{ x: 20, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -43,6 +45,7 @@ export default function PreorderSection() {
                         Limited edition. Not just a teddy bear - a cause
                         collectable.
                     </p>
+
                     <ul className="list-disc ml-5 text-gray-700 space-y-2 mb-6">
                         <li>Your name can be stitched on your Don K</li>
                         <li>
@@ -57,6 +60,7 @@ export default function PreorderSection() {
                             firsthand
                         </li>
                     </ul>
+
                     <div className="flex items-baseline gap-3 mb-6">
                         <div className="text-3xl font-extrabold text-emerald-700">
                             $50
@@ -65,7 +69,9 @@ export default function PreorderSection() {
                             pre-order price
                         </div>
                     </div>
+
                     <PreorderForm />
+
                     <p className="mt-4 text-sm text-gray-600">
                         Social impact investors: interested in larger orders or
                         aligned campaigns?{' '}
@@ -79,6 +85,20 @@ export default function PreorderSection() {
                     </p>
                 </motion.div>
             </div>
+
+            {/* Separate investment note below the main section */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="mt-10 text-center"
+            >
+                <p className="text-base md:text-lg text-gray-800 font-medium">
+                    Each Don K can also be resold in future years and serves as
+                    a meaningful social impact investment.
+                </p>
+            </motion.div>
         </section>
     )
 }

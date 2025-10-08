@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SubscribeEmail from '@/components/Forms/subscribe-email'
 import EdonTeaserBanner from '@/components/donk/banner'
+import DonkBanner from '@/components/donk/small-banner'
 
 const benefits = [
     {
@@ -68,6 +69,7 @@ export default function Home() {
                         Support Our Project
                     </Link>
                 </div>
+                <DonkBanner />
                 <div className="w-11/12 sm:w-3/4 md:w-3/5 mx-auto drop-shadow-lg md:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
                     <AnimationVideo src="/AnimationVideo.mp4" />
                 </div>
