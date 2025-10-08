@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import PreorderSection from '@/components/donk/pre-order'
 import { Suspense } from 'react'
 import CheckoutStatusHandler from '@/components/donk/status-handler'
+import YoutubeVideo from '@/components/Youtube'
 
 export default function DonkPage() {
     return (
@@ -48,6 +49,12 @@ export default function DonkPage() {
                             <span className="text-orange-500">Worn</span>.
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="w-11/12 sm:w-5/6 md:w-3/4 lg:w-1/2 mx-auto my-16 flex flex-col gap-6">
+                <div className="w-full">
+                    <YoutubeVideo videoId="Svyd1fXdIyY" title="DonK Movement" />
                 </div>
             </section>
 

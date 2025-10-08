@@ -1,22 +1,23 @@
-import React from "react";
+import React from 'react'
 
 interface YoutubeProps {
-    videoId: string;
+    videoId: string
+    title?: string
 }
 
 const YoutubeVideo = (props: YoutubeProps) => {
     return (
-        <div className="aspect-w-16 aspect-h-9">
+        <div className="aspect-video">
             <iframe
                 src={`https://www.youtube.com/embed/${props.videoId}`}
-                title="Larry Rowbs Foundation Mission"
+                title={props.title ?? 'Larry Rowbs Foundation Mission'}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                className="rounded-lg"
+                className="w-full h-full rounded-lg"
                 loading="lazy"
             ></iframe>
         </div>
-    );
-};
+    )
+}
 
-export default YoutubeVideo;
+export default YoutubeVideo
