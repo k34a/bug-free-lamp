@@ -1,15 +1,19 @@
-import { Metadata } from 'next'
-import Image from 'next/image'
+'use client'
 
-export const metadata: Metadata = {
-    title: 'Larry Rowbs Foundation x SOULU | e.don Movement',
-    description:
-        'Join the e.don Movement by Larry Rowbs Foundation and SOULU. Transform fashion waste into hope, dignity, and sustainable community impact.',
-}
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import PreorderSection from '@/components/donk/pre-order'
+import { Suspense } from 'react'
+import CheckoutStatusHandler from '@/components/donk/status-handler'
 
 export default function DonkPage() {
     return (
         <div className="min-h-screen bg-white">
+            <Suspense fallback={null}>
+                <CheckoutStatusHandler />
+            </Suspense>
+            <PreorderSection />
+
             {/* Hero Section */}
             <section className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-emerald-50"></div>
@@ -20,7 +24,7 @@ export default function DonkPage() {
                                 Larry Rowbs Foundation
                             </h1>
                             <div className="text-3xl md:text-4xl text-blue-500 font-bold">
-                                ×
+                                x
                             </div>
                             <Image
                                 src="/images/soulu-logo-clean.png"
@@ -146,7 +150,13 @@ export default function DonkPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Block 1 */}
-                        <div className="flex flex-col items-center text-center bg-red-50 p-6 rounded-xl border border-red-200 shadow-sm">
+                        <motion.div
+                            initial={{ y: 10, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.05 }}
+                            className="flex flex-col items-center text-center bg-red-50 p-6 rounded-xl border border-red-200 shadow-sm"
+                        >
                             <div className="w-20 h-20 relative mb-4">
                                 <Image
                                     src="/images/child-labor.jpg"
@@ -162,10 +172,16 @@ export default function DonkPage() {
                                 Millions of children are trafficked into fashion
                                 supply chains each year.
                             </p>
-                        </div>
+                        </motion.div>
 
                         {/* Block 2 */}
-                        <div className="flex flex-col items-center text-center bg-emerald-50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+                        <motion.div
+                            initial={{ y: 10, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="flex flex-col items-center text-center bg-emerald-50 p-6 rounded-xl border border-emerald-200 shadow-sm"
+                        >
                             <div className="w-20 h-20 relative mb-4">
                                 <Image
                                     src="/images/broken-chain.jpg"
@@ -181,10 +197,16 @@ export default function DonkPage() {
                                 Don K fights exploitation by reducing demand for
                                 fast fashion and raising awareness.
                             </p>
-                        </div>
+                        </motion.div>
 
                         {/* Block 3 */}
-                        <div className="flex flex-col items-center text-center bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
+                        <motion.div
+                            initial={{ y: 10, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.15 }}
+                            className="flex flex-col items-center text-center bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm"
+                        >
                             <div className="w-20 h-20 relative mb-4">
                                 <Image
                                     src="/images/children-education.jpg"
@@ -200,7 +222,7 @@ export default function DonkPage() {
                                 Every DON K purchased helps free children from
                                 forced labor and supports education.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
 
                     <div className="text-center mt-12">
@@ -652,6 +674,8 @@ export default function DonkPage() {
                     </div>
                 </div>
             </section>
+
+            <PreorderSection />
         </div>
     )
 }
