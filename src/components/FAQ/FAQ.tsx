@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import React from "react";
-import FAQItem from "./FAQItem";
-import { useState } from "react";
+import React from 'react'
+import FAQItem from './FAQItem'
+import { useState } from 'react'
 
 interface FAQProps {
-    heading: string;
-    description: string;
+    heading: string
+    description: string
     faqs: Array<{
-        ques: string;
-        ans: JSX.Element | string;
-    }>;
+        ques: string
+        ans: React.JSX.Element | string
+    }>
 }
 
 export default function FAQ(props: FAQProps) {
-    const [isOpen, setIsOpen] = useState(-1);
+    const [isOpen, setIsOpen] = useState(-1)
 
     return (
         <div className="my-12 w-11/12 max-w-screen-sm mx-auto grid gap-5">
@@ -38,9 +38,9 @@ export default function FAQ(props: FAQProps) {
                             faqindex={index}
                             key={index}
                         />
-                    );
+                    )
                 })}
             </div>
         </div>
-    );
+    )
 }

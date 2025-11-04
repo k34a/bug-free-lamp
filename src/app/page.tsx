@@ -50,6 +50,7 @@ export default function Home() {
     return (
         <main>
             <div className="flex flex-col pt-18 sm:pt-24 pb-6 md:pt-30 gap-16 sm:gap-24 md:gap-30">
+                <EdonTeaserBanner />
                 <div className="px-3 text-center flex flex-col items-center justify-center gap-8 md:gap-12">
                     <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-stone-700 to-emerald-600 bg-clip-text text-transparent">
                         Making fashion sustainable
@@ -138,7 +139,6 @@ export default function Home() {
                     <AnimationVideo src="/larry01 (360p).mp4" />
                 </div>
                 <OurWork />
-                <EdonTeaserBanner />
                 <Partners />
                 <div>
                     <SubscribeEmail />

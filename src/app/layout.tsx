@@ -34,9 +34,8 @@ export default function RootLayout({
             <CookieConsent />
             <body className={inter.className}>
                 <MantineProvider>
-                    {/* <Header /> */}
                     <HeaderMegaMenu />
-                    {children}
+                    <div style={{ marginTop: '80px' }}>{children}</div>
                     <Footer />
                 </MantineProvider>
             </body>

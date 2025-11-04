@@ -1,6 +1,10 @@
-import React from "react";
-import Link from "next/link";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import React from 'react'
+import Link from 'next/link'
+import {
+    IconBrandFacebook,
+    IconBrandInstagram,
+    IconBrandLinkedin,
+} from '@tabler/icons-react'
 
 export default function Footer() {
     return (
@@ -14,7 +18,7 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaFacebook />
+                        <IconBrandFacebook />
                     </a>
                     <a
                         href="https://www.instagram.com/thelarryrowbsfoundation/"
@@ -22,7 +26,7 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaInstagram />
+                        <IconBrandInstagram />
                     </a>
                     <a
                         href="https://www.linkedin.com/company/larryrowbsfoundation/"
@@ -30,7 +34,7 @@ export default function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaLinkedin />
+                        <IconBrandLinkedin />
                     </a>
                 </div>
             </div>
@@ -50,12 +54,12 @@ export default function Footer() {
                     <div className="flex items-center justify-center ">
                         <div className="text-white border-white bg-black">
                             <p className="text-sm">
-                                Site designed & developed by{" "}
+                                Site designed & developed by{' '}
                                 <span className="text-green-300">k34a</span>
                             </p>
                             <p className="text-xs">
                                 Your product. Our craft. Let&apos;s collaborate
-                                to make an impact!{" "}
+                                to make an impact!{' '}
                                 <a
                                     href="mailto:k34a@live.in"
                                     className="text-green-300 hover:text-green-200"
@@ -70,5 +74,5 @@ export default function Footer() {
                 </div>
             </div>
         </section>
-    );
+    )
 }

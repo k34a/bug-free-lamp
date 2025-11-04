@@ -14,7 +14,7 @@ export const links = {
         },
         {
             name: 'Get Involved',
-            sublinks: [{ name: 'Join us', href: '/join-us' }],
+            sublinks: [{ name: 'Join us', href: '/join' }],
         },
         { name: 'Contact', href: '/contact' },
     ],

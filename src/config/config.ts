@@ -19,7 +19,7 @@ export const ngoDetails = {
         'fashion industry reform',
     ],
     registrationNumber: 'E-0014172(THN)',
-    logo: `logo.webp`,
+    logo: `/logo.webp`,
     contact: {
         addresses: [
             {

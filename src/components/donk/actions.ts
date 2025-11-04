@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation'
 import { headers } from 'next/headers'
 
 export async function createCheckout(formData: FormData) {
-    const hdrs = headers()
+    const hdrs = await headers()
     const origin =
         hdrs.get('origin') ||
         process.env.NEXT_PUBLIC_SITE_URL ||
