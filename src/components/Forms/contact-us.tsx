@@ -1,99 +1,90 @@
-"use client";
+'use client'
 
-import { useRef, useState } from "react";
-import { z } from "zod";
-import { titleCase } from "@/lib/commonFrontEndFns";
-import { ENV } from "@/lib/cfg";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useState } from 'react'
+import { z } from 'zod'
+import { titleCase } from '@/lib/commonFrontEndFns'
 
 const ContactUsSchema = z.object({
     firstName: z
-        .string({ message: "Please provide first name" })
-        .min(5, "First name should be atleast 5 characters"),
+        .string({ message: 'Please provide first name' })
+        .min(5, 'First name should be atleast 5 characters'),
     lastName: z.string().optional(),
     email: z
-        .string({ message: "Please provide a valid email" })
-        .email("Please provide a valid email"),
+        .string({ message: 'Please provide a valid email' })
+        .email('Please provide a valid email'),
     message: z
         .string()
         .min(
             20,
-            "Please provide a valid location/address. Minimum 20 characters."
+            'Please provide a valid location/address. Minimum 20 characters.'
         ),
     token: z.string(),
-});
+})
 
 const defaultFormData = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
-    token: "",
-};
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+    token: '',
+}
 
 const JoinUsForm = () => {
-    const [formData, setFormData] = useState(defaultFormData);
-    const [formErrors, setFormErrors] = useState(defaultFormData);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [error, setError] = useState("");
-    const [loading, setloading] = useState(false);
-    const refTurnstile = useRef<TurnstileInstance>(null);
+    const [formData, setFormData] = useState(defaultFormData)
+    const [formErrors, setFormErrors] = useState(defaultFormData)
+    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [error, setError] = useState('')
+    const [loading, setloading] = useState(false)
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
         makeTitleCase: boolean = false
     ) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target
         setFormData({
             ...formData,
             [name]: makeTitleCase ? titleCase(value) : value,
-        });
-    };
-
-    const handleTurnstileSuccess = (token: string) => {
-        setFormData((v) => ({ ...v, token }));
-    };
+        })
+    }
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormErrors(defaultFormData);
-        setError("");
-        setIsSubmitted(false);
+        e.preventDefault()
+        setFormErrors(defaultFormData)
+        setError('')
+        setIsSubmitted(false)
 
-        const validation = ContactUsSchema.safeParse(formData);
+        const validation = ContactUsSchema.safeParse(formData)
         if (!validation.success) {
-            const errors = validation.error.formErrors.fieldErrors;
+            const errors = validation.error.formErrors.fieldErrors
             setFormErrors({
-                firstName: errors.firstName ? errors.firstName[0] : "",
-                lastName: errors.lastName ? errors.lastName[0] : "",
-                email: errors.email ? errors.email[0] : "",
-                message: errors.message ? errors.message[0] : "",
-                token: "",
-            });
-            setFormData((v) => ({ ...v, token: "" }));
-            refTurnstile.current?.reset();
-            return;
+                firstName: errors.firstName ? errors.firstName[0] : '',
+                lastName: errors.lastName ? errors.lastName[0] : '',
+                email: errors.email ? errors.email[0] : '',
+                message: errors.message ? errors.message[0] : '',
+                token: '',
+            })
+            setFormData((v) => ({ ...v, token: '' }))
+            return
         }
 
-        setloading(true);
-        const response = await fetch("/contact/api", {
-            method: "POST",
+        setloading(true)
+        const response = await fetch('/contact/api', {
+            method: 'POST',
             body: JSON.stringify(formData),
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
-        });
-        const json = await response.json();
+        })
+        const json = await response.json()
         if (!response.ok) {
-            setError(json.error);
-            setFormData((v) => ({ ...v, token: "" }));
+            setError(json.error)
+            setFormData((v) => ({ ...v, token: '' }))
         } else {
-            setIsSubmitted(true);
-            setFormData(defaultFormData);
+            setIsSubmitted(true)
+            setFormData(defaultFormData)
         }
-        refTurnstile.current?.reset();
-        setloading(false);
-    };
+        setloading(false)
+    }
 
     return (
         <div className="py-12 md:py-16 w-11/12 max-w-screen-lg m-auto">
@@ -187,19 +178,13 @@ const JoinUsForm = () => {
                         {formErrors.message}
                     </div>
                 </div>
-                <Turnstile
-                    id="turnstile-1"
-                    ref={refTurnstile}
-                    siteKey={ENV.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-                    onSuccess={handleTurnstileSuccess}
-                />
                 <div className="mt-4">
                     <button
                         className="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded disabled:cursor-not-allowed"
                         type="submit"
                         disabled={loading || formData.token.length === 0}
                     >
-                        {loading ? "Submitting..." : "Join us"}
+                        {loading ? 'Submitting...' : 'Join us'}
                     </button>
                 </div>
                 <div className="text-sm text-red-500">{error}</div>
@@ -211,7 +196,7 @@ const JoinUsForm = () => {
                 )}
             </form>
         </div>
-    );
-};
+    )
+}
 
-export default JoinUsForm;
+export default JoinUsForm
