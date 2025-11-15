@@ -1,46 +1,37 @@
-"use client";
+'use client'
 
-import React from "react";
-import FAQItem from "./FAQItem";
-import { useState } from "react";
+import React from 'react'
+import { Accordion, Text, Title } from '@mantine/core'
+import classes from './FAQSimple.module.css'
 
 interface FAQProps {
-    heading: string;
-    description: string;
+    heading: string
+    description: string
     faqs: Array<{
-        ques: string;
-        ans: JSX.Element | string;
-    }>;
+        ques: string
+        ans: React.JSX.Element | string
+    }>
 }
 
 export default function FAQ(props: FAQProps) {
-    const [isOpen, setIsOpen] = useState(-1);
-
     return (
-        <div className="my-12 w-11/12 max-w-screen-sm mx-auto grid gap-5">
-            <div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-center title-font text-gray-900 mb-4">
-                    {props.heading}
-                </h2>
-                <p className="text-base leading-relaxed text-center">
-                    {props.description}
-                </p>
-            </div>
-            <div className="grid grid-cols-1 divide-y-2">
-                {props.faqs.map((ele, index) => {
+        <>
+            <Title order={2}>{props.heading}</Title>
+            <Text c="dimmed'">{props.description}</Text>
+            <Accordion variant="separated">
+                {props.faqs.map((ele, idx) => {
                     return (
-                        <FAQItem
-                            {...ele}
-                            question={ele.ques}
-                            answer={ele.ans}
-                            isOpen={isOpen == index}
-                            setIsOpen={setIsOpen}
-                            faqindex={index}
-                            key={index}
-                        />
-                    );
+                        <Accordion.Item
+                            key={idx}
+                            className={classes.item}
+                            value="reset-password"
+                        >
+                            <Accordion.Control>{ele.ques}</Accordion.Control>
+                            <Accordion.Panel>{ele.ans}</Accordion.Panel>
+                        </Accordion.Item>
+                    )
                 })}
-            </div>
-        </div>
-    );
+            </Accordion>
+        </>
+    )
 }

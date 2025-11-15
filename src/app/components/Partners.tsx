@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 export default function Partners() {
     return (
-        <div>
+        <div id="partners">
             <div className="w-11/12 md:w-3/4 lg:w-1/2 m-auto py-12 flex flex-col gap-6">
                 <h2 className="font-bold text-2xl sm:text-4xl md:text-5xl text-center capitalize text-green-700">
                     Sustainable Fashion has become a movement!

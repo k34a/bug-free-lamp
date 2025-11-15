@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import Avatar from "react-avatar";
-import { FaLinkedin } from "react-icons/fa";
+import { IconBrandLinkedin } from '@tabler/icons-react'
+import Avatar from 'react-avatar'
 
 interface TeamMemberCardProps {
-    name: string;
-    role: string;
-    bio: string;
-    linkedin: string;
+    name: string
+    role: string
+    bio: string
+    linkedin: string
 }
 
 export default function TeamMemberCard(props: TeamMemberCardProps) {
@@ -42,11 +42,11 @@ export default function TeamMemberCard(props: TeamMemberCardProps) {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <FaLinkedin size={24} />
+                            <IconBrandLinkedin size={24} />
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    );
+    )
 }
