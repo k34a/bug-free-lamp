@@ -13,6 +13,19 @@ export const links = {
             ],
         },
         {
+            name: 'Programs',
+            sublinks: [
+                {
+                    name: 'e.don Movement (DonK)',
+                    href: '/donk',
+                },
+                {
+                    name: 'Larry Rowbs Adventure',
+                    href: '/larry-rowbs-adventure',
+                },
+            ],
+        },
+        {
             name: 'Get Involved',
             sublinks: [{ name: 'Join us', href: '/join' }],
         },

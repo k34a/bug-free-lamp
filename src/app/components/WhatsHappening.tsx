@@ -1,20 +1,23 @@
-import NextImage from "next/image";
-import Link from "next/link";
+import NextImage from 'next/image'
+import Link from 'next/link'
 
 const landfillImages = [
-    "/dumpedclothes/1.webp",
-    "/dumpedclothes/2.webp",
-    "/dumpedclothes/3.webp",
-    "/dumpedclothes/4.webp",
-];
+    '/dumpedclothes/1.webp',
+    '/dumpedclothes/2.webp',
+    '/dumpedclothes/3.webp',
+    '/dumpedclothes/4.webp',
+]
 
 export default function WhatsHappening() {
     return (
-        <div className="w-11/12 sm:w-4/5 md:w-3/5 mx-auto py-6 flex flex-col gap-6">
+        <div
+            className="w-11/12 sm:w-4/5 md:w-3/5 mx-auto py-6 flex flex-col gap-6"
+            id="why-are-we-doing-this"
+        >
             <div className="bg-gradient-to-r from-stone-700 to-emerald-600 bg-clip-text text-transparent">
                 <span className="text-3xl sm:text-4xl md:text-5xl font-bold">
                     Why we are doing this?
-                </span>{" "}
+                </span>{' '}
                 <br />
                 <span className="text-2xl sm:text-3xl md:text-4xl">
                     - Because a truck full of used clothes ends up in landfills
@@ -35,8 +38,8 @@ export default function WhatsHappening() {
                 </video>
             </div>
             <p className="md:text-lg">
-                The fashion industry prioritizes cutting costs by making use of{" "}
-                <b>cheap and toxic materials</b>. This also reduces the{" "}
+                The fashion industry prioritizes cutting costs by making use of{' '}
+                <b>cheap and toxic materials</b>. This also reduces the{' '}
                 <b>lifespan</b> of the clothes.
                 <br />
                 Discarding the clothes in this fast fashion era leads to
@@ -68,10 +71,10 @@ export default function WhatsHappening() {
                                 key={index}
                                 className="rounded sm:rounded-lg drop-shadow-md sm:drop-shadow-lg max-w-full max-h-full"
                             />
-                        );
+                        )
                     })}
                 </div>
             </div>
         </div>
-    );
+    )
 }

@@ -6,14 +6,6 @@ html {
     scroll-behavior: smooth;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.3s linear;
-    font-display: swap;
-}
-
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -37,31 +29,27 @@ a:hover {
     text-decoration: underline;
 }
 
-img {
-    pointer-events: none;
-}
-
-input[type="radio"]:after {
+input[type='radio']:after {
     width: 24px;
     height: 24px;
     border-radius: 24px;
     cursor: pointer;
     position: relative;
     background-color: #535353;
-    content: "";
+    content: '';
     display: inline-block;
     visibility: visible;
     border: 2px solid white;
 }
 
-input[type="radio"]:checked:after {
+input[type='radio']:checked:after {
     width: 24px;
     height: 24px;
     border-radius: 24px;
     cursor: pointer;
     position: relative;
     background-color: #4f46e5;
-    content: "";
+    content: '';
     display: inline-block;
     visibility: visible;
     border: 2px solid white;
@@ -77,7 +65,7 @@ input[type="radio"]:checked:after {
 }
 
 .highlight-container:before {
-    content: " ";
+    content: ' ';
     display: block;
     height: 90%;
     width: 100%;

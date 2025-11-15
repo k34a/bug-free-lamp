@@ -122,7 +122,7 @@ export default function HeaderMegaMenu() {
                         href={links.donateLink.href}
                         className={classes.donateButton}
                     >
-                        <IconHeart className="w-4 h-4 text-sky-500 fill-sky-500" />
+                        <IconHeart className="w-4 h-4 text-green-500 fill-green-500" />
                         <span>DONATE</span>
                     </Link>
                 </Group>
@@ -131,7 +131,7 @@ export default function HeaderMegaMenu() {
                         href={links.donateLink.href}
                         className={classes.donateButton}
                     >
-                        <IconHeart className="w-4 h-4 text-sky-500 fill-sky-500" />
+                        <IconHeart className="w-4 h-4 text-green-500 fill-green-500" />
                         <span>DONATE</span>
                     </Link>
                     <Burger
@@ -151,7 +151,7 @@ export default function HeaderMegaMenu() {
                 hiddenFrom="lg"
                 zIndex={1000000}
             >
-                <ScrollArea h="calc(100vh - 80px)" mx="-md">
+                <ScrollArea h="100%" mx="-md">
                     <Divider my="sm" />
 
                     {links.primaryLinks.map((link) => {
@@ -205,9 +205,9 @@ export default function HeaderMegaMenu() {
                         <Link
                             href={links.donateLink.href}
                             onClick={closeDrawer}
-                            className="w-full  border-2 p-2 text-center border-sky-500 text-black rounded-4xl text-xl flex gap-2 items-center justify-center"
+                            className="w-full  border-2 p-2 text-center border-green-500 text-black rounded-4xl text-xl flex gap-2 items-center justify-center"
                         >
-                            <IconHeart className="w-4 h-4 text-sky-500 fill-sky-500" />
+                            <IconHeart className="w-4 h-4 text-green-500 fill-green-500" />
                             <span>Donate</span>
                         </Link>
                         <div className="flex flex-col gap-4">
