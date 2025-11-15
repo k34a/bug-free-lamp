@@ -1,15 +1,15 @@
-import YoutubeVideo from "@/components/Youtube";
-import Link from "next/link";
-import Image from "next/image";
-import SubscribeEmail from "@/components/Forms/subscribe-email";
+import YoutubeVideo from '@/components/Youtube'
+import Link from 'next/link'
+import Image from 'next/image'
 
-import { type Metadata } from "next";
+import { type Metadata } from 'next'
+import NewsletterSubscribe from '@/components/newsletter-subscribe'
 
 export const metadata: Metadata = {
-    title: "Larry Rowbs Adventure: Educative Sustainable Fashion",
+    title: 'Larry Rowbs Adventure: Educative Sustainable Fashion',
     description:
-        "This adventurous educative game will transform the way you think about the fashion industry.",
-};
+        'This adventurous educative game will transform the way you think about the fashion industry.',
+}
 
 const Page = () => {
     return (
@@ -17,9 +17,9 @@ const Page = () => {
             <div className="w-11/12 sm:w-5/6 md:w-3/4 lg:w-1/2 mx-auto my-16 flex flex-col gap-6">
                 <div>
                     <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
-                        Get Ready for Larry Rowbs Adventure:{" "}
-                        <span className="text-blue-500">Educative</span>{" "}
-                        <span className="text-green-500">Sustainable</span>{" "}
+                        Get Ready for Larry Rowbs Adventure:{' '}
+                        <span className="text-blue-500">Educative</span>{' '}
+                        <span className="text-green-500">Sustainable</span>{' '}
                         <span className="text-pink-500">Fashion</span>
                     </h1>
                     <p className="sm:text-lg md:text-xl italic">
@@ -30,12 +30,12 @@ const Page = () => {
                 <p>
                     <span className="italic">
                         Larry Rowbs Adventure: Educative Sustainable Fashion
-                    </span>{" "}
-                    is the{" "}
+                    </span>{' '}
+                    is the{' '}
                     <span className="font-bold underline">
                         first eduventurous game in the fashion industry
                     </span>
-                    {". "}
+                    {'. '}
                     It is both - adventurous and educative. This mixture of a
                     fun learning experience crossed with a fast-paced
                     runner-like game delivers a unique twist. Players earn
@@ -52,15 +52,15 @@ const Page = () => {
                     <YoutubeVideo videoId="geGdb89rU98" />
                 </div>
                 <div>
-                    <SubscribeEmail />
+                    <NewsletterSubscribe />
                 </div>
                 <p>
                     Our goal is to make fashion sustainable - one step at a
                     time. To solve the social hazards and environmental harms
-                    caused fast fashion, the{" "}
+                    caused fast fashion, the{' '}
                     <Link href="/" className="text-green-700">
                         Larry Rowbs Foundation
-                    </Link>{" "}
+                    </Link>{' '}
                     will be starting a full-scale clothing facility to recycle
                     the fashion waste into brand new and 100% biodegradable
                     products. The proceeds from the recycling facility will be
@@ -172,7 +172,7 @@ const Page = () => {
                     </a>
                 </p>
                 <div>
-                    <SubscribeEmail />
+                    <NewsletterSubscribe />
                 </div>
                 <hr />
                 <Link
@@ -183,7 +183,7 @@ const Page = () => {
                 </Link>
             </div>
         </>
-    );
-};
+    )
+}
 
-export default Page;
+export default Page
