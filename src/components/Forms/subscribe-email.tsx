@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+'use client'
 
 const SubscribeEmail = () => {
     return (
@@ -9,13 +7,13 @@ const SubscribeEmail = () => {
             width="480"
             height="320"
             style={{
-                border: "1px solid #EEE",
-                background: "white",
-                margin: "auto",
+                border: '1px solid #EEE',
+                background: 'white',
+                margin: 'auto',
             }}
             loading="lazy"
         ></iframe>
-    );
-};
+    )
+}
 
-export default SubscribeEmail;
+export default SubscribeEmail

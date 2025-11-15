@@ -4,9 +4,9 @@ import Partners from '@/app/components/Partners'
 import AnimationVideo from '@/app/components/AnimationVideo'
 import Image from 'next/image'
 import Link from 'next/link'
-import SubscribeEmail from '@/components/Forms/subscribe-email'
 import EdonTeaserBanner from '@/components/donk/banner'
 import DonkBanner from '@/components/donk/small-banner'
+import NewsletterSubscribe from '@/components/newsletter-subscribe'
 
 const benefits = [
     {
@@ -132,7 +132,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div>
-                    <SubscribeEmail />
+                    <NewsletterSubscribe />
                 </div>
                 <WhatsHappening />
                 <div className="w-11/12 sm:w-3/4 md:w-3/5 mx-auto drop-shadow-lg md:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">
@@ -141,7 +141,7 @@ export default function Home() {
                 <OurWork />
                 <Partners />
                 <div>
-                    <SubscribeEmail />
+                    <NewsletterSubscribe />
                 </div>
             </div>
         </main>
